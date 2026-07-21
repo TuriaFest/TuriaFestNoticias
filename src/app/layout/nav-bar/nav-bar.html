@@ -1,0 +1,158 @@
+<header class="nav-bar">
+  <div class="nav-bar__inner">
+    <a class="nav-bar__brand" routerLink="/" [attr.aria-label]="'nav.home' | t">
+      <img
+        class="nav-bar__brand-img nav-bar__brand-img--light"
+        ngSrc="assets/branding/festi-val-logo.webp"
+        width="800"
+        height="580"
+        priority
+        alt="TuriaFestNoticias"
+      />
+      <img
+        class="nav-bar__brand-img nav-bar__brand-img--dark"
+        ngSrc="assets/branding/festi-val-logo-dark.webp"
+        width="800"
+        height="580"
+        loading="eager"
+        alt=""
+        aria-hidden="true"
+      />
+    </a>
+
+    <nav class="nav-bar__nav" [attr.aria-label]="'nav.aria.primary' | t">
+      <ul class="nav-bar__nav-list">
+        <li>
+          <a
+            class="nav-bar__nav-link"
+            data-testid="nav-link-inicio"
+            routerLink="/"
+            routerLinkActive="nav-bar__nav-link--active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            #rlaHome="routerLinkActive"
+            [attr.aria-current]="rlaHome.isActive ? 'page' : null"
+          >
+            {{ 'nav.home' | t }}
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-bar__nav-link"
+            data-testid="nav-link-festivales"
+            routerLink="/festivales"
+            routerLinkActive="nav-bar__nav-link--active"
+            #rlaFestivales="routerLinkActive"
+            [attr.aria-current]="rlaFestivales.isActive ? 'page' : null"
+          >
+            {{ 'nav.festivals' | t }}
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-bar__nav-link"
+            data-testid="nav-link-calendario"
+            routerLink="/calendario"
+            routerLinkActive="nav-bar__nav-link--active"
+            #rlaCalendario="routerLinkActive"
+            [attr.aria-current]="rlaCalendario.isActive ? 'page' : null"
+          >
+            {{ 'nav.calendar' | t }}
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-bar__nav-link"
+            data-testid="nav-link-noticias"
+            routerLink="/noticias"
+            routerLinkActive="nav-bar__nav-link--active"
+            #rlaNoticias="routerLinkActive"
+            [attr.aria-current]="rlaNoticias.isActive ? 'page' : null"
+          >
+            {{ 'nav.news' | t }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-bar__actions">
+      <div class="nav-bar__language" #langMenuContainer data-testid="nav-language-selector">
+        <button
+          class="nav-bar__icon-btn nav-bar__language-trigger"
+          data-testid="nav-btn-language"
+          type="button"
+          [attr.aria-label]="'nav.language.label' | t"
+          aria-haspopup="menu"
+          [attr.aria-expanded]="langMenuOpen()"
+          (click)="toggleLangMenu()"
+        >
+          <img
+            class="nav-bar__language-flag"
+            [ngSrc]="currentLang().flag"
+            [alt]="currentLang().label"
+            width="24"
+            height="24"
+          />
+        </button>
+
+        @if (langMenuOpen()) {
+          <div class="nav-bar__language-menu" role="menu" data-testid="nav-language-menu">
+            @for (lang of languages; track lang.code) {
+              <button
+                class="nav-bar__language-option"
+                [class.nav-bar__language-option--active]="lang.code === activeLang()"
+                type="button"
+                role="menuitem"
+                [attr.aria-current]="lang.code === activeLang() ? 'true' : null"
+                [attr.data-testid]="'nav-language-option-' + lang.code"
+                (click)="selectLang(lang.code)"
+              >
+                <img
+                  class="nav-bar__language-option-flag"
+                  [ngSrc]="lang.flag"
+                  [alt]="''"
+                  aria-hidden="true"
+                  width="20"
+                  height="20"
+                />
+                <span class="nav-bar__language-option-label">{{ lang.label }}</span>
+              </button>
+            }
+          </div>
+        }
+      </div>
+
+      <button
+        class="nav-bar__icon-btn nav-bar__search"
+        data-testid="nav-btn-buscar"
+        type="button"
+        [attr.aria-label]="'nav.search' | t"
+      >
+        <svg lucideSearch aria-hidden="true" focusable="false" size="20" strokeWidth="2"></svg>
+      </button>
+
+      <button
+        class="nav-bar__icon-btn nav-bar__theme-toggle"
+        data-testid="nav-btn-tema"
+        type="button"
+        [attr.aria-label]="themeLabelKey() | t"
+        [attr.aria-pressed]="isDark()"
+        (click)="toggleTheme()"
+      >
+        @if (isDark()) {
+          <svg lucideMoon aria-hidden="true" focusable="false" size="20" strokeWidth="2"></svg>
+        } @else {
+          <svg lucideSun aria-hidden="true" focusable="false" size="20" strokeWidth="2"></svg>
+        }
+      </button>
+
+      <button
+        class="nav-bar__icon-btn nav-bar__menu"
+        data-testid="nav-btn-menu"
+        type="button"
+        [attr.aria-label]="'nav.menu' | t"
+      >
+        <svg lucideMenu aria-hidden="true" focusable="false" size="22" strokeWidth="2"></svg>
+      </button>
+    </div>
+  </div>
+</header>

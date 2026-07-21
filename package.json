@@ -15,9 +15,7 @@
     "sync:codex:check": "node scripts/sync-codex.mjs --check",
     "images:convert": "node scripts/convert-images.mjs",
     "branches:update-from-develop": "bash scripts/update-branches-from-develop.sh",
-    "branches:merge-develop-into-all": "bash scripts/merge-develop-into-branches.sh",
-    "deploy": "npm run build && wrangler deploy",
-    "cf:preview": "npm run build && wrangler dev"
+    "branches:merge-develop-into-all": "bash scripts/merge-develop-into-branches.sh"
   },
   "prettier": {
     "printWidth": 100,
@@ -42,6 +40,8 @@
     "@angular/platform-server": "^21.1.0",
     "@angular/router": "^21.1.0",
     "@angular/ssr": "^21.1.0",
+    "@jsverse/transloco": "^8.3.0",
+    "@lucide/angular": "^1.17.0",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -60,7 +60,6 @@
     "sharp": "^0.34.5",
     "typescript": "~5.9.2",
     "typescript-eslint": "8.59.2",
-    "vitest": "^4.0.8",
-    "wrangler": "^4.42.0"
+    "vitest": "^4.0.8"
   }
 }

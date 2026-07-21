@@ -1,0 +1,851 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "festivals": "Festivales",
+    "calendar": "Calendario",
+    "news": "Noticias",
+    "map": "Mapa",
+    "search": "Buscar",
+    "theme": {
+      "toDark": "Activar modo oscuro",
+      "toLight": "Activar modo claro"
+    },
+    "menu": "Abrir menú",
+    "progress": {
+      "loading": "Cargando página"
+    },
+    "language": {
+      "label": "Cambiar idioma",
+      "current": "Idioma actual: {lang}",
+      "es": "Español",
+      "ca": "Valencià",
+      "en": "English"
+    },
+    "aria": {
+      "primary": "Navegación principal"
+    }
+  },
+  "news": {
+    "meta": {
+      "title": "Noticias — TuriaFestNoticias"
+    },
+    "eyebrow": "Actualidad festivalera",
+    "title": "Noticias",
+    "description": "Novedades, anuncios y actualidad de los festivales de la Comunitat Valenciana.",
+    "empty": {
+      "ariaLabel": "Noticias aún no disponibles",
+      "title": "Aún no hay noticias",
+      "description": "Estamos preparando este espacio para contarte las últimas novedades del panorama festivalero valenciano.",
+      "cta": "Explorar festivales"
+    }
+  },
+  "home": {
+    "ariaLabel": "Inicio",
+    "hero": {
+      "title": "Descubre los festivales que hacen vibrar el Mediterráneo",
+      "description": "Explora los principales festivales de la Comunitat Valenciana: fechas, ubicaciones, estilos musicales y toda la información que necesitas para planear tu próxima experiencia.",
+      "imageAlt": "Público disfrutando de un festival de música al atardecer en la playa",
+      "primaryCta": "Explorar festivales",
+      "secondaryCta": "Ver calendario"
+    },
+    "nextFestival": {
+      "ariaLabel": "Próximo festival destacado",
+      "eyebrow": "Próximo festival",
+      "titleAccent": "Latin Fest",
+      "title": "arranca el 4 de julio. ¿Ya tienes tu plan?",
+      "description": "La primera cita de julio llega a Benidorm y abre dos fines de semana latinos seguidos antes de su parada en Valencia.",
+      "date": "4 julio 2026",
+      "location": "Benidorm, Alicante",
+      "genre": "Latino en directo",
+      "imageAlt": "Vista aérea del recinto de Latin Fest junto al mar en Benidorm",
+      "primaryCta": "Ver Latin Fest",
+      "secondaryCta": "Ir al calendario",
+      "countdown": {
+        "days": "días",
+        "hours": "horas",
+        "minutes": "min",
+        "seconds": "seg"
+      },
+      "festivals": {
+        "bigsound": {
+          "titleAccent": "Bigsound Festival",
+          "title": "arranca el 26 de junio. ¿Ya tienes tu plan?",
+          "date": "26 junio 2026",
+          "location": "Parc Central de Torrent, Valencia",
+          "genre": "Pop & directo",
+          "imageAlt": "Cartel de Bigsound Festival Valencia 2026",
+          "primaryCta": "Ver Bigsound"
+        },
+        "latinFestBenidorm": {
+          "titleAccent": "Latin Fest",
+          "title": "arranca el 4 de julio. ¿Ya tienes tu plan?",
+          "date": "4 julio 2026",
+          "location": "Benidorm, Alicante",
+          "genre": "Latino en directo",
+          "imageAlt": "Cartel de Latin Fest Benidorm 2026",
+          "primaryCta": "Ver Latin Fest"
+        },
+        "reve": {
+          "titleAccent": "Reve Festival",
+          "title": "arranca el 16 de julio. ¿Ya tienes tu plan?",
+          "date": "16 julio 2026",
+          "location": "Roig Arena, Valencia",
+          "genre": "Pop y show",
+          "imageAlt": "Cartel de Reve Festival Roig Arena Valencia 2026",
+          "primaryCta": "Ver Reve"
+        },
+        "latinFestValencia": {
+          "titleAccent": "Latin Fest",
+          "title": "llega a Valencia el 17 de julio. ¿Ya tienes tu plan?",
+          "date": "17 julio 2026",
+          "location": "Valencia",
+          "genre": "Latino en directo",
+          "imageAlt": "Recinto visual de Latin Fest Valencia 2026",
+          "primaryCta": "Ver Latin Fest"
+        },
+        "zevra": {
+          "titleAccent": "Zevra Festival",
+          "title": "arranca el 24 de julio. ¿Ya tienes tu plan?",
+          "date": "24 julio 2026",
+          "location": "Cullera, Valencia",
+          "genre": "Urbano",
+          "imageAlt": "Cartel general de Zevra Festival 2026",
+          "primaryCta": "Ver Zevra"
+        },
+        "arenal": {
+          "titleAccent": "Arenal Sound",
+          "title": "arranca el 30 de julio. ¿Ya tienes tu plan?",
+          "date": "30 julio 2026",
+          "location": "Playa El Arenal, Burriana",
+          "genre": "Pop, urbano y electrónica",
+          "imageAlt": "Cartel de Arenal Sound 2026",
+          "primaryCta": "Ver Arenal"
+        },
+        "medusa": {
+          "titleAccent": "Medusa Festival",
+          "title": "arranca el 13 de agosto. ¿Ya tienes tu plan?",
+          "date": "13 agosto 2026",
+          "location": "Playa de Cullera, Valencia",
+          "genre": "Electrónica",
+          "imageAlt": "Cartel general de Medusa Festival 2026",
+          "primaryCta": "Ver Medusa"
+        }
+      }
+    },
+    "featured": {
+      "title": "Festivales destacados",
+      "cards": {
+        "bigsound": {
+          "date": "JUN 26-27",
+          "name": "Bigsound Festival",
+          "location": "Torrent, Valencia"
+        },
+        "latinFestBenidorm": {
+          "date": "JUL 4-5",
+          "name": "Latin Fest Benidorm",
+          "location": "Benidorm, Alicante"
+        },
+        "latinFest": {
+          "date": "JUL 17-18",
+          "name": "Latin Fest Valencia",
+          "location": "Valencia"
+        },
+        "reve": {
+          "date": "JUL 16",
+          "name": "Reve Festival",
+          "location": "Roig Arena, Valencia"
+        },
+        "zevra": {
+          "date": "JUL 24-27",
+          "name": "Zevra Festival",
+          "location": "Cullera, Valencia"
+        },
+        "arenal": {
+          "date": "JUL 30-AGO 2",
+          "name": "Arenal Sound",
+          "location": "Playa El Arenal, Burriana"
+        },
+        "medusa": {
+          "date": "AGO 13-17",
+          "name": "Medusa Festival",
+          "location": "Playa de Cullera, Valencia"
+        }
+      }
+    },
+    "calendar": {
+      "title": "Calendario de festivales 2026",
+      "subtitle": "Explora cuándo y dónde se celebran los mejores festivales de la Comunitat Valenciana.",
+      "empty": "Todavía no hay festivales seleccionados para este mes. Cambia el filtro para seguir explorando el verano.",
+      "filters": {
+        "ariaLabel": "Filtrar festivales por mes",
+        "all": "Todos",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre"
+      },
+      "months": {
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto"
+      },
+      "shortMonths": {
+        "june": "JUN",
+        "july": "JUL",
+        "august": "AGO"
+      },
+      "cards": {
+        "bigsound": {
+          "date": "26–27 Jun",
+          "name": "Bigsound Festival",
+          "location": "Parc Central de Torrent",
+          "genre": "Pop & directo"
+        },
+        "latinFestValencia": {
+          "date": "17–18 Jul",
+          "name": "Latin Fest Valencia",
+          "location": "Valencia",
+          "genre": "Latino"
+        },
+        "latinFest": {
+          "date": "4–5 Jul",
+          "name": "Latin Fest Benidorm",
+          "location": "Benidorm, Alicante",
+          "genre": "Latino"
+        },
+        "reve": {
+          "date": "16 Jul",
+          "name": "Reve Festival",
+          "location": "Roig Arena, Valencia",
+          "genre": "Pop y show"
+        },
+        "zevra": {
+          "date": "24–27 Jul",
+          "name": "Zevra Festival",
+          "location": "Cullera",
+          "genre": "Urbano"
+        },
+        "arenal": {
+          "date": "30 Jul–2 Ago",
+          "name": "Arenal Sound",
+          "location": "Playa El Arenal, Burriana",
+          "genre": "Pop, urbano y electrónica"
+        },
+        "medusa": {
+          "date": "13–17 Ago",
+          "name": "Medusa Festival",
+          "location": "Playa de Cullera, Valencia",
+          "genre": "Electrónica"
+        }
+      },
+      "stats": {
+        "festivals": "Festivales seleccionados",
+        "attendees": "Asistentes cada año",
+        "artists": "Artistas en escena",
+        "provinces": "Provincias por descubrir"
+      }
+    },
+    "map": {
+      "eyebrow": "Exploración editorial",
+      "title": "Festivales sobre el mapa valenciano",
+      "description": "Recorre la Comunitat: cada pin revela el carácter, las fechas y la energía de su festival.",
+      "figureLabel": "Mapa estático de la Comunitat Valenciana con festivales destacados",
+      "panel": {
+        "eyebrow": "Festival en foco",
+        "cta": "Ver festival"
+      },
+      "categories": {
+        "electronic": "Electrónica",
+        "latin": "Latino",
+        "pop": "Pop & directo",
+        "urban": "Urbano"
+      },
+      "stats": {
+        "attendance": "Asistencia",
+        "artists": "Artistas",
+        "duration": "Duración",
+        "days": "días"
+      },
+      "fav": {
+        "label": "Añadir a favoritos",
+        "add": "Favoritos"
+      }
+    },
+    "faq": {
+      "ariaLabel": "Preguntas frecuentes sobre cómo elegir festival",
+      "eyebrow": "Guía rápida",
+      "title": "Preguntas que suelen salir antes del primer festival",
+      "description": "Una capa rápida de contexto para decidir mejor: qué género encaja, dónde comparar fechas y cuándo saltar a la web oficial antes de comprar.",
+      "items": {
+        "tickets": {
+          "question": "¿Las entradas se compran directamente en TuriaFestNoticias?",
+          "answer": "No. TuriaFestNoticias funciona como guía editorial: te ayuda a comparar festivales, fechas y sedes, y después te lleva al enlace oficial de cada evento para terminar la compra."
+        },
+        "genres": {
+          "question": "¿Puedo descubrir festivales por estilo musical?",
+          "answer": "Sí. La portada, el calendario y las fichas están pensados para orientarte rápido entre electrónica, urbano, pop y latino sin tener que entrar a ciegas en cada festival."
+        },
+        "provinces": {
+          "question": "¿Cómo comparo Valencia, Alicante y Castellón?",
+          "answer": "Usa la home como punto de partida: primero ves el calendario editorial, luego el mapa de la Comunitat y, desde ahí, puedes saltar a los festivales que mejor te encajen por ubicación."
+        },
+        "family": {
+          "question": "¿Cómo sé si un festival encaja para ir en grupo o en familia?",
+          "answer": "La ficha de cada festival resume el tono del evento, la ubicación y el tipo de experiencia. Para políticas exactas de edad, accesos o acompañantes, el último paso siempre es revisar la web oficial."
+        },
+        "details": {
+          "question": "¿Dónde miro cartel, recinto y detalles prácticos antes de decidirme?",
+          "answer": "Cada festival tiene su propia ficha dentro de TuriaFestNoticias con contexto editorial, fechas, mapa y acceso directo al sitio oficial, que es donde encontrarás cartel confirmado, horarios y normativa final."
+        },
+        "dates": {
+          "question": "¿Qué hago si primero quiero ordenar el verano por fechas?",
+          "answer": "Empieza por el calendario: te deja ver los festivales en orden cronológico y saltar después a la ficha del evento cuando ya tienes claro qué fin de semana quieres reservar."
+        }
+      }
+    },
+    "playlists": {
+      "eyebrow": "Banda sonora",
+      "title": "Playlists oficiales",
+      "subtitle": "Escucha el sonido de los principales festivales de la Comunitat Valenciana.",
+      "cta": "Ver en Spotify",
+      "iframeTitle": "Playlist oficial de {festival} en Spotify",
+      "cards": {
+        "zevra": {
+          "name": "ZEVRA Festival",
+          "description": "Los sonidos urbanos que definen el verano."
+        },
+        "medusa": {
+          "name": "Medusa Festival",
+          "description": "La esencia electrónica del Mediterráneo."
+        },
+        "arenal": {
+          "name": "Arenal Sound",
+          "description": "Pop, urbano y electrónica para la semana grande de Burriana."
+        },
+        "latinFest": {
+          "name": "Latin Fest",
+          "description": "La mejor selección latina del verano."
+        }
+      }
+    }
+  },
+  "festivales": {
+    "map": {
+      "page": {
+        "eyebrow": "Mapa interactivo",
+        "title": "Descubre festivales sobre el mapa.",
+        "description": "Explora los siete festivales semilla desde una experiencia cartográfica con búsqueda, filtros y fichas flotantes."
+      },
+      "figure": {
+        "label": "Mapa interactivo de ubicación de festivales"
+      },
+      "search": {
+        "label": "Buscar festivales, ciudades o municipios",
+        "placeholder": "Busca por festival, ciudad o municipio"
+      },
+      "filters": {
+        "provincePrefix": "Provincia",
+        "upcoming": "Próximos",
+        "currentYear": "Año actual",
+        "clear": "Limpiar filtros"
+      },
+      "provinces": {
+        "valencia": "Valencia",
+        "alicante": "Alicante",
+        "castellon": "Castellón"
+      },
+      "sidebar": {
+        "title": "Festivales",
+        "empty": "No hay festivales que coincidan con los filtros actuales.",
+        "hint": "Haz clic en los marcadores o en los festivales para ver más información.",
+        "sort": {
+          "label": "Ordenar",
+          "upcoming": "Próximos",
+          "name": "Nombre A-Z"
+        }
+      },
+      "marker": {
+        "label": "Abrir ficha de {festival} en el mapa",
+        "selected": "{festival} está seleccionado",
+        "highlighted": "{festival} está resaltado"
+      },
+      "card": {
+        "eyebrow": "Festival seleccionado",
+        "detailLink": "Ver festival",
+        "favorite": "Guardar en favoritos",
+        "share": "Compartir festival"
+      },
+      "mobileSheet": {
+        "label": "Panel móvil de festivales",
+        "toggle": "Todos los festivales"
+      },
+      "fallback": {
+        "title": "Mapa no disponible",
+        "copy": "La capa interactiva no se ha podido cargar. Usa el panel de festivales y los enlaces de cómo llegar para seguir explorando."
+      },
+      "attribution": "© Protomaps © OpenStreetMap",
+      "textEquivalent": {
+        "label": "Listado textual de ubicaciones de festivales",
+        "title": "Ubicaciones y cómo llegar",
+        "directions": "Cómo llegar"
+      },
+      "festivals": {
+        "bigsound": {
+          "name": "Bigsound Festival",
+          "dates": "26 – 27 jun 2026",
+          "city": "Torrent",
+          "province": "Valencia",
+          "description": "Dos jornadas de urbano, pop y grandes directos en el área metropolitana de Valencia.",
+          "howToGetThere": "Cómo llegar a Bigsound"
+        },
+        "latinValencia": {
+          "name": "Latin Fest Valencia",
+          "dates": "17–18 jul 2026",
+          "city": "Valencia",
+          "province": "Valencia",
+          "description": "Edición valenciana de Latin Fest con ritmos latinos y reggaetón en formato intensivo.",
+          "howToGetThere": "Cómo llegar a Latin Fest Valencia"
+        },
+        "latinBenidorm": {
+          "name": "Latin Fest Benidorm",
+          "dates": "4–5 jul 2026",
+          "city": "Benidorm",
+          "province": "Alicante",
+          "description": "Edición de Benidorm de Latin Fest con enfoque mediterráneo y cartel latino concentrado.",
+          "howToGetThere": "Cómo llegar a Latin Fest Benidorm"
+        },
+        "medusa": {
+          "name": "Medusa Festival",
+          "dates": "13 – 17 ago 2026",
+          "city": "Cullera",
+          "province": "Valencia",
+          "description": "Macrofestival electrónico junto al mar con varios días de programación y puesta en escena inmersiva.",
+          "howToGetThere": "Cómo llegar a Medusa"
+        },
+        "arenal": {
+          "name": "Arenal Sound",
+          "dates": "30 jul – 2 ago 2026",
+          "city": "Burriana",
+          "province": "Castellón",
+          "description": "Festival masivo junto a la Playa del Arenal con pop, urbano, electrónica, camping y ambiente de verano en Burriana.",
+          "howToGetThere": "Cómo llegar a Arenal Sound"
+        },
+        "reve": {
+          "name": "Reve Festival",
+          "dates": "16 jul 2026",
+          "city": "Valencia",
+          "province": "Valencia",
+          "description": "Festival nocturno en Valencia con mezcla de pop, espectáculo visual y cartel de gran formato.",
+          "howToGetThere": "Cómo llegar a Reve"
+        },
+        "zevra": {
+          "name": "Zevra Festival",
+          "dates": "24 – 27 jul 2026",
+          "city": "Cullera",
+          "province": "Valencia",
+          "description": "Experiencia de playa con cartel urbano y latino repartido en varias jornadas frente al Mediterráneo.",
+          "howToGetThere": "Cómo llegar a Zevra"
+        }
+      }
+    }
+  },
+  "festival": {
+    "detail": {
+      "facts": {
+        "ariaLabel": "Datos clave del festival",
+        "location": {
+          "label": "Ubicación"
+        },
+        "genre": {
+          "label": "Género"
+        },
+        "price": {
+          "label": "Desde",
+          "feesIncluded": "GD incluidos",
+          "feesExcluded": "+ gastos de gestión"
+        },
+        "age": {
+          "label": "Edad mínima",
+          "authorization": "{{ from }} y {{ to }} años con autorización paterna.",
+          "adultsOnly": "{{ area }} solo 18+."
+        },
+        "schedule": {
+          "label": "Horario",
+          "pendingPrimary": "Pendiente",
+          "pendingSecondary": "Consulta la sección HORARIOS de la web oficial.",
+          "daily": "Cada día"
+        }
+      },
+      "hero": {
+        "breadcrumb": {
+          "ariaLabel": "Ruta de navegación",
+          "home": "Inicio",
+          "festivals": "Festivales"
+        },
+        "meta": {
+          "ariaLabel": "Información del festival"
+        },
+        "cta": {
+          "tickets": "COMPRAR ENTRADAS",
+          "official": "VER SITIO OFICIAL"
+        },
+        "review": {
+          "singular": "reseña",
+          "plural": "reseñas"
+        }
+      },
+      "overview": {
+        "ariaLabel": "Sobre el festival",
+        "title": "Sobre el festival",
+        "highlightsAriaLabel": "Highlights del festival"
+      },
+      "locationMap": {
+        "ariaLabel": "Ubicación del festival",
+        "title": "Ubicación",
+        "iframeTitle": "Mapa de ubicación de {festival}"
+      },
+      "byFestival": {
+        "bigsound": {
+          "name": "Bigsound Festival",
+          "hero": {
+            "title": "BIGSOUND",
+            "subtitle": "FESTIVAL",
+            "location": "Parc Central de Torrent, Valencia",
+            "dates": "26 – 27 jun 2026"
+          },
+          "overview": {
+            "paragraph1": "Bigsound Festival se ha consolidado como uno de los grandes encuentros pop e indie de la Comunitat Valenciana. Programado en Parc Central de Torrent, combina cabezas de cartel internacionales con artistas emergentes de la escena nacional, y apuesta por una producción cuidada y un público intergeneracional.",
+            "paragraph2": "Dos jornadas de música en vivo, food trucks de cocina mediterránea y zonas chill orientadas al verano valenciano. Buena conectividad en transporte público desde el centro y una agenda de actividades paralelas que arranca por la tarde.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival y, cuando existe, su recorrido visual complementario.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel general"
+              }
+            },
+            "highlights": {
+              "beach": "Ciudad",
+              "camping": "Hoteles cercanos",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "latinFest": {
+          "name": "Latin Fest",
+          "hero": {
+            "title": "LATIN",
+            "subtitle": "FEST",
+            "location": "Valencia",
+            "dates": "17 – 18 jul 2026"
+          },
+          "overview": {
+            "paragraph1": "Latin Fest es el festival de referencia para el reggaeton y la música urbana latina en la Comunitat Valenciana. Cartel concentrado en grandes nombres del género y una producción pensada para un público joven que busca espectáculo, baile y energía mediterránea.",
+            "paragraph2": "El recinto principal está en Valencia capital y suele complementarse con una parada en Benidorm. Conexión sencilla en transporte público, zonas de hidratación, food trucks de cocina latina y un ambiente festivo de verano.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival y sus variaciones por ciudad para comparar cada edición de un vistazo.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Valencia",
+                "benidorm": "Benidorm"
+              }
+            },
+            "highlights": {
+              "beach": "Ciudad",
+              "camping": "Hoteles cercanos",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "medusa": {
+          "name": "Medusa Festival",
+          "hero": {
+            "title": "MEDUSA",
+            "subtitle": "FESTIVAL",
+            "location": "Playa de Cullera, Valencia",
+            "dates": "13 – 17 ago 2026"
+          },
+          "overview": {
+            "paragraph1": "Medusa Festival es uno de los festivales de música electrónica más importantes de Europa y una referencia imprescindible del verano en España. Celebrado en la espectacular playa de Cullera (Valencia), reúne durante cinco días a algunos de los mejores DJs y artistas internacionales en un entorno único junto al mar Mediterráneo.",
+            "paragraph2": "Con más de 300.000 m² de recinto, impresionantes escenarios temáticos, producciones audiovisuales de gran formato y una experiencia inmersiva incomparable, Medusa Festival atrae cada año a miles de asistentes de todo el mundo que buscan música, espectáculo y una atmósfera inolvidable.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel general y la programación visual por jornadas para seguir el festival de un vistazo.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel general",
+                "thursday": "Jueves",
+                "friday": "Viernes",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+              }
+            },
+            "highlights": {
+              "beach": "Playa",
+              "camping": "Camping",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "arenal": {
+          "name": "Arenal Sound",
+          "hero": {
+            "title": "Arenal Sound",
+            "subtitle": "PLAYA Y MÚSICA",
+            "location": "Playa El Arenal, Burriana, Castellón",
+            "dates": "30 jul – 2 ago 2026"
+          },
+          "overview": {
+            "paragraph1": "Arenal Sound convierte Burriana en uno de los grandes puntos de encuentro festivaleros del Mediterráneo. Cuatro días junto a la Playa del Arenal con una mezcla amplia de pop, urbano y electrónica para vivir el verano sin salir del recinto.",
+            "paragraph2": "El festival combina conciertos, sesiones, zonas de descanso, camping y una programación pensada para moverse entre escenarios durante toda la jornada. Su ubicación en la costa de Castellón lo hace especialmente cómodo para quienes buscan playa y música en el mismo viaje.",
+            "posterGallery": {
+              "title": "Cartel oficial de Arenal Sound 2026",
+              "intro": "El cartel reúne nombres de pop, urbano y electrónica para la edición de Burriana.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado de Arenal Sound",
+                "close": "Cerrar cartel de Arenal Sound"
+              },
+              "labels": {
+                "general": "Cartel 2026"
+              }
+            },
+            "highlights": {
+              "beach": "Playa",
+              "camping": "Camping",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "reve": {
+          "name": "Reve Festival",
+          "hero": {
+            "title": "REVE",
+            "subtitle": "FESTIVAL",
+            "location": "Roig Arena, Valencia",
+            "dates": "16 jul 2026"
+          },
+          "overview": {
+            "paragraph1": "Reve Festival es la cita pop nocturna del verano valenciano, con un cartel orientado al mainstream y al espectáculo visual de gran formato. Concebido para grandes audiencias, prioriza la puesta en escena y la calidad de sonido sobre la fórmula clásica de festival al aire libre.",
+            "paragraph2": "Ubicado en Roig Arena, ofrece una experiencia cómoda con buena conectividad en transporte público, hoteles cercanos, zonas de restauración y producciones audiovisuales que prolongan la noche hasta tarde.",
+            "featuredVideo": {
+              "ariaLabel": "Teaser oficial de Reve Festival con María Becerra en pantalla",
+              "fallback": "Tu navegador no puede reproducir este vídeo."
+            },
+            "photoGallery": {
+              "title": "Galería REVE",
+              "intro": "Un mosaico de prensa con la imagen principal del festival y retratos de la noche urbana que toma el Roig Arena.",
+              "ariaLabel": "Galería de fotos de Reve Festival",
+              "controls": {
+                "previous": "Ver foto anterior",
+                "next": "Ver foto siguiente"
+              },
+              "labels": {
+                "main": "Imagen principal",
+                "mariaBecerraLive": "María Becerra en directo",
+                "mariaBecerraPortrait": "María Becerra",
+                "cMari": "C Marí",
+                "lorna": "Lorna",
+                "laZowi": "La Zowi",
+                "rvfv": "RVFV"
+              }
+            },
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival para consultar su propuesta visual completa.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel vertical",
+                "horizontal": "Cartel horizontal",
+                "story": "Cartel story",
+                "mariaBecerra": "María Becerra",
+                "kiddVoodoo": "Kidd Voodoo",
+                "lorna": "Lorna",
+                "cMari": "C Marí",
+                "laZowi": "La Zowi",
+                "rvfv": "RVFV"
+              }
+            },
+            "highlights": {
+              "beach": "Ciudad",
+              "camping": "Hoteles cercanos",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "zevra": {
+          "name": "Zevra Festival",
+          "hero": {
+            "title": "ZEVRA",
+            "subtitle": "FESTIVAL",
+            "location": "Cullera, Valencia",
+            "dates": "24 – 27 jul 2026"
+          },
+          "overview": {
+            "paragraph1": "Zevra Festival es una experiencia urbana y latina celebrada frente al Mediterráneo, en la playa de Cullera (Valencia). Cuatro jornadas con cartel centrado en reggaeton, latin y urban, en un recinto pensado para combinar música, playa y fiesta de verano.",
+            "paragraph2": "Producción a gran escala, varios escenarios, zonas de food trucks de cocina mediterránea y latina, y un calendario de afterparties que se extiende a los clubes cercanos. Conexión sencilla en coche desde Valencia capital.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival y la programación visual por días para seguir el fin de semana completo.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel general",
+                "friday": "Viernes",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+              }
+            },
+            "highlights": {
+              "beach": "Playa",
+              "camping": "Camping",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "ariaLabel": "Pie de página",
+    "brand": {
+      "logoAlt": "TuriaFestNoticias",
+      "description": "Tu guía de festivales en la Comunitat Valenciana. Música, cultura y verano."
+    },
+    "social": {
+      "ariaLabel": "Redes sociales de TuriaFestNoticias",
+      "instagram": "Síguenos en Instagram",
+      "x": "Síguenos en X",
+      "youtube": "Síguenos en YouTube",
+      "spotify": "Escúchanos en Spotify"
+    },
+    "explore": {
+      "title": "Explora",
+      "map": "Mapa de festivales",
+      "upcoming": "Próximos festivales",
+      "byGenre": "Por género",
+      "byProvince": "Por provincia"
+    },
+    "info": {
+      "title": "Información",
+      "about": "Sobre TuriaFestNoticias",
+      "contact": "Contacto",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "title": "Legal",
+      "notice": "Aviso legal",
+      "privacy": "Política de privacidad",
+      "cookies": "Política de cookies",
+      "terms": "Términos de uso"
+    },
+    "bottom": {
+      "copyright": "© 2026 TuriaFestNoticias. Todos los derechos reservados."
+    }
+  },
+  "error": {
+    "network": "Error de red. Comprueba tu conexión e inténtalo de nuevo.",
+    "notFound": "El contenido solicitado no se encontró.",
+    "unknown": "Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo.",
+    "dismiss": "Cerrar"
+  },
+  "festivalList": {
+    "title": "Festivales",
+    "subtitle": "Descubre los principales festivales de música de la Comunidad Valenciana"
+  },
+  "calendarPage": {
+    "hero": {
+      "ariaLabel": "Introducción del calendario de festivales",
+      "eyebrow": "Calendario",
+      "title": "Festivales por día",
+      "description": "Explora los próximos festivales de la Comunitat Valenciana ordenados por fecha. Cada día con festival aparece con su cartel, ubicación y acceso directo a la ficha del evento.",
+      "stats": {
+        "festivals": "{{ count }} festivales",
+        "region": "Comunitat Valenciana",
+        "season": "Temporada 2026"
+      }
+    },
+    "filters": {
+      "ariaLabel": "Filtros del calendario",
+      "month": {
+        "title": "Mes",
+        "ariaLabel": "Filtrar por mes"
+      },
+      "province": {
+        "title": "Provincia",
+        "ariaLabel": "Filtrar por provincia"
+      },
+      "genre": {
+        "title": "Género",
+        "ariaLabel": "Filtrar por género"
+      },
+      "months": {
+        "all": "Todos",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre"
+      },
+      "provinces": {
+        "all": "Todas",
+        "valencia": "Valencia",
+        "alicante": "Alicante",
+        "castellon": "Castellón"
+      },
+      "genres": {
+        "all": "Todos",
+        "electronic": "Electrónica",
+        "urban": "Urbano",
+        "latin": "Latino",
+        "pop": "Pop"
+      }
+    },
+    "results": {
+      "summary": "{{ dayCount }} días visibles · {{ festivalCount }} festivales"
+    },
+    "timeline": {
+      "ariaLabel": "Cronología de festivales por día",
+      "eyebrow": "Temporada 2026",
+      "cta": "Ver festival"
+    },
+    "badges": {
+      "singleDay": "Festival de un día",
+      "start": "Inicio",
+      "lastDay": "Último día",
+      "dayOfTotal": "Día {{ day }} de {{ total }}"
+    },
+    "empty": {
+      "ariaLabel": "Sin resultados en el calendario",
+      "eyebrow": "Sin coincidencias",
+      "title": "No hay festivales con esos filtros",
+      "body": "Prueba a cambiar el mes, la provincia o el género para volver a ver días con festivales activos.",
+      "cta": "Restablecer filtros"
+    }
+  }
+}
