@@ -16,6 +16,12 @@ describe('news catalogue', () => {
     );
   });
 
+  it('keeps the Latin Fest gallery free of visible captions', () => {
+    const article = getNewsArticleBySlug(LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG);
+
+    expect(article?.gallery.every((image) => image.captionKey === undefined)).toBe(true);
+  });
+
   it('returns undefined for an unpublished slug', () => {
     expect(getNewsArticleBySlug('noticia-no-publicada')).toBeUndefined();
   });
