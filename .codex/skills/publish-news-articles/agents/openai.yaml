@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Publicar noticias'
+  short_description: 'Reglas para crear noticias verificadas'
+  default_prompt: 'Usa $publish-news-articles para crear y publicar una noticia completa en TuriaFestNoticias.'
