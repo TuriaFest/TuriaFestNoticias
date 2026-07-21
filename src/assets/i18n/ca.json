@@ -5,6 +5,11 @@
     "calendar": "Calendari",
     "map": "Mapa",
     "search": "Buscar",
+    "searchForm": {
+      "label": "Cercar notícies",
+      "placeholder": "Cerca per titular, ciutat o gènere musical",
+      "submit": "Cercar"
+    },
     "theme": {
       "toDark": "Activar mode fosc",
       "toLight": "Activar mode clar"
@@ -836,11 +841,25 @@
   },
   "news": {
     "meta": {
-      "title": "Notícies — TuriaFestNoticias"
+      "title": "TuriaFest — Notícies"
     },
     "eyebrow": "Actualitat festivalera",
     "title": "Notícies",
     "description": "Novetats, anuncis i actualitat dels festivals de la Comunitat Valenciana.",
+    "sample": {
+      "sectionTitle": "Últimes notícies",
+      "city": "València",
+      "genre": "electrònica",
+      "date": "21 juliol 2026",
+      "title": "Així es veurà la primera notícia de TuriaFestNoticias",
+      "excerpt": "Este contingut és una prova visual per a definir com conviuran el titular, la data i l'entradeta quan publiquem notícies reals."
+    },
+    "search": {
+      "results": "Resultats per a «{{ query }}»",
+      "clear": "Netejar la cerca",
+      "emptyTitle": "No hem trobat notícies",
+      "emptyDescription": "Prova amb un altre titular, ciutat o gènere musical."
+    },
     "empty": {
       "ariaLabel": "Notícies encara no disponibles",
       "title": "Encara no hi ha notícies",

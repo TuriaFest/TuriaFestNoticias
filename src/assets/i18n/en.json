@@ -5,6 +5,11 @@
     "calendar": "Calendar",
     "map": "Map",
     "search": "Search",
+    "searchForm": {
+      "label": "Search news",
+      "placeholder": "Search by headline, city, or music genre",
+      "submit": "Search"
+    },
     "theme": {
       "toDark": "Switch to dark mode",
       "toLight": "Switch to light mode"
@@ -836,11 +841,25 @@
   },
   "news": {
     "meta": {
-      "title": "News — TuriaFestNoticias"
+      "title": "TuriaFest — News"
     },
     "eyebrow": "Festival updates",
     "title": "News",
     "description": "Updates, announcements, and current news from festivals across the Valencian Community.",
+    "sample": {
+      "sectionTitle": "Latest news",
+      "city": "Valencia",
+      "genre": "electronic",
+      "date": "21 July 2026",
+      "title": "This is how the first TuriaFestNoticias story will look",
+      "excerpt": "This is sample content created to define how the headline, date, and introduction will work together when real stories are published."
+    },
+    "search": {
+      "results": "Results for “{{ query }}”",
+      "clear": "Clear search",
+      "emptyTitle": "No news found",
+      "emptyDescription": "Try another headline, city, or music genre."
+    },
     "empty": {
       "ariaLabel": "News not available yet",
       "title": "No news yet",

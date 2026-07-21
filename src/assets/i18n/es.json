@@ -6,6 +6,11 @@
     "news": "Noticias",
     "map": "Mapa",
     "search": "Buscar",
+    "searchForm": {
+      "label": "Buscar noticias",
+      "placeholder": "Busca por titular, ciudad o género musical",
+      "submit": "Buscar"
+    },
     "theme": {
       "toDark": "Activar modo oscuro",
       "toLight": "Activar modo claro"
@@ -27,11 +32,25 @@
   },
   "news": {
     "meta": {
-      "title": "Noticias — TuriaFestNoticias"
+      "title": "TuriaFest — Noticias"
     },
     "eyebrow": "Actualidad festivalera",
     "title": "Noticias",
     "description": "Novedades, anuncios y actualidad de los festivales de la Comunitat Valenciana.",
+    "sample": {
+      "sectionTitle": "Últimas noticias",
+      "city": "Valencia",
+      "genre": "electrónica",
+      "date": "21 julio 2026",
+      "title": "Así se verá la primera noticia de TuriaFestNoticias",
+      "excerpt": "Este contenido es una prueba visual para definir cómo convivirán el titular, la fecha y la entradilla cuando publiquemos noticias reales."
+    },
+    "search": {
+      "results": "Resultados para «{{ query }}»",
+      "clear": "Limpiar búsqueda",
+      "emptyTitle": "No encontramos noticias",
+      "emptyDescription": "Prueba con otro titular, ciudad o género musical."
+    },
     "empty": {
       "ariaLabel": "Noticias aún no disponibles",
       "title": "Aún no hay noticias",
