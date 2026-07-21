@@ -846,13 +846,67 @@
     "eyebrow": "Festival updates",
     "title": "News",
     "description": "Updates, announcements, and current news from festivals across the Valencian Community.",
-    "sample": {
+    "list": {
       "sectionTitle": "Latest news",
-      "city": "Valencia",
-      "genre": "electronic",
-      "date": "21 July 2026",
-      "title": "This is how the first TuriaFestNoticias story will look",
-      "excerpt": "This is sample content created to define how the headline, date, and introduction will work together when real stories are published."
+      "readMore": "Read the story"
+    },
+    "article": {
+      "breadcrumbLabel": "Breadcrumb",
+      "eyebrow": "Report · Reve Fest 2026",
+      "author": "TuriaFest newsroom",
+      "photoCredit": "Photography: TuriaFest archive",
+      "sourceTitle": "Sources and verification",
+      "galleryEyebrow": "Inside the venue",
+      "backToNews": "Back to News"
+    },
+    "articles": {
+      "reveFest2026": {
+        "title": "Reve Fest lights up Roig Arena: nine hours of urban music with a purpose",
+        "summary": "The first edition brought thousands of young people to Valencia for Kidd Voodoo, C. Marí, Lorna, María Becerra, La Zowi and RVFV, turning festival proceeds into music for hospitals.",
+        "city": "Valencia",
+        "category": "Urban music",
+        "searchGenres": "urban music reggaeton trap urban pop latin",
+        "publishedLabel": "21 July 2026",
+        "seoTitle": "Reve Fest 2026: nine hours of urban music | TuriaFest",
+        "seoDescription": "Our Reve Fest 2026 report from Roig Arena: nine hours of urban music, six artists and a social purpose linked to Músicos por la Salud.",
+        "coverAlt": "A Reve Fest artist sings on the Roig Arena stage under violet lights",
+        "coverCaption": "Reve Fest brought nine hours of urban music to Roig Arena on 16 July.",
+        "highlight": "Nine hours of urban music driven by an idea that went beyond the stage: turning festival proceeds into new hospital micro-concerts.",
+        "sections": {
+          "debut": {
+            "heading": "A high-energy debut",
+            "paragraph1": "Reve Fest held its first edition at Roig Arena on 16 July 2026. Across nine hours, thousands of attendees —mostly young people— filled the Valencia venue for a programme built around the new languages of urban music.",
+            "paragraph2": "The day moved forward without separating stage and crowd: bass that shook the floor, phones held high and a run of live sets that changed register without losing intensity. From the opening performances to the close, every handover was designed to feel like part of the same experience."
+          },
+          "lineup": {
+            "heading": "Six takes on urban music",
+            "paragraph1": "Kidd Voodoo opened the programme with a stop on his Euphoria World Tour. C. Marí followed with his blend of reggaeton, trap and contemporary sounds, then Lorna, before a second half led by María Becerra, La Zowi and RVFV. Several DJ sets kept the momentum between performances.",
+            "paragraph2": "María Becerra delivered one of the day's most anticipated moments with a set spanning some of her best-known songs. The final stretch shifted texture with La Zowi's trap sound and ended with RVFV, who closed the first edition while Roig Arena was still moving."
+          },
+          "purpose": {
+            "heading": "A night looking beyond the stage",
+            "paragraph1": "Reve Fest was launched by Músicos por la Salud as a fully charitable event. According to the organisers, proceeds are used to hire young musicians for the micro-concerts the organisation delivers in hospitals and social-healthcare centres.",
+            "paragraph2": "That purpose gave the debut another dimension: the energy concentrated in one Valencia afternoon will continue in places where music can accompany, connect and offer relief. Reve Fest ends its first edition with a clear image — a new generation in front of the stage and another opportunity for music to travel much further."
+          }
+        },
+        "gallery": {
+          "title": "Reve Fest from the front row",
+          "openingAlt": "Urban music singer performing in front of a red screen at Reve Fest",
+          "openingCaption": "The opening performances set the pace for a nine-hour programme.",
+          "stageAlt": "Singer moving across the Roig Arena stage through smoke and lights",
+          "stageCaption": "The main stage alternated live performances and DJ sets throughout the afternoon.",
+          "afternoonAlt": "Artist singing at Reve Fest with green visuals in the background",
+          "afternoonCaption": "Each handover brought a different sound and stage language.",
+          "eveningAlt": "Vocalist performing under violet lighting at Reve Fest",
+          "eveningCaption": "The Roig Arena floor followed every chorus.",
+          "closingAlt": "Rapper raising one arm during the closing stretch of Reve Fest",
+          "closingCaption": "The final part of the night pushed the urban sound into its most direct register.",
+          "finalAlt": "Artist performing under violet lights during the Reve Fest finale",
+          "finalCaption": "RVFV brought the festival's first edition to a close."
+        },
+        "sourceName": "Roig Arena · official report",
+        "sourceVerified": "Information verified on 21 July 2026."
+      }
     },
     "search": {
       "results": "Results for “{{ query }}”",
