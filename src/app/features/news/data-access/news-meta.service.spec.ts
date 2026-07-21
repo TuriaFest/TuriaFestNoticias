@@ -32,12 +32,13 @@ describe('NewsMetaService', () => {
     const canonical = document.head.querySelector<HTMLLinkElement>('[data-fv-news-canonical]');
     const script = document.head.querySelector<HTMLScriptElement>('[data-fv-news-jsonld]');
     const schema = JSON.parse(script?.textContent ?? '{}') as {
-      '@graph'?: readonly { '@type'?: string }[];
+      '@graph'?: readonly { '@type'?: string; citation?: string }[];
     };
+    const newsArticle = schema['@graph']?.find((entry) => entry['@type'] === 'NewsArticle');
 
     expect(document.head.querySelectorAll('[data-fv-news-canonical]')).toHaveLength(1);
     expect(canonical?.href).toContain(`/noticias/${article.slug}`);
-    expect(schema['@graph']?.some((entry) => entry['@type'] === 'NewsArticle')).toBe(true);
+    expect(newsArticle?.citation).toBe(article.source.url);
   });
 
   it('removes article-only metadata when returning to the listing', () => {

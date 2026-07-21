@@ -163,7 +163,9 @@
 
 .news-entry__body h3 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: var(--fv-space-1);
 
   @include focus-ring;
 }

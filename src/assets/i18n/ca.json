@@ -855,38 +855,82 @@
       "eyebrow": "Crònica · Reve Fest 2026",
       "author": "Redacció TuriaFest",
       "photoCredit": "Fotografies: arxiu TuriaFest",
-      "sourceTitle": "Fonts i verificació",
       "galleryEyebrow": "Des del recinte",
       "backToNews": "Tornar a Notícies"
     },
-    "articles": {
-      "reveFest2026": {
-        "title": "Reve Fest encén el Roig Arena: nou hores de música urbana amb propòsit",
-        "summary": "La primera edició va reunir milers de joves a València amb Kidd Voodoo, C. Marí, Lorna, María Becerra, La Zowi i RVFV en un festival que va convertir la recaptació en música per a hospitals.",
+  "articles": {
+    "latinFestValencia2026": {
+      "title": "Latin Fest ompli València de música urbana durant dos dies",
+      "summary": "Latin Fest va estrenar el format de dues jornades a l'Estadi Ciutat de València. Beéle, ROA i Kris R van marcar el divendres; Mora, Omar Courtz, Kapo i Pirlo van prendre el relleu el dissabte.",
+      "city": "València",
+      "category": "Música urbana llatina",
+      "searchGenres": "música urbana llatina reggaeton trap llatí afrobeat dancehall pop llatí",
+      "publishedLabel": "21 juliol 2026",
+      "seoTitle": "Latin Fest València: dos dies de música urbana | TuriaFest",
+      "seoDescription": "Latin Fest va estrenar dues jornades a l'Estadi Ciutat de València amb Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo i Pirlo.",
+      "coverAlt": "Artista de Latin Fest canta amb barret blanc davant d'un escenari il·luminat en roig",
+      "coverCaption": "Latin Fest va reunir dues jornades de música urbana a l'Estadi Ciutat de València els dies 17 i 18 de juliol.",
+      "highlight": "En passar d'una sola data a dues jornades, Latin Fest va poder donar a cada cartell el seu propi ritme sense perdre la sensació d'una celebració compartida.",
+      "sections": {
+        "newStage": {
+          "heading": "Un estadi per a obrir una etapa nova",
+          "paragraph1": "Latin Fest va començar el 17 de juliol una edició diferent de totes les anteriors a València. El festival va deixar arrere l'Auditori Marina Sud, es va instal·lar a l'Estadi Ciutat de València i va ampliar la programació a dos dies consecutius.",
+          "paragraph2": "Cada jornada es va estendre des de les cinc de la vesprada fins a la una de la matinada. El format d'estadi va donar més profunditat als visuals, al cos de ball i a les bandes, mentre les sessions de DJ enllaçaven els directes i mantenien el pols entre canvis d'escenari."
+        },
+        "friday": {
+          "heading": "Divendres: tres veus per a estrenar el format",
+          "paragraph1": "Beéle, ROA i Kris R van repartir el pes de la primera data. El cartell va viatjar entre melodies caribenyes, reggaeton i trap sense tractar el divendres com una avantsala: la jornada va tindre identitat pròpia des de les primeres hores fins al tram nocturn.",
+          "paragraph2": "La producció va acompanyar eixe recorregut amb canvis constants de color, pantalles de gran format i músics en directe. Entre actuació i actuació, els DJ van mantindre la pista en moviment i van evitar que l'energia es reiniciara amb cada relleu."
+        },
+        "saturday": {
+          "heading": "Dissabte: el relleu puja la intensitat",
+          "paragraph1": "La segona jornada va canviar de repartiment amb Mora, Omar Courtz, Kapo i Pirlo. Les seues propostes van ampliar el recorregut del festival des del pop urbà i els ritmes afrocaribenys fins al reggaeton i el trap porto-riqueny i colombià.",
+          "paragraph2": "Amb la caiguda de la nit, la posada en escena va guanyar volum: grans elements inflables, feixos de llum sobre el públic i una producció visual que ocupava tot el fons de l'estadi. El dissabte va tancar així un cap de setmana que va convertir l'ampliació de Latin Fest en alguna cosa més que una suma de concerts: dues jornades diferents dins d'una mateixa cita urbana."
+        }
+      },
+      "gallery": {
+        "title": "Dos dies de Latin Fest, des de la pista",
+        "fridayOpeningAlt": "Cantant de Latin Fest actua amb ulleres roges i micròfon durant la primera jornada",
+        "fridayOpeningCaption": "El divendres va obrir un recorregut entre reggaeton, trap i melodies caribenyes.",
+        "fridayStageAlt": "Dos artistes comparteixen l'escenari de Latin Fest entre fum i llums violetes",
+        "fridayStageCaption": "Beéle, ROA i Kris R van donar identitat pròpia a la jornada inaugural.",
+        "fridayCloseAlt": "Vocalista de Latin Fest canta davant d'una pantalla de gran format durant el divendres",
+        "fridayCloseCaption": "La producció visual va canviar amb cada actuació sense trencar la continuïtat de la vesprada.",
+        "saturdayOpeningAlt": "Cantant i guitarrista actuen sota il·luminació roja en la segona jornada de Latin Fest",
+        "saturdayOpeningCaption": "El dissabte va prendre el relleu amb Mora, Omar Courtz, Kapo i Pirlo en el cartell.",
+        "saturdayNightAlt": "Artista de Latin Fest sosté una bandera d'Espanya entre llums verdes i visuals roses",
+        "saturdayNightCaption": "El tram nocturn va portar la producció de l'estadi a la seua escala més espectacular.",
+        "finalAlt": "Cantant interpreta el tancament de Latin Fest entre fum, làsers i una gran escenografia rosa",
+        "finalCaption": "Dues jornades diferents van acabar formant una única crònica de música urbana a València."
+      }
+    },
+    "reveFest2026": {
+        "title": "Reve Fest debuta a València amb música urbana per a hospitals",
+        "summary": "El festival va estrenar la primera edició amb sis directes i diverses sessions de DJ. La recaptació permetrà impulsar nous microconcerts de Músicos por la Salud en hospitals i centres sociosanitaris.",
         "city": "València",
         "category": "Música urbana",
         "searchGenres": "música urbana reggaeton trap pop urbà llatí",
         "publishedLabel": "21 juliol 2026",
-        "seoTitle": "Reve Fest 2026: nou hores de música urbana | TuriaFest",
-        "seoDescription": "Crònica de Reve Fest 2026 al Roig Arena: nou hores de música urbana, sis artistes i un propòsit solidari lligat a Músicos por la Salud.",
+        "seoTitle": "Reve Fest debuta amb música urbana solidària | TuriaFest",
+        "seoDescription": "Reve Fest debuta al Roig Arena amb sis artistes i una recaptació destinada a portar microconcerts als hospitals.",
         "coverAlt": "Una artista de Reve Fest canta sobre l'escenari del Roig Arena sota llums violetes",
         "coverCaption": "Reve Fest va portar nou hores de música urbana al Roig Arena el 16 de juliol.",
-        "highlight": "Nou hores de música urbana amb una idea que anava més enllà de l'escenari: convertir la recaptació en nous microconcerts per a hospitals.",
+        "highlight": "El que es va viure durant una vesprada a València continuarà després en hospitals i centres sociosanitaris, convertit en nous microconcerts.",
         "sections": {
           "debut": {
-            "heading": "Una estrena amb el pols alt",
-            "paragraph1": "Reve Fest va celebrar la primera edició el 16 de juliol de 2026 al Roig Arena. Durant nou hores, milers d'assistents —majoritàriament joves— van ocupar el recinte valencià per a seguir una programació construïda al voltant dels nous llenguatges de la música urbana.",
-            "paragraph2": "La jornada va avançar sense separar escenari i públic: bases que feien tremolar la pista, telèfons enlaire i una successió de directes que canviaven de registre sense perdre intensitat. Des de les primeres actuacions fins al tancament, el festival va buscar que cada relleu formara part d'una mateixa experiència."
+            "heading": "Una primera edició amb doble destinació",
+            "paragraph1": "Reve Fest es va estrenar el 16 de juliol al Roig Arena amb una proposta de doble recorregut: reunir durant nou hores diferents veus de l'escena urbana i fer que el resultat de la jornada continuara molt després d'apagar l'escenari.",
+            "paragraph2": "Milers d'assistents, amb una presència majoritàriament jove, van acompanyar el debut del festival a València. Sis actuacions i diverses sessions de DJ van construir una programació contínua, pensada com un únic viatge entre registres urbans diferents."
           },
           "lineup": {
-            "heading": "Sis maneres d'entendre l'urbà",
-            "paragraph1": "Kidd Voodoo va obrir la programació amb una parada del seu Euphoria World Tour. Després van arribar C. Marí, amb el seu encreuament de reggaeton, trap i sons contemporanis, i Lorna, abans d'una segona meitat encapçalada per María Becerra, La Zowi i RVFV. Diverses sessions de DJ van mantindre el ritme entre actuacions.",
-            "paragraph2": "María Becerra va protagonitzar un dels moments més esperats amb un repertori que va recórrer alguns dels seus temes més reconeixibles. La recta final va canviar de textura amb el trap de La Zowi i va acabar amb RVFV, encarregat de tancar la primera edició davant d'un Roig Arena encara en moviment."
+            "heading": "Un cartell que viatjava entre escenes",
+            "paragraph1": "Kidd Voodoo va portar a València una parada del seu Euphoria World Tour. El relleu va passar després per C. Marí i el seu encreuament de reggaeton, trap i sons contemporanis, abans que Lorna completara la primera part de la trobada.",
+            "paragraph2": "María Becerra va obrir la segona meitat amb el seu repertori de pop urbà llatí. La Zowi va canviar el to cap al trap i RVFV va assumir el tancament. Entre cada directe, les sessions de DJ van evitar que la música perdera continuïtat i van unir propostes amb identitats molt diferents."
           },
           "purpose": {
-            "heading": "Una nit que també mirava fora de l'escenari",
-            "paragraph1": "Reve Fest va nàixer impulsat per Músicos por la Salud amb una finalitat cent per cent solidària. Segons l'organització, els beneficis es destinen a contractar joves músics per als microconcerts que l'entitat desenvolupa en hospitals i centres sociosanitaris.",
-            "paragraph2": "Este propòsit va donar una lectura diferent a l'estrena: l'energia concentrada durant una vesprada a València continuarà en espais on la música pot acompanyar, connectar i alleujar. Reve Fest tanca així la primera edició amb una imatge clara: una nova generació davant de l'escenari i una altra oportunitat perquè la música arribe molt més lluny."
+            "heading": "La recaptació canvia d'escenari",
+            "paragraph1": "L'element que distingeix Reve Fest apareix quan acaba l'últim concert. Músicos por la Salud, impulsora de l'esdeveniment, destinarà els beneficis a contractar joves intèrprets per a les seues actuacions de petit format en hospitals i centres sociosanitaris.",
+            "paragraph2": "La primera edició queda així connectada amb una activitat que succeeix lluny dels grans recintes. El públic va trobar una nova cita urbana a València i, al mateix temps, va contribuir perquè la música arribe a persones que la rebran en un context completament diferent."
           }
         },
         "gallery": {
@@ -903,9 +947,7 @@
           "closingCaption": "L'última part de la nit va portar l'urbà fins al seu registre més directe.",
           "finalAlt": "Artista actuant entre llums violetes durant el tancament de Reve Fest",
           "finalCaption": "RVFV va posar el tancament a la primera edició del festival."
-        },
-        "sourceName": "Roig Arena · notícia oficial",
-        "sourceVerified": "Informació contrastada el 21 juliol 2026."
+        }
       }
     },
     "search": {

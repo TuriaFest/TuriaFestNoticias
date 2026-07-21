@@ -35,8 +35,6 @@ export interface NewsArticle {
   readonly galleryTitleKey: TranslationKey;
   readonly gallery: readonly NewsArticleImage[];
   readonly source: Readonly<{
-    nameKey: TranslationKey;
     url: string;
-    verifiedLabelKey: TranslationKey;
   }>;
 }

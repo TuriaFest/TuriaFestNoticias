@@ -855,38 +855,82 @@
       "eyebrow": "Report · Reve Fest 2026",
       "author": "TuriaFest newsroom",
       "photoCredit": "Photography: TuriaFest archive",
-      "sourceTitle": "Sources and verification",
       "galleryEyebrow": "Inside the venue",
       "backToNews": "Back to News"
     },
-    "articles": {
-      "reveFest2026": {
-        "title": "Reve Fest lights up Roig Arena: nine hours of urban music with a purpose",
-        "summary": "The first edition brought thousands of young people to Valencia for Kidd Voodoo, C. Marí, Lorna, María Becerra, La Zowi and RVFV, turning festival proceeds into music for hospitals.",
+  "articles": {
+    "latinFestValencia2026": {
+      "title": "Latin Fest fills Valencia with urban music for two days",
+      "summary": "Latin Fest debuted its two-day format at Estadi Ciutat de València. Beéle, ROA and Kris R shaped Friday; Mora, Omar Courtz, Kapo and Pirlo took over on Saturday.",
+      "city": "Valencia",
+      "category": "Latin urban music",
+      "searchGenres": "latin urban music reggaeton latin trap afrobeat dancehall latin pop",
+      "publishedLabel": "21 July 2026",
+      "seoTitle": "Latin Fest Valencia: two days of urban music | TuriaFest",
+      "seoDescription": "Latin Fest debuted two days at Estadi Ciutat de València with Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo and Pirlo.",
+      "coverAlt": "A Latin Fest artist sings in a white hat in front of a red-lit stage",
+      "coverCaption": "Latin Fest brought two days of urban music to Estadi Ciutat de València on 17 and 18 July.",
+      "highlight": "By expanding from a single date to two days, Latin Fest gave each line-up its own rhythm without losing the sense of one shared celebration.",
+      "sections": {
+        "newStage": {
+          "heading": "A stadium opens a new chapter",
+          "paragraph1": "Latin Fest began an edition unlike any of its previous Valencia dates on 17 July. The festival left Auditorio Marina Sur behind, moved into Estadi Ciutat de València and expanded its programme across two consecutive days.",
+          "paragraph2": "Each day ran from five in the afternoon until one in the morning. The stadium format gave the visuals, dance ensemble and live bands more depth, while DJ sets connected the concerts and kept the momentum going between stage changes."
+        },
+        "friday": {
+          "heading": "Friday: three voices launch the new format",
+          "paragraph1": "Beéle, ROA and Kris R carried the first date. The line-up moved between Caribbean melodies, reggaeton and trap without treating Friday as a warm-up: the day had an identity of its own from the opening hours through the night-time stretch.",
+          "paragraph2": "The production followed that journey with constant colour changes, large-format screens and live musicians. Between performances, the DJs kept the floor moving and prevented the energy from having to restart at every handover."
+        },
+        "saturday": {
+          "heading": "Saturday: the handover raises the intensity",
+          "paragraph1": "The second day brought a new cast with Mora, Omar Courtz, Kapo and Pirlo. Their performances broadened the festival's range from urban pop and Afro-Caribbean rhythms to Puerto Rican and Colombian reggaeton and trap.",
+          "paragraph2": "As night fell, the staging grew in scale: large inflatables, beams of light sweeping across the audience and a visual production that occupied the entire back of the stadium. Saturday completed a weekend that made Latin Fest's expansion more than a sequence of concerts: two distinct days within one urban-music gathering."
+        }
+      },
+      "gallery": {
+        "title": "Two days of Latin Fest from the floor",
+        "fridayOpeningAlt": "Latin Fest singer performs with red glasses and a microphone during the first day",
+        "fridayOpeningCaption": "Friday opened a journey through reggaeton, trap and Caribbean melodies.",
+        "fridayStageAlt": "Two artists share the Latin Fest stage through smoke and violet lights",
+        "fridayStageCaption": "Beéle, ROA and Kris R gave the opening day its own identity.",
+        "fridayCloseAlt": "Latin Fest vocalist sings in front of a large-format screen on Friday",
+        "fridayCloseCaption": "The visual production shifted with each performance without breaking the afternoon's flow.",
+        "saturdayOpeningAlt": "Singer and guitarist perform under red lighting on Latin Fest's second day",
+        "saturdayOpeningCaption": "Saturday took over with Mora, Omar Courtz, Kapo and Pirlo on the line-up.",
+        "saturdayNightAlt": "Latin Fest artist holds a Spanish flag between green lights and pink visuals",
+        "saturdayNightCaption": "The night-time stretch pushed the stadium production to its most spectacular scale.",
+        "finalAlt": "Singer performs the Latin Fest finale through smoke, lasers and a large pink stage set",
+        "finalCaption": "Two different days ultimately formed one story of urban music in Valencia."
+      }
+    },
+    "reveFest2026": {
+        "title": "Reve Fest debuts in Valencia with urban music for hospitals",
+        "summary": "The festival opened its first edition with six live sets and several DJ sessions. Proceeds will support new Músicos por la Salud micro-concerts in hospitals and social-healthcare centres.",
         "city": "Valencia",
         "category": "Urban music",
         "searchGenres": "urban music reggaeton trap urban pop latin",
         "publishedLabel": "21 July 2026",
-        "seoTitle": "Reve Fest 2026: nine hours of urban music | TuriaFest",
-        "seoDescription": "Our Reve Fest 2026 report from Roig Arena: nine hours of urban music, six artists and a social purpose linked to Músicos por la Salud.",
+        "seoTitle": "Reve Fest debuts with urban music for a cause | TuriaFest",
+        "seoDescription": "Reve Fest debuts at Roig Arena with six artists and proceeds dedicated to bringing micro-concerts into hospitals.",
         "coverAlt": "A Reve Fest artist sings on the Roig Arena stage under violet lights",
         "coverCaption": "Reve Fest brought nine hours of urban music to Roig Arena on 16 July.",
-        "highlight": "Nine hours of urban music driven by an idea that went beyond the stage: turning festival proceeds into new hospital micro-concerts.",
+        "highlight": "What happened during one afternoon in Valencia will continue later in hospitals and social-healthcare centres through new micro-concerts.",
         "sections": {
           "debut": {
-            "heading": "A high-energy debut",
-            "paragraph1": "Reve Fest held its first edition at Roig Arena on 16 July 2026. Across nine hours, thousands of attendees —mostly young people— filled the Valencia venue for a programme built around the new languages of urban music.",
-            "paragraph2": "The day moved forward without separating stage and crowd: bass that shook the floor, phones held high and a run of live sets that changed register without losing intensity. From the opening performances to the close, every handover was designed to feel like part of the same experience."
+            "heading": "A first edition with two destinations",
+            "paragraph1": "Reve Fest debuted at Roig Arena on 16 July with a two-part idea: bring different voices from the urban scene together for nine hours, then allow the result of the day to continue long after the stage went dark.",
+            "paragraph2": "Thousands of attendees, most of them young, joined the festival's Valencia debut. Six performances and several DJ sessions formed one continuous programme conceived as a journey through distinct urban styles."
           },
           "lineup": {
-            "heading": "Six takes on urban music",
-            "paragraph1": "Kidd Voodoo opened the programme with a stop on his Euphoria World Tour. C. Marí followed with his blend of reggaeton, trap and contemporary sounds, then Lorna, before a second half led by María Becerra, La Zowi and RVFV. Several DJ sets kept the momentum between performances.",
-            "paragraph2": "María Becerra delivered one of the day's most anticipated moments with a set spanning some of her best-known songs. The final stretch shifted texture with La Zowi's trap sound and ended with RVFV, who closed the first edition while Roig Arena was still moving."
+            "heading": "A line-up moving between scenes",
+            "paragraph1": "Kidd Voodoo brought a stop on his Euphoria World Tour to Valencia. The handover then went to C. Marí and his blend of reggaeton, trap and contemporary sounds before Lorna completed the first part of the event.",
+            "paragraph2": "María Becerra opened the second half with her Latin urban-pop repertoire. La Zowi shifted the tone towards trap and RVFV took charge of the finale. Between each live set, DJ sessions kept the music moving and connected artists with very different identities."
           },
           "purpose": {
-            "heading": "A night looking beyond the stage",
-            "paragraph1": "Reve Fest was launched by Músicos por la Salud as a fully charitable event. According to the organisers, proceeds are used to hire young musicians for the micro-concerts the organisation delivers in hospitals and social-healthcare centres.",
-            "paragraph2": "That purpose gave the debut another dimension: the energy concentrated in one Valencia afternoon will continue in places where music can accompany, connect and offer relief. Reve Fest ends its first edition with a clear image — a new generation in front of the stage and another opportunity for music to travel much further."
+            "heading": "The proceeds move to another stage",
+            "paragraph1": "What sets Reve Fest apart becomes clear after the final concert. Músicos por la Salud, the organisation behind the event, will use the proceeds to hire young performers for its small-format concerts in hospitals and social-healthcare centres.",
+            "paragraph2": "The first edition is therefore connected to work that takes place far from major venues. The audience discovered a new urban-music date in Valencia while also helping music reach people who will experience it in a completely different setting."
           }
         },
         "gallery": {
@@ -903,9 +947,7 @@
           "closingCaption": "The final part of the night pushed the urban sound into its most direct register.",
           "finalAlt": "Artist performing under violet lights during the Reve Fest finale",
           "finalCaption": "RVFV brought the festival's first edition to a close."
-        },
-        "sourceName": "Roig Arena · official report",
-        "sourceVerified": "Information verified on 21 July 2026."
+        }
       }
     },
     "search": {

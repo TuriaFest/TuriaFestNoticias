@@ -43,4 +43,11 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('fv-nav-bar')).not.toBeNull();
   });
+
+  it('should render the site footer', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('[data-testid="site-footer"]')).not.toBeNull();
+  });
 });
