@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router } from '@angular/router';
 import { LucideMenu, LucideMoon, LucideSearch, LucideSun } from '@lucide/angular';
 
 import { ThemeService } from '@core/platform/theme.service';
@@ -35,8 +35,6 @@ const LANGUAGES: readonly LangOption[] = [
   imports: [
     NgOptimizedImage,
     ReactiveFormsModule,
-    RouterLink,
-    RouterLinkActive,
     LucideSearch,
     LucideMoon,
     LucideSun,
