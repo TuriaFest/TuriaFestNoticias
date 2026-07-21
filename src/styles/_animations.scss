@@ -1,0 +1,61 @@
+// ============================================================================
+// _animations.scss — TuriaFestNoticias Design System · Keyframes
+// ============================================================================
+// All animations honour `prefers-reduced-motion` via `_motion.scss`.
+// ============================================================================
+
+@keyframes fv-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fv-pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
+
+@keyframes fv-live-dot {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(74, 222, 157, 0.6);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(74, 222, 157, 0);
+  }
+}
+
+@keyframes fv-glow-pulse {
+  0%, 100% { opacity: 0.85; }
+  50%      { opacity: 1; }
+}
+
+@keyframes fv-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fv-progress-load {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(0.8); }
+}
+
+@keyframes fv-progress-complete {
+  0%   { transform: scaleX(0.8); opacity: 1; }
+  60%  { transform: scaleX(1);   opacity: 1; }
+  100% { transform: scaleX(1);   opacity: 0; }
+}
+
+

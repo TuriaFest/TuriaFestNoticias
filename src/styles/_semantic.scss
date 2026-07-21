@@ -1,0 +1,137 @@
+// ============================================================================
+// _semantic.scss — TuriaFestNoticias Design System · Semantic tokens
+// ============================================================================
+// CSS custom properties under the `--fv-*` namespace. Components ONLY consume
+// these — never the primitive SCSS variables from `_tokens.scss`.
+// ============================================================================
+
+@use 'styles/tokens' as *;
+
+:root {
+  // --- Surfaces ---
+  --fv-bg-canvas:   #{$fv-gray-950};
+  --fv-bg-surface:  #{$fv-gray-900};
+  --fv-bg-elevated: #{$fv-gray-850};
+  --fv-bg-overlay:  rgba(24, 24, 38, 0.6); // translucent glass
+  --fv-bg-image-matte: #{$fv-sand-50}; // fixed neutral matte for transparent logos/posters
+
+  // --- Borders (hairline by default) ---
+  --fv-border-subtle:  rgba(255, 255, 255, 0.06);
+  --fv-border-default: rgba(255, 255, 255, 0.10);
+  --fv-border-strong:  rgba(255, 255, 255, 0.16);
+  --fv-border-accent:  rgba(78, 140, 255, 0.40);
+
+  // --- Text ---
+  --fv-text-primary:   #{$fv-gray-50};
+  --fv-text-secondary: #{$fv-gray-300};
+  --fv-text-muted:     #{$fv-gray-400};
+  --fv-text-inverse:   #{$fv-gray-950};
+
+  // --- Accents ---
+  --fv-accent-blue:        #{$fv-blue-500};
+  --fv-accent-med-blue:    #{$fv-med-blue-500};  // Mediterranean accent
+  --fv-accent-coral:       #{$fv-coral-500};     // Mediterranean accent
+  --fv-accent-orange:      #{$fv-orange-400};    // Mediterranean accent
+  --fv-accent-violet:      #{$fv-violet-500};    // Brand-gradient stop (progress bar)
+  --fv-accent-pink:        #{$fv-pink-500};      // Brand-gradient stop (progress bar)
+  --fv-accent-amber:       #{$fv-amber-400};     // Brand-gradient stop (progress bar)
+  --fv-accent-green:       #{$fv-green-500}; // ONLY for live/success indicators
+  --fv-accent-danger:      #{$fv-red-500};
+  --fv-accent-warning:     #{$fv-amber-500};
+
+  // --- Effects ---
+  --fv-blur-glass: 16px; // backdrop-filter blur for glass surfaces (see `glass()` mixin)
+
+  // --- Nav / light-surface (Mediterranean canvas) ---
+  --fv-bg-nav:              #{$fv-sand-50};      // nav-bar background
+  --fv-text-nav:            #{$fv-navy-950};     // nav text on sand
+  --fv-border-nav:          rgba(15, 23, 42, 0.07); // hairline on sand
+  --fv-bg-nav-icon-hover:   rgba(15, 23, 42, 0.05);
+  --fv-bg-page:             #{$fv-sand-50};      // page-level canvas
+  --fv-bg-card-light:       #ffffff;             // elevated card on sand sections
+  --fv-bg-tile-dark:        #{$fv-gray-850};     // dark tile/poster background inside light cards
+
+  // --- Footer (light surface, warm off-white #F4F4FA) ---
+  --fv-bg-footer:           #{$fv-gray-50};       // #F4F4FA footer canvas
+  --fv-bg-footer-hover:     rgba(15, 23, 42, 0.05); // social icon / badge hover wash
+  --fv-text-footer:         #{$fv-navy-950};      // headings + primary footer text (navy)
+  --fv-text-footer-muted:   rgba(15, 23, 42, 0.64); // links + tagline (navy @ 64%)
+  --fv-text-footer-faint:   rgba(15, 23, 42, 0.45); // copyright + version meta (navy @ 45%)
+  --fv-border-footer:       rgba(15, 23, 42, 0.08); // hairline dividers (navy @ 8%)
+
+  // --- Gradients ---
+  --fv-gradient-brand:
+    linear-gradient(135deg, #{$fv-med-blue-500} 0%, #{$fv-blue-500} 100%);
+  --fv-gradient-text:
+    linear-gradient(135deg, #{$fv-gray-50} 0%, #{$fv-blue-400} 100%);
+  --fv-gradient-hero-glow:
+    radial-gradient(
+      60% 50% at 50% 0%,
+      rgba(45, 156, 219, 0.22) 0%,
+      rgba(78, 140, 255, 0.10) 35%,
+      transparent 70%
+    );
+  --fv-gradient-card-sheen:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      transparent 40%
+    );
+
+  // --- Liquid Glass ---
+  --fv-glass-alpha:        0.6;      // 60% opacity
+  --fv-glass-blur:         16px;     // backdrop blur
+  --fv-glass-saturate:     140%;     // color saturation boost
+  --fv-glass-border:       1px solid var(--fv-border-subtle);
+  --fv-glass-highlight:    rgba(255, 255, 255, 0.04);
+  --fv-glass-shadow-sm:    0 4px 12px rgba(0, 0, 0, 0.2);
+  --fv-glass-shadow-md:    0 8px 24px rgba(0, 0, 0, 0.3);
+  --fv-glass-shadow-lg:    0 16px 40px rgba(0, 0, 0, 0.4);
+  --fv-glass-glow-blue:    0 0 20px rgba(78, 140, 255, 0.2);
+  --fv-glass-glow-med:     0 0 20px rgba(45, 156, 219, 0.2);
+}
+
+// ============================================================================
+// Dark theme — flips ONLY the themeable "chrome" surface tokens.
+// ============================================================================
+// The base `:root` above is the LIGHT theme (Mediterranean light surfaces) and
+// must stay pixel-identical. Dark mode redefines the light-surface tokens with
+// dark equivalents built from the same primitives in `_tokens.scss`. The
+// "dark canvas" tokens (`--fv-bg-canvas/surface/elevated`, `--fv-text-primary…`)
+// are theme-independent — they remain dark for always-dark elements (hero
+// overlay text, poster tiles). See `theming-styling` SKILL, hard rule #7.
+// ============================================================================
+
+@mixin fv-theme-dark {
+  // --- Surfaces ---
+  --fv-bg-page:           #{$fv-gray-950};        // deep navy/near-black canvas
+  --fv-bg-nav:            #{$fv-gray-900};         // sticky header surface
+  --fv-bg-footer:         #{$fv-gray-900};         // footer surface
+  --fv-bg-card-light:     #{$fv-gray-850};         // elevated dark cards/panels
+  --fv-bg-tile-dark:      #{$fv-gray-800};         // tiles inside elevated cards
+
+  // --- Text (high contrast, not pure white) ---
+  --fv-text-nav:          #{$fv-gray-50};
+  --fv-text-footer:       #{$fv-gray-50};
+  --fv-text-footer-muted: rgba(244, 244, 250, 0.66);
+  --fv-text-footer-faint: rgba(244, 244, 250, 0.45);
+
+  // --- Borders + hover washes (subtle light lines on dark) ---
+  --fv-border-nav:        rgba(255, 255, 255, 0.10);
+  --fv-border-footer:     rgba(255, 255, 255, 0.10);
+  --fv-bg-nav-icon-hover: rgba(255, 255, 255, 0.06);
+  --fv-bg-footer-hover:   rgba(255, 255, 255, 0.06);
+}
+
+// Explicit manual choice.
+:root[data-theme='dark'] {
+  @include fv-theme-dark;
+}
+
+// System preference: applies only when the user has NOT made a manual choice
+// (no `data-theme` attribute). `ThemeService` removes the attribute for `system`.
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include fv-theme-dark;
+  }
+}

@@ -1,0 +1,31 @@
+// ============================================================================
+// _shadows.scss — TuriaFestNoticias Design System · Elevation
+// ============================================================================
+// Soft, atmospheric, never harsh. No drop shadows with rgba(0,0,0,0.5) +
+// 30 px blur — that reads as AI-generated UI.
+// ============================================================================
+
+:root {
+  --fv-shadow-card:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.25);
+
+  --fv-shadow-elevated:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 20px 48px rgba(0, 0, 0, 0.45);
+
+  --fv-shadow-focus:
+    0 0 0 2px var(--fv-bg-canvas),
+    0 0 0 4px var(--fv-accent-blue);
+
+  --fv-shadow-glow-blue: 0 0 40px rgba(78, 140, 255, 0.25);
+
+  // Hero CTA button elevations — warm-on-dark lift for the primary action,
+  // subtle glass rim for the secondary ghost button.
+  --fv-shadow-hero-btn-primary:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  --fv-shadow-hero-btn-secondary:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 10px 24px rgba(0, 0, 0, 0.12);
+}

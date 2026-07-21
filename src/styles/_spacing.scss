@@ -1,0 +1,20 @@
+// ============================================================================
+// _spacing.scss — TuriaFestNoticias Design System · Spacing scale
+// ============================================================================
+// 4 px base unit, exponential where useful. Components use `var(--fv-space-N)`
+// — never literal pixel values.
+// ============================================================================
+
+:root {
+  --fv-space-0:  0;
+  --fv-space-1:  4px;
+  --fv-space-2:  8px;
+  --fv-space-3:  12px;
+  --fv-space-4:  16px;
+  --fv-space-5:  24px;
+  --fv-space-6:  32px;
+  --fv-space-7:  48px;
+  --fv-space-8:  64px;
+  --fv-space-9:  96px;
+  --fv-space-10: 128px;
+}

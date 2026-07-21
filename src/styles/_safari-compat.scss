@@ -1,0 +1,74 @@
+// ============================================================================
+// _safari-compat.scss — TuriaFestNoticias · Safari Compatibility Layer
+// ============================================================================
+// Safari-specific fixes and forward-compatible patterns.
+//
+// TARGET FLOOR: Safari 16.2 / iOS 16.2 (December 2022)
+// All features below that line must have a static fallback.
+//
+// ── KNOWN ISSUES BY SAFARI VERSION ──────────────────────────────────────────
+//
+// Safari < 16.2  color-mix(in srgb, …)         → NOT supported
+//                Strategy: static rgba() fallback BEFORE color-mix().
+//                CSS cascade: last valid declaration wins.
+//                In Safari < 16.2 the color-mix() line is invalid → rgba() stays.
+//                In modern browsers color-mix() overrides it.
+//
+// Safari < 9     backdrop-filter                → NOT supported (pre-history)
+//                Strategy: always pair -webkit-backdrop-filter before backdrop-filter.
+//                The glass() mixin in _mixins.scss already does this correctly.
+//                Any DIRECT use of backdrop-filter in a component must also add
+//                the -webkit- prefix manually (see home.page.scss button--secondary).
+//
+// Safari < 17.5  text-wrap: balance             → ignored (graceful degradation)
+//                Strategy: no fix needed — text just wraps normally.
+//
+// Safari < 15    aspect-ratio                   → NOT supported (below our floor)
+//                Strategy: not needed for our target, tracked here for reference.
+//
+// ── COLOUR REFERENCE FOR INLINE rgba() FALLBACKS ────────────────────────────
+// Use these values when writing rgba() counterparts to color-mix() declarations.
+// Keep in sync with _tokens.scss.
+//
+// DARK CANVAS TOKENS
+//   --fv-bg-canvas   (#07070C)   →  rgba(7,   7,   12,  α)
+//   --fv-bg-surface  (#0B0B14)   →  rgba(11,  11,  20,  α)
+//   --fv-bg-elevated (#11111D)   →  rgba(17,  17,  29,  α)
+//   --fv-text-primary (#F4F4FA)  →  rgba(244, 244, 250, α)
+//   --fv-accent-blue  (#4E8CFF)  →  rgba(78,  140, 255, α)
+//
+// LIGHT / MEDITERRANEAN CANVAS TOKENS
+//   --fv-bg-nav / --fv-bg-page  (#F8F5F0)  →  rgba(248, 245, 240, α)
+//   --fv-text-nav               (#0F172A)  →  rgba(15,  23,  42,  α)
+//   --fv-bg-card-light          (#ffffff)  →  rgba(255, 255, 255, α)
+//   --fv-border-nav (hairline)  (#0F172A)  →  rgba(15,  23,  42,  α)
+//   --fv-accent-med-blue        (#2D9CDB)  →  rgba(45,  156, 219, α)
+//   --fv-accent-coral           (#FF4D4D)  →  rgba(255, 77,  77,  α)
+//   --fv-accent-orange          (#FF8A3D)  →  rgba(255, 138, 61,  α)
+//   --fv-accent-warning         (#F5B544)  →  rgba(245, 181, 68,  α)
+//   --fv-accent-green           (#4ADE9D)  →  rgba(74,  222, 157, α)
+//
+// ── SCSS MIXIN ───────────────────────────────────────────────────────────────
+// color-mix-safe($prop, $fallback, $var, $pct, $blend)
+//
+// Outputs a static rgba() fallback immediately followed by the color-mix()
+// declaration for the same CSS property. Modern browsers apply the last valid
+// value; Safari < 16.2 stops at the rgba() line.
+//
+// Arguments:
+//   $prop      — CSS property name (background, color, border-color, …)
+//   $fallback  — Static rgba() or hex value for Safari < 16.2
+//   $var       — CSS custom property string, e.g. var(--fv-bg-canvas)
+//   $pct       — Integer percentage for color-mix, e.g. 92
+//   $blend     — Second color in color-mix (default: transparent)
+//
+// Example:
+//   @include color-mix-safe(background, rgba(7, 7, 12, 0.92), var(--fv-bg-canvas), 92);
+//   @include color-mix-safe(color, rgba(15, 23, 42, 0.65), var(--fv-text-nav), 65);
+//   @include color-mix-safe(background, rgba(255,255,255,0.14), var(--fv-bg-card-light), 14, var(--fv-bg-nav));
+// ============================================================================
+
+@mixin color-mix-safe($prop, $fallback, $var, $pct, $blend: transparent) {
+  #{$prop}: #{$fallback}; // Safari < 16.2 fallback
+  #{$prop}: color-mix(in srgb, #{$var} #{$pct}%, #{$blend}); // modern override
+}

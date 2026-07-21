@@ -1,0 +1,32 @@
+// ============================================================================
+// _typography.scss — TuriaFestNoticias Design System · Type ramp
+// ============================================================================
+// Font families live in `_fonts.scss` (--fv-font-*). This file owns sizes,
+// leading and tracking — composed by components via semantic tokens.
+// ============================================================================
+
+:root {
+  // --- Sizes ---
+  --fv-text-xs:      12px;
+  --fv-text-sm:      14px;
+  --fv-text-base:    16px;
+  --fv-text-lg:      18px;
+  --fv-text-xl:      20px;
+  --fv-text-2xl:     24px;
+  --fv-text-3xl:     32px;
+  --fv-text-4xl:     44px;
+  --fv-text-display: 64px;
+
+  // --- Leading ---
+  --fv-leading-display: 1.08; // hero/display headlines — tighter than tight for editorial impact
+  --fv-leading-tight:   1.15;
+  --fv-leading-snug:    1.3;
+  --fv-leading-normal:  1.5;
+  --fv-leading-relaxed: 1.65;
+
+  // --- Tracking ---
+  --fv-tracking-tight: -0.02em;
+  --fv-tracking-snug:  -0.01em;
+  --fv-tracking-wide:   0.08em;
+  --fv-tracking-wider:  0.14em;
+}

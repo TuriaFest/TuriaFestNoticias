@@ -1,0 +1,44 @@
+// ============================================================================
+// _tokens.scss — TuriaFestNoticias Design System · Primitive tokens
+// ============================================================================
+// Raw palette and raw scales. SCSS-only — these are NOT exposed as CSS custom
+// properties. Components must consume the semantic tokens in `_semantic.scss`.
+// ============================================================================
+
+// --- Neutrals (deep navy bias, not pure black) ---
+$fv-gray-950: #07070C; // canvas
+$fv-gray-900: #0B0B14; // surface
+$fv-gray-850: #11111D; // elevated
+$fv-gray-800: #181826; // overlay base
+$fv-gray-700: #232336;
+$fv-gray-600: #2F2F47;
+$fv-gray-500: #4A4A66;
+$fv-gray-400: #6B6E85;
+$fv-gray-300: #9CA0B5;
+$fv-gray-200: #C9CCDB;
+$fv-gray-100: #E7E9F2;
+$fv-gray-50:  #F4F4FA;
+
+// --- Brand (Mediterranean blue primary, secondary blue) ---
+$fv-blue-500: #4E8CFF;
+$fv-blue-400: #6BA1FF;
+
+// --- Accents (green is reserved for live/success) ---
+$fv-green-500: #4ADE9D;
+$fv-green-400: #6BE8B0;
+
+// --- States ---
+$fv-red-500:   #FF5C7A;
+$fv-amber-500: #F5B544;
+
+// --- Mediterranean canvas (nav / light surfaces) ---
+$fv-sand-50:    #F8F5F0; // light page canvas, nav background
+$fv-navy-950:   #0F172A; // deep navy text on sand
+$fv-coral-500:  #FF4D4D; // Mediterranean accent — reserved for future use
+$fv-orange-400: #FF8A3D; // Mediterranean accent — reserved for future use
+$fv-med-blue-500: #2D9CDB; // Mediterranean accent — reserved for future use
+
+// --- Brand-gradient extras (used by the slow-navigation progress bar) ---
+$fv-violet-500: #A855F7;
+$fv-pink-500:   #FF5A7A;
+$fv-amber-400:  #F59E0B;

@@ -1,0 +1,182 @@
+// ============================================================================
+// _fonts.scss — TuriaFestNoticias Design System · Font Rules
+// ============================================================================
+//
+// Font Role Mapping (see getFont):
+//   ui             → Inter            General UI text
+//   data           → Inter            Data display / structured content
+//   heading        → Sora             Section titles & component headings
+//   hero           → Sora | Inter     Hero sections (Sora when emphasis)
+//   festival_name  → Sora | Inter     Festival names (Sora when high importance)
+//   mono           → JetBrains Mono   Technical values, dates, IDs, logs
+//   brand          → Sora             Brand-level usage
+// ============================================================================
+
+// ---------------------------------------------------------------------------
+// 1. @font-face declarations (variable fonts, self-hosted)
+// ---------------------------------------------------------------------------
+
+// --- Inter (Variable) ---
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+// --- Sora (Variable) ---
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/Sora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+// --- JetBrains Mono (Variable) ---
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+// ---------------------------------------------------------------------------
+// 2. Shared font stacks (used by custom properties & utility classes)
+// ---------------------------------------------------------------------------
+
+$font-stack-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
+
+$font-stack-sora: 'Sora', 'Inter', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+$font-stack-mono: 'JetBrains Mono', 'Fira Code', 'Source Code Pro',
+  'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+// ---------------------------------------------------------------------------
+// 3. CSS Custom Properties — Font Role Tokens
+// ---------------------------------------------------------------------------
+// These are the canonical tokens consumed throughout the app.
+// Components should reference these variables instead of hard-coding families.
+// ---------------------------------------------------------------------------
+
+:root {
+  // — Role-based tokens —
+  // Role: ui — General UI text (default system readability)
+  --fv-font-ui: #{$font-stack-inter};
+
+  // Role: data — Data display / structured content
+  --fv-font-data: #{$font-stack-inter};
+
+  // Role: heading — Section titles and component headings
+  --fv-font-heading: #{$font-stack-sora};
+
+  // Role: hero — Hero sections / landing impact (default: no emphasis)
+  --fv-font-hero: #{$font-stack-inter};
+
+  // Role: hero with emphasis
+  --fv-font-hero-emphasis: #{$font-stack-sora};
+
+  // Role: festival_name — Festival names (default: not high importance)
+  --fv-font-festival-name: #{$font-stack-inter};
+
+  // Role: festival_name with high importance
+  --fv-font-festival-name-high: #{$font-stack-sora};
+
+  // Role: mono — Technical values, dates, IDs, logs, debug info
+  --fv-font-mono: #{$font-stack-mono};
+
+  // Role: brand — Brand-level fallback usage
+  --fv-font-brand: #{$font-stack-sora};
+}
+
+// ---------------------------------------------------------------------------
+// 4. Utility Classes — `.fv-font-{role}`
+// ---------------------------------------------------------------------------
+// Apply directly in templates:
+//   <p class="fv-font-ui">Body text</p>
+//   <h2 class="fv-font-heading">Section Title</h2>
+//   <span class="fv-font-mono">2026-06-04</span>
+// ---------------------------------------------------------------------------
+
+// Role: ui — General UI text
+.fv-font-ui {
+  font-family: var(--fv-font-ui);
+}
+
+// Role: data — Data display / structured content
+.fv-font-data {
+  font-family: var(--fv-font-data);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+// Role: heading — Section titles & component headings
+.fv-font-heading {
+  font-family: var(--fv-font-heading);
+  letter-spacing: -0.02em;
+}
+
+// Role: hero — Hero sections / landing impact (default: no emphasis)
+.fv-font-hero {
+  font-family: var(--fv-font-hero);
+  letter-spacing: -0.03em;
+}
+
+// Role: hero with emphasis
+.fv-font-hero--emphasis {
+  font-family: var(--fv-font-hero-emphasis);
+  letter-spacing: -0.03em;
+}
+
+// Role: festival_name — Festival names and highlighted entities
+.fv-font-festival-name {
+  font-family: var(--fv-font-festival-name);
+}
+
+// Role: festival_name with high importance
+.fv-font-festival-name--high {
+  font-family: var(--fv-font-festival-name-high);
+  letter-spacing: -0.01em;
+}
+
+// Role: mono — Technical values (dates, IDs, logs, debug info)
+.fv-font-mono {
+  font-family: var(--fv-font-mono);
+  font-variant-ligatures: contextual;
+  letter-spacing: -0.02em;
+}
+
+// Role: brand — Brand-level fallback usage
+.fv-font-brand {
+  font-family: var(--fv-font-brand);
+  letter-spacing: -0.02em;
+}
+
+// ---------------------------------------------------------------------------
+// 5. Global base application
+// ---------------------------------------------------------------------------
+// The default body font binding lives in `_reset.scss`, which consumes
+// `--fv-font-ui` so all text inherits Inter unless overridden by a role-
+// specific class or token.
+// ---------------------------------------------------------------------------

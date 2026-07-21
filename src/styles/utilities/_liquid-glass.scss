@@ -1,0 +1,99 @@
+// ============================================================================
+// utilities/_liquid-glass.scss — Liquid Glass effect utilities
+// ============================================================================
+// Reusable utility classes for premium glass surfaces with translucency,
+// soft blur, layered depth, and atmospheric effects. All colors and tokens
+// sourced from the TuriaFestNoticias design system.
+// ============================================================================
+
+@use 'styles/tokens' as *;
+
+// --- Base Liquid Glass Effect ---
+// Semi-transparent surface with backdrop blur, subtle border, and depth
+
+.liquid-glass {
+  background: rgba($fv-gray-850, var(--fv-glass-alpha));
+  border: var(--fv-glass-border);
+  backdrop-filter: blur(var(--fv-glass-blur)) saturate(var(--fv-glass-saturate));
+  -webkit-backdrop-filter: blur(var(--fv-glass-blur)) saturate(var(--fv-glass-saturate));
+}
+
+// --- Liquid Glass Card ---
+// Elevated glass card for modals, popovers, isolated content
+
+.liquid-glass-card {
+  @extend .liquid-glass;
+  border-radius: var(--fv-radius-lg);
+  box-shadow: var(--fv-glass-shadow-md);
+  padding: var(--fv-space-4);
+}
+
+// --- Liquid Glass Button ---
+// Interactive glass button with hover and focus states
+
+.liquid-glass-button {
+  @extend .liquid-glass;
+  border-radius: var(--fv-radius-sm);
+  padding: var(--fv-space-3) var(--fv-space-4);
+  cursor: pointer;
+  transition:
+    background-color var(--fv-duration-fast) var(--fv-ease-standard),
+    box-shadow var(--fv-duration-fast) var(--fv-ease-standard);
+
+  &:hover {
+    background: rgba($fv-gray-850, calc(var(--fv-glass-alpha) + 0.05));
+    box-shadow: var(--fv-glass-glow-blue);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--fv-shadow-focus);
+  }
+}
+
+// --- Liquid Glass Panel ---
+// Information panel, sidebar section, detail view container
+
+.liquid-glass-panel {
+  @extend .liquid-glass;
+  border-radius: var(--fv-radius-lg);
+  box-shadow: var(--fv-glass-shadow-sm);
+  padding: var(--fv-space-5);
+}
+
+// --- Liquid Glass Map Overlay ---
+// Positioned overlay for maps and layered content (requires depth behind)
+
+.liquid-glass-map-overlay {
+  @extend .liquid-glass;
+  border-radius: var(--fv-radius-lg);
+  box-shadow: var(--fv-glass-shadow-lg);
+  position: absolute;
+}
+
+// --- Glow Variants ---
+// Add blue edge glow to any glass element using BEM modifier
+
+.liquid-glass--glow-blue {
+  box-shadow: var(--fv-glass-glow-blue);
+}
+
+.liquid-glass--glow-med {
+  box-shadow: var(--fv-glass-glow-med);
+}
+
+// --- Highlight Layer (Premium Shine Effect) ---
+// Pseudo-element creates a subtle highlight on top of glass surfaces
+// Adds premium appearance and light refraction feeling
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: var(--fv-glass-highlight);
+  border-radius: inherit;
+  pointer-events: none;
+}

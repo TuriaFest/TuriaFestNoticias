@@ -1,0 +1,25 @@
+// ============================================================================
+// _breakpoints.scss — TuriaFestNoticias Design System · Breakpoints
+// ============================================================================
+// Mobile-first only. Media queries cannot read CSS custom properties, so the
+// scale lives as a SCSS map consumed by the `from()` mixin.
+// Usage:
+//   @use 'styles/breakpoints' as *;
+//   @include from(md) { ... }
+// ============================================================================
+
+@use 'sass:map';
+
+$fv-breakpoints: (
+  sm:  640px,
+  md:  768px,
+  lg:  1024px,
+  xl:  1280px,
+  2xl: 1440px,
+);
+
+@mixin from($bp) {
+  @media (min-width: map.get($fv-breakpoints, $bp)) {
+    @content;
+  }
+}

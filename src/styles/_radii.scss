@@ -1,0 +1,14 @@
+// ============================================================================
+// _radii.scss — TuriaFestNoticias Design System · Radius scale
+// ============================================================================
+// Never mix more than two radii in a single view.
+// ============================================================================
+
+:root {
+  --fv-radius-sm:   8px;   // small chips, badges
+  --fv-radius-md:   12px;  // buttons, inputs
+  --fv-radius-lg:   16px;  // cards
+  --fv-radius-xl:   24px;  // hero panels, modals
+  --fv-radius-2xl:  32px;
+  --fv-radius-pill: 999px;
+}
