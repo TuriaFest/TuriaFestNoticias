@@ -6,8 +6,18 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:TuriaFestNoticias": "node dist/TuriaFestNoticias/server/server.mjs"
+    "test": "sh -c 'if printf \"%s\\n\" \"$@\" | grep -qx -- \"--run\"; then ng test --watch=false; else ng test \"$@\"; fi' --",
+    "serve:ssr:TuriaFestNoticias": "node dist/TuriaFestNoticias/server/server.mjs",
+    "lint": "ng lint",
+    "i18n:sync": "node scripts/i18n-sync.mjs",
+    "i18n:check": "node scripts/i18n-sync.mjs --check",
+    "sync:codex": "node scripts/sync-codex.mjs",
+    "sync:codex:check": "node scripts/sync-codex.mjs --check",
+    "images:convert": "node scripts/convert-images.mjs",
+    "branches:update-from-develop": "bash scripts/update-branches-from-develop.sh",
+    "branches:merge-develop-into-all": "bash scripts/merge-develop-into-branches.sh",
+    "deploy": "npm run build && wrangler deploy",
+    "cf:preview": "npm run build && wrangler dev"
   },
   "prettier": {
     "printWidth": 100,
@@ -40,10 +50,17 @@
     "@angular/build": "^21.1.0",
     "@angular/cli": "^21.1.0",
     "@angular/compiler-cli": "^21.1.0",
+    "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "angular-eslint": "21.4.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-boundaries": "^6.0.2",
     "jsdom": "^27.1.0",
+    "sharp": "^0.34.5",
     "typescript": "~5.9.2",
-    "vitest": "^4.0.8"
+    "typescript-eslint": "8.59.2",
+    "vitest": "^4.0.8",
+    "wrangler": "^4.42.0"
   }
 }
