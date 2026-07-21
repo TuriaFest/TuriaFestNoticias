@@ -6,11 +6,6 @@
 /out-tsc
 /bazel-out
 
-# Cloudflare / Wrangler
-.wrangler/
-.dev.vars
-.mf/
-
 # Node
 /node_modules
 npm-debug.log
