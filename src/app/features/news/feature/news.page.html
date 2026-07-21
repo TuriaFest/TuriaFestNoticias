@@ -12,7 +12,7 @@
 
   <section class="news-feed" aria-labelledby="news-feed-title">
     <h2 id="news-feed-title" class="news-feed__heading">
-      {{ 'news.sample.sectionTitle' | t }}
+      {{ 'news.list.sectionTitle' | t }}
     </h2>
 
     @if (query(); as activeQuery) {
@@ -22,24 +22,48 @@
       </div>
     }
 
-    @if (hasResults()) {
-      <article class="news-entry" data-testid="news-sample-article">
-        <div class="news-entry__media" data-testid="news-sample-media" aria-hidden="true"></div>
+    @if (visibleArticles().length) {
+      @for (article of visibleArticles(); track article.id) {
+        <article class="news-entry" [attr.data-testid]="'news-card-' + article.id">
+          <a
+            class="news-entry__media"
+            [routerLink]="['/noticias', article.slug]"
+            [attr.aria-label]="article.titleKey | t"
+            data-testid="news-card-media"
+          >
+            <img
+              [ngSrc]="article.cardImage.src"
+              [width]="article.cardImage.width"
+              [height]="article.cardImage.height"
+              [alt]="article.cardImage.altKey | t"
+            />
+          </a>
 
-        <div class="news-entry__body">
-          <div class="news-entry__meta">
-            <p class="news-entry__context">
-              <span>{{ 'news.sample.city' | t }}</span>
-              <span aria-hidden="true">·</span>
-              <span>{{ 'news.sample.genre' | t }}</span>
-            </p>
-            <time datetime="2026-07-21">{{ 'news.sample.date' | t }}</time>
+          <div class="news-entry__body">
+            <div class="news-entry__meta">
+              <p class="news-entry__context">
+                <span>{{ article.cityKey | t }}</span>
+                <span aria-hidden="true">·</span>
+                <span>{{ article.categoryKey | t }}</span>
+              </p>
+              <time [attr.datetime]="article.publishedAt">{{ article.publishedLabelKey | t }}</time>
+            </div>
+
+            <h3>
+              <a [routerLink]="['/noticias', article.slug]">{{ article.titleKey | t }}</a>
+            </h3>
+            <p class="news-entry__excerpt">{{ article.summaryKey | t }}</p>
+            <a
+              class="news-entry__read-more"
+              [routerLink]="['/noticias', article.slug]"
+              data-testid="news-card-read-more"
+            >
+              {{ 'news.list.readMore' | t }}
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
-
-          <h3>{{ 'news.sample.title' | t }}</h3>
-          <p class="news-entry__excerpt">{{ 'news.sample.excerpt' | t }}</p>
-        </div>
-      </article>
+        </article>
+      }
     } @else {
       <div class="news-search-empty" data-testid="news-search-empty" role="status">
         <h3>{{ 'news.search.emptyTitle' | t }}</h3>

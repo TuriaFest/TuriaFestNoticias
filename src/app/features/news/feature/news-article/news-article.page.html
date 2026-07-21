@@ -1,0 +1,99 @@
+<article class="news-article" data-testid="news-article-detail">
+  <div class="news-article__shell">
+    <nav class="news-article__breadcrumb" [attr.aria-label]="'news.article.breadcrumbLabel' | t">
+      <ol>
+        <li>
+          <a routerLink="/noticias">{{ 'news.title' | t }}</a>
+        </li>
+        <li aria-current="page">{{ article.categoryKey | t }}</li>
+      </ol>
+    </nav>
+
+    <header class="news-article__header">
+      <h1 data-testid="news-article-title">{{ article.titleKey | t }}</h1>
+      <p class="news-article__standfirst">{{ article.summaryKey | t }}</p>
+
+      <div class="news-article__meta">
+        <span>{{ article.cityKey | t }}</span>
+        <span aria-hidden="true">·</span>
+        <span>{{ article.categoryKey | t }}</span>
+        <span aria-hidden="true">·</span>
+        <time [attr.datetime]="article.publishedAt">{{ article.publishedLabelKey | t }}</time>
+        <span aria-hidden="true">·</span>
+        <span>{{ article.authorKey | t }}</span>
+      </div>
+    </header>
+
+    <figure class="news-article__hero">
+      <img
+        [ngSrc]="article.cover.src"
+        [width]="article.cover.width"
+        [height]="article.cover.height"
+        [alt]="article.cover.altKey | t"
+        priority
+      />
+      <figcaption>
+        @if (article.cover.captionKey; as captionKey) {
+          <span>{{ captionKey | t }}</span>
+        }
+        <span>{{ 'news.article.photoCredit' | t }}</span>
+      </figcaption>
+    </figure>
+
+    <div class="news-article__body">
+      @for (section of article.sections; track section.headingKey; let sectionIndex = $index) {
+        <section class="news-article__section">
+          <h2>{{ section.headingKey | t }}</h2>
+          @for (paragraphKey of section.paragraphKeys; track paragraphKey) {
+            <p>{{ paragraphKey | t }}</p>
+          }
+        </section>
+
+        @if (sectionIndex === 0) {
+          <blockquote class="news-article__highlight">
+            <p>{{ article.highlightKey | t }}</p>
+          </blockquote>
+        }
+      }
+
+      <aside class="news-article__source" aria-labelledby="news-article-source-title">
+        <h2 id="news-article-source-title">{{ 'news.article.sourceTitle' | t }}</h2>
+        <p>
+          <a [href]="article.source.url" target="_blank" rel="noopener noreferrer">
+            {{ article.source.nameKey | t }}
+          </a>
+          <span>{{ article.source.verifiedLabelKey | t }}</span>
+        </p>
+      </aside>
+    </div>
+
+    <section class="news-gallery" aria-labelledby="news-gallery-title">
+      <header class="news-gallery__header">
+        <h2 id="news-gallery-title">{{ article.galleryTitleKey | t }}</h2>
+      </header>
+
+      <div class="news-gallery__grid">
+        @for (image of article.gallery; track image.src) {
+          <figure class="news-gallery__item">
+            <img
+              [ngSrc]="image.src"
+              [width]="image.width"
+              [height]="image.height"
+              [alt]="image.altKey | t"
+            />
+            @if (image.captionKey; as captionKey) {
+              <figcaption>{{ captionKey | t }}</figcaption>
+            }
+          </figure>
+        }
+      </div>
+    </section>
+
+    <footer class="news-article__footer">
+      <a routerLink="/noticias">
+        <span aria-hidden="true">←</span>
+        {{ 'news.article.backToNews' | t }}
+      </a>
+    </footer>
+  </div>
+</article>
