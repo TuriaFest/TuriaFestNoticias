@@ -7,7 +7,7 @@
         width="800"
         height="580"
         priority
-        alt="TuriaFestNoticias"
+        alt="TuriaFest"
       />
       <img
         class="nav-bar__brand-img nav-bar__brand-img--dark"
@@ -126,6 +126,9 @@
         data-testid="nav-btn-buscar"
         type="button"
         [attr.aria-label]="'nav.search' | t"
+        aria-controls="nav-news-search"
+        [attr.aria-expanded]="searchOpen()"
+        (click)="toggleSearch()"
       >
         <svg lucideSearch aria-hidden="true" focusable="false" size="20" strokeWidth="2"></svg>
       </button>
@@ -155,4 +158,38 @@
       </button>
     </div>
   </div>
+
+  @if (searchOpen()) {
+    <form
+      id="nav-news-search"
+      class="nav-bar__search-form"
+      role="search"
+      [attr.aria-label]="'nav.searchForm.label' | t"
+      (submit)="submitSearch(); $event.preventDefault()"
+    >
+      <label class="sr-only" for="nav-news-search-input">
+        {{ 'nav.searchForm.label' | t }}
+      </label>
+
+      <div class="nav-bar__search-field">
+        <svg lucideSearch aria-hidden="true" focusable="false" size="20" strokeWidth="2"></svg>
+        <input
+          #searchInput
+          id="nav-news-search-input"
+          class="nav-bar__search-input"
+          data-testid="nav-search-input"
+          type="search"
+          name="buscar"
+          autocomplete="off"
+          enterkeyhint="search"
+          [formControl]="searchControl"
+          [placeholder]="'nav.searchForm.placeholder' | t"
+        />
+      </div>
+
+      <button class="nav-bar__search-submit" data-testid="nav-search-submit" type="submit">
+        {{ 'nav.searchForm.submit' | t }}
+      </button>
+    </form>
+  }
 </header>

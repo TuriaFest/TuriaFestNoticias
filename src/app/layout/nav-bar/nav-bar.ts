@@ -8,7 +8,8 @@ import {
   viewChild,
 } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideMenu, LucideMoon, LucideSearch, LucideSun } from '@lucide/angular';
 
 import { ThemeService } from '@core/platform/theme.service';
@@ -33,6 +34,7 @@ const LANGUAGES: readonly LangOption[] = [
   selector: 'fv-nav-bar',
   imports: [
     NgOptimizedImage,
+    ReactiveFormsModule,
     RouterLink,
     RouterLinkActive,
     LucideSearch,
@@ -47,16 +49,20 @@ const LANGUAGES: readonly LangOption[] = [
   host: {
     class: 'fv-nav-bar-host',
     '(document:click)': 'onDocumentClick($event)',
-    '(document:keydown.escape)': 'closeLangMenu()',
+    '(document:keydown.escape)': 'closeOverlays()',
   },
 })
 export class NavBar {
   readonly #theme = inject(ThemeService);
   readonly #translation = inject(TranslationService);
+  readonly #router = inject(Router);
 
   protected readonly languages = LANGUAGES;
   protected readonly langMenuOpen = signal(false);
+  protected readonly searchOpen = signal(false);
+  protected readonly searchControl = new FormControl('', { nonNullable: true });
   protected readonly langMenuRef = viewChild<ElementRef<HTMLElement>>('langMenuContainer');
+  protected readonly searchInputRef = viewChild<ElementRef<HTMLInputElement>>('searchInput');
 
   protected readonly isDark = computed(() => this.#theme.resolvedTheme() === 'dark');
   protected readonly themeLabelKey = computed(() =>
@@ -76,6 +82,7 @@ export class NavBar {
   }
 
   protected toggleLangMenu(): void {
+    this.closeSearch();
     this.langMenuOpen.update((v) => !v);
   }
 
@@ -86,6 +93,38 @@ export class NavBar {
   protected selectLang(code: LangCode): void {
     void this.#translation.switchLang(code);
     this.closeLangMenu();
+  }
+
+  protected toggleSearch(): void {
+    this.closeLangMenu();
+    this.searchOpen.update((open) => !open);
+
+    if (this.searchOpen()) {
+      queueMicrotask(() => this.searchInputRef()?.nativeElement.focus());
+    }
+  }
+
+  protected closeSearch(): void {
+    this.searchOpen.set(false);
+  }
+
+  protected closeOverlays(): void {
+    this.closeLangMenu();
+    this.closeSearch();
+  }
+
+  protected submitSearch(): void {
+    const query = this.searchControl.value.trim();
+    if (!query) {
+      this.searchInputRef()?.nativeElement.focus();
+      return;
+    }
+
+    void this.#router.navigate(['/noticias'], {
+      queryParams: { buscar: query },
+    });
+    this.searchControl.reset('');
+    this.closeSearch();
   }
 
   protected onDocumentClick(event: MouseEvent): void {

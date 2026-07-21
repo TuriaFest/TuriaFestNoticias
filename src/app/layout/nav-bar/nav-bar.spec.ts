@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TestBed } from '@angular/core/testing';
-import { provideRouter } from '@angular/router';
+import { provideRouter, Router } from '@angular/router';
 import { provideTransloco, TranslocoService } from '@jsverse/transloco';
 import { of } from 'rxjs';
 
@@ -58,18 +58,14 @@ describe('NavBar', () => {
     ) as HTMLImageElement | null;
     expect(img).not.toBeNull();
     expect(img?.getAttribute('ng-img')).toBe('true');
-    expect(img?.getAttribute('alt')).toBe('TuriaFestNoticias');
-    expect(img?.getAttribute('src') ?? '').toContain(
-      'assets/branding/festi-val-logo.webp',
-    );
+    expect(img?.getAttribute('alt')).toBe('TuriaFest');
+    expect(img?.getAttribute('src') ?? '').toContain('assets/branding/festi-val-logo.webp');
   });
 
   it('renders four primary navigation items with Spanish labels', () => {
     const fixture = TestBed.createComponent(NavBar);
     fixture.detectChanges();
-    const links = (fixture.nativeElement as HTMLElement).querySelectorAll(
-      '.nav-bar__nav-link',
-    );
+    const links = (fixture.nativeElement as HTMLElement).querySelectorAll('.nav-bar__nav-link');
     expect(links.length).toBe(4);
     const labels = Array.from(links).map((link) => link.textContent?.trim());
     expect(labels).toEqual(['Inicio', 'Festivales', 'Calendario', 'Noticias']);
@@ -107,6 +103,42 @@ describe('NavBar', () => {
     expect(toggle?.getAttribute('aria-pressed')).toBe('false');
     expect(root.querySelector('.nav-bar__theme-toggle svg[lucidesun]')).not.toBeNull();
     expect(root.querySelector('.nav-bar__menu svg[lucidemenu]')).not.toBeNull();
+  });
+
+  it('opens the news search form from the search button', () => {
+    const fixture = TestBed.createComponent(NavBar);
+    fixture.detectChanges();
+    const root = fixture.nativeElement as HTMLElement;
+    const trigger = root.querySelector('[data-testid="nav-btn-buscar"]') as HTMLButtonElement;
+
+    trigger.click();
+    fixture.detectChanges();
+
+    expect(trigger.getAttribute('aria-expanded')).toBe('true');
+    expect(root.querySelector('[data-testid="nav-search-input"]')).not.toBeNull();
+    expect(root.querySelector('[data-testid="nav-search-submit"]')).not.toBeNull();
+  });
+
+  it('navigates to news with the submitted search query', () => {
+    const fixture = TestBed.createComponent(NavBar);
+    const router = TestBed.inject(Router);
+    const navigate = vi.spyOn(router, 'navigate').mockResolvedValue(true);
+    fixture.detectChanges();
+    const root = fixture.nativeElement as HTMLElement;
+
+    (root.querySelector('[data-testid="nav-btn-buscar"]') as HTMLButtonElement).click();
+    fixture.detectChanges();
+
+    const input = root.querySelector('[data-testid="nav-search-input"]') as HTMLInputElement;
+    input.value = 'Valencia';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    root
+      .querySelector('form')
+      ?.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+
+    expect(navigate).toHaveBeenCalledWith(['/noticias'], {
+      queryParams: { buscar: 'Valencia' },
+    });
   });
 
   it('flips the theme toggle icon and aria-pressed when activated', () => {
@@ -173,8 +205,8 @@ describe('NavBar', () => {
     const options = menu!.querySelectorAll('.nav-bar__language-option');
     expect(options.length).toBe(3);
 
-    const labels = Array.from(options).map(
-      (o) => o.querySelector('.nav-bar__language-option-label')?.textContent?.trim(),
+    const labels = Array.from(options).map((o) =>
+      o.querySelector('.nav-bar__language-option-label')?.textContent?.trim(),
     );
     expect(labels).toEqual(['Español', 'Valencià', 'English']);
   });
@@ -199,12 +231,8 @@ describe('NavBar', () => {
     const actions = root.querySelector('.nav-bar__actions')!;
     const children = Array.from(actions.children);
 
-    const langIndex = children.findIndex((el) =>
-      el.classList.contains('nav-bar__language'),
-    );
-    const searchIndex = children.findIndex((el) =>
-      el.classList.contains('nav-bar__search'),
-    );
+    const langIndex = children.findIndex((el) => el.classList.contains('nav-bar__language'));
+    const searchIndex = children.findIndex((el) => el.classList.contains('nav-bar__search'));
 
     expect(langIndex).toBeGreaterThanOrEqual(0);
     expect(searchIndex).toBeGreaterThan(langIndex);

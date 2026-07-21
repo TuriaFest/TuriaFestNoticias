@@ -3,9 +3,12 @@
 // ============================================================================
 
 :host {
-  display: contents;
+  display: block;
+  min-height: 100vh;
+  background: var(--fv-bg-page);
+  color: var(--fv-text-primary);
 }
 
 .app-main {
-  min-height: 100dvh;
+  min-height: calc(100vh - 72px);
 }
