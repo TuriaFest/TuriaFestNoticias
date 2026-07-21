@@ -1,0 +1,51 @@
+<div class="news-page">
+  <header class="news-hero" aria-describedby="news-page-description">
+    <div class="news-hero__title-lockup">
+      <h1 class="news-hero__title" data-testid="news-page-title">{{ 'news.title' | t }}</h1>
+      <span class="news-hero__title-echo" aria-hidden="true">{{ 'news.title' | t }}</span>
+    </div>
+
+    <p id="news-page-description" class="news-hero__intro" data-testid="news-page-description">
+      {{ 'news.description' | t }}
+    </p>
+  </header>
+
+  <section class="news-feed" aria-labelledby="news-feed-title">
+    <h2 id="news-feed-title" class="news-feed__heading">
+      {{ 'news.sample.sectionTitle' | t }}
+    </h2>
+
+    @if (query(); as activeQuery) {
+      <div class="news-feed__search-summary" role="status" aria-live="polite">
+        <p>{{ 'news.search.results' | t: { query: activeQuery } }}</p>
+        <a routerLink="/noticias">{{ 'news.search.clear' | t }}</a>
+      </div>
+    }
+
+    @if (hasResults()) {
+      <article class="news-entry" data-testid="news-sample-article">
+        <div class="news-entry__media" data-testid="news-sample-media" aria-hidden="true"></div>
+
+        <div class="news-entry__body">
+          <div class="news-entry__meta">
+            <p class="news-entry__context">
+              <span>{{ 'news.sample.city' | t }}</span>
+              <span aria-hidden="true">·</span>
+              <span>{{ 'news.sample.genre' | t }}</span>
+            </p>
+            <time datetime="2026-07-21">{{ 'news.sample.date' | t }}</time>
+          </div>
+
+          <h3>{{ 'news.sample.title' | t }}</h3>
+          <p class="news-entry__excerpt">{{ 'news.sample.excerpt' | t }}</p>
+        </div>
+      </article>
+    } @else {
+      <div class="news-search-empty" data-testid="news-search-empty" role="status">
+        <h3>{{ 'news.search.emptyTitle' | t }}</h3>
+        <p>{{ 'news.search.emptyDescription' | t }}</p>
+        <a routerLink="/noticias">{{ 'news.search.clear' | t }}</a>
+      </div>
+    }
+  </section>
+</div>
