@@ -8,8 +8,8 @@
 // Component-level sizing values that fall outside the global token scale.
 :host {
   // Icon-button touch targets (UI sizing, not spacing tokens)
-  --nav-icon-size-sm: calc(var(--fv-space-6) + var(--fv-space-1)); // 36px
-  --nav-icon-size-md: calc(var(--fv-space-6) + var(--fv-space-2)); // 40px
+  --nav-icon-size-sm: calc(var(--fv-space-6) + var(--fv-space-3)); // 44px
+  --nav-icon-size-md: calc(var(--fv-space-6) + var(--fv-space-3)); // 44px
   // Nav link font size sits between --fv-text-sm (14px) and --fv-text-base (16px)
   --nav-link-font-size: 15px;
   // Language flag dimensions

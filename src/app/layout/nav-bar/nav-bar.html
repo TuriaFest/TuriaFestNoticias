@@ -1,6 +1,10 @@
 <header class="nav-bar">
   <div class="nav-bar__inner">
-    <a class="nav-bar__brand" routerLink="/" [attr.aria-label]="'nav.home' | t">
+    <a
+      class="nav-bar__brand"
+      href="https://www.turiafest.com/"
+      [attr.aria-label]="'nav.home' | t"
+    >
       <img
         class="nav-bar__brand-img nav-bar__brand-img--light"
         ngSrc="assets/branding/festi-val-logo.webp"
@@ -26,11 +30,7 @@
           <a
             class="nav-bar__nav-link"
             data-testid="nav-link-inicio"
-            routerLink="/"
-            routerLinkActive="nav-bar__nav-link--active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            #rlaHome="routerLinkActive"
-            [attr.aria-current]="rlaHome.isActive ? 'page' : null"
+            href="https://www.turiafest.com/"
           >
             {{ 'nav.home' | t }}
           </a>
@@ -39,10 +39,7 @@
           <a
             class="nav-bar__nav-link"
             data-testid="nav-link-festivales"
-            routerLink="/festivales"
-            routerLinkActive="nav-bar__nav-link--active"
-            #rlaFestivales="routerLinkActive"
-            [attr.aria-current]="rlaFestivales.isActive ? 'page' : null"
+            href="https://www.turiafest.com/festivales"
           >
             {{ 'nav.festivals' | t }}
           </a>
@@ -51,10 +48,7 @@
           <a
             class="nav-bar__nav-link"
             data-testid="nav-link-calendario"
-            routerLink="/calendario"
-            routerLinkActive="nav-bar__nav-link--active"
-            #rlaCalendario="routerLinkActive"
-            [attr.aria-current]="rlaCalendario.isActive ? 'page' : null"
+            href="https://www.turiafest.com/calendario"
           >
             {{ 'nav.calendar' | t }}
           </a>

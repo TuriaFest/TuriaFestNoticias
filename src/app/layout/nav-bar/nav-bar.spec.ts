@@ -53,9 +53,13 @@ describe('NavBar', () => {
   it('renders the brand logo from the project branding assets', () => {
     const fixture = TestBed.createComponent(NavBar);
     fixture.detectChanges();
+    const brand = (fixture.nativeElement as HTMLElement).querySelector(
+      '.nav-bar__brand',
+    ) as HTMLAnchorElement | null;
     const img = (fixture.nativeElement as HTMLElement).querySelector(
       '.nav-bar__brand-img',
     ) as HTMLImageElement | null;
+    expect(brand?.getAttribute('href')).toBe('https://www.turiafest.com/');
     expect(img).not.toBeNull();
     expect(img?.getAttribute('ng-img')).toBe('true');
     expect(img?.getAttribute('alt')).toBe('TuriaFest');
@@ -71,14 +75,21 @@ describe('NavBar', () => {
     expect(labels).toEqual(['Inicio', 'Festivales', 'Calendario', 'Noticias']);
   });
 
-  it('renders the inicio link with routerLink and test id', () => {
+  it('links the public sections to their TuriaFest destinations', () => {
     const fixture = TestBed.createComponent(NavBar);
     fixture.detectChanges();
-    const inicioLink = (fixture.nativeElement as HTMLElement).querySelector(
-      '[data-testid="nav-link-inicio"]',
-    ) as HTMLAnchorElement | null;
-    expect(inicioLink).not.toBeNull();
-    expect(inicioLink?.getAttribute('href')).toBe('/');
+    const root = fixture.nativeElement as HTMLElement;
+
+    const destinations = {
+      'nav-link-inicio': 'https://www.turiafest.com/',
+      'nav-link-festivales': 'https://www.turiafest.com/festivales',
+      'nav-link-calendario': 'https://www.turiafest.com/calendario',
+    } as const;
+
+    for (const [testId, expectedHref] of Object.entries(destinations)) {
+      const link = root.querySelector(`[data-testid="${testId}"]`) as HTMLAnchorElement | null;
+      expect(link?.getAttribute('href')).toBe(expectedHref);
+    }
   });
 
   it('links Noticias to its route', () => {

@@ -36,6 +36,20 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Cloudflare Workers deployment
+
+The production build is deployed as prerendered static assets from
+`dist/TuriaFestNoticias/browser`. The Worker configuration lives in `wrangler.jsonc`.
+
+To build and deploy the current branch, run:
+
+```bash
+npm run deploy
+```
+
+In Cloudflare Builds, use `npm run build` as the build command and `npx wrangler deploy` as the
+deploy command.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
