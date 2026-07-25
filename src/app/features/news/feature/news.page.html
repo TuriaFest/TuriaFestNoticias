@@ -23,7 +23,7 @@
     }
 
     @if (visibleArticles().length) {
-      @for (article of visibleArticles(); track article.id) {
+      @for (article of visibleArticles(); track article.id; let isFirst = $first) {
         <article class="news-entry" [attr.data-testid]="'news-card-' + article.id">
           <a
             class="news-entry__media"
@@ -36,6 +36,7 @@
               [width]="article.cardImage.width"
               [height]="article.cardImage.height"
               [alt]="article.cardImage.altKey | t"
+              [priority]="isFirst"
             />
           </a>
 

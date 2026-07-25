@@ -858,47 +858,85 @@
       "galleryEyebrow": "Inside the venue",
       "backToNews": "Back to News"
     },
-  "articles": {
-    "latinFestValencia2026": {
-      "title": "Latin Fest fills Valencia with urban music for two days",
-      "summary": "Latin Fest debuted its two-day format at Estadi Ciutat de València. Beéle, ROA and Kris R shaped Friday; Mora, Omar Courtz, Kapo and Pirlo took over on Saturday.",
-      "city": "Valencia",
-      "category": "Latin urban music",
-      "searchGenres": "latin urban music reggaeton latin trap afrobeat dancehall latin pop",
-      "publishedLabel": "21 July 2026",
-      "seoTitle": "Latin Fest Valencia: two days of urban music | TuriaFest",
-      "seoDescription": "Latin Fest debuted two days at Estadi Ciutat de València with Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo and Pirlo.",
-      "coverAlt": "A Latin Fest artist sings in a white hat in front of a red-lit stage",
-      "coverCaption": "Latin Fest brought two days of urban music to Estadi Ciutat de València on 17 and 18 July.",
-      "highlight": "By expanding from a single date to two days, Latin Fest gave each line-up its own rhythm without losing the sense of one shared celebration.",
-      "sections": {
-        "newStage": {
-          "heading": "A stadium opens a new chapter",
-          "paragraph1": "Latin Fest began an edition unlike any of its previous Valencia dates on 17 July. The festival left Auditorio Marina Sur behind, moved into Estadi Ciutat de València and expanded its programme across two consecutive days.",
-          "paragraph2": "Each day ran from five in the afternoon until one in the morning. The stadium format gave the visuals, dance ensemble and live bands more depth, while DJ sets connected the concerts and kept the momentum going between stage changes."
+    "articles": {
+      "latinFest2027Registration": {
+        "title": "Latin Fest opens 2027 registration for Valencia and Benidorm",
+        "summary": "Latin Fest has launched two registration windows for a release of 500 early-bird tickets per edition. The deadline is 2 August at 23:59, while Valencia is already looking towards its tenth anniversary.",
+        "city": "Valencia and Benidorm",
+        "category": "Early access",
+        "searchGenres": "Latin Fest Valencia Benidorm 2027 tickets early bird early access registration anniversary Latin urban music reggaeton",
+        "publishedLabel": "25 July 2026",
+        "seoTitle": "Latin Fest 2027 registration opens | TuriaFest",
+        "seoDescription": "Latin Fest registration for 500 early-bird tickets per edition in Valencia and Benidorm 2027 stays open until 2 August.",
+        "coverAlt": "Latin Fest 2027 registration posters for Valencia in orange and Benidorm in green",
+        "coverCaption": "The Valencia and Benidorm campaigns share one deadline: 2 August at 23:59.",
+        "imageCredit": "Artwork: Latin Fest",
+        "highlight": "Latin Fest 2027 begins before its dates and line-up arrive: two registrations, one for each city, and one shared early-access window.",
+        "sections": {
+          "launch": {
+            "heading": "Two registrations, one deadline",
+            "paragraph1": "Latin Fest has opened separate registration windows for its 2027 events in Valencia and Benidorm. Access is being distributed through the festival's official Instagram profile: each post triggers a direct-message link when users leave the requested word, while both forms are also available from the profile bio.",
+            "paragraph2": "Both announcements set the deadline at 2 August at 23:59 and limit the release to 500 early-bird tickets per edition. The artwork presents this tier as the lowest price of the year, although neither the ticket price nor the full sales conditions have been published yet."
+          },
+          "valencia": {
+            "heading": "Valencia prepares its tenth anniversary",
+            "paragraph1": "The Valencia campaign adds the first edition-specific detail for next year: Latin Fest will celebrate its tenth anniversary in 2027. The announcement opens a new festival season without disclosing the dates, venue or artists on the line-up.",
+            "paragraph2": "To receive the link for this registration, the post asks users to comment «ANIVERSARIO». Registration provides access to the promotional release but does not replace the subsequent purchase, which will remain subject to the availability of the announced allocation."
+          },
+          "benidorm": {
+            "heading": "Benidorm opens its own access",
+            "paragraph1": "Benidorm has a separate campaign and form. The word requested under this post is «REGISTRO», with the same 2 August deadline and another announced allocation of 500 early-bird tickets at a promotional price.",
+            "paragraph2": "The organisers present the opening as a continuation of the edition that has just taken place, but the dates, venue and line-up for Benidorm 2027 have not yet been announced. Until those details arrive, the confirmed information is the early-access window and the need to use the correct registration for each city."
+          }
         },
-        "friday": {
-          "heading": "Friday: three voices launch the new format",
-          "paragraph1": "Beéle, ROA and Kris R carried the first date. The line-up moved between Caribbean melodies, reggaeton and trap without treating Friday as a warm-up: the day had an identity of its own from the opening hours through the night-time stretch.",
-          "paragraph2": "The production followed that journey with constant colour changes, large-format screens and live musicians. Between performances, the DJs kept the floor moving and prevented the energy from having to restart at every handover."
-        },
-        "saturday": {
-          "heading": "Saturday: the handover raises the intensity",
-          "paragraph1": "The second day brought a new cast with Mora, Omar Courtz, Kapo and Pirlo. Their performances broadened the festival's range from urban pop and Afro-Caribbean rhythms to Puerto Rican and Colombian reggaeton and trap.",
-          "paragraph2": "As night fell, the staging grew in scale: large inflatables, beams of light sweeping across the audience and a visual production that occupied the entire back of the stadium. Saturday completed a weekend that made Latin Fest's expansion more than a sequence of concerts: two distinct days within one urban-music gathering."
+        "gallery": {
+          "title": "Two cities, two registration windows",
+          "valenciaAlt": "Official Latin Fest Valencia 2027 artwork showing the registration deadline on a screen",
+          "valenciaCaption": "The Valencia registration anticipates Latin Fest's tenth anniversary.",
+          "benidormAlt": "Green official Latin Fest Benidorm 2027 artwork showing the registration deadline",
+          "benidormCaption": "Benidorm has a separate registration with the same promotional deadline."
         }
       },
-      "gallery": {
-        "title": "Two days of Latin Fest from the floor",
-        "fridayOpeningAlt": "Latin Fest singer performs with red glasses and a microphone during the first day",
-        "fridayStageAlt": "Two artists share the Latin Fest stage through smoke and violet lights",
-        "fridayCloseAlt": "Latin Fest vocalist sings in front of a large-format screen on Friday",
-        "saturdayOpeningAlt": "Singer and guitarist perform under red lighting on Latin Fest's second day",
-        "saturdayNightAlt": "Latin Fest artist holds a Spanish flag between green lights and pink visuals",
-        "finalAlt": "Singer performs the Latin Fest finale through smoke, lasers and a large pink stage set"
-      }
-    },
-    "reveFest2026": {
+      "latinFestValencia2026": {
+        "title": "Latin Fest fills Valencia with urban music for two days",
+        "summary": "Latin Fest debuted its two-day format at Estadi Ciutat de València. Beéle, ROA and Kris R shaped Friday; Mora, Omar Courtz, Kapo and Pirlo took over on Saturday.",
+        "city": "Valencia",
+        "category": "Latin urban music",
+        "searchGenres": "latin urban music reggaeton latin trap afrobeat dancehall latin pop",
+        "publishedLabel": "21 July 2026",
+        "seoTitle": "Latin Fest Valencia: two days of urban music | TuriaFest",
+        "seoDescription": "Latin Fest debuted two days at Estadi Ciutat de València with Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo and Pirlo.",
+        "coverAlt": "A Latin Fest artist sings in a white hat in front of a red-lit stage",
+        "coverCaption": "Latin Fest brought two days of urban music to Estadi Ciutat de València on 17 and 18 July.",
+        "highlight": "By expanding from a single date to two days, Latin Fest gave each line-up its own rhythm without losing the sense of one shared celebration.",
+        "sections": {
+          "newStage": {
+            "heading": "A stadium opens a new chapter",
+            "paragraph1": "Latin Fest began an edition unlike any of its previous Valencia dates on 17 July. The festival left Auditorio Marina Sur behind, moved into Estadi Ciutat de València and expanded its programme across two consecutive days.",
+            "paragraph2": "Each day ran from five in the afternoon until one in the morning. The stadium format gave the visuals, dance ensemble and live bands more depth, while DJ sets connected the concerts and kept the momentum going between stage changes."
+          },
+          "friday": {
+            "heading": "Friday: three voices launch the new format",
+            "paragraph1": "Beéle, ROA and Kris R carried the first date. The line-up moved between Caribbean melodies, reggaeton and trap without treating Friday as a warm-up: the day had an identity of its own from the opening hours through the night-time stretch.",
+            "paragraph2": "The production followed that journey with constant colour changes, large-format screens and live musicians. Between performances, the DJs kept the floor moving and prevented the energy from having to restart at every handover."
+          },
+          "saturday": {
+            "heading": "Saturday: the handover raises the intensity",
+            "paragraph1": "The second day brought a new cast with Mora, Omar Courtz, Kapo and Pirlo. Their performances broadened the festival's range from urban pop and Afro-Caribbean rhythms to Puerto Rican and Colombian reggaeton and trap.",
+            "paragraph2": "As night fell, the staging grew in scale: large inflatables, beams of light sweeping across the audience and a visual production that occupied the entire back of the stadium. Saturday completed a weekend that made Latin Fest's expansion more than a sequence of concerts: two distinct days within one urban-music gathering."
+          }
+        },
+        "gallery": {
+          "title": "Two days of Latin Fest from the floor",
+          "fridayOpeningAlt": "Latin Fest singer performs with red glasses and a microphone during the first day",
+          "fridayStageAlt": "Two artists share the Latin Fest stage through smoke and violet lights",
+          "fridayCloseAlt": "Latin Fest vocalist sings in front of a large-format screen on Friday",
+          "saturdayOpeningAlt": "Singer and guitarist perform under red lighting on Latin Fest's second day",
+          "saturdayNightAlt": "Latin Fest artist holds a Spanish flag between green lights and pink visuals",
+          "finalAlt": "Singer performs the Latin Fest finale through smoke, lasers and a large pink stage set"
+        }
+      },
+      "reveFest2026": {
         "title": "Reve Fest debuts in Valencia with urban music for hospitals",
         "summary": "The festival opened its first edition with six live sets and several DJ sessions. Proceeds will support new Músicos por la Salud micro-concerts in hospitals and social-healthcare centres.",
         "city": "Valencia",

@@ -42,6 +42,7 @@ export class NewsMetaService {
   applyArticle(article: NewsArticle, content: NewsArticleMeta): void {
     const canonicalUrl = `${this.#baseUrl}/noticias/${article.slug}`;
     const imageUrl = this.#absoluteUrl(article.socialImage.src);
+    const citations = [article.source.url, ...(article.source.additionalUrls ?? [])];
 
     this.#applyCommon(content, canonicalUrl, 'article');
     this.#meta.updateTag({ property: 'article:published_time', content: article.publishedAt });
@@ -68,7 +69,7 @@ export class NewsMetaService {
           articleSection: content.category,
           inLanguage: content.language,
           url: canonicalUrl,
-          citation: article.source.url,
+          citation: citations.length === 1 ? citations[0] : citations,
         },
         {
           '@type': 'BreadcrumbList',

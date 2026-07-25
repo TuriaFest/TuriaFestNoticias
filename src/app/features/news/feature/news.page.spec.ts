@@ -3,8 +3,10 @@ import { ActivatedRoute, convertToParamMap, provideRouter } from '@angular/route
 import { BehaviorSubject } from 'rxjs';
 
 import {
+  LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG,
   LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG,
   REVE_FEST_2026_ARTICLE_SLUG,
+  ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG,
 } from '../data-access/news.catalogue';
 import { NewsPageComponent } from './news.page';
 
@@ -37,20 +39,48 @@ describe('NewsPageComponent', () => {
     expect(root.querySelector('[data-testid="news-page-description"]')).not.toBeNull();
   });
 
-  it('renders both real articles with the newest story first and a crawlable detail link', () => {
+  it('renders all real articles with the newest story first and crawlable detail links', () => {
     const fixture = TestBed.createComponent(NewsPageComponent);
     fixture.detectChanges();
     const root = fixture.nativeElement as HTMLElement;
-    const article = root.querySelector('[data-testid="news-card-latin-fest-valencia-2026"]');
+    const article = root.querySelector('[data-testid="news-card-zevra-2026-first-day"]');
 
     expect(article?.tagName).toBe('ARTICLE');
-    expect(root.querySelectorAll('article')).toHaveLength(2);
+    expect(root.querySelectorAll('article')).toHaveLength(4);
     expect(article?.querySelector('img')).not.toBeNull();
-    expect(article?.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-21');
+    expect(article?.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-25');
     expect(
       article?.querySelector<HTMLAnchorElement>('[data-testid="news-card-read-more"]')?.href,
-    ).toContain(`/noticias/${LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG}`);
+    ).toContain(`/noticias/${ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG}`);
+    expect(
+      root.querySelector(`[href="/noticias/${LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG}"]`),
+    ).not.toBeNull();
+    expect(
+      root.querySelector(`[href="/noticias/${LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG}"]`),
+    ).not.toBeNull();
     expect(root.querySelector(`[href="/noticias/${REVE_FEST_2026_ARTICLE_SLUG}"]`)).not.toBeNull();
+  });
+
+  it('finds the Latin Fest 2027 story by its Benidorm early-bird context', () => {
+    queryParamMap.next(convertToParamMap({ buscar: 'Benidorm early bird' }));
+    const fixture = TestBed.createComponent(NewsPageComponent);
+    fixture.detectChanges();
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(
+      root.querySelector('[data-testid="news-card-latin-fest-2027-registration"]'),
+    ).not.toBeNull();
+    expect(root.querySelectorAll('article')).toHaveLength(1);
+  });
+
+  it('finds the Zevra story through an artist who is not pictured in the gallery', () => {
+    queryParamMap.next(convertToParamMap({ buscar: 'La Sargantana' }));
+    const fixture = TestBed.createComponent(NewsPageComponent);
+    fixture.detectChanges();
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(root.querySelector('[data-testid="news-card-zevra-2026-first-day"]')).not.toBeNull();
+    expect(root.querySelectorAll('article')).toHaveLength(1);
   });
 
   it('finds the Latin Fest story by a music-style synonym', () => {

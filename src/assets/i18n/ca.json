@@ -858,47 +858,85 @@
       "galleryEyebrow": "Des del recinte",
       "backToNews": "Tornar a Notícies"
     },
-  "articles": {
-    "latinFestValencia2026": {
-      "title": "Latin Fest ompli València de música urbana durant dos dies",
-      "summary": "Latin Fest va estrenar el format de dues jornades a l'Estadi Ciutat de València. Beéle, ROA i Kris R van marcar el divendres; Mora, Omar Courtz, Kapo i Pirlo van prendre el relleu el dissabte.",
-      "city": "València",
-      "category": "Música urbana llatina",
-      "searchGenres": "música urbana llatina reggaeton trap llatí afrobeat dancehall pop llatí",
-      "publishedLabel": "21 juliol 2026",
-      "seoTitle": "Latin Fest València: dos dies de música urbana | TuriaFest",
-      "seoDescription": "Latin Fest va estrenar dues jornades a l'Estadi Ciutat de València amb Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo i Pirlo.",
-      "coverAlt": "Artista de Latin Fest canta amb barret blanc davant d'un escenari il·luminat en roig",
-      "coverCaption": "Latin Fest va reunir dues jornades de música urbana a l'Estadi Ciutat de València els dies 17 i 18 de juliol.",
-      "highlight": "En passar d'una sola data a dues jornades, Latin Fest va poder donar a cada cartell el seu propi ritme sense perdre la sensació d'una celebració compartida.",
-      "sections": {
-        "newStage": {
-          "heading": "Un estadi per a obrir una etapa nova",
-          "paragraph1": "Latin Fest va començar el 17 de juliol una edició diferent de totes les anteriors a València. El festival va deixar arrere l'Auditori Marina Sud, es va instal·lar a l'Estadi Ciutat de València i va ampliar la programació a dos dies consecutius.",
-          "paragraph2": "Cada jornada es va estendre des de les cinc de la vesprada fins a la una de la matinada. El format d'estadi va donar més profunditat als visuals, al cos de ball i a les bandes, mentre les sessions de DJ enllaçaven els directes i mantenien el pols entre canvis d'escenari."
+    "articles": {
+      "latinFest2027Registration": {
+        "title": "Latin Fest obri el registre per a 2027 a València i Benidorm",
+        "summary": "Latin Fest ha activat dos registres per a accedir al llançament de 500 entrades early bird per edició. El termini acaba el 2 d'agost a les 23.59 i València ja mira cap al desé aniversari.",
+        "city": "València i Benidorm",
+        "category": "Accés anticipat",
+        "searchGenres": "Latin Fest València Benidorm 2027 entrades early bird accés anticipat registre aniversari música urbana llatina reggaeton",
+        "publishedLabel": "25 juliol 2026",
+        "seoTitle": "Latin Fest 2027 obri els registres | TuriaFest",
+        "seoDescription": "Latin Fest obri fins al 2 d'agost el registre per a 500 entrades early bird per edició a València i Benidorm 2027.",
+        "coverAlt": "Cartells de registre de Latin Fest 2027 per a València en taronja i Benidorm en verd",
+        "coverCaption": "Les campanyes de València i Benidorm comparteixen tancament: el 2 d'agost a les 23.59.",
+        "imageCredit": "Dissenys: Latin Fest",
+        "highlight": "El primer moviment de Latin Fest 2027 arriba abans que les dates i el cartell: dos registres, un per ciutat, i una finestra comuna d'accés anticipat.",
+        "sections": {
+          "launch": {
+            "heading": "Dos registres amb una mateixa data límit",
+            "paragraph1": "Latin Fest ha posat en marxa dues convocatòries independents per a les cites de València i Benidorm en 2027. L'organització distribueix l'accés des del perfil oficial d'Instagram: cada publicació activa un enllaç per missatge directe en deixar la paraula indicada, i els dos formularis també estan disponibles des de la biografia del festival.",
+            "paragraph2": "Tots dos anuncis fixen el tancament el 2 d'agost a les 23.59 i reserven el llançament a un contingent de 500 entrades early bird per edició. Les peces presenten este tram com el preu més baix de l'any, encara que no detallen l'import de les entrades ni les condicions completes de la venda."
+          },
+          "valencia": {
+            "heading": "València prepara el desé aniversari",
+            "paragraph1": "La campanya de València incorpora la primera dada pròpia de la pròxima edició: Latin Fest celebrarà en 2027 el desé aniversari. L'anunci obri així una nova temporada del festival sense avançar encara les dates, el recinte ni els artistes que formaran part del cartell.",
+            "paragraph2": "Per a rebre l'enllaç d'esta convocatòria, la publicació demana comentar «ANIVERSARIO». El registre funciona com a porta d'entrada al llançament promocional i no substituïx la compra posterior, que continuarà condicionada per la disponibilitat del contingent anunciat."
+          },
+          "benidorm": {
+            "heading": "Benidorm obri el seu propi accés",
+            "paragraph1": "Benidorm compta amb una campanya i un formulari diferenciats. En este cas, la paraula sol·licitada en la publicació és «REGISTRO», amb el mateix tancament del 2 d'agost i un altre contingent anunciat de 500 entrades early bird a preu promocional.",
+            "paragraph2": "L'organització planteja l'obertura com a continuïtat de l'edició acabada de celebrar, però encara no ha comunicat les dates, el recinte ni el cartell de Benidorm 2027. Fins que arriben eixos anuncis, el que està confirmat és l'accés anticipat i la necessitat d'utilitzar el registre corresponent a cada ciutat."
+          }
         },
-        "friday": {
-          "heading": "Divendres: tres veus per a estrenar el format",
-          "paragraph1": "Beéle, ROA i Kris R van repartir el pes de la primera data. El cartell va viatjar entre melodies caribenyes, reggaeton i trap sense tractar el divendres com una avantsala: la jornada va tindre identitat pròpia des de les primeres hores fins al tram nocturn.",
-          "paragraph2": "La producció va acompanyar eixe recorregut amb canvis constants de color, pantalles de gran format i músics en directe. Entre actuació i actuació, els DJ van mantindre la pista en moviment i van evitar que l'energia es reiniciara amb cada relleu."
-        },
-        "saturday": {
-          "heading": "Dissabte: el relleu puja la intensitat",
-          "paragraph1": "La segona jornada va canviar de repartiment amb Mora, Omar Courtz, Kapo i Pirlo. Les seues propostes van ampliar el recorregut del festival des del pop urbà i els ritmes afrocaribenys fins al reggaeton i el trap porto-riqueny i colombià.",
-          "paragraph2": "Amb la caiguda de la nit, la posada en escena va guanyar volum: grans elements inflables, feixos de llum sobre el públic i una producció visual que ocupava tot el fons de l'estadi. El dissabte va tancar així un cap de setmana que va convertir l'ampliació de Latin Fest en alguna cosa més que una suma de concerts: dues jornades diferents dins d'una mateixa cita urbana."
+        "gallery": {
+          "title": "Dues ciutats, dues convocatòries",
+          "valenciaAlt": "Disseny oficial de Latin Fest València 2027 amb el termini de registre en una pantalla",
+          "valenciaCaption": "La convocatòria de València anticipa el desé aniversari de Latin Fest.",
+          "benidormAlt": "Disseny oficial de Latin Fest Benidorm 2027 en verd amb el termini de registre",
+          "benidormCaption": "Benidorm disposa d'un registre separat amb el mateix tancament de la promoció."
         }
       },
-      "gallery": {
-        "title": "Dos dies de Latin Fest, des de la pista",
-        "fridayOpeningAlt": "Cantant de Latin Fest actua amb ulleres roges i micròfon durant la primera jornada",
-        "fridayStageAlt": "Dos artistes comparteixen l'escenari de Latin Fest entre fum i llums violetes",
-        "fridayCloseAlt": "Vocalista de Latin Fest canta davant d'una pantalla de gran format durant el divendres",
-        "saturdayOpeningAlt": "Cantant i guitarrista actuen sota il·luminació roja en la segona jornada de Latin Fest",
-        "saturdayNightAlt": "Artista de Latin Fest sosté una bandera d'Espanya entre llums verdes i visuals roses",
-        "finalAlt": "Cantant interpreta el tancament de Latin Fest entre fum, làsers i una gran escenografia rosa"
-      }
-    },
-    "reveFest2026": {
+      "latinFestValencia2026": {
+        "title": "Latin Fest ompli València de música urbana durant dos dies",
+        "summary": "Latin Fest va estrenar el format de dues jornades a l'Estadi Ciutat de València. Beéle, ROA i Kris R van marcar el divendres; Mora, Omar Courtz, Kapo i Pirlo van prendre el relleu el dissabte.",
+        "city": "València",
+        "category": "Música urbana llatina",
+        "searchGenres": "música urbana llatina reggaeton trap llatí afrobeat dancehall pop llatí",
+        "publishedLabel": "21 juliol 2026",
+        "seoTitle": "Latin Fest València: dos dies de música urbana | TuriaFest",
+        "seoDescription": "Latin Fest va estrenar dues jornades a l'Estadi Ciutat de València amb Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo i Pirlo.",
+        "coverAlt": "Artista de Latin Fest canta amb barret blanc davant d'un escenari il·luminat en roig",
+        "coverCaption": "Latin Fest va reunir dues jornades de música urbana a l'Estadi Ciutat de València els dies 17 i 18 de juliol.",
+        "highlight": "En passar d'una sola data a dues jornades, Latin Fest va poder donar a cada cartell el seu propi ritme sense perdre la sensació d'una celebració compartida.",
+        "sections": {
+          "newStage": {
+            "heading": "Un estadi per a obrir una etapa nova",
+            "paragraph1": "Latin Fest va començar el 17 de juliol una edició diferent de totes les anteriors a València. El festival va deixar arrere l'Auditori Marina Sud, es va instal·lar a l'Estadi Ciutat de València i va ampliar la programació a dos dies consecutius.",
+            "paragraph2": "Cada jornada es va estendre des de les cinc de la vesprada fins a la una de la matinada. El format d'estadi va donar més profunditat als visuals, al cos de ball i a les bandes, mentre les sessions de DJ enllaçaven els directes i mantenien el pols entre canvis d'escenari."
+          },
+          "friday": {
+            "heading": "Divendres: tres veus per a estrenar el format",
+            "paragraph1": "Beéle, ROA i Kris R van repartir el pes de la primera data. El cartell va viatjar entre melodies caribenyes, reggaeton i trap sense tractar el divendres com una avantsala: la jornada va tindre identitat pròpia des de les primeres hores fins al tram nocturn.",
+            "paragraph2": "La producció va acompanyar eixe recorregut amb canvis constants de color, pantalles de gran format i músics en directe. Entre actuació i actuació, els DJ van mantindre la pista en moviment i van evitar que l'energia es reiniciara amb cada relleu."
+          },
+          "saturday": {
+            "heading": "Dissabte: el relleu puja la intensitat",
+            "paragraph1": "La segona jornada va canviar de repartiment amb Mora, Omar Courtz, Kapo i Pirlo. Les seues propostes van ampliar el recorregut del festival des del pop urbà i els ritmes afrocaribenys fins al reggaeton i el trap porto-riqueny i colombià.",
+            "paragraph2": "Amb la caiguda de la nit, la posada en escena va guanyar volum: grans elements inflables, feixos de llum sobre el públic i una producció visual que ocupava tot el fons de l'estadi. El dissabte va tancar així un cap de setmana que va convertir l'ampliació de Latin Fest en alguna cosa més que una suma de concerts: dues jornades diferents dins d'una mateixa cita urbana."
+          }
+        },
+        "gallery": {
+          "title": "Dos dies de Latin Fest, des de la pista",
+          "fridayOpeningAlt": "Cantant de Latin Fest actua amb ulleres roges i micròfon durant la primera jornada",
+          "fridayStageAlt": "Dos artistes comparteixen l'escenari de Latin Fest entre fum i llums violetes",
+          "fridayCloseAlt": "Vocalista de Latin Fest canta davant d'una pantalla de gran format durant el divendres",
+          "saturdayOpeningAlt": "Cantant i guitarrista actuen sota il·luminació roja en la segona jornada de Latin Fest",
+          "saturdayNightAlt": "Artista de Latin Fest sosté una bandera d'Espanya entre llums verdes i visuals roses",
+          "finalAlt": "Cantant interpreta el tancament de Latin Fest entre fum, làsers i una gran escenografia rosa"
+        }
+      },
+      "reveFest2026": {
         "title": "Reve Fest debuta a València amb música urbana per a hospitals",
         "summary": "El festival va estrenar la primera edició amb sis directes i diverses sessions de DJ. La recaptació permetrà impulsar nous microconcerts de Músicos por la Salud en hospitals i centres sociosanitaris.",
         "city": "València",

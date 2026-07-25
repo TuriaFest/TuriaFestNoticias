@@ -49,47 +49,135 @@
       "galleryEyebrow": "Desde el recinto",
       "backToNews": "Volver a Noticias"
     },
-  "articles": {
-    "latinFestValencia2026": {
-      "title": "Latin Fest llena Valencia de música urbana durante dos días",
-      "summary": "Latin Fest estrenó su formato de dos jornadas en el Estadi Ciutat de València. Beéle, ROA y Kris R marcaron el viernes; Mora, Omar Courtz, Kapo y Pirlo tomaron el relevo el sábado.",
-      "city": "Valencia",
-      "category": "Música urbana latina",
-      "searchGenres": "música urbana latina reguetón reggaeton trap latino afrobeat dancehall pop latino",
-      "publishedLabel": "21 julio 2026",
-      "seoTitle": "Latin Fest Valencia: dos días de música urbana | TuriaFest",
-      "seoDescription": "Latin Fest estrenó dos jornadas en el Estadi Ciutat de València con Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo y Pirlo.",
-      "coverAlt": "Artista de Latin Fest canta con sombrero blanco ante un escenario iluminado en rojo",
-      "coverCaption": "Latin Fest reunió dos jornadas de música urbana en el Estadi Ciutat de València los días 17 y 18 de julio.",
-      "highlight": "Al pasar de una sola fecha a dos jornadas, Latin Fest pudo dar a cada cartel su propio ritmo sin perder la sensación de una celebración compartida.",
-      "sections": {
-        "newStage": {
-          "heading": "Un estadio para abrir una etapa nueva",
-          "paragraph1": "Latin Fest comenzó el 17 de julio una edición diferente a todas las anteriores en Valencia. El festival dejó atrás el Auditorio Marina Sur, se instaló en el Estadi Ciutat de València y amplió su programación a dos días consecutivos.",
-          "paragraph2": "Cada jornada se extendió desde las cinco de la tarde hasta la una de la madrugada. El formato de estadio dio más profundidad a los visuales, al cuerpo de baile y a las bandas, mientras las sesiones de DJ enlazaban los directos y mantenían el pulso entre cambios de escenario."
+    "articles": {
+      "zevra2026FirstDay": {
+        "title": "Zevra 2026 abre en Cullera con Nicky Jam y JC Reyes",
+        "summary": "El quinto aniversario de Zevra arrancó el viernes 24 de julio en la playa de Cullera con 41 actuaciones repartidas en siete espacios. La galería recoge los directos de Nicky Jam y JC Reyes; la programación completa sumó muchas más voces y sesiones.",
+        "city": "Cullera",
+        "category": "Crónica de festival",
+        "searchGenres": "Zevra 2026 Cullera primera jornada viernes 24 julio Nicky Jam JC Reyes Totote Leire Martínez Shark Arnny Montana King África Carliitos Jose de las Heras Mar Lucas Gil Chimeno Dumore Juan Valiente Moya Santi Bertomeu Rajobos Nev Dany Asensi Danigo Jordi Sanz Hidalgo Maggie Enygma Jaime Bermejo Jayxme Barce Fercho Energy Danny Mad Joel Moreno Los Liaos Txarandonga DJ Joel No Ni Qué Va De Bo Osuna G El Truc Tot A Una DJ Lluís SB El Tinglao Manxisa La Sargantana La Jarranga Klandestina Tere Ling Azhar Lucia Gea DJs Comunidad Zevra música urbana reguetón pop electrónica",
+        "publishedLabel": "25 julio 2026",
+        "seoTitle": "Zevra 2026: primera jornada en Cullera | TuriaFest",
+        "seoDescription": "Zevra 2026 abre en Cullera con Nicky Jam y JC Reyes en imágenes y otras 39 actuaciones repartidas entre siete escenarios.",
+        "coverAlt": "Composición de Nicky Jam bajo luces rojas y JC Reyes bajo iluminación verde en Zevra 2026",
+        "coverCaption": "Nicky Jam y JC Reyes actuaron en la primera jornada de Zevra 2026, el viernes 24 de julio en Cullera.",
+        "sections": {
+          "opening": {
+            "heading": "La quinta edición arranca frente al Mediterráneo",
+            "paragraph1": "Zevra abrió el viernes 24 de julio su quinta edición en el recinto de la playa de Cullera. El horario oficial distribuyó 41 actuaciones entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo y Church Club, con música desde la tarde hasta las seis de la mañana.",
+            "paragraph2": "El festival mantiene su programación hasta el domingo 26, dentro de una edición anunciada del 24 al 27 de julio. La primera jornada cruzó música urbana, pop y electrónica, combinando directos, sesiones de DJ y encuentros entre colectivos en varios escenarios simultáneos."
+          },
+          "photos": {
+            "heading": "Nicky Jam y JC Reyes, en imágenes",
+            "paragraph1": "Las fotografías disponibles se concentran en dos tramos del Negrita Stage. Nicky Jam aparece con camiseta blanca, gorra y un micrófono dorado, recortado por visuales rojas; horas después, JC Reyes cambia la paleta a verdes y violetas, con llamaradas puntuales en el frente del escenario.",
+            "paragraph2": "La galería no pretende representar todo el cartel: documenta únicamente esas dos actuaciones porque son las únicas de las que se han facilitado imágenes. El resto de artistas que formaron parte del viernes también figura a continuación, agrupado según el horario oficial."
+          },
+          "mainStages": {
+            "heading": "Nueve actuaciones entre Negrita y Cutty Sark",
+            "paragraph1": "El Negrita Stage programó a Totote, Nicky Jam, Leire Martínez, JC Reyes y el cierre conjunto de Shark y Arnny Montana. Entre los cambios de escenario, la programación incluyó además la ceremonia de apertura de Zevra, pero esta crónica contabiliza los cinco pases artísticos anunciados.",
+            "paragraph2": "En el Cutty Sark Stage actuaron King África, Carliitos, Jose de las Heras y Mar Lucas. Sus horarios se alternaron con el principal, ampliando la noche con perfiles de directo y sesiones de DJ."
+          },
+          "arcadeBeyond": {
+            "heading": "De Arcade Land a Beyond",
+            "paragraph1": "Arcade Land by Vibra Mahou reunió a Gil, Chimeno, Dumore, Juan Valiente, Moya, Santi Bertomeu, Rajobos & Nev y Dany Asensi.",
+            "paragraph2": "El Beyond by Pepsi encadenó a Danigo, Jordi Sanz, Hidalgo, Maggie, Enygma B2B Jaime Bermejo, Jayxme, Barce, Fercho Energy y Danny Mad."
+          },
+          "lateStages": {
+            "heading": "Dharma, The Club y Church Club completan el viernes",
+            "paragraph1": "En Dharma Cutty Sark se sucedieron Joel Moreno, Los Liaos vs Txarandonga, DJ Joel, No Ni Qué vs Va De Bo, Osuna G, El Truc vs Tot A Una, DJ Lluís SB, El Tinglao vs Manxisa, DJ Joel Moreno y La Sargantana vs La Jarranga.",
+            "paragraph2": "The Club by Vertigo Plata o Plomo contó con Klandestina, Tere Ling, Azhar y Lucia Gea. El Church Club completó el viernes con DJs Comunidad Zevra, una sesión colectiva programada de 22:00 a 4:00."
+          }
         },
-        "friday": {
-          "heading": "Viernes: tres voces para estrenar el formato",
-          "paragraph1": "Beéle, ROA y Kris R repartieron el peso de la primera fecha. El cartel viajó entre melodías caribeñas, reguetón y trap sin tratar el viernes como una antesala: la jornada tuvo identidad propia desde las primeras horas hasta el tramo nocturno.",
-          "paragraph2": "La producción acompañó ese recorrido con cambios constantes de color, pantallas de gran formato y músicos en directo. Entre actuación y actuación, los DJ mantuvieron la pista en movimiento y evitaron que la energía se reiniciara con cada relevo."
-        },
-        "saturday": {
-          "heading": "Sábado: el relevo sube la intensidad",
-          "paragraph1": "La segunda jornada cambió de reparto con Mora, Omar Courtz, Kapo y Pirlo. Sus propuestas ampliaron el recorrido del festival desde el pop urbano y los ritmos afrocaribeños hasta el reguetón y el trap puertorriqueño y colombiano.",
-          "paragraph2": "Con la caída de la noche, la puesta en escena ganó volumen: grandes elementos inflables, haces de luz sobre el público y una producción visual que ocupaba todo el fondo del estadio. El sábado cerró así un fin de semana que convirtió la ampliación de Latin Fest en algo más que una suma de conciertos: dos jornadas distintas dentro de una misma cita urbana."
+        "gallery": {
+          "title": "Nicky Jam y JC Reyes, desde el Negrita Stage",
+          "nickyJamWideAlt": "Nicky Jam canta en el Negrita Stage de Zevra bajo iluminación roja",
+          "nickyJamPortraitAlt": "Nicky Jam sostiene el micrófono durante su actuación en Zevra 2026",
+          "nickyJamRedAlt": "Nicky Jam actúa ante las pantallas rojas del escenario principal de Zevra",
+          "nickyJamLightsAlt": "Nicky Jam alza un brazo frente a los focos del Negrita Stage",
+          "jcReyesFlameAlt": "JC Reyes recorre el escenario de Zevra con una llamarada al fondo",
+          "jcReyesCloseAlt": "JC Reyes canta con un micrófono verde bajo una luz violeta",
+          "jcReyesGreenAlt": "JC Reyes señala al público durante su actuación iluminada en verde",
+          "jcReyesPurpleAlt": "JC Reyes canta en primer plano bajo la iluminación violeta del escenario"
         }
       },
-      "gallery": {
-        "title": "Dos días de Latin Fest, desde la pista",
-        "fridayOpeningAlt": "Cantante de Latin Fest actúa con gafas rojas y micrófono durante la primera jornada",
-        "fridayStageAlt": "Dos artistas comparten el escenario de Latin Fest entre humo y luces violetas",
-        "fridayCloseAlt": "Vocalista de Latin Fest canta ante una pantalla de gran formato durante el viernes",
-        "saturdayOpeningAlt": "Cantante y guitarrista actúan bajo iluminación roja en la segunda jornada de Latin Fest",
-        "saturdayNightAlt": "Artista de Latin Fest sostiene una bandera de España entre luces verdes y visuales rosas",
-        "finalAlt": "Cantante interpreta el cierre de Latin Fest entre humo, láseres y una gran escenografía rosa"
-      }
-    },
-    "reveFest2026": {
+      "latinFest2027Registration": {
+        "title": "Latin Fest abre el registro para 2027 en Valencia y Benidorm",
+        "summary": "Latin Fest ha activado dos registros para acceder al lanzamiento de 500 entradas early bird por edición. El plazo termina el 2 de agosto a las 23:59 y Valencia ya mira a su décimo aniversario.",
+        "city": "Valencia y Benidorm",
+        "category": "Acceso anticipado",
+        "searchGenres": "Latin Fest Valencia Benidorm 2027 entradas early bird acceso anticipado registro aniversario música urbana latina reguetón reggaeton",
+        "publishedLabel": "25 julio 2026",
+        "seoTitle": "Latin Fest 2027 abre sus registros | TuriaFest",
+        "seoDescription": "Latin Fest abre hasta el 2 de agosto el registro para 500 entradas early bird por edición en Valencia y Benidorm 2027.",
+        "coverAlt": "Carteles de registro de Latin Fest 2027 para Valencia en naranja y Benidorm en verde",
+        "coverCaption": "Las campañas de Valencia y Benidorm comparten cierre: el 2 de agosto a las 23:59.",
+        "imageCredit": "Artes: Latin Fest",
+        "highlight": "El primer movimiento de Latin Fest 2027 llega antes que las fechas y el cartel: dos registros, uno por ciudad, y una ventana común de acceso anticipado.",
+        "sections": {
+          "launch": {
+            "heading": "Dos registros con una misma fecha límite",
+            "paragraph1": "Latin Fest ha puesto en marcha dos convocatorias independientes para sus citas de Valencia y Benidorm en 2027. La organización distribuye el acceso desde su perfil oficial de Instagram: cada publicación activa un enlace por mensaje directo al dejar la palabra indicada, y los dos formularios también están disponibles desde la biografía del festival.",
+            "paragraph2": "Ambos anuncios fijan el cierre el 2 de agosto a las 23:59 y reservan su lanzamiento a un cupo de 500 entradas early bird por edición. Las piezas presentan ese tramo como el precio más bajo del año, aunque todavía no detallan el importe de las entradas ni las condiciones completas de la venta."
+          },
+          "valencia": {
+            "heading": "Valencia prepara su décimo aniversario",
+            "paragraph1": "La campaña de Valencia añade el primer dato propio de la próxima edición: Latin Fest celebrará en 2027 su décimo aniversario. El anuncio abre así una nueva temporada del festival sin adelantar todavía las fechas, el recinto ni los artistas que formarán parte del cartel.",
+            "paragraph2": "Para recibir el enlace de esta convocatoria, la publicación pide comentar «ANIVERSARIO». El registro funciona como puerta de entrada al lanzamiento promocional y no sustituye la compra posterior, que seguirá condicionada por la disponibilidad del cupo anunciado."
+          },
+          "benidorm": {
+            "heading": "Benidorm abre su propio acceso",
+            "paragraph1": "Benidorm cuenta con una campaña y un formulario diferenciados. En este caso, la palabra solicitada en la publicación es «REGISTRO», con el mismo cierre del 2 de agosto y otro cupo anunciado de 500 entradas early bird a precio promocional.",
+            "paragraph2": "La organización plantea la apertura como continuidad de la edición recién celebrada, pero aún no ha comunicado las fechas, el recinto ni el cartel de Benidorm 2027. Hasta que lleguen esos anuncios, lo confirmado es el acceso anticipado y la necesidad de utilizar el registro correspondiente a cada ciudad."
+          }
+        },
+        "gallery": {
+          "title": "Dos ciudades, dos convocatorias",
+          "valenciaAlt": "Arte oficial de Latin Fest Valencia 2027 con el plazo de registro en una pantalla",
+          "valenciaCaption": "La convocatoria de Valencia anticipa el décimo aniversario de Latin Fest.",
+          "benidormAlt": "Arte oficial de Latin Fest Benidorm 2027 en verde con el plazo de registro",
+          "benidormCaption": "Benidorm dispone de un registro separado con el mismo cierre de la promoción."
+        }
+      },
+      "latinFestValencia2026": {
+        "title": "Latin Fest llena Valencia de música urbana durante dos días",
+        "summary": "Latin Fest estrenó su formato de dos jornadas en el Estadi Ciutat de València. Beéle, ROA y Kris R marcaron el viernes; Mora, Omar Courtz, Kapo y Pirlo tomaron el relevo el sábado.",
+        "city": "Valencia",
+        "category": "Música urbana latina",
+        "searchGenres": "música urbana latina reguetón reggaeton trap latino afrobeat dancehall pop latino",
+        "publishedLabel": "21 julio 2026",
+        "seoTitle": "Latin Fest Valencia: dos días de música urbana | TuriaFest",
+        "seoDescription": "Latin Fest estrenó dos jornadas en el Estadi Ciutat de València con Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo y Pirlo.",
+        "coverAlt": "Artista de Latin Fest canta con sombrero blanco ante un escenario iluminado en rojo",
+        "coverCaption": "Latin Fest reunió dos jornadas de música urbana en el Estadi Ciutat de València los días 17 y 18 de julio.",
+        "highlight": "Al pasar de una sola fecha a dos jornadas, Latin Fest pudo dar a cada cartel su propio ritmo sin perder la sensación de una celebración compartida.",
+        "sections": {
+          "newStage": {
+            "heading": "Un estadio para abrir una etapa nueva",
+            "paragraph1": "Latin Fest comenzó el 17 de julio una edición diferente a todas las anteriores en Valencia. El festival dejó atrás el Auditorio Marina Sur, se instaló en el Estadi Ciutat de València y amplió su programación a dos días consecutivos.",
+            "paragraph2": "Cada jornada se extendió desde las cinco de la tarde hasta la una de la madrugada. El formato de estadio dio más profundidad a los visuales, al cuerpo de baile y a las bandas, mientras las sesiones de DJ enlazaban los directos y mantenían el pulso entre cambios de escenario."
+          },
+          "friday": {
+            "heading": "Viernes: tres voces para estrenar el formato",
+            "paragraph1": "Beéle, ROA y Kris R repartieron el peso de la primera fecha. El cartel viajó entre melodías caribeñas, reguetón y trap sin tratar el viernes como una antesala: la jornada tuvo identidad propia desde las primeras horas hasta el tramo nocturno.",
+            "paragraph2": "La producción acompañó ese recorrido con cambios constantes de color, pantallas de gran formato y músicos en directo. Entre actuación y actuación, los DJ mantuvieron la pista en movimiento y evitaron que la energía se reiniciara con cada relevo."
+          },
+          "saturday": {
+            "heading": "Sábado: el relevo sube la intensidad",
+            "paragraph1": "La segunda jornada cambió de reparto con Mora, Omar Courtz, Kapo y Pirlo. Sus propuestas ampliaron el recorrido del festival desde el pop urbano y los ritmos afrocaribeños hasta el reguetón y el trap puertorriqueño y colombiano.",
+            "paragraph2": "Con la caída de la noche, la puesta en escena ganó volumen: grandes elementos inflables, haces de luz sobre el público y una producción visual que ocupaba todo el fondo del estadio. El sábado cerró así un fin de semana que convirtió la ampliación de Latin Fest en algo más que una suma de conciertos: dos jornadas distintas dentro de una misma cita urbana."
+          }
+        },
+        "gallery": {
+          "title": "Dos días de Latin Fest, desde la pista",
+          "fridayOpeningAlt": "Cantante de Latin Fest actúa con gafas rojas y micrófono durante la primera jornada",
+          "fridayStageAlt": "Dos artistas comparten el escenario de Latin Fest entre humo y luces violetas",
+          "fridayCloseAlt": "Vocalista de Latin Fest canta ante una pantalla de gran formato durante el viernes",
+          "saturdayOpeningAlt": "Cantante y guitarrista actúan bajo iluminación roja en la segunda jornada de Latin Fest",
+          "saturdayNightAlt": "Artista de Latin Fest sostiene una bandera de España entre luces verdes y visuales rosas",
+          "finalAlt": "Cantante interpreta el cierre de Latin Fest entre humo, láseres y una gran escenografía rosa"
+        }
+      },
+      "reveFest2026": {
         "title": "Reve Fest debuta en Valencia con música urbana para hospitales",
         "summary": "El festival estrenó su primera edición con seis directos y varias sesiones de DJ. La recaudación permitirá impulsar nuevos microconciertos de Músicos por la Salud en hospitales y centros sociosanitarios.",
         "city": "Valencia",

@@ -1,4 +1,9 @@
-import { NgOptimizedImage } from '@angular/common';
+import {
+  IMAGE_LOADER,
+  NgOptimizedImage,
+  type ImageLoader,
+  type ImageLoaderConfig,
+} from '@angular/common';
 import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
@@ -13,11 +18,17 @@ const LANGUAGE_TAGS: Readonly<Record<string, string>> = {
   en: 'en-GB',
 };
 
+const NEWS_IMAGE_LOADER: ImageLoader = ({ src, width, loaderParams }: ImageLoaderConfig) => {
+  const sources = loaderParams?.['sources'] as Readonly<Record<number, string>> | undefined;
+  return width === undefined ? src : (sources?.[width] ?? src);
+};
+
 @Component({
   selector: 'fv-news-article-page',
   imports: [NgOptimizedImage, RouterLink, TranslatePipe],
   templateUrl: './news-article.page.html',
   styleUrl: './news-article.page.scss',
+  providers: [{ provide: IMAGE_LOADER, useValue: NEWS_IMAGE_LOADER }],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsArticlePageComponent {

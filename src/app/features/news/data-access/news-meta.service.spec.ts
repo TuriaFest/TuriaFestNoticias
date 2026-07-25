@@ -32,13 +32,16 @@ describe('NewsMetaService', () => {
     const canonical = document.head.querySelector<HTMLLinkElement>('[data-fv-news-canonical]');
     const script = document.head.querySelector<HTMLScriptElement>('[data-fv-news-jsonld]');
     const schema = JSON.parse(script?.textContent ?? '{}') as {
-      '@graph'?: readonly { '@type'?: string; citation?: string }[];
+      '@graph'?: readonly { '@type'?: string; citation?: string | readonly string[] }[];
     };
     const newsArticle = schema['@graph']?.find((entry) => entry['@type'] === 'NewsArticle');
 
     expect(document.head.querySelectorAll('[data-fv-news-canonical]')).toHaveLength(1);
     expect(canonical?.href).toContain(`/noticias/${article.slug}`);
-    expect(newsArticle?.citation).toBe(article.source.url);
+    expect(newsArticle?.citation).toEqual([
+      article.source.url,
+      ...(article.source.additionalUrls ?? []),
+    ]);
   });
 
   it('removes article-only metadata when returning to the listing', () => {

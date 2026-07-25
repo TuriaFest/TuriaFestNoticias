@@ -2,10 +2,16 @@ import type { TranslationKey } from '@shared/data-access/i18n/translations';
 
 export interface NewsArticleImage {
   readonly src: string;
+  readonly responsive?: Readonly<{
+    srcset: string;
+    sizes: string;
+    sources: Readonly<Record<number, string>>;
+  }>;
   readonly width: number;
   readonly height: number;
   readonly altKey: TranslationKey;
   readonly captionKey?: TranslationKey;
+  readonly creditKey?: TranslationKey;
 }
 
 export interface NewsArticleSection {
@@ -30,11 +36,12 @@ export interface NewsArticle {
   readonly cover: NewsArticleImage;
   readonly cardImage: NewsArticleImage;
   readonly socialImage: NewsArticleImage;
-  readonly highlightKey: TranslationKey;
+  readonly highlightKey?: TranslationKey;
   readonly sections: readonly NewsArticleSection[];
   readonly galleryTitleKey: TranslationKey;
   readonly gallery: readonly NewsArticleImage[];
   readonly source: Readonly<{
     url: string;
+    additionalUrls?: readonly string[];
   }>;
 }
