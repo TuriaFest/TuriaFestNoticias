@@ -50,6 +50,56 @@
       "backToNews": "Volver a Noticias"
     },
     "articles": {
+      "zevra2026SecondDay": {
+        "title": "Zevra 2026 vive su segunda jornada con Ozuna, Omar Montes y Luar La L",
+        "summary": "La segunda jornada de Zevra reunió el sábado 25 de julio 39 actuaciones repartidas en siete espacios de la playa de Cullera. La galería recorre los directos de Omar Montes, Ozuna y Luar La L.",
+        "city": "Cullera",
+        "category": "Crónica de festival",
+        "searchGenres": "Zevra 2026 Cullera segunda jornada sábado 25 julio Ozuna Omar Montes Luar La L J.Beren La La Love You Saiko Ovy On The Drums Alvama Ice Samurái Camin Lorna Xiyo Fernandezz Mónica Mara Space Elephants Funzo Helen Krhu Zafiro DJ Noex Mike Adrian Denniz R.Flow Sweet Suárez Juanjo García Ivan Ortiz Darío Huerta Cande Gariso Albert González YX3 Lucia Reina Selecta D Basto Gea Brenda Serna Parkineos Mareels Paula Fields Xune Fran Hernández Paskman DJs Comunidad Zevra música urbana reguetón trap pop electrónica",
+        "publishedLabel": "26 julio 2026",
+        "seoTitle": "Zevra 2026: Ozuna y Omar Montes en el día 2 | TuriaFest",
+        "seoDescription": "Zevra 2026 reúne a Ozuna, Omar Montes y Luar La L en su segunda jornada en Cullera, con 39 actuaciones repartidas entre siete espacios.",
+        "coverAlt": "Composición de Omar Montes, Ozuna y Luar La L actuando en la segunda jornada de Zevra 2026",
+        "coverCaption": "Omar Montes, Ozuna y Luar La L actuaron el sábado 25 de julio en Zevra 2026.",
+        "sections": {
+          "opening": {
+            "heading": "El sábado multiplica la actividad frente al mar",
+            "paragraph1": "Zevra encaró el sábado 25 de julio su segunda jornada en la playa de Cullera. El horario oficial reunió 39 pases artísticos entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo y Church Club, con programación desde las cinco de la tarde hasta las seis de la mañana.",
+            "paragraph2": "La noche combinó grandes directos urbanos, pop, trap y sesiones electrónicas en varios escenarios simultáneos. Ozuna ocupó el tramo central del Negrita Stage, mientras el resto del recinto mantuvo propuestas paralelas hasta los últimos cierres de la madrugada."
+          },
+          "photos": {
+            "heading": "Omar Montes, Ozuna y Luar La L, en imágenes",
+            "paragraph1": "Las fotografías disponibles siguen tres momentos del sábado. Omar Montes aparece todavía bajo la luz cálida del atardecer; Ozuna cambia la escena a azules y violetas con gorra roja y chaqueta clara; Luar La L queda recortado después contra un escenario oscuro, entre humo y focos rojos.",
+            "paragraph2": "La galería documenta únicamente esas tres actuaciones porque son las únicas de las que se han facilitado fotografías identificables. El resto de artistas y sesiones que formaron parte de la jornada también se recoge a continuación, agrupado según el horario oficial."
+          },
+          "mainStages": {
+            "heading": "Once pases entre Negrita y Cutty Sark",
+            "paragraph1": "El Negrita Stage programó a J.Beren, Omar Montes, La La Love You, Ozuna, Saiko, Ovy On The Drums y Alvama Ice. El horario incluyó además una ceremonia antes de Ozuna, pero esta crónica contabiliza los siete pases artísticos anunciados en el escenario principal.",
+            "paragraph2": "En el Cutty Sark Stage se sucedieron Samurái, Camin, Lorna y Luar La L. Los cuatro turnos se alternaron con el principal y extendieron la programación urbana desde las nueve de la noche hasta las cuatro de la madrugada."
+          },
+          "arcadeBeyond": {
+            "heading": "Quince sesiones entre Arcade Land y Beyond",
+            "paragraph1": "Arcade Land by Vibra Mahou reunió a Xiyo y Fernandezz, Mónica Mara, Space Elephants y Funzo.",
+            "paragraph2": "El Beyond by Pepsi encadenó a Helen Krhu, Zafiro, DJ Noex, Mike & Adrian Denniz, R.Flow, J.Beren, Sweet Suárez, Juanjo García B2B Ivan Ortiz, Darío Huerta, Cande Gariso y Albert González."
+          },
+          "lateStages": {
+            "heading": "Dharma, The Club y Church Club sostienen la madrugada",
+            "paragraph1": "Dharma Cutty Sark programó a YX3, Lucia Reina, Selecta, D Basto, Gea, Brenda Serna y Parkineos. En The Club by Vertigo Plata o Plomo actuaron Mareels, Paula Fields, Xune, Fran Hernández y Paskman.",
+            "paragraph2": "El Church Club completó el mapa del sábado con DJs Comunidad Zevra entre las diez de la noche y las cuatro de la mañana. Con esta sesión colectiva, los tres espacios sumaron trece de los 39 pases artísticos de la jornada."
+          }
+        },
+        "gallery": {
+          "title": "Omar Montes, Ozuna y Luar La L, desde el recinto",
+          "omarMontesAlt": "Omar Montes canta bajo la luz del atardecer durante la segunda jornada de Zevra",
+          "ozunaBlueAlt": "Ozuna se inclina hacia el público bajo iluminación azul en Zevra 2026",
+          "ozunaProfileAlt": "Ozuna canta de perfil con gorra roja y chaqueta clara sobre el escenario",
+          "ozunaArmAlt": "Ozuna alza un brazo durante su actuación del sábado en Zevra",
+          "luarWideAlt": "Luar La L actúa entre humo y focos rojos en un escenario de Zevra",
+          "luarPairAlt": "Luar La L canta acompañado por otro intérprete durante su directo",
+          "luarGestureAlt": "Luar La L hace un gesto al público mientras sostiene el micrófono",
+          "luarCloseAlt": "Luar La L canta en primer plano con gafas y una camiseta negra"
+        }
+      },
       "zevra2026FirstDay": {
         "title": "Zevra 2026 abre en Cullera con Nicky Jam y JC Reyes",
         "summary": "El quinto aniversario de Zevra arrancó el viernes 24 de julio en la playa de Cullera con 41 actuaciones repartidas en siete espacios. La galería recoge los directos de Nicky Jam y JC Reyes; la programación completa sumó muchas más voces y sesiones.",

@@ -980,6 +980,106 @@
           "finalAlt": "Artista actuant entre llums violetes durant el tancament de Reve Fest",
           "finalCaption": "RVFV va posar el tancament a la primera edició del festival."
         }
+      },
+      "zevra2026SecondDay": {
+        "title": "Zevra 2026 viu la seua segona jornada amb Ozuna, Omar Montes i Luar La L",
+        "summary": "La segona jornada de Zevra va reunir dissabte 25 de juliol 39 actuacions repartides en set espais de la platja de Cullera. La galeria recorre els directes d'Omar Montes, Ozuna i Luar La L.",
+        "city": "Cullera",
+        "category": "Crònica de festival",
+        "searchGenres": "Zevra 2026 Cullera segona jornada dissabte 25 juliol Ozuna Omar Montes Luar La L J.Beren La La Love You Saiko Ovy On The Drums Alvama Ice Samurái Camin Lorna Xiyo Fernandezz Mónica Mara Space Elephants Funzo Helen Krhu Zafiro DJ Noex Mike Adrian Denniz R.Flow Sweet Suárez Juanjo García Ivan Ortiz Darío Huerta Cande Gariso Albert González YX3 Lucia Reina Selecta D Basto Gea Brenda Serna Parkineos Mareels Paula Fields Xune Fran Hernández Paskman DJs Comunitat Zevra música urbana reggaeton trap pop electrònica",
+        "publishedLabel": "26 juliol 2026",
+        "seoTitle": "Zevra 2026: Ozuna i Omar Montes en el dia 2 | TuriaFest",
+        "seoDescription": "Zevra 2026 reuneix Ozuna, Omar Montes i Luar La L en la segona jornada a Cullera, amb 39 actuacions repartides entre set espais.",
+        "coverAlt": "Composició d'Omar Montes, Ozuna i Luar La L actuant en la segona jornada de Zevra 2026",
+        "coverCaption": "Omar Montes, Ozuna i Luar La L van actuar dissabte 25 de juliol en Zevra 2026.",
+        "sections": {
+          "opening": {
+            "heading": "El dissabte multiplica l'activitat vora mar",
+            "paragraph1": "Zevra va encarar dissabte 25 de juliol la seua segona jornada a la platja de Cullera. L'horari oficial va reunir 39 passes artístics entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo i Church Club, amb programació des de les cinc de la vesprada fins a les sis del matí.",
+            "paragraph2": "La nit va combinar grans directes urbans, pop, trap i sessions electròniques en diversos escenaris simultanis. Ozuna va ocupar el tram central del Negrita Stage, mentre la resta del recinte va mantindre propostes paral·leles fins als últims tancaments de la matinada."
+          },
+          "photos": {
+            "heading": "Omar Montes, Ozuna i Luar La L, en imatges",
+            "paragraph1": "Les fotografies disponibles segueixen tres moments del dissabte. Omar Montes apareix encara sota la llum càlida del capvespre; Ozuna canvia l'escena a blaus i violetes amb gorra roja i jaqueta clara; Luar La L queda retallat després contra un escenari fosc, entre fum i focus rojos.",
+            "paragraph2": "La galeria documenta únicament aquestes tres actuacions perquè són les úniques de les quals s'han facilitat fotografies identificables. La resta d'artistes i sessions que van formar part de la jornada també es recullen a continuació, agrupats segons l'horari oficial."
+          },
+          "mainStages": {
+            "heading": "Onze passes entre Negrita i Cutty Sark",
+            "paragraph1": "El Negrita Stage va programar J.Beren, Omar Montes, La La Love You, Ozuna, Saiko, Ovy On The Drums i Alvama Ice. L'horari va incloure també una cerimònia abans d'Ozuna, però aquesta crònica comptabilitza els set passes artístics anunciats a l'escenari principal.",
+            "paragraph2": "Al Cutty Sark Stage es van succeir Samurái, Camin, Lorna i Luar La L. Els quatre torns es van alternar amb el principal i van estendre la programació urbana des de les nou de la nit fins a les quatre de la matinada."
+          },
+          "arcadeBeyond": {
+            "heading": "Quinze sessions entre Arcade Land i Beyond",
+            "paragraph1": "Arcade Land by Vibra Mahou va reunir Xiyo y Fernandezz, Mónica Mara, Space Elephants i Funzo.",
+            "paragraph2": "El Beyond by Pepsi va encadenar Helen Krhu, Zafiro, DJ Noex, Mike & Adrian Denniz, R.Flow, J.Beren, Sweet Suárez, Juanjo García B2B Ivan Ortiz, Darío Huerta, Cande Gariso i Albert González."
+          },
+          "lateStages": {
+            "heading": "Dharma, The Club i Church Club sostenen la matinada",
+            "paragraph1": "Dharma Cutty Sark va programar YX3, Lucia Reina, Selecta, D Basto, Gea, Brenda Serna i Parkineos. A The Club by Vertigo Plata o Plomo van actuar Mareels, Paula Fields, Xune, Fran Hernández i Paskman.",
+            "paragraph2": "El Church Club va completar el mapa del dissabte amb DJs Comunitat Zevra entre les deu de la nit i les quatre del matí. Amb aquesta sessió col·lectiva, els tres espais van sumar tretze dels 39 passes artístics de la jornada."
+          }
+        },
+        "gallery": {
+          "title": "Omar Montes, Ozuna i Luar La L, des del recinte",
+          "omarMontesAlt": "Omar Montes canta sota la llum del capvespre durant la segona jornada de Zevra",
+          "ozunaBlueAlt": "Ozuna s'inclina cap al públic sota il·luminació blava en Zevra 2026",
+          "ozunaProfileAlt": "Ozuna canta de perfil amb gorra roja i jaqueta clara sobre l'escenari",
+          "ozunaArmAlt": "Ozuna alça un braç durant la seua actuació del dissabte en Zevra",
+          "luarWideAlt": "Luar La L actua entre fum i focus rojos en un escenari de Zevra",
+          "luarPairAlt": "Luar La L canta acompanyat per un altre intèrpret durant el seu directe",
+          "luarGestureAlt": "Luar La L fa un gest al públic mentre sosté el micròfon",
+          "luarCloseAlt": "Luar La L canta en primer pla amb ulleres i una samarreta negra"
+        }
+      },
+      "zevra2026FirstDay": {
+        "title": "Zevra 2026 obri a Cullera amb Nicky Jam i JC Reyes",
+        "summary": "El cinqué aniversari de Zevra va arrancar divendres 24 de juliol a la platja de Cullera amb 41 actuacions repartides en set espais. La galeria recull els directes de Nicky Jam i JC Reyes; la programació completa va sumar moltes més veus i sessions.",
+        "city": "Cullera",
+        "category": "Crònica de festival",
+        "searchGenres": "Zevra 2026 Cullera primera jornada divendres 24 juliol Nicky Jam JC Reyes Totote Leire Martínez Shark Arnny Montana King África Carliitos Jose de las Heras Mar Lucas Gil Chimeno Dumore Juan Valiente Moya Santi Bertomeu Rajobos Nev Dany Asensi Danigo Jordi Sanz Hidalgo Maggie Enygma Jaime Bermejo Jayxme Barce Fercho Energy Danny Mad Joel Moreno Los Liaos Txarandonga DJ Joel No Ni Qué Va De Bo Osuna G El Truc Tot A Una DJ Lluís SB El Tinglao Manxisa La Sargantana La Jarranga Klandestina Tere Ling Azhar Lucia Gea DJs Comunitat Zevra música urbana reggaeton pop electrònica",
+        "publishedLabel": "25 juliol 2026",
+        "seoTitle": "Zevra 2026: primera jornada a Cullera | TuriaFest",
+        "seoDescription": "Zevra 2026 obri a Cullera amb Nicky Jam i JC Reyes en imatges i altres 39 actuacions repartides entre set escenaris.",
+        "coverAlt": "Composició de Nicky Jam sota llums roges i JC Reyes sota il·luminació verda en Zevra 2026",
+        "coverCaption": "Nicky Jam i JC Reyes van actuar en la primera jornada de Zevra 2026, divendres 24 de juliol a Cullera.",
+        "sections": {
+          "opening": {
+            "heading": "La cinquena edició arranca davant del Mediterrani",
+            "paragraph1": "Zevra va obrir divendres 24 de juliol la seua cinquena edició al recinte de la platja de Cullera. L'horari oficial va distribuir 41 actuacions entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo i Church Club, amb música des de la vesprada fins a les sis del matí.",
+            "paragraph2": "El festival manté la seua programació fins al diumenge 26, dins d'una edició anunciada del 24 al 27 de juliol. La primera jornada va creuar música urbana, pop i electrònica, combinant directes, sessions de DJ i trobades entre col·lectius en diversos escenaris simultanis."
+          },
+          "photos": {
+            "heading": "Nicky Jam i JC Reyes, en imatges",
+            "paragraph1": "Les fotografies disponibles es concentren en dos trams del Negrita Stage. Nicky Jam apareix amb samarreta blanca, gorra i un micròfon daurat, retallat per visuals roges; hores després, JC Reyes canvia la paleta a verds i violetes, amb flamarades puntuals al davant de l'escenari.",
+            "paragraph2": "La galeria no pretén representar tot el cartell: documenta únicament aquestes dues actuacions perquè són les úniques de les quals s'han facilitat imatges. La resta d'artistes que van formar part del divendres també figuren a continuació, agrupats segons l'horari oficial."
+          },
+          "mainStages": {
+            "heading": "Nou actuacions entre Negrita i Cutty Sark",
+            "paragraph1": "El Negrita Stage va programar Totote, Nicky Jam, Leire Martínez, JC Reyes i el tancament conjunt de Shark i Arnny Montana. Entre els canvis d'escenari, la programació va incloure també la cerimònia d'obertura de Zevra, però aquesta crònica comptabilitza els cinc passes artístics anunciats.",
+            "paragraph2": "Al Cutty Sark Stage van actuar King África, Carliitos, Jose de las Heras i Mar Lucas. Els seus horaris es van alternar amb el principal, ampliant la nit amb perfils de directe i sessions de DJ."
+          },
+          "arcadeBeyond": {
+            "heading": "D'Arcade Land a Beyond",
+            "paragraph1": "Arcade Land by Vibra Mahou va reunir Gil, Chimeno, Dumore, Juan Valiente, Moya, Santi Bertomeu, Rajobos & Nev i Dany Asensi.",
+            "paragraph2": "El Beyond by Pepsi va encadenar Danigo, Jordi Sanz, Hidalgo, Maggie, Enygma B2B Jaime Bermejo, Jayxme, Barce, Fercho Energy i Danny Mad."
+          },
+          "lateStages": {
+            "heading": "Dharma, The Club i Church Club completen el divendres",
+            "paragraph1": "A Dharma Cutty Sark es van succeir Joel Moreno, Los Liaos vs Txarandonga, DJ Joel, No Ni Qué vs Va De Bo, Osuna G, El Truc vs Tot A Una, DJ Lluís SB, El Tinglao vs Manxisa, DJ Joel Moreno i La Sargantana vs La Jarranga.",
+            "paragraph2": "The Club by Vertigo Plata o Plomo va comptar amb Klandestina, Tere Ling, Azhar i Lucia Gea. El Church Club va completar el divendres amb DJs Comunitat Zevra, una sessió col·lectiva programada de 22:00 a 4:00."
+          }
+        },
+        "gallery": {
+          "title": "Nicky Jam i JC Reyes, des del Negrita Stage",
+          "nickyJamWideAlt": "Nicky Jam canta al Negrita Stage de Zevra sota il·luminació roja",
+          "nickyJamPortraitAlt": "Nicky Jam sosté el micròfon durant la seua actuació en Zevra 2026",
+          "nickyJamRedAlt": "Nicky Jam actua davant de les pantalles roges de l'escenari principal de Zevra",
+          "nickyJamLightsAlt": "Nicky Jam alça un braç davant dels focus del Negrita Stage",
+          "jcReyesFlameAlt": "JC Reyes recorre l'escenari de Zevra amb una flamarada al fons",
+          "jcReyesCloseAlt": "JC Reyes canta amb un micròfon verd sota una llum violeta",
+          "jcReyesGreenAlt": "JC Reyes assenyala el públic durant la seua actuació il·luminada en verd",
+          "jcReyesPurpleAlt": "JC Reyes canta en primer pla sota la il·luminació violeta de l'escenari"
+        }
       }
     },
     "search": {

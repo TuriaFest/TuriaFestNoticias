@@ -5,9 +5,16 @@ import {
   NEWS_ARTICLES,
   REVE_FEST_2026_ARTICLE_SLUG,
   ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG,
+  ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG,
 } from './news.catalogue';
 
 describe('news catalogue', () => {
+  it('returns the Zevra second-day article by its immutable slug', () => {
+    expect(getNewsArticleBySlug(ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG)?.id).toBe(
+      'zevra-2026-second-day',
+    );
+  });
+
   it('returns the Zevra first-day article by its immutable slug', () => {
     expect(getNewsArticleBySlug(ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG)?.id).toBe(
       'zevra-2026-first-day',
@@ -52,6 +59,19 @@ describe('news catalogue', () => {
     expect(article?.cover.responsive?.sources[1600]).toContain('zevra-2026-cover-1600.webp');
     expect(article?.gallery).toHaveLength(8);
     expect(article?.gallery.every((image) => image.src.includes('/zevra-2026-'))).toBe(true);
+  });
+
+  it('uses the supplied second-day photos for a responsive cover and eight-image gallery', () => {
+    const article = getNewsArticleBySlug(ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG);
+
+    expect(article?.cover.responsive?.srcset).toBe('640w, 800w, 1200w, 1600w');
+    expect(article?.cover.responsive?.sources[1600]).toContain(
+      'zevra-2026-day-two-cover-1600.webp',
+    );
+    expect(article?.gallery).toHaveLength(8);
+    expect(article?.gallery.every((image) => image.src.includes('/zevra-2026-day-two-'))).toBe(
+      true,
+    );
   });
 
   it('returns undefined for an unpublished slug', () => {
