@@ -50,6 +50,56 @@
       "backToNews": "Volver a Noticias"
     },
     "articles": {
+      "zevra2026ThirdDay": {
+        "title": "Zevra 2026 cierra su tercera jornada con Anuel AA, Juan Magán y Chanel",
+        "summary": "Zevra completó el domingo 26 de julio su tercera jornada con 38 pases artísticos repartidos en siete espacios de la playa de Cullera. La galería recorre la actuación de Anuel AA, cabeza de cartel de la última noche.",
+        "city": "Cullera",
+        "category": "Crónica de festival",
+        "searchGenres": "Zevra 2026 Cullera tercera jornada domingo 26 julio Anuel AA Juan Magán Chanel Álvaro Soler Henry Méndez DJ Nano Carlittos Íñigo Quintero Metrika Efecto Pasillo La Pantera Tami Tamako Ginesta DPR Cream DPR Artic Polo Nández Cencii Adela BB Claupi La Venganza Prepago DJ Khriz Font Villanueva DJ Bacardit Luc Loren Michenlo Alvaro Varen Rubens Vibes Omar Svenson Jaime Soeiro Lorena Llanes Carlos Agraz Anthony Godfather Pive Speaker Reality Reality DJ Set Guau Mbreaks Jose Rodríguez Tortu Karpin The Brainkiller DJs Comunidad Zevra BreakB música urbana reguetón trap pop electrónica breakbeat",
+        "publishedLabel": "27 julio 2026",
+        "seoTitle": "Zevra 2026: Anuel AA cierra la tercera jornada | TuriaFest",
+        "seoDescription": "Anuel AA encabeza la tercera jornada de Zevra 2026 en Cullera, con Juan Magán, Chanel y otros 35 pases artísticos repartidos en siete espacios.",
+        "coverAlt": "Composición de Anuel AA actuando entre luces rojas y azules en la tercera jornada de Zevra 2026",
+        "coverCaption": "Anuel AA encabezó la tercera jornada de Zevra 2026 durante la madrugada del domingo 26 al lunes 27 de julio.",
+        "sections": {
+          "opening": {
+            "heading": "La última noche recorre siete espacios",
+            "paragraph1": "Zevra completó el domingo 26 de julio su tercera y última jornada de conciertos en la playa de Cullera. El horario oficial distribuyó 38 pases artísticos entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo y Church Club, con programación desde las cinco de la tarde hasta las seis de la mañana.",
+            "paragraph2": "El cierre cruzó pop, música urbana, reguetón y electrónica con actuaciones simultáneas durante buena parte de la noche. Anuel AA ocupó el tramo central del escenario principal, mientras Juan Magán, Henry Méndez y DJ Nano prolongaron el Negrita Stage hasta el amanecer."
+          },
+          "photos": {
+            "heading": "Anuel AA, en imágenes",
+            "paragraph1": "Las fotografías disponibles siguen la actuación de Anuel AA en el Negrita Stage. El artista aparece vestido de negro y con gafas, entre humo, contraluces y cambios de iluminación del rojo al azul, sosteniendo un micrófono decorado con flores de colores.",
+            "paragraph2": "La galería documenta únicamente ese concierto porque es el único del domingo del que se han facilitado fotografías identificables. Los demás artistas y sesiones que formaron parte de la jornada también se recogen a continuación, agrupados según el horario oficial."
+          },
+          "mainStages": {
+            "heading": "Quince pases entre Negrita, Cutty Sark y Arcade Land",
+            "paragraph1": "El Negrita Stage programó a Carlittos, Chanel, Álvaro Soler, Anuel AA, Juan Magán, Henry Méndez y DJ Nano. El horario incluyó además una ceremonia antes de Anuel AA, pero esta crónica contabiliza los siete pases artísticos anunciados en el escenario principal.",
+            "paragraph2": "En el Cutty Sark Stage actuaron Íñigo Quintero, Metrika, Efecto Pasillo y La Pantera. Arcade Land by Vibra Mahou completó este bloque con Tami Tamako, Ginesta, DPR Cream & DPR Artic y Polo Nández."
+          },
+          "beyond": {
+            "heading": "Beyond encadena ocho bloques durante doce horas",
+            "paragraph1": "El Beyond by Pepsi abrió con Cencii y continuó con La Beba Showcase, un tramo compartido por Adela BB, Claupi, La Venganza y Prepago.",
+            "paragraph2": "La programación siguió con DJ Khriz, Font & Villanueva, DJ Bacardit, Carlittos, Luc Loren y Michenlo, que cerró el escenario a las cinco de la mañana."
+          },
+          "lateStages": {
+            "heading": "Dharma, BreakB y Church Club sostienen la madrugada",
+            "paragraph1": "Dharma Cutty Sark reunió a Alvaro Varen B2B Rubens Vibes, Omar Svenson B2B Jaime Soeiro, Lorena Llanes, Carlos Agraz, Anthony Godfather y Pive.",
+            "paragraph2": "The Club acogió el takeover de BreakB, presentado por Speaker Reality, con Reality DJ Set, Guau, Mbreaks, Jose Rodríguez, Tortu, Karpin, The Brainkiller y un cierre especial B2B2B2B. El Church Club completó el domingo con DJs Comunidad Zevra entre las diez de la noche y las cuatro de la mañana."
+          }
+        },
+        "gallery": {
+          "title": "Anuel AA, desde el Negrita Stage",
+          "redSmokeAlt": "Anuel AA canta bajo humo rojo durante la tercera jornada de Zevra 2026",
+          "backlightAlt": "Anuel AA queda recortado por un foco blanco entre el humo del escenario",
+          "raisedHandAlt": "Anuel AA alza una mano bajo iluminación azul en el Negrita Stage",
+          "redStageAlt": "Anuel AA recorre el escenario iluminado en rojo mientras canta",
+          "redPortraitAlt": "Anuel AA canta en primer plano ante un fondo rojo",
+          "closePortraitAlt": "Anuel AA sostiene un micrófono decorado con flores durante su actuación",
+          "orangePortraitAlt": "Anuel AA actúa ante un foco naranja en Zevra 2026",
+          "profileAlt": "Anuel AA canta de perfil entre humo y luz blanca en el escenario principal"
+        }
+      },
       "zevra2026SecondDay": {
         "title": "Zevra 2026 vive su segunda jornada con Ozuna, Omar Montes y Luar La L",
         "summary": "La segunda jornada de Zevra reunió el sábado 25 de julio 39 actuaciones repartidas en siete espacios de la playa de Cullera. La galería recorre los directos de Omar Montes, Ozuna y Luar La L.",

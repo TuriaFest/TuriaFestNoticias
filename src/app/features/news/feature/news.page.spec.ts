@@ -8,6 +8,7 @@ import {
   REVE_FEST_2026_ARTICLE_SLUG,
   ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG,
   ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG,
+  ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG,
 } from '../data-access/news.catalogue';
 import { NewsPageComponent } from './news.page';
 
@@ -44,15 +45,18 @@ describe('NewsPageComponent', () => {
     const fixture = TestBed.createComponent(NewsPageComponent);
     fixture.detectChanges();
     const root = fixture.nativeElement as HTMLElement;
-    const article = root.querySelector('[data-testid="news-card-zevra-2026-second-day"]');
+    const article = root.querySelector('[data-testid="news-card-zevra-2026-third-day"]');
 
     expect(article?.tagName).toBe('ARTICLE');
-    expect(root.querySelectorAll('article')).toHaveLength(5);
+    expect(root.querySelectorAll('article')).toHaveLength(6);
     expect(article?.querySelector('img')).not.toBeNull();
-    expect(article?.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-26');
+    expect(article?.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-27');
     expect(
       article?.querySelector<HTMLAnchorElement>('[data-testid="news-card-read-more"]')?.href,
-    ).toContain(`/noticias/${ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG}`);
+    ).toContain(`/noticias/${ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG}`);
+    expect(
+      root.querySelector(`[href="/noticias/${ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG}"]`),
+    ).not.toBeNull();
     expect(
       root.querySelector(`[href="/noticias/${ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG}"]`),
     ).not.toBeNull();
@@ -104,6 +108,16 @@ describe('NewsPageComponent', () => {
     const root = fixture.nativeElement as HTMLElement;
 
     expect(root.querySelector('[data-testid="news-card-zevra-2026-second-day"]')).not.toBeNull();
+    expect(root.querySelectorAll('article')).toHaveLength(1);
+  });
+
+  it('finds the Zevra third-day story through an artist who is not pictured in the gallery', () => {
+    queryParamMap.next(convertToParamMap({ buscar: 'DPR Artic' }));
+    const fixture = TestBed.createComponent(NewsPageComponent);
+    fixture.detectChanges();
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(root.querySelector('[data-testid="news-card-zevra-2026-third-day"]')).not.toBeNull();
     expect(root.querySelectorAll('article')).toHaveLength(1);
   });
 

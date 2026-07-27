@@ -7,6 +7,7 @@ import {
   REVE_FEST_2026_ARTICLE_SLUG,
   ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG,
   ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG,
+  ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG,
 } from '../../data-access/news.catalogue';
 import { NewsArticlePageComponent } from './news-article.page';
 
@@ -52,6 +53,19 @@ describe('NewsArticlePageComponent', () => {
     expect(root.querySelectorAll('.news-gallery__item')).toHaveLength(8);
     expect(root.querySelector('.news-article__highlight')).toBeNull();
     expect(root.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-26');
+    expect(root.querySelector('a[href*="zevrafestival.com"]')).toBeNull();
+  });
+
+  it('renders the Zevra third-day story with every section and only the supplied photos', async () => {
+    const fixture = await renderArticle(ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG);
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(root.querySelector('[data-testid="news-article-detail"]')?.tagName).toBe('ARTICLE');
+    expect(root.querySelectorAll('h1')).toHaveLength(1);
+    expect(root.querySelectorAll('.news-article__section')).toHaveLength(5);
+    expect(root.querySelectorAll('.news-gallery__item')).toHaveLength(8);
+    expect(root.querySelector('.news-article__highlight')).toBeNull();
+    expect(root.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-27');
     expect(root.querySelector('a[href*="zevrafestival.com"]')).toBeNull();
   });
 

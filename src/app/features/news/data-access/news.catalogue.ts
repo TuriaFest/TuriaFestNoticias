@@ -1,9 +1,10 @@
 import type { NewsArticle } from './news-article.model';
 
+export const ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG =
+  'zevra-2026-tercera-jornada-anuel-aa-juan-magan-chanel';
 export const ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG =
   'zevra-2026-segunda-jornada-ozuna-omar-montes-luar-la-l';
-export const ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG =
-  'zevra-2026-primera-jornada-nicky-jam-jc-reyes';
+export const ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG = 'zevra-2026-primera-jornada-nicky-jam-jc-reyes';
 export const LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG =
   'latin-fest-2027-registro-valencia-benidorm';
 export const LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG =
@@ -11,12 +12,153 @@ export const LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG =
 export const REVE_FEST_2026_ARTICLE_SLUG = 'reve-fest-2026-nueve-horas-musica-urbana';
 
 const ZEVRA_2026_SECOND_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG}`;
+const ZEVRA_2026_THIRD_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG}`;
 const ZEVRA_2026_FIRST_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG}`;
 const LATIN_FEST_2027_REGISTRATION_ASSET_ROOT = `/assets/images/news/${LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG}`;
 const LATIN_FEST_VALENCIA_NEWS_ASSET_ROOT = `/assets/images/news/${LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG}`;
 const REVE_FEST_NEWS_ASSET_ROOT = `/assets/images/news/${REVE_FEST_2026_ARTICLE_SLUG}`;
 
 export const NEWS_ARTICLES: readonly NewsArticle[] = [
+  {
+    id: 'zevra-2026-third-day',
+    slug: ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG,
+    titleKey: 'news.articles.zevra2026ThirdDay.title',
+    summaryKey: 'news.articles.zevra2026ThirdDay.summary',
+    cityKey: 'news.articles.zevra2026ThirdDay.city',
+    categoryKey: 'news.articles.zevra2026ThirdDay.category',
+    searchGenresKey: 'news.articles.zevra2026ThirdDay.searchGenres',
+    publishedLabelKey: 'news.articles.zevra2026ThirdDay.publishedLabel',
+    publishedAt: '2026-07-27T17:14:24+02:00',
+    modifiedAt: '2026-07-27T17:14:24+02:00',
+    authorKey: 'news.article.author',
+    seoTitleKey: 'news.articles.zevra2026ThirdDay.seoTitle',
+    seoDescriptionKey: 'news.articles.zevra2026ThirdDay.seoDescription',
+    cover: {
+      src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-cover-1600.webp`,
+      responsive: {
+        srcset: '640w, 800w, 1200w, 1600w',
+        sizes:
+          '(min-width: 1200px) 1104px, (min-width: 1024px) calc(100vw - 96px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 48px)',
+        sources: {
+          640: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-cover-640.webp`,
+          800: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-cover-800.webp`,
+          1200: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-cover-1200.webp`,
+          1600: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-cover-1600.webp`,
+        },
+      },
+      width: 1600,
+      height: 1200,
+      altKey: 'news.articles.zevra2026ThirdDay.coverAlt',
+      captionKey: 'news.articles.zevra2026ThirdDay.coverCaption',
+    },
+    cardImage: {
+      src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-card-640x400.webp`,
+      width: 640,
+      height: 400,
+      altKey: 'news.articles.zevra2026ThirdDay.coverAlt',
+    },
+    socialImage: {
+      src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-social-1200x630.webp`,
+      width: 1200,
+      height: 630,
+      altKey: 'news.articles.zevra2026ThirdDay.coverAlt',
+    },
+    sections: [
+      {
+        headingKey: 'news.articles.zevra2026ThirdDay.sections.opening.heading',
+        paragraphKeys: [
+          'news.articles.zevra2026ThirdDay.sections.opening.paragraph1',
+          'news.articles.zevra2026ThirdDay.sections.opening.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.zevra2026ThirdDay.sections.photos.heading',
+        paragraphKeys: [
+          'news.articles.zevra2026ThirdDay.sections.photos.paragraph1',
+          'news.articles.zevra2026ThirdDay.sections.photos.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.zevra2026ThirdDay.sections.mainStages.heading',
+        paragraphKeys: [
+          'news.articles.zevra2026ThirdDay.sections.mainStages.paragraph1',
+          'news.articles.zevra2026ThirdDay.sections.mainStages.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.zevra2026ThirdDay.sections.beyond.heading',
+        paragraphKeys: [
+          'news.articles.zevra2026ThirdDay.sections.beyond.paragraph1',
+          'news.articles.zevra2026ThirdDay.sections.beyond.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.zevra2026ThirdDay.sections.lateStages.heading',
+        paragraphKeys: [
+          'news.articles.zevra2026ThirdDay.sections.lateStages.paragraph1',
+          'news.articles.zevra2026ThirdDay.sections.lateStages.paragraph2',
+        ],
+      },
+    ],
+    galleryTitleKey: 'news.articles.zevra2026ThirdDay.gallery.title',
+    gallery: [
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-01-960.webp`,
+        width: 960,
+        height: 1707,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.redSmokeAlt',
+      },
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-02-960.webp`,
+        width: 960,
+        height: 1707,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.backlightAlt',
+      },
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-03-960.webp`,
+        width: 960,
+        height: 1707,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.raisedHandAlt',
+      },
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-04-960.webp`,
+        width: 960,
+        height: 1707,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.redStageAlt',
+      },
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-05-960.webp`,
+        width: 960,
+        height: 1280,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.redPortraitAlt',
+      },
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-06-960.webp`,
+        width: 960,
+        height: 1280,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.closePortraitAlt',
+      },
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-07-960.webp`,
+        width: 960,
+        height: 1280,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.orangePortraitAlt',
+      },
+      {
+        src: `${ZEVRA_2026_THIRD_DAY_ASSET_ROOT}/zevra-2026-day-three-gallery-08-960.webp`,
+        width: 960,
+        height: 1707,
+        altKey: 'news.articles.zevra2026ThirdDay.gallery.profileAlt',
+      },
+    ],
+    source: {
+      url: 'https://www.zevrafestival.com/horarios',
+      additionalUrls: [
+        'https://www.zevrafestival.com/images/2026/Zevra_Horario_Domingo_update.jpg',
+        'https://www.zevrafestival.com/',
+      ],
+    },
+  },
   {
     id: 'zevra-2026-second-day',
     slug: ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG,
