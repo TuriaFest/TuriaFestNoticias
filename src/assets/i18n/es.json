@@ -50,6 +50,47 @@
       "backToNews": "Volver a Noticias"
     },
     "articles": {
+      "zevra2027Presale": {
+        "title": "Zevra confirma las fechas de 2027 y abrirá una preventa desde 59,95 €",
+        "summary": "Zevra volverá a Cullera del 23 al 25 de julio de 2027: el viernes se reservará para la preparty y el festival ocupará el sábado y el domingo. La preventa limitada se abrirá el 30 de julio de 2026 a las 12:00.",
+        "city": "Cullera",
+        "category": "Entradas y fechas",
+        "searchGenres": "Zevra Festival 2027 Cullera Valencia fechas 23 24 25 julio preparty preventa abonos entradas general camping acampada Front Stage VIP consumiciones cashless pulsera descuento 20 por ciento música urbana reguetón pop electrónica",
+        "publishedLabel": "27 julio 2026",
+        "seoTitle": "Zevra 2027: fechas y preventa desde 59,95 € | TuriaFest",
+        "seoDescription": "Zevra anuncia sus fechas de 2027 en Cullera y una preventa limitada el 30 de julio, con abonos desde 59,95 € más gastos de gestión.",
+        "coverAlt": "Arte oficial de Zevra 2027 con el escenario, fuegos artificiales y las fechas del 23 al 25 de julio",
+        "coverCaption": "Zevra celebrará la preparty el viernes 23 de julio y el festival los días 24 y 25 de julio de 2027.",
+        "sections": {
+          "dates": {
+            "heading": "Tres fechas para el regreso a Cullera",
+            "paragraph1": "Zevra ya ha situado su próxima edición en el calendario. La actividad comenzará el viernes 23 de julio de 2027 con la preparty y continuará el sábado 24 y el domingo 25 con las dos jornadas principales del festival en Cullera.",
+            "paragraph2": "El anuncio abre la nueva temporada inmediatamente después de la quinta edición. La organización cifra en 155.000 las personas que pasaron por Zevra 2026, pero todavía no ha comunicado los artistas ni la distribución de escenarios de 2027."
+          },
+          "presale": {
+            "heading": "La preventa se abre el 30 de julio a mediodía",
+            "paragraph1": "La primera venta de abonos comenzará el jueves 30 de julio de 2026 a las 12:00. La campaña la presenta como una preventa muy limitada y disponible únicamente durante esa jornada, por lo que tanto el precio como la disponibilidad dependerán de los tramos que permanezcan activos.",
+            "paragraph2": "Zevra ha adelantado cuatro modalidades para este lanzamiento. Todos los importes anunciados se muestran sin gastos de gestión, que se añadirán durante el proceso de compra."
+          },
+          "prices": {
+            "heading": "Cuatro tipos de abono desde 59,95 €",
+            "paragraph1": "El abono general parte de 59,95 € más gastos de gestión. La opción que combina abono general y zona de acampada se anuncia por 90 € más gastos de gestión, mientras que el abono general con acceso Front Stage sube a 127 € más gastos de gestión.",
+            "paragraph2": "La modalidad VIP incluye Front Stage y tres consumiciones por 174 € más gastos de gestión. La organización no ha detallado todavía el resto de condiciones de cada categoría ni ha anunciado el cartel de la próxima edición."
+          },
+          "cashless": {
+            "heading": "El saldo de la pulsera de 2026 también cuenta",
+            "paragraph1": "Quienes conserven saldo en su pulsera cashless de Zevra 2026 podrán utilizarlo para pagar el abono de 2027. La promoción añade un 20 % de descuento a esa compra al introducir el código de la pulsera durante el proceso.",
+            "paragraph2": "Esta ventaja está vinculada a la preventa oficial y al código de la pulsera. Antes de completar la operación conviene revisar en la plataforma de venta el importe aplicado, los gastos de gestión y las condiciones definitivas de la promoción."
+          }
+        },
+        "gallery": {
+          "title": "Precios y ventaja cashless de la preventa",
+          "presaleAlt": "Arte oficial con los cuatro tipos de abono y los precios de la preventa de Zevra 2027",
+          "presaleCaption": "La preventa anuncia abonos desde 59,95 € y tres modalidades adicionales, todas con gastos de gestión.",
+          "cashlessAlt": "Arte oficial que explica el uso del saldo de la pulsera cashless de 2026 para comprar el abono de 2027",
+          "cashlessCaption": "El código de la pulsera de 2026 permitirá aplicar el saldo restante y un descuento adicional del 20 %."
+        }
+      },
       "zevra2026ThirdDay": {
         "title": "Zevra 2026 cierra su tercera jornada con Anuel AA, Juan Magán y Chanel",
         "summary": "Zevra completó el domingo 26 de julio su tercera jornada con 38 pases artísticos repartidos en siete espacios de la playa de Cullera. La galería recorre la actuación de Anuel AA, cabeza de cartel de la última noche.",

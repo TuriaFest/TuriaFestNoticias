@@ -9,6 +9,7 @@ import {
   ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG,
   ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG,
   ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG,
+  ZEVRA_2027_PRESALE_ARTICLE_SLUG,
 } from '../data-access/news.catalogue';
 import { NewsPageComponent } from './news.page';
 
@@ -45,15 +46,18 @@ describe('NewsPageComponent', () => {
     const fixture = TestBed.createComponent(NewsPageComponent);
     fixture.detectChanges();
     const root = fixture.nativeElement as HTMLElement;
-    const article = root.querySelector('[data-testid="news-card-zevra-2026-third-day"]');
+    const article = root.querySelector('[data-testid="news-card-zevra-2027-presale"]');
 
     expect(article?.tagName).toBe('ARTICLE');
-    expect(root.querySelectorAll('article')).toHaveLength(6);
+    expect(root.querySelectorAll('article')).toHaveLength(7);
     expect(article?.querySelector('img')).not.toBeNull();
     expect(article?.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-27');
     expect(
       article?.querySelector<HTMLAnchorElement>('[data-testid="news-card-read-more"]')?.href,
-    ).toContain(`/noticias/${ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG}`);
+    ).toContain(`/noticias/${ZEVRA_2027_PRESALE_ARTICLE_SLUG}`);
+    expect(
+      root.querySelector(`[href="/noticias/${ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG}"]`),
+    ).not.toBeNull();
     expect(
       root.querySelector(`[href="/noticias/${ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG}"]`),
     ).not.toBeNull();
@@ -67,6 +71,16 @@ describe('NewsPageComponent', () => {
       root.querySelector(`[href="/noticias/${LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG}"]`),
     ).not.toBeNull();
     expect(root.querySelector(`[href="/noticias/${REVE_FEST_2026_ARTICLE_SLUG}"]`)).not.toBeNull();
+  });
+
+  it('finds the Zevra 2027 story through its cashless presale', () => {
+    queryParamMap.next(convertToParamMap({ buscar: 'cashless Front Stage' }));
+    const fixture = TestBed.createComponent(NewsPageComponent);
+    fixture.detectChanges();
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(root.querySelector('[data-testid="news-card-zevra-2027-presale"]')).not.toBeNull();
+    expect(root.querySelectorAll('article')).toHaveLength(1);
   });
 
   it('finds the Latin Fest 2027 story by its Benidorm early-bird context', () => {

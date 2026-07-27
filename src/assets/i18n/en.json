@@ -1130,6 +1130,47 @@
           "orangePortraitAlt": "Anuel AA performs under an orange spotlight at Zevra 2026",
           "profileAlt": "Anuel AA sings in profile amid smoke and white light on the main stage"
         }
+      },
+      "zevra2027Presale": {
+        "title": "Zevra confirms its 2027 dates and will open a presale from €59.95",
+        "summary": "Zevra returns to Cullera from 23 to 25 July 2027: Friday will host the preparty, and the festival runs Saturday and Sunday. A limited presale opens 30 July 2026 at 12:00.",
+        "city": "Cullera",
+        "category": "Tickets and dates",
+        "searchGenres": "Zevra Festival 2027 Cullera Valencia dates 23 24 25 July preparty presale passes tickets general camping camp Front Stage VIP drinks cashless wristband 20 percent discount urban music reggaeton pop electronic",
+        "publishedLabel": "27 July 2026",
+        "seoTitle": "Zevra 2027: dates and presale from €59.95 | TuriaFest",
+        "seoDescription": "Zevra announces its 2027 dates in Cullera and a limited presale on 30 July, with passes from €59.95 plus booking fees.",
+        "coverAlt": "Official Zevra 2027 artwork with the stage, fireworks and the 23-25 July dates",
+        "coverCaption": "Zevra will hold the preparty on Friday 23 July and the festival on 24 and 25 July 2027.",
+        "sections": {
+          "dates": {
+            "heading": "Three dates for the return to Cullera",
+            "paragraph1": "Zevra has already set its next edition in the calendar. Activity begins on Friday 23 July 2027 with the preparty and continues Saturday 24 and Sunday 25 with the two main festival days in Cullera.",
+            "paragraph2": "The announcement opens the new season immediately after the fifth edition. The organisers put the number of attendees at Zevra 2026 at 155,000, but have not yet announced the artists or stage layout for 2027."
+          },
+          "presale": {
+            "heading": "The presale opens 30 July at midday",
+            "paragraph1": "The first pass sale starts Thursday 30 July 2026 at 12:00. The campaign presents it as a very limited presale available only that day, so both price and availability will depend on which tiers remain active.",
+            "paragraph2": "Zevra has revealed four tiers for this launch. All announced prices are shown without booking fees, which will be added during checkout."
+          },
+          "prices": {
+            "heading": "Four pass tiers from €59.95",
+            "paragraph1": "The general pass starts at €59.95 plus booking fees. The option combining a general pass with the camping area is announced at €90 plus booking fees, while the general pass with Front Stage access rises to €127 plus booking fees.",
+            "paragraph2": "The VIP tier includes Front Stage access and three drinks for €174 plus booking fees. The organisers have not yet detailed the remaining conditions for each category or announced the lineup for the next edition."
+          },
+          "cashless": {
+            "heading": "2026 wristband balance also counts",
+            "paragraph1": "Anyone with remaining balance on their 2026 Zevra cashless wristband can use it toward the 2027 pass. The promotion adds a 20% discount to that purchase when the wristband code is entered during checkout.",
+            "paragraph2": "This benefit is tied to the official presale and the wristband code. Before completing the purchase, check the applied amount, booking fees and final promotion terms on the sales platform."
+          }
+        },
+        "gallery": {
+          "title": "Presale prices and cashless benefit",
+          "presaleAlt": "Official artwork with the four pass tiers and Zevra 2027 presale prices",
+          "presaleCaption": "The presale announces passes from €59.95 and three additional tiers, all plus booking fees.",
+          "cashlessAlt": "Official artwork explaining how to use 2026 cashless wristband balance to buy the 2027 pass",
+          "cashlessCaption": "The 2026 wristband code will let buyers apply the remaining balance plus an additional 20% discount."
+        }
       }
     },
     "search": {

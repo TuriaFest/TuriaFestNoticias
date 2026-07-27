@@ -1130,6 +1130,47 @@
           "orangePortraitAlt": "Anuel AA actua davant un focus taronja en Zevra 2026",
           "profileAlt": "Anuel AA canta de perfil entre fum i llum blanca en l'escenari principal"
         }
+      },
+      "zevra2027Presale": {
+        "title": "Zevra confirma les dates de 2027 i obrirà una prevenda des de 59,95 €",
+        "summary": "Zevra tornarà a Cullera del 23 al 25 de juliol de 2027: el divendres es reservarà per a la preparty i el festival ocuparà el dissabte i el diumenge. La prevenda limitada s'obrirà el 30 de juliol de 2026 a les 12:00.",
+        "city": "Cullera",
+        "category": "Entrades i dates",
+        "searchGenres": "Zevra Festival 2027 Cullera Valencia dates 23 24 25 juliol preparty prevenda abonaments entrades general càmping acampada Front Stage VIP consumicions cashless polsera descompte 20 per cent música urbana reggaeton pop electrònica",
+        "publishedLabel": "27 juliol 2026",
+        "seoTitle": "Zevra 2027: dates i prevenda des de 59,95 € | TuriaFest",
+        "seoDescription": "Zevra anuncia les seues dates de 2027 a Cullera i una prevenda limitada el 30 de juliol, amb abonaments des de 59,95 € més despeses de gestió.",
+        "coverAlt": "Art oficial de Zevra 2027 amb l'escenari, focs artificials i les dates del 23 al 25 de juliol",
+        "coverCaption": "Zevra celebrarà la preparty el divendres 23 de juliol i el festival els dies 24 i 25 de juliol de 2027.",
+        "sections": {
+          "dates": {
+            "heading": "Tres dates per al retorn a Cullera",
+            "paragraph1": "Zevra ja ha situat la seua pròxima edició en el calendari. L'activitat començarà el divendres 23 de juliol de 2027 amb la preparty i continuarà el dissabte 24 i el diumenge 25 amb les dues jornades principals del festival a Cullera.",
+            "paragraph2": "L'anunci obri la nova temporada immediatament després de la cinquena edició. L'organització xifra en 155.000 les persones que van passar per Zevra 2026, però encara no ha comunicat els artistes ni la distribució d'escenaris de 2027."
+          },
+          "presale": {
+            "heading": "La prevenda s'obri el 30 de juliol a migdia",
+            "paragraph1": "La primera venda d'abonaments començarà el dijous 30 de juliol de 2026 a les 12:00. La campanya la presenta com una prevenda molt limitada i disponible únicament durant aquesta jornada, per la qual cosa tant el preu com la disponibilitat dependran dels trams que romanguen actius.",
+            "paragraph2": "Zevra ha avançat quatre modalitats per a aquest llançament. Tots els imports anunciats es mostren sense despeses de gestió, que s'afegiran durant el procés de compra."
+          },
+          "prices": {
+            "heading": "Quatre tipus d'abonament des de 59,95 €",
+            "paragraph1": "L'abonament general parteix de 59,95 € més despeses de gestió. L'opció que combina abonament general i zona d'acampada s'anuncia per 90 € més despeses de gestió, mentre que l'abonament general amb accés Front Stage puja a 127 € més despeses de gestió.",
+            "paragraph2": "La modalitat VIP inclou Front Stage i tres consumicions per 174 € més despeses de gestió. L'organització encara no ha detallat la resta de condicions de cada categoria ni ha anunciat el cartell de la pròxima edició."
+          },
+          "cashless": {
+            "heading": "El saldo de la polsera de 2026 també compta",
+            "paragraph1": "Qui conserve saldo en la seua polsera cashless de Zevra 2026 podrà utilitzar-lo per a pagar l'abonament de 2027. La promoció afig un 20 % de descompte a aquesta compra en introduir el codi de la polsera durant el procés.",
+            "paragraph2": "Aquest avantatge està vinculat a la prevenda oficial i al codi de la polsera. Abans de completar l'operació convé revisar en la plataforma de venda l'import aplicat, les despeses de gestió i les condicions definitives de la promoció."
+          }
+        },
+        "gallery": {
+          "title": "Preus i avantatge cashless de la prevenda",
+          "presaleAlt": "Art oficial amb els quatre tipus d'abonament i els preus de la prevenda de Zevra 2027",
+          "presaleCaption": "La prevenda anuncia abonaments des de 59,95 € i tres modalitats addicionals, totes amb despeses de gestió.",
+          "cashlessAlt": "Art oficial que explica l'ús del saldo de la polsera cashless de 2026 per a comprar l'abonament de 2027",
+          "cashlessCaption": "El codi de la polsera de 2026 permetrà aplicar el saldo restant i un descompte addicional del 20 %."
+        }
       }
     },
     "search": {

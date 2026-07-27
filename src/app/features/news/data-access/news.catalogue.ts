@@ -1,5 +1,6 @@
 import type { NewsArticle } from './news-article.model';
 
+export const ZEVRA_2027_PRESALE_ARTICLE_SLUG = 'zevra-2027-fechas-preventa-abonos-cashless';
 export const ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG =
   'zevra-2026-tercera-jornada-anuel-aa-juan-magan-chanel';
 export const ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG =
@@ -14,11 +15,108 @@ export const REVE_FEST_2026_ARTICLE_SLUG = 'reve-fest-2026-nueve-horas-musica-ur
 const ZEVRA_2026_SECOND_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG}`;
 const ZEVRA_2026_THIRD_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG}`;
 const ZEVRA_2026_FIRST_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG}`;
+const ZEVRA_2027_PRESALE_ASSET_ROOT = `/assets/images/news/${ZEVRA_2027_PRESALE_ARTICLE_SLUG}`;
 const LATIN_FEST_2027_REGISTRATION_ASSET_ROOT = `/assets/images/news/${LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG}`;
 const LATIN_FEST_VALENCIA_NEWS_ASSET_ROOT = `/assets/images/news/${LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG}`;
 const REVE_FEST_NEWS_ASSET_ROOT = `/assets/images/news/${REVE_FEST_2026_ARTICLE_SLUG}`;
 
 export const NEWS_ARTICLES: readonly NewsArticle[] = [
+  {
+    id: 'zevra-2027-presale',
+    slug: ZEVRA_2027_PRESALE_ARTICLE_SLUG,
+    titleKey: 'news.articles.zevra2027Presale.title',
+    summaryKey: 'news.articles.zevra2027Presale.summary',
+    cityKey: 'news.articles.zevra2027Presale.city',
+    categoryKey: 'news.articles.zevra2027Presale.category',
+    searchGenresKey: 'news.articles.zevra2027Presale.searchGenres',
+    publishedLabelKey: 'news.articles.zevra2027Presale.publishedLabel',
+    publishedAt: '2026-07-27T17:57:28+02:00',
+    modifiedAt: '2026-07-27T17:57:28+02:00',
+    authorKey: 'news.article.author',
+    seoTitleKey: 'news.articles.zevra2027Presale.seoTitle',
+    seoDescriptionKey: 'news.articles.zevra2027Presale.seoDescription',
+    cover: {
+      src: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-cover-1600.webp`,
+      responsive: {
+        srcset: '640w, 800w, 1200w, 1600w',
+        sizes:
+          '(min-width: 1200px) 1104px, (min-width: 1024px) calc(100vw - 96px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 48px)',
+        sources: {
+          640: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-cover-640.webp`,
+          800: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-cover-800.webp`,
+          1200: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-cover-1200.webp`,
+          1600: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-cover-1600.webp`,
+        },
+      },
+      width: 1600,
+      height: 1200,
+      altKey: 'news.articles.zevra2027Presale.coverAlt',
+      captionKey: 'news.articles.zevra2027Presale.coverCaption',
+    },
+    cardImage: {
+      src: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-card-640x400.webp`,
+      width: 640,
+      height: 400,
+      altKey: 'news.articles.zevra2027Presale.coverAlt',
+    },
+    socialImage: {
+      src: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-social-1200x630.webp`,
+      width: 1200,
+      height: 630,
+      altKey: 'news.articles.zevra2027Presale.coverAlt',
+    },
+    sections: [
+      {
+        headingKey: 'news.articles.zevra2027Presale.sections.dates.heading',
+        paragraphKeys: [
+          'news.articles.zevra2027Presale.sections.dates.paragraph1',
+          'news.articles.zevra2027Presale.sections.dates.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.zevra2027Presale.sections.presale.heading',
+        paragraphKeys: [
+          'news.articles.zevra2027Presale.sections.presale.paragraph1',
+          'news.articles.zevra2027Presale.sections.presale.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.zevra2027Presale.sections.prices.heading',
+        paragraphKeys: [
+          'news.articles.zevra2027Presale.sections.prices.paragraph1',
+          'news.articles.zevra2027Presale.sections.prices.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.zevra2027Presale.sections.cashless.heading',
+        paragraphKeys: [
+          'news.articles.zevra2027Presale.sections.cashless.paragraph1',
+          'news.articles.zevra2027Presale.sections.cashless.paragraph2',
+        ],
+      },
+    ],
+    galleryTitleKey: 'news.articles.zevra2027Presale.gallery.title',
+    gallery: [
+      {
+        src: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-gallery-01-960.webp`,
+        width: 960,
+        height: 1200,
+        altKey: 'news.articles.zevra2027Presale.gallery.presaleAlt',
+        captionKey: 'news.articles.zevra2027Presale.gallery.presaleCaption',
+      },
+      {
+        src: `${ZEVRA_2027_PRESALE_ASSET_ROOT}/zevra-2027-gallery-02-960.webp`,
+        width: 960,
+        height: 1200,
+        altKey: 'news.articles.zevra2027Presale.gallery.cashlessAlt',
+        captionKey: 'news.articles.zevra2027Presale.gallery.cashlessCaption',
+      },
+    ],
+    source: {
+      url: 'https://www.zevrafestival.com/',
+      additionalUrls: ['https://www.instagram.com/p/DbTIr7ZCER2/'],
+    },
+  },
   {
     id: 'zevra-2026-third-day',
     slug: ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG,
