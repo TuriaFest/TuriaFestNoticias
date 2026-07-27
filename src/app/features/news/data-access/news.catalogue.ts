@@ -27,7 +27,7 @@ export const NEWS_ARTICLES: readonly NewsArticle[] = [
     searchGenresKey: 'news.articles.zevra2026SecondDay.searchGenres',
     publishedLabelKey: 'news.articles.zevra2026SecondDay.publishedLabel',
     publishedAt: '2026-07-26T15:23:58+02:00',
-    modifiedAt: '2026-07-26T15:23:58+02:00',
+    modifiedAt: '2026-07-26T15:41:21+02:00',
     authorKey: 'news.article.author',
     seoTitleKey: 'news.articles.zevra2026SecondDay.seoTitle',
     seoDescriptionKey: 'news.articles.zevra2026SecondDay.seoDescription',

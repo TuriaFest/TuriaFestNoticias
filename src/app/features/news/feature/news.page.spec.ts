@@ -97,6 +97,16 @@ describe('NewsPageComponent', () => {
     expect(root.querySelectorAll('article')).toHaveLength(1);
   });
 
+  it('finds the Zevra second-day story through the guest performance song', () => {
+    queryParamMap.next(convertToParamMap({ buscar: 'Rakata' }));
+    const fixture = TestBed.createComponent(NewsPageComponent);
+    fixture.detectChanges();
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(root.querySelector('[data-testid="news-card-zevra-2026-second-day"]')).not.toBeNull();
+    expect(root.querySelectorAll('article')).toHaveLength(1);
+  });
+
   it('finds the Latin Fest story by a music-style synonym', () => {
     queryParamMap.next(convertToParamMap({ buscar: 'dancehall' }));
     const fixture = TestBed.createComponent(NewsPageComponent);
