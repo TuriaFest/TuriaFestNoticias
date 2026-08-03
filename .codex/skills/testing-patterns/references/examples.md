@@ -187,7 +187,7 @@ describe('seo lib', () => {
       imageAlt: 'Alt',
     });
 
-    expect(seo.canonical).toBe('https://turia-fest-noticias.rngheru.workers.dev/noticias');
+    expect(seo.canonical).toBe('https://turiafestnoticias.es/noticias');
     expect(seo.og.type).toBe('website');
   });
 

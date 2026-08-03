@@ -97,7 +97,7 @@ documented reason.
 <!-- Compliant server output for /noticias/arenal-sound-2027-fechas -->
 <title>Arenal Sound 2027: fechas y aforo confirmados | TuriaFestNoticias</title>
 <meta name="description" content="Consulta la información verificada y las novedades oficiales de Arenal Sound 2027.">
-<link rel="canonical" href="https://turia-fest-noticias.rngheru.workers.dev/noticias/arenal-sound-2027-fechas">
+<link rel="canonical" href="https://turiafestnoticias.es/noticias/arenal-sound-2027-fechas">
 ```
 
 ```html
@@ -115,9 +115,9 @@ The following are known implementation gaps, not approved conventions:
   are roadmap, so `Event` structured data does not exist yet.
 - `public/robots.txt` and `public/sitemap.xml` do not yet exist — `public/` currently holds only
   `assets/`, `favicon.ico`, `fonts/` and `turiafest-favicon.ico`.
-- `src/lib/site.ts` currently sets `SITE_BASE_URL` to a Cloudflare Workers URL
-  (`turia-fest-noticias.rngheru.workers.dev`). The production custom domain MUST replace it
-  before canonical URLs, sitemap or `hreflang` are released.
+- `src/lib/site.ts` sets `SITE_BASE_URL` to the production origin
+  (`https://turiafestnoticias.es`); canonicals, Open Graph and JSON-LD derive from it. The
+  Cloudflare deploy must serve the site on that custom domain.
 - Locale infrastructure (`src/i18n`, `src/assets/i18n`) exists for `es`/`ca`/`en`, but no localized
   route URLs or `hreflang` alternates are emitted yet — activation is a roadmap phase, not a
   current behavior.

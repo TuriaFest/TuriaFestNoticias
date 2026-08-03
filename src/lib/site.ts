@@ -3,7 +3,7 @@
 // ============================================================================
 
 /** Production origin. Canonicals and Open Graph URLs must be absolute. */
-export const SITE_BASE_URL = 'https://turia-fest-noticias.rngheru.workers.dev';
+export const SITE_BASE_URL = 'https://turiafestnoticias.es';
 
 /** Normalised base URL (no trailing slash). */
 export const BASE_URL = SITE_BASE_URL.replace(/\/$/, '');

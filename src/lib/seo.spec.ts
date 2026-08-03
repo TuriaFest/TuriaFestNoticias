@@ -19,7 +19,7 @@ describe('seo lib', () => {
       imageAlt: 'Alt',
     });
 
-    expect(seo.canonical).toBe('https://turia-fest-noticias.rngheru.workers.dev/noticias');
+    expect(seo.canonical).toBe('https://turiafestnoticias.es/noticias');
     expect(seo.og.type).toBe('website');
     expect(seo.og.image).toMatch(/^https:\/\//);
     expect(seo.article).toBeUndefined();
@@ -41,7 +41,7 @@ describe('seo lib', () => {
     });
 
     expect(seo.canonical).toBe(
-      `https://turia-fest-noticias.rngheru.workers.dev/noticias/${article.slug}`,
+      `https://turiafestnoticias.es/noticias/${article.slug}`,
     );
     expect(seo.og.type).toBe('article');
     expect(seo.article?.publishedTime).toBe(article.publishedAt);
