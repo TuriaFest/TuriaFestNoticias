@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, provideRouter } from '@angular/router';
 
 import {
+  ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG,
   LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG,
   LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG,
   REVE_FEST_2026_ARTICLE_SLUG,
@@ -30,6 +31,20 @@ describe('NewsArticlePageComponent', () => {
     await fixture.whenStable();
     return fixture;
   }
+
+  it('renders the Arenal Sound 2027 presale story with its four sections and both posters', async () => {
+    const fixture = await renderArticle(ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG);
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(root.querySelector('[data-testid="news-article-detail"]')?.tagName).toBe('ARTICLE');
+    expect(root.querySelectorAll('h1')).toHaveLength(1);
+    expect(root.querySelectorAll('.news-article__section')).toHaveLength(4);
+    expect(root.querySelectorAll('.news-gallery__item')).toHaveLength(2);
+    expect(root.querySelector('.news-article__highlight')).toBeNull();
+    expect(root.querySelector('time')?.getAttribute('datetime')).toContain('2026-08-03');
+    expect(root.querySelector('a[href*="instagram.com"]')).toBeNull();
+    expect(root.querySelector('a[href*="arenalsound.com"]')).toBeNull();
+  });
 
   it('renders the Zevra 2027 presale story with its prices and cashless artwork', async () => {
     const fixture = await renderArticle(ZEVRA_2027_PRESALE_ARTICLE_SLUG);

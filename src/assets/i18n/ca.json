@@ -1171,7 +1171,48 @@
           "cashlessAlt": "Art oficial que explica l'ús del saldo de la polsera cashless de 2026 per a comprar l'abonament de 2027",
           "cashlessCaption": "El codi de la polsera de 2026 permetrà aplicar el saldo restant i un descompte addicional del 20 %."
         }
-      }
+      },
+      "arenalSound2027Presale": {
+  "title": "Arenal Sound anuncia les seues dates de 2027 i obri una prevenda de 48 hores amb abonaments des de 54,99 €",
+  "summary": "Després de tancar la seua edició de 2026, Arenal Sound torna a Burriana del 29 de juliol a l'1 d'agost de 2027, amb la preparty el dia 29. La prevenda de 3.000 abonaments s'obri el dimecres 5 d'agost a les 12:00 i només estarà disponible 48 hores, amb preus des de 54,99 € amb les despeses de gestió incloses.",
+  "city": "Burriana",
+  "category": "Entrades i dates",
+  "searchGenres": "Arenal Sound 2027 Burriana Castelló dates 29 30 31 juliol 1 agost preparty prevenda abonaments entrades preu 54,99 euros despeses de gestió incloses arenalsound.com 3.000 abonaments dimecres 5 agost divendres 7 agost 48 hores pop urbà electrònica indie reggaeton festival platja estiu Sounders",
+  "publishedLabel": "3 agost 2026",
+  "seoTitle": "Arenal Sound 2027: dates i prevenda des de 54,99 € | TuriaFest",
+  "seoDescription": "Arenal Sound 2027 se celebrarà del 29 de juliol a l'1 d'agost a Burriana. La prevenda d'abonaments s'obri el 5 d'agost durant 48 hores, amb 3.000 abonaments des de 54,99 € amb les despeses de gestió incloses.",
+  "coverAlt": "Art oficial d'Arenal Sound 2027 amb les dates del 29 de juliol a l'1 d'agost a Burriana i les condicions de la prevenda d'abonaments",
+  "coverCaption": "Arenal Sound 2027 se celebrarà a Burriana del 29 de juliol (preparty) a l'1 d'agost i obri la seua prevenda d'abonaments el dimecres 5 d'agost.",
+  "sections": {
+    "dates": {
+      "heading": "Tornada a Burriana del 29 de juliol a l'1 d'agost de 2027",
+      "paragraph1": "Arenal Sound ha situat la seua pròxima edició del 29 de juliol a l'1 d'agost de 2027 a la platja de Burriana (Castelló). El festival ha acomiadat la seua edició de 2026 amb el missatge «Gràcies, Sounders. Ens veiem el 2027» i ha recuperat el seu lema «Torna a viure l'estiu de la teua vida».",
+      "paragraph2": "L'abonament dóna accés als dies 29 (preparty), 30 i 31 de juliol i 1 d'agost de 2027. L'organització encara no ha anunciat els artistes ni la distribució d'escenaris de la nova edició."
+    },
+    "presale": {
+      "heading": "La prevenda s'obri el 5 d'agost i dura 48 hores",
+      "paragraph1": "La primera venda d'abonaments començarà el dimecres 5 d'agost de 2026 a les 12:00 i es tancarà el divendres 7 d'agost a les 12:00. La campanya la presenta com el preu més baix, disponible únicament durant aquestes 48 hores.",
+      "paragraph2": "En tractar-se d'una prevenda limitada, tant el preu com la disponibilitat dependran dels trams que romanguen actius durant aquesta finestra de dos dies."
+    },
+    "prices": {
+      "heading": "3.000 abonaments des de 54,99 € amb les despeses de gestió incloses",
+      "paragraph1": "El festival ha reservat 3.000 abonaments per a aquesta prevenda, amb un preu que arranca en 54,99 €. A diferència d'altres campanyes, l'import anunciat inclou les despeses de gestió.",
+      "paragraph2": "L'organització encara no ha detallat la resta de modalitats ni les condicions completes de cada tram. Abans de comprar convé revisar en la plataforma oficial el preu final i les condicions vigents."
+    },
+    "info": {
+      "heading": "On consultar la informació oficial",
+      "paragraph1": "Arenal Sound remet a la seua web arenalsound.com per a ampliar la informació sobre la prevenda i les dates de 2027.",
+      "paragraph2": "TuriaFest arreplega ací les dades comunicades pel festival en els seus canals oficials i actualitzarà aquesta notícia quan s'anuncie el cartell i la resta de modalitats d'abonament."
+    }
+  },
+  "gallery": {
+    "title": "Els cartells oficials de la prevenda",
+    "presaleAlt": "Art oficial de la prevenda d'Arenal Sound 2027 amb el lema «Torna a viure l'estiu de la teua vida» i els abonaments des de 54,99 €",
+    "presaleCaption": "La prevenda anuncia 3.000 abonaments des de 54,99 €, disponibles el dimecres 5 d'agost a les 12:00 i només durant 48 hores.",
+    "datesAlt": "Art oficial d'Arenal Sound 2027 amb el missatge «Gràcies, Sounders. Ens veiem a Arenal Sound» i les dates del 29 de juliol a l'1 d'agost de 2027 a Burriana",
+    "datesCaption": "El festival acomiada 2026 i confirma les dates de 2027: del 29 de juliol (preparty) a l'1 d'agost a Burriana, amb la prevenda del dimecres 5 al divendres 7 d'agost."
+  }
+}
     },
     "search": {
       "results": "Resultats per a «{{ query }}»",

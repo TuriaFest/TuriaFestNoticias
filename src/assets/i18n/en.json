@@ -1171,7 +1171,48 @@
           "cashlessAlt": "Official artwork explaining how to use 2026 cashless wristband balance to buy the 2027 pass",
           "cashlessCaption": "The 2026 wristband code will let buyers apply the remaining balance plus an additional 20% discount."
         }
-      }
+      },
+      "arenalSound2027Presale": {
+  "title": "Arenal Sound announces its 2027 dates and opens a 48-hour presale with passes from €54.99",
+  "summary": "After closing its 2026 edition, Arenal Sound returns to Burriana from 29 July to 1 August 2027, with the preparty on the 29th. The presale of 3,000 passes opens Wednesday 5 August at 12:00 and will only be available for 48 hours, with prices from €54.99 including booking fees.",
+  "city": "Burriana",
+  "category": "Tickets and dates",
+  "searchGenres": "Arenal Sound 2027 Burriana Castellón dates 29 30 31 July 1 August preparty presale passes tickets price 54.99 euros booking fees included arenalsound.com 3,000 passes Wednesday 5 August Friday 7 August 48 hours pop urban electronic indie reggaeton festival beach summer Sounders",
+  "publishedLabel": "3 August 2026",
+  "seoTitle": "Arenal Sound 2027: dates and presale from €54.99 | TuriaFest",
+  "seoDescription": "Arenal Sound 2027 will run from 29 July to 1 August in Burriana. The pass presale opens on 5 August for 48 hours, with 3,000 passes from €54.99 including booking fees.",
+  "coverAlt": "Official Arenal Sound 2027 artwork with the 29 July to 1 August dates in Burriana and the presale conditions",
+  "coverCaption": "Arenal Sound 2027 will take place in Burriana from 29 July (preparty) to 1 August and opens its pass presale on Wednesday 5 August.",
+  "sections": {
+    "dates": {
+      "heading": "Back to Burriana from 29 July to 1 August 2027",
+      "paragraph1": "Arenal Sound has set its next edition for 29 July to 1 August 2027 on Burriana beach (Castellón). The festival closed its 2026 edition with the message «Thanks, Sounders. See you in 2027» and brought back its slogan «Live the summer of your life again».",
+      "paragraph2": "The pass grants access to 29 (preparty), 30 and 31 July and 1 August 2027. The organisers have not yet announced the artists or the stage layout for the new edition."
+    },
+    "presale": {
+      "heading": "The presale opens on 5 August and lasts 48 hours",
+      "paragraph1": "The first pass sale starts Wednesday 5 August 2026 at 12:00 and closes Friday 7 August at 12:00. The campaign presents it as the lowest price, available only during those 48 hours.",
+      "paragraph2": "As a limited presale, both the price and availability will depend on the tiers that remain active during that two-day window."
+    },
+    "prices": {
+      "heading": "3,000 passes from €54.99 with booking fees included",
+      "paragraph1": "The festival has reserved 3,000 passes for this presale, with prices starting at €54.99. Unlike other campaigns, the announced amount includes booking fees.",
+      "paragraph2": "The organisers have not yet detailed the remaining tiers or the full conditions of each one. Before buying, check the final price and current terms on the official platform."
+    },
+    "info": {
+      "heading": "Where to check the official information",
+      "paragraph1": "Arenal Sound points to its website arenalsound.com for more information on the presale and the 2027 dates.",
+      "paragraph2": "TuriaFest gathers here the details released by the festival on its official channels and will update this article when the lineup and the remaining pass tiers are announced."
+    }
+  },
+  "gallery": {
+    "title": "The official presale posters",
+    "presaleAlt": "Official Arenal Sound 2027 presale artwork with the slogan «Live the summer of your life again» and passes from €54.99",
+    "presaleCaption": "The presale announces 3,000 passes from €54.99, available from Wednesday 5 August at 12:00 and only for 48 hours.",
+    "datesAlt": "Official Arenal Sound 2027 artwork with the message «Thanks, Sounders. See you at Arenal Sound» and the 29 July to 1 August 2027 dates in Burriana",
+    "datesCaption": "The festival bids farewell to 2026 and confirms the 2027 dates: 29 July (preparty) to 1 August in Burriana, with the presale from Wednesday 5 to Friday 7 August."
+  }
+}
     },
     "search": {
       "results": "Results for “{{ query }}”",

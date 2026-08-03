@@ -1,5 +1,6 @@
 import type { NewsArticle } from './news-article.model';
 
+export const ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG = 'arenal-sound-2027-fechas-preventa-abonos';
 export const ZEVRA_2027_PRESALE_ARTICLE_SLUG = 'zevra-2027-fechas-preventa-abonos-cashless';
 export const ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG =
   'zevra-2026-tercera-jornada-anuel-aa-juan-magan-chanel';
@@ -12,6 +13,7 @@ export const LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG =
   'latin-fest-valencia-2026-dos-dias-musica-urbana';
 export const REVE_FEST_2026_ARTICLE_SLUG = 'reve-fest-2026-nueve-horas-musica-urbana';
 
+const ARENAL_SOUND_2027_PRESALE_ASSET_ROOT = `/assets/images/news/${ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG}`;
 const ZEVRA_2026_SECOND_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_SECOND_DAY_ARTICLE_SLUG}`;
 const ZEVRA_2026_THIRD_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG}`;
 const ZEVRA_2026_FIRST_DAY_ASSET_ROOT = `/assets/images/news/${ZEVRA_2026_FIRST_DAY_ARTICLE_SLUG}`;
@@ -21,6 +23,104 @@ const LATIN_FEST_VALENCIA_NEWS_ASSET_ROOT = `/assets/images/news/${LATIN_FEST_VA
 const REVE_FEST_NEWS_ASSET_ROOT = `/assets/images/news/${REVE_FEST_2026_ARTICLE_SLUG}`;
 
 export const NEWS_ARTICLES: readonly NewsArticle[] = [
+  {
+    id: 'arenal-sound-2027-presale',
+    slug: ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG,
+    titleKey: 'news.articles.arenalSound2027Presale.title',
+    summaryKey: 'news.articles.arenalSound2027Presale.summary',
+    cityKey: 'news.articles.arenalSound2027Presale.city',
+    categoryKey: 'news.articles.arenalSound2027Presale.category',
+    searchGenresKey: 'news.articles.arenalSound2027Presale.searchGenres',
+    publishedLabelKey: 'news.articles.arenalSound2027Presale.publishedLabel',
+    publishedAt: '2026-08-03T11:30:00+02:00',
+    modifiedAt: '2026-08-03T11:30:00+02:00',
+    authorKey: 'news.article.author',
+    seoTitleKey: 'news.articles.arenalSound2027Presale.seoTitle',
+    seoDescriptionKey: 'news.articles.arenalSound2027Presale.seoDescription',
+    cover: {
+      src: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-cover-1024.webp`,
+      responsive: {
+        srcset: '640w, 800w, 1024w',
+        sizes:
+          '(min-width: 1200px) 1104px, (min-width: 1024px) calc(100vw - 96px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 48px)',
+        sources: {
+          640: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-cover-640.webp`,
+          800: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-cover-800.webp`,
+          1024: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-cover-1024.webp`,
+        },
+      },
+      width: 1024,
+      height: 768,
+      altKey: 'news.articles.arenalSound2027Presale.coverAlt',
+      captionKey: 'news.articles.arenalSound2027Presale.coverCaption',
+    },
+    cardImage: {
+      src: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-card-640x400.webp`,
+      width: 640,
+      height: 400,
+      altKey: 'news.articles.arenalSound2027Presale.coverAlt',
+    },
+    socialImage: {
+      src: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-social-1200x630.webp`,
+      width: 1200,
+      height: 630,
+      altKey: 'news.articles.arenalSound2027Presale.coverAlt',
+    },
+    sections: [
+      {
+        headingKey: 'news.articles.arenalSound2027Presale.sections.dates.heading',
+        paragraphKeys: [
+          'news.articles.arenalSound2027Presale.sections.dates.paragraph1',
+          'news.articles.arenalSound2027Presale.sections.dates.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.arenalSound2027Presale.sections.presale.heading',
+        paragraphKeys: [
+          'news.articles.arenalSound2027Presale.sections.presale.paragraph1',
+          'news.articles.arenalSound2027Presale.sections.presale.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.arenalSound2027Presale.sections.prices.heading',
+        paragraphKeys: [
+          'news.articles.arenalSound2027Presale.sections.prices.paragraph1',
+          'news.articles.arenalSound2027Presale.sections.prices.paragraph2',
+        ],
+      },
+      {
+        headingKey: 'news.articles.arenalSound2027Presale.sections.info.heading',
+        paragraphKeys: [
+          'news.articles.arenalSound2027Presale.sections.info.paragraph1',
+          'news.articles.arenalSound2027Presale.sections.info.paragraph2',
+        ],
+      },
+    ],
+    galleryTitleKey: 'news.articles.arenalSound2027Presale.gallery.title',
+    gallery: [
+      {
+        src: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-gallery-01-1024.webp`,
+        width: 1024,
+        height: 1281,
+        altKey: 'news.articles.arenalSound2027Presale.gallery.presaleAlt',
+        captionKey: 'news.articles.arenalSound2027Presale.gallery.presaleCaption',
+      },
+      {
+        src: `${ARENAL_SOUND_2027_PRESALE_ASSET_ROOT}/arenal-sound-2027-gallery-02-1024.webp`,
+        width: 1024,
+        height: 1281,
+        altKey: 'news.articles.arenalSound2027Presale.gallery.datesAlt',
+        captionKey: 'news.articles.arenalSound2027Presale.gallery.datesCaption',
+      },
+    ],
+    source: {
+      url: 'https://arenalsound.com/',
+      additionalUrls: [
+        'https://www.instagram.com/p/DbkFKrWkale/',
+        'https://www.instagram.com/p/Dbkgroaj1o-/',
+      ],
+    },
+  },
   {
     id: 'zevra-2027-presale',
     slug: ZEVRA_2027_PRESALE_ARTICLE_SLUG,

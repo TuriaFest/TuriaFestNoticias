@@ -1,4 +1,5 @@
 import {
+  ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG,
   getNewsArticleBySlug,
   LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG,
   LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG,
@@ -11,6 +12,23 @@ import {
 } from './news.catalogue';
 
 describe('news catalogue', () => {
+  it('returns the Arenal Sound 2027 presale article by its immutable slug', () => {
+    expect(getNewsArticleBySlug(ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG)?.id).toBe(
+      'arenal-sound-2027-presale',
+    );
+  });
+
+  it('uses the supplied Arenal Sound 2027 posters for its responsive cover and two-image gallery', () => {
+    const article = getNewsArticleBySlug(ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG);
+
+    expect(article?.cover.responsive?.srcset).toBe('640w, 800w, 1024w');
+    expect(article?.cover.responsive?.sources[1024]).toContain('arenal-sound-2027-cover-1024.webp');
+    expect(article?.socialImage.width).toBe(1200);
+    expect(article?.socialImage.height).toBe(630);
+    expect(article?.gallery).toHaveLength(2);
+    expect(article?.gallery.every((image) => image.src.includes('/arenal-sound-2027-'))).toBe(true);
+  });
+
   it('returns the Zevra 2027 presale article by its immutable slug', () => {
     expect(getNewsArticleBySlug(ZEVRA_2027_PRESALE_ARTICLE_SLUG)?.id).toBe('zevra-2027-presale');
   });

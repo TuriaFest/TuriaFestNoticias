@@ -50,6 +50,47 @@
       "backToNews": "Volver a Noticias"
     },
     "articles": {
+      "arenalSound2027Presale": {
+        "title": "Arenal Sound anuncia sus fechas de 2027 y abre una preventa de 48 horas con abonos desde 54,99 €",
+        "summary": "Tras cerrar su edición de 2026, Arenal Sound vuelve a Burriana del 29 de julio al 1 de agosto de 2027, con preparty el día 29. La preventa de 3.000 abonos se abre el miércoles 5 de agosto a las 12:00 y solo estará disponible 48 horas, con precios desde 54,99 € con gastos de gestión incluidos.",
+        "city": "Burriana",
+        "category": "Entradas y fechas",
+        "searchGenres": "Arenal Sound 2027 Burriana Castellón fechas 29 30 31 julio 1 agosto preparty pre-party preventa abonos entradas precio 54,99 euros gastos de gestión incluidos arenalsound.com 3.000 abonos miércoles 5 agosto viernes 7 agosto 48 horas pop urbano electrónica indie reguetón festival playa verano Sounders",
+        "publishedLabel": "3 agosto 2026",
+        "seoTitle": "Arenal Sound 2027: fechas y preventa desde 54,99 € | TuriaFest",
+        "seoDescription": "Arenal Sound 2027 se celebrará del 29 de julio al 1 de agosto en Burriana. La preventa de abonos abre el 5 de agosto durante 48 horas, con 3.000 abonos desde 54,99 € con gastos de gestión incluidos.",
+        "coverAlt": "Arte oficial de Arenal Sound 2027 con las fechas del 29 de julio al 1 de agosto en Burriana y las condiciones de la preventa de abonos",
+        "coverCaption": "Arenal Sound 2027 se celebrará en Burriana del 29 de julio (preparty) al 1 de agosto y abre su preventa de abonos el miércoles 5 de agosto.",
+        "sections": {
+          "dates": {
+            "heading": "Vuelta a Burriana del 29 de julio al 1 de agosto de 2027",
+            "paragraph1": "Arenal Sound ha situado su próxima edición del 29 de julio al 1 de agosto de 2027 en la playa de Burriana (Castellón). El festival ha despedido su edición de 2026 con el mensaje «Gracias, Sounders. Nos vemos en 2027» y ha recuperado su lema «Vuelve a vivir el verano de tu vida».",
+            "paragraph2": "El abono da acceso a los días 29 (preparty), 30 y 31 de julio y 1 de agosto de 2027. La organización todavía no ha anunciado los artistas ni la distribución de escenarios de la nueva edición."
+          },
+          "presale": {
+            "heading": "La preventa se abre el 5 de agosto y dura 48 horas",
+            "paragraph1": "La primera venta de abonos comenzará el miércoles 5 de agosto de 2026 a las 12:00 y se cerrará el viernes 7 de agosto a las 12:00. La campaña la presenta como el precio más bajo, disponible únicamente durante esas 48 horas.",
+            "paragraph2": "Al tratarse de una preventa limitada, tanto el precio como la disponibilidad dependerán de los tramos que permanezcan activos durante esa ventana de dos días."
+          },
+          "prices": {
+            "heading": "3.000 abonos desde 54,99 € con gastos de gestión incluidos",
+            "paragraph1": "El festival ha reservado 3.000 abonos para esta preventa, con un precio que arranca en 54,99 €. A diferencia de otras campañas, el importe anunciado incluye los gastos de gestión.",
+            "paragraph2": "La organización no ha detallado todavía el resto de modalidades ni las condiciones completas de cada tramo. Antes de comprar conviene revisar en la plataforma oficial el precio final y las condiciones vigentes."
+          },
+          "info": {
+            "heading": "Dónde consultar la información oficial",
+            "paragraph1": "Arenal Sound remite a su web arenalsound.com para ampliar la información sobre la preventa y las fechas de 2027.",
+            "paragraph2": "TuriaFest recoge aquí los datos comunicados por el festival en sus canales oficiales y actualizará esta noticia cuando se anuncien el cartel y el resto de modalidades de abono."
+          }
+        },
+        "gallery": {
+          "title": "Los carteles oficiales de la preventa",
+          "presaleAlt": "Arte oficial de la preventa de Arenal Sound 2027 con el lema «Vuelve a vivir el verano de tu vida» y los abonos desde 54,99 €",
+          "presaleCaption": "La preventa anuncia 3.000 abonos desde 54,99 €, disponibles el miércoles 5 de agosto a las 12:00 y solo durante 48 horas.",
+          "datesAlt": "Arte oficial de Arenal Sound 2027 con el mensaje «Gracias, Sounders. Nos vemos en Arenal Sound» y las fechas del 29 de julio al 1 de agosto de 2027 en Burriana",
+          "datesCaption": "El festival despide 2026 y confirma las fechas de 2027: del 29 de julio (preparty) al 1 de agosto en Burriana, con la preventa del miércoles 5 al viernes 7 de agosto."
+        }
+      },
       "zevra2027Presale": {
         "title": "Zevra confirma las fechas de 2027 y abrirá una preventa desde 59,95 €",
         "summary": "Zevra volverá a Cullera del 23 al 25 de julio de 2027: el viernes se reservará para la preparty y el festival ocupará el sábado y el domingo. La preventa limitada se abrirá el 30 de julio de 2026 a las 12:00.",

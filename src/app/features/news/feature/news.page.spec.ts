@@ -3,6 +3,7 @@ import { ActivatedRoute, convertToParamMap, provideRouter } from '@angular/route
 import { BehaviorSubject } from 'rxjs';
 
 import {
+  ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG,
   LATIN_FEST_2027_REGISTRATION_ARTICLE_SLUG,
   LATIN_FEST_VALENCIA_2026_ARTICLE_SLUG,
   REVE_FEST_2026_ARTICLE_SLUG,
@@ -46,15 +47,18 @@ describe('NewsPageComponent', () => {
     const fixture = TestBed.createComponent(NewsPageComponent);
     fixture.detectChanges();
     const root = fixture.nativeElement as HTMLElement;
-    const article = root.querySelector('[data-testid="news-card-zevra-2027-presale"]');
+    const article = root.querySelector('[data-testid="news-card-arenal-sound-2027-presale"]');
 
     expect(article?.tagName).toBe('ARTICLE');
-    expect(root.querySelectorAll('article')).toHaveLength(7);
+    expect(root.querySelectorAll('article')).toHaveLength(8);
     expect(article?.querySelector('img')).not.toBeNull();
-    expect(article?.querySelector('time')?.getAttribute('datetime')).toContain('2026-07-27');
+    expect(article?.querySelector('time')?.getAttribute('datetime')).toContain('2026-08-03');
     expect(
       article?.querySelector<HTMLAnchorElement>('[data-testid="news-card-read-more"]')?.href,
-    ).toContain(`/noticias/${ZEVRA_2027_PRESALE_ARTICLE_SLUG}`);
+    ).toContain(`/noticias/${ARENAL_SOUND_2027_PRESALE_ARTICLE_SLUG}`);
+    expect(
+      root.querySelector(`[href="/noticias/${ZEVRA_2027_PRESALE_ARTICLE_SLUG}"]`),
+    ).not.toBeNull();
     expect(
       root.querySelector(`[href="/noticias/${ZEVRA_2026_THIRD_DAY_ARTICLE_SLUG}"]`),
     ).not.toBeNull();
