@@ -8,6 +8,14 @@
   box-sizing: border-box;
 }
 
+// The `hidden` attribute must always win over component `display` rules.
+// Without this, a class that sets `display: flex/grid/block` (e.g. the nav
+// language menu / search panel) overrides the UA `[hidden] { display: none }`
+// and the element renders visible even while scripts treat it as hidden.
+[hidden] {
+  display: none !important;
+}
+
 html,
 body {
   margin: 0;
