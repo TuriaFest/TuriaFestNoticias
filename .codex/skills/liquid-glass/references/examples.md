@@ -336,100 +336,100 @@ Worked examples for the [Liquid Glass skill](../SKILL.md). Each one composes the
 
 ---
 
-### Example 5: Component Using Liquid Glass in Angular
+### Example 5: Component Using Liquid Glass in Astro
 
-**TypeScript Component:**
+**`.astro` Component:**
 
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'fv-festival-spotlight',
-  standalone: true,
-  template: `
-    <article class="liquid-glass-card spotlight-card">
-      <img
-        ngSrc="festival-poster.jpg"
-        alt="Festival Poster"
-        width="300"
-        height="300"
-        class="spotlight-card__image"
-      />
-      <div class="spotlight-card__content">
-        <h3 class="spotlight-card__title">{{ festival.nombre }}</h3>
-        <p class="spotlight-card__genre">{{ festival.generos.join(', ') }}</p>
-        <p class="spotlight-card__dates">
-          {{ festival.fechaInicio | date: 'd MMM' }} –
-          {{ festival.fechaFin | date: 'd MMM yyyy' }}
-        </p>
-        <a
-          [routerLink]="['/festivales', festival.slug]"
-          class="liquid-glass-button spotlight-card__link"
-        >
-          Explore Festival
-        </a>
-      </div>
-    </article>
-  `,
-  styles: [`
-    .spotlight-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--fv-space-4);
-      max-width: 600px;
-
-      &__image {
-        border-radius: var(--fv-radius-2);
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-
-      &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: var(--fv-space-2);
-      }
-
-      &__title {
-        margin: 0;
-        font-size: var(--fv-font-lg);
-        font-weight: 600;
-        color: var(--fv-text-primary);
-      }
-
-      &__genre {
-        margin: 0;
-        font-size: var(--fv-font-sm);
-        color: var(--fv-accent-blue);
-        font-weight: 500;
-      }
-
-      &__dates {
-        margin: 0;
-        font-size: var(--fv-font-sm);
-        color: var(--fv-text-secondary);
-      }
-
-      &__link {
-        margin-top: var(--fv-space-2);
-      }
-
-      @media (max-width: 640px) {
-        grid-template-columns: 1fr;
-      }
-    }
-  `]
-})
-export class FestivalSpotlightComponent {
-  festival = {
-    nombre: 'Medusa Festival',
-    slug: 'medusa',
-    generos: ['electronic', 'techno', 'house'],
-    fechaInicio: '2026-07-23',
-    fechaFin: '2026-07-25'
+```astro
+---
+// src/components/FestivalSpotlight.astro
+// Accepts a plain data object as a prop — no store, no service injection.
+// Date formatting happens in frontmatter (plain TS), never as inline template logic.
+interface Props {
+  festival: {
+    nombre: string;
+    slug: string;
+    generos: string[];
+    fechaInicio: string;
+    fechaFin: string;
   };
 }
+
+const { festival } = Astro.props;
+
+const dateFormatter = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short' });
+const dateRange = `${dateFormatter.format(new Date(festival.fechaInicio))} – ${dateFormatter.format(new Date(festival.fechaFin))}`;
+---
+
+<article class="liquid-glass-card spotlight-card">
+  <img
+    src={`/assets/images/festivals/${festival.slug}/${festival.slug}-poster.webp`}
+    alt={`Cartel de ${festival.nombre}`}
+    width="300" height="300"
+    loading="lazy"
+    class="spotlight-card__image"
+  />
+  <div class="spotlight-card__content">
+    <h3 class="spotlight-card__title">{festival.nombre}</h3>
+    <p class="spotlight-card__genre">{festival.generos.join(', ')}</p>
+    <p class="spotlight-card__dates">{dateRange}</p>
+    <a href={`/festivales/${festival.slug}`} class="liquid-glass-button spotlight-card__link">
+      Explore Festival
+    </a>
+  </div>
+</article>
+
+<style lang="scss" is:global>
+  @use '../styles/mixins' as *;
+
+  .spotlight-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--fv-space-4);
+    max-width: 600px;
+
+    &__image {
+      border-radius: var(--fv-radius-lg);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--fv-space-2);
+    }
+
+    &__title {
+      margin: 0;
+      font-size: var(--fv-text-lg);
+      font-weight: 600;
+      color: var(--fv-text-primary);
+    }
+
+    &__genre {
+      margin: 0;
+      font-size: var(--fv-text-sm);
+      color: var(--fv-accent-blue);
+      font-weight: 500;
+    }
+
+    &__dates {
+      margin: 0;
+      font-size: var(--fv-text-sm);
+      color: var(--fv-text-secondary);
+    }
+
+    &__link {
+      margin-top: var(--fv-space-2);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 ```
 

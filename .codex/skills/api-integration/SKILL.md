@@ -1,44 +1,50 @@
 ---
 name: api-integration
 description: >-
-  Typed HTTP services for festival data: DTOs validated once with Zod at the boundary,
-  interceptors and caching, with HttpClient confined to data-access folders. Use when adding or
-  changing a service, an HTTP call, a DTO contract or a resolver.
+  Typed data-fetching for TuriaFestNoticias: today a local, framework-agnostic catalogue in
+  src/data; when remote sources arrive, DTOs are validated once with Zod at the boundary inside a
+  data-access module, using the platform fetch API — no HttpClient, no interceptors. Use when
+  adding or changing a catalogue module, a remote fetch, a DTO contract, or a getStaticPaths data
+  source.
 ---
 
 # 🌐 API Integration
 
-Patterns for communicating with backend services that supply festival data.
+Patterns for how **TuriaFestNoticias** obtains the data it renders.
 
 ## Purpose
 
-Standardize HTTP communication for the **TuriaFestNoticias** portal — fetching festival listings from the **Sanity** headless CMS, artist line-ups, venue information, and (in the future) ticketing partners like Dice or Ticketmaster.
+Standardize data access for the portal — today the **local news catalogue** (`src/data/news.catalogue.ts`), and on the roadmap, remote sources: a headless CMS for the festival catalogue (see [[sanity-cms]]), artist line-ups, venue information, and (future) ticketing partners like Dice or Ticketmaster.
 
-## Scope
+## Current state (MVP)
 
-- Typed services built on `HttpClient`.
-- Strongly-typed DTOs in `@shared/domain/` (cross-feature) or a feature's own `data-access/` (feature-local).
-- **Runtime boundary validation with Zod** — every payload that crosses the network is parsed before reaching the rest of the app.
-- HTTP interceptors for auth tokens, error normalization, request logging, and caching.
-- Caching of read-only endpoints (festival catalogue rarely changes mid-session).
+There is **no HTTP layer today**. `NEWS_ARTICLES` in `src/data/news.catalogue.ts` is a hand-authored, typed, in-memory array (`readonly NewsArticle[]`) matching the `NewsArticle` interface in `src/data/news-article.model.ts`. Pages call `getNewsArticleBySlug(slug)` from the catalogue at **build time** — inside `.astro` frontmatter or a `getStaticPaths()` — and Astro bakes the result into static HTML. There is no client-side fetch, no loading state, no error boundary to design for yet.
 
-## Recommended Approach
+## Scope (for when remote data arrives)
 
-- One service per resource: `FestivalService`, `ArtistService`, `VenueService`.
-- Return `Signal<T>` via `toSignal()` for components; expose raw `Observable<T>` only when chained operators are needed.
-- Centralize the base URL in `environment.ts`.
-- Use `HttpResourceRef` (Angular 19+) for declarative resources where possible.
+- A typed **data-access module** per resource, colocated under `src/data/` (e.g. a future `src/data/festival.repository.ts`).
+- Strongly-typed DTOs and their inferred domain types in the same module as the model they describe (`<name>.model.ts`), mirroring the current `news-article.model.ts` pattern.
+- **Runtime boundary validation with Zod** — every payload that crosses the network is parsed before the rest of the app (pages, layouts, islands) ever sees it.
+- Plain platform `fetch`, called only at **build time** (inside `.astro` frontmatter, `getStaticPaths()`, or a Node build script under `scripts/`) since the site is fully static (`output: 'static'`) — never from a client island, which would defeat prerendering and leak a remote origin into the client bundle.
+- No interceptors, no `HttpClient`: Astro has neither. Cross-cutting concerns (error normalization, caching) are plain functions the data-access module calls explicitly.
+
+## Recommended approach
+
+- One module per resource: `src/data/festival.repository.ts`, `src/data/artist.repository.ts` (naming mirrors the existing `news.catalogue.ts` convention — `<domain>.catalogue.ts` for fully local data, `<domain>.repository.ts` once a module talks to a remote source).
+- Export plain async functions (`listFestivals(): Promise<Festival[]>`, `getFestivalBySlug(slug): Promise<Festival | undefined>`) — no classes required unless the module needs to memoize a client instance (as `sanityClient` will, see [[sanity-cms]]).
+- Centralize any remote base URL or project ID in `src/lib/site.ts` alongside `SITE_BASE_URL` — never hardcode it inside a data-access module.
+- Because everything resolves at build time, "caching" means: fetch once per `astro build` invocation, not per request. A module-level `let cache: Festival[] | undefined` guarded by the function is enough — there is no multi-request server process to worry about staleness within.
 
 ## Zod at the boundary
 
-The **only** place Zod runs is at the HTTP boundary. Once a payload is parsed, the inferred TypeScript type is trusted everywhere downstream — no defensive validation in stores or components.
+The **only** place Zod runs is at the fetch boundary, inside the data-access module. Once a payload is parsed, the inferred TypeScript type is trusted everywhere downstream — no defensive validation in pages, layouts, or islands.
 
 ### Pattern
 
-Each model file declares the Zod schema **and** exports the inferred type. Components and stores import the type; only the service imports the schema.
+Each model file declares the Zod schema **and** exports the inferred type, exactly like `news-article.model.ts` exports `NewsArticle` today — except a remote-backed model additionally exports the schema used to validate it.
 
 ```ts
-// src/app/shared/domain/festival.model.ts
+// src/data/festival.model.ts (roadmap)
 import { z } from 'zod';
 
 export const ProvinciaSchema = z.enum(['Valencia', 'Alicante', 'Castellón']);
@@ -60,131 +66,111 @@ export const FestivalSchema = z.object({
 export type Festival = z.infer<typeof FestivalSchema>;
 ```
 
-### Service usage
+### Data-access module usage
 
 ```ts
-// src/app/shared/data-access/festival.service.ts
-@Injectable({ providedIn: 'root' })
-export class FestivalService {
-  private readonly http = inject(HttpClient);
-  private readonly base = environment.apiBaseUrl;
+// src/data/festival.repository.ts (roadmap)
+import { z } from 'zod';
+import { FestivalSchema, type Festival } from './festival.model';
+import { CMS_BASE_URL } from '@lib/site';
 
-  list(): Observable<Festival[]> {
-    return this.http
-      .get<unknown>(`${this.base}/festivals`)
-      .pipe(map((raw) => z.array(FestivalSchema).parse(raw)));
-  }
+let cache: Festival[] | undefined;
+
+export async function listFestivals(): Promise<Festival[]> {
+  if (cache) return cache;
+  const response = await fetch(`${CMS_BASE_URL}/festivals`);
+  const raw: unknown = await response.json();
+  cache = z.array(FestivalSchema).parse(raw);
+  return cache;
+}
+
+export async function getFestivalBySlug(slug: string): Promise<Festival | undefined> {
+  const all = await listFestivals();
+  return all.find((festival) => festival.slug === slug);
 }
 ```
 
 ### Rules
 
-- **Parse, never validate** — use `.parse()` (or `.safeParse()` when the failure is a user-facing concern, not a bug). A failed parse is an error.
-- **Schemas live next to types**, in `@shared/domain/` (or a feature's `data-access/`). Never inside services.
-- **One schema per DTO**. Compose with `z.object({ ... }).extend(...)`, never duplicate.
-- **Never re-validate downstream**. Once parsed, the type is trusted.
-- **Coerce, don't convert**: use `z.coerce.date()` for ISO strings that need to become `Date` at the boundary; never do `new Date(x)` later.
+- **Parse, never validate** — use `.parse()` (or `.safeParse()` when the failure is a build-time concern you want to report gracefully rather than crash `astro build`). A failed parse during the build is a build error, by design — it is cheaper to fail CI than to ship bad data as static HTML.
+- **Schemas live next to types**, in the resource's model file under `src/data/`. Never inside a page's frontmatter.
+- **One schema per DTO**. Compose with `.extend(...)`, never duplicate.
+- **Never re-validate downstream**. Once parsed in the data-access module, the type is trusted by every page/island that imports it.
+- **Coerce, don't convert**: use `z.coerce.date()` for ISO strings that need to become `Date` at the boundary; never do `new Date(x)` later inside a page.
 - **Discriminated unions** for polymorphic payloads (`z.discriminatedUnion('tipo', [...])`).
 
 ### Error mapping
 
-A failed `parse()` throws `ZodError`. The HTTP interceptor catches it and normalizes to the `FestivalError` shape with `code: 'VALIDATION'` (see [[error-handling]]). The user sees a generic "no hemos podido cargar la información" message; the dev sees the full Zod issue path in Sentry.
+A failed `.parse()` throws `ZodError` during `astro build`. Wrap the call site in a helper that maps it to the shared `FestivalError` shape (see [[error-handling]]) before logging, so the build failure carries a `code` and message key instead of a raw stack trace.
 
-## Conventions
+## Conventions (roadmap, once a CMS or ticketing API is wired)
 
-- `GET /festivals` → list with pagination and filter query params.
-- `GET /festivals/:slug` → detail page hydration.
-- `GET /festivals/:slug/artists` → line-up.
-- All endpoints return ISO-8601 dates; `z.string().datetime()` at the boundary, formatted later by [[internationalization]] via `date-fns`.
+- A `list*()` function per resource collection, called from a page's frontmatter or a `getStaticPaths()`.
+- A `get*BySlug()` function per detail page, used the same way `getNewsArticleBySlug()` is used in `src/pages/noticias/[slug].astro` today.
+- All remote payloads carry ISO-8601 dates; `z.string().datetime()` at the boundary, formatted later by [[internationalization]] via `Intl`/precomputed labels.
 
-## Caching
+## Error handling
 
-- Read-only catalogue endpoints get a service-level memoization with stale-while-revalidate.
-- Interceptor honors `Cache-Control` headers from Cloudflare's edge.
-
-## Error Handling
-
-Delegated to [[error-handling]] via an `HttpInterceptor` that catches both network errors and `ZodError`s.
+Delegated to [[error-handling]]: a shared `toFestivalError()` helper normalizes both fetch failures and `ZodError`s into the `FestivalError` shape, called explicitly from each data-access function — there is no interceptor to register it in globally, since Astro has no HTTP client pipeline.
 
 ---
 
 ## Examples
 
-### Service with caching — stale-while-revalidate
+### Local catalogue lookup — today's actual pattern
 
 ```ts
-// src/app/shared/data-access/festival.service.ts
-import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, shareReplay } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { z } from 'zod';
-import { environment } from '@env/environment';
-import { FestivalSchema } from '@shared/domain/festival.model';
-import type { Festival } from '@shared/domain/festival.model';
+// src/data/news.catalogue.ts (excerpt)
+import type { NewsArticle } from './news-article.model';
 
-@Injectable({ providedIn: 'root' })
-export class FestivalService {
-  private readonly http = inject(HttpClient);
-  private readonly base = environment.apiBaseUrl;
+export const NEWS_ARTICLES: readonly NewsArticle[] = [
+  /* ... typed article objects ... */
+];
 
-  // Cached for the session — catalogue rarely changes mid-session.
-  // shareReplay(1) multicasts to all subscribers without re-fetching.
-  private readonly catalogue$ = this.http
-    .get<unknown>(`${this.base}/festivals`)
-    .pipe(
-      map(raw => z.array(FestivalSchema).parse(raw)),
-      shareReplay(1),
-    );
-
-  list(): Observable<Festival[]> {
-    return this.catalogue$;
-  }
-
-  getBySlug(slug: string): Observable<Festival> {
-    return this.http
-      .get<unknown>(`${this.base}/festivals/${slug}`)
-      .pipe(map(raw => FestivalSchema.parse(raw)));
-  }
+export function getNewsArticleBySlug(slug: string): NewsArticle | undefined {
+  return NEWS_ARTICLES.find((article) => article.slug === slug);
 }
 ```
 
-### Interceptor registration in app.config.ts
+```astro
+---
+// src/pages/noticias/[slug].astro
+import { NEWS_ARTICLES, getNewsArticleBySlug } from '@data/news.catalogue';
 
-```ts
-// src/app/app.config.ts
-import { ApplicationConfig } from '@angular/core';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { httpErrorInterceptor } from '@core/interceptors/http-error.interceptor';
+export function getStaticPaths() {
+  return NEWS_ARTICLES.map((article) => ({ params: { slug: article.slug } }));
+}
 
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideHttpClient(
-      withInterceptors([httpErrorInterceptor]),
-    ),
-    // ... other providers
-  ],
-};
+const { slug } = Astro.params;
+const article = getNewsArticleBySlug(slug ?? '');
+if (!article) throw new Error(`News article route is missing catalogue data: ${slug}`);
+---
 ```
 
-### HttpResource — declarative resource (Angular 19+)
+### Remote data-access module with Zod (roadmap pattern)
 
 ```ts
-// Declarative alternative when a single resource is tied to route params
-@Component({ /* ... */ })
-export class FestivalDetailPageComponent {
-  private readonly route = inject(ActivatedRoute);
-
-  // Automatically re-fetches when the slug param changes.
-  // Zod parsing happens in the service; the component just reads the resource.
-  readonly festivalResource = httpResource<Festival>(() => ({
-    url:  `/api/festivals/${this.route.snapshot.params['slug']}`,
-    method: 'GET',
-  }));
-
-  readonly festival = this.festivalResource.value;   // Signal<Festival | undefined>
-  readonly loading  = this.festivalResource.isLoading; // Signal<boolean>
+// src/data/festival.repository.ts (roadmap — see above for the full listing)
+export async function getFestivalBySlug(slug: string): Promise<Festival | undefined> {
+  const all = await listFestivals();
+  return all.find((festival) => festival.slug === slug);
 }
+```
+
+```astro
+---
+// src/pages/festivales/[slug].astro (roadmap)
+import { listFestivals, getFestivalBySlug } from '@data/festival.repository';
+
+export async function getStaticPaths() {
+  const festivals = await listFestivals();
+  return festivals.map((festival) => ({ params: { slug: festival.slug } }));
+}
+
+const { slug } = Astro.params;
+const festival = await getFestivalBySlug(slug ?? '');
+if (!festival) throw new Error(`Festival route is missing catalogue data: ${slug}`);
+---
 ```
 
 ## Related skills

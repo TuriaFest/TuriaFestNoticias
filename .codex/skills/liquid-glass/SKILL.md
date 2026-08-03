@@ -296,39 +296,42 @@ Import this utility file in `src/styles/styles.scss`:
 
 ---
 
-## Angular Rules
+## Astro Rules
 
-When implementing Liquid Glass in Angular:
+When implementing Liquid Glass in an `.astro` component:
 
 ### Component Structure
 
-```typescript
-// ✓ DO: Use utility classes
+```astro
+<!-- ✓ DO: Use utility classes directly in markup -->
 <div class="liquid-glass-card">
   <h3>Festival Lineup</h3>
   <p>Artists for this year's event</p>
 </div>
 
-// ✓ DO: Extend utilities with BEM modifiers
+<!-- ✓ DO: Extend utilities with BEM modifiers -->
 <button class="liquid-glass-button liquid-glass--glow-blue">
   View Details
 </button>
+```
 
-// ✗ DON'T: Create component-specific styles
+```scss
+// ✗ DON'T: Create component-specific styles that duplicate the utility
+// src/components/_my-panel.scss
 .my-custom-glass {
   background: rgba(17, 17, 29, 0.6);
   backdrop-filter: blur(16px);
-  // — duplicates .liquid-glass
+  // — duplicates .liquid-glass, use the utility class instead
 }
 ```
 
 ### Best Practices
 
-- **Reuse utility classes** — avoid duplicating `.liquid-glass` across components
-- **Reuse design tokens** — never hardcode values
-- **Prefer shared utilities** — if a glass style is used in multiple components, add it to `_liquid-glass.scss`
-- **Avoid component-specific SCSS** — unless absolutely necessary for layout or positioning
-- **Follow existing project architecture** — use `@shared/ui` for reusable glass components
+- **Reuse utility classes** — avoid duplicating `.liquid-glass` across components; apply the class directly in the `.astro` markup.
+- **Reuse design tokens** — never hardcode values.
+- **Prefer shared utilities** — if a glass style is used on multiple pages/components, add it to `_liquid-glass.scss` rather than to a page-local partial.
+- **Avoid component-specific SCSS** — unless absolutely necessary for layout or positioning; keep that layout-only SCSS in the component's colocated `_<name>.scss` partial (see [[project-structure]]) and let `.liquid-glass-*` own the visual effect.
+- **Follow existing project architecture** — shared, reusable glass components live in `src/components/` per [[ui-components]]; page-specific glass panels can stay in the page's own colocated SCSS partial as long as they compose the shared `.liquid-glass-*` utility rather than reimplementing it.
 
 ---
 
@@ -442,7 +445,7 @@ Liquid Glass must remain performant and smooth.
 
 ## Implementation examples
 
-Five worked examples (festival card, map overlay, filter panel, hero overlay, Angular component) with full templates and SCSS.
+Five worked examples (festival card, map overlay, filter panel, hero overlay, `.astro` component) with full templates and SCSS.
 
 ➡️ Moved to [`references/examples.md`](references/examples.md) to keep this SKILL.md lean.
 

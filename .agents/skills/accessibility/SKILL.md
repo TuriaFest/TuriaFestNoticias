@@ -28,39 +28,44 @@ Ensure every user — including those using screen readers, keyboard navigation,
 
 ## Automated Checks
 
-- `axe-core` integrated into Playwright suite.
-- ESLint plugin `eslint-plugin-jsx-a11y` adapted for Angular templates via `@angular-eslint/template`.
+- `axe-core` integrated into the Playwright suite.
+- `astro check` catches basic template/type issues; there is no JSX-based lint layer — semantic-HTML and ARIA discipline in `.astro` markup is enforced by this skill and by code review, not by an ESLint a11y plugin.
 
 ---
 
 ## Examples
 
-### Semantic HTML — nav-bar template
+### Semantic HTML — NavBar.astro markup
 
-```html
-<!-- ✅ DO — semantic landmarks, aria-current, aria-label from i18n -->
+```astro
+---
+// ✅ DO — semantic landmarks, aria-current, aria-label from i18n, computed in frontmatter
+import { ES_TRANSLATIONS } from '@i18n/translations';
+import { t } from '@i18n/index';
+
+const currentPath = Astro.url.pathname;
+---
+
 <header>
-  <nav [attr.aria-label]="'nav.aria.primary' | t">
-    <a routerLink="/"
-       [attr.aria-current]="(currentUrl$ | async) === '/' ? 'page' : null">
-      {{ 'nav.home' | t }}
+  <nav aria-label={t('nav.aria.primary', ES_TRANSLATIONS)}>
+    <a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>
+      {t('nav.home', ES_TRANSLATIONS)}
     </a>
-    <a routerLink="/festivales"
-       [attr.aria-current]="(currentUrl$ | async)?.startsWith('/festivales') ? 'page' : null">
-      {{ 'nav.festivals' | t }}
+    <a href="/festivales" aria-current={currentPath.startsWith('/festivales') ? 'page' : undefined}>
+      {t('nav.festivals', ES_TRANSLATIONS)}
     </a>
   </nav>
 </header>
 
 <main id="main-content">
-  <router-outlet />
+  <slot />
 </main>
 ```
 
-```html
-<!-- ❌ DON'T — div soup, no landmarks, aria-label hardcoded in Spanish -->
+```astro
+<!-- ❌ DON'T — div soup, no landmarks, aria-label hardcoded in Spanish, click handled inline -->
 <div class="nav" aria-label="Navegación">
-  <div class="link" (click)="go('/')">Inicio</div>
+  <div class="link" onclick="location.href='/'">Inicio</div>
 </div>
 ```
 
@@ -84,13 +89,24 @@ Ensure every user — including those using screen readers, keyboard navigation,
 
 ### Live region — search result count
 
-```html
-<!-- Announced to screen readers when results change -->
-<p aria-live="polite" aria-atomic="true" class="sr-only">
-  {{ 'search.results.count' | t : { count: results().length } }}
-</p>
+```astro
+<!-- Announced to screen readers when the news-search island updates the DOM -->
+<p aria-live="polite" aria-atomic="true" class="sr-only" data-testid="search-results-count"></p>
+```
 
-<!-- sr-only utility in _reset.scss -->
+```ts
+// src/scripts/news-search.ts — the island writes the count, never inline markup interpolation
+import { translateKey } from './i18n';
+
+function updateResultsCount(count: number): void {
+  const el = document.querySelector<HTMLElement>('[data-testid="search-results-count"]');
+  if (!el) return;
+  el.textContent = translateKey('search.results.count', { count });
+}
+```
+
+```scss
+/* sr-only utility in _reset.scss */
 ```
 
 ```scss

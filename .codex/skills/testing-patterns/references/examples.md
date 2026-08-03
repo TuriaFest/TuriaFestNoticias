@@ -1,118 +1,244 @@
-# Test examples (Vitest, ATL, Zod)
+# Test examples (Vitest + jsdom)
 
 > Reference for the [[testing-patterns]] skill — extracted from `SKILL.md` for progressive disclosure.
 
 ## Examples
 
-### Vitest — service unit test
+### Vitest — pure-domain unit test
+
+Framework-agnostic modules under `src/data`, `src/lib`, `src/i18n` are plain TypeScript — no DOM, no HTTP, no framework harness needed. Import the module and assert directly.
 
 ```ts
-// src/app/shared/data-access/festival.service.spec.ts
-import { TestBed } from '@angular/core/testing';
-import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { FestivalService } from './festival.service';
-import { FestivalSchema } from '@shared/domain/festival.model';
+// src/data/news-search.spec.ts
+import { describe, it, expect } from 'vitest';
 
-const FESTIVAL_FIXTURE = {
-  slug: 'fib-benicassim', nombre: 'FIB', provincia: 'Castellón',
-  ciudad: 'Benicàssim', fechaInicio: '2026-07-15T00:00:00.000Z',
-  fechaFin: '2026-07-18T00:00:00.000Z', generos: ['indie', 'rock'],
-  cartel: [], precioDesde: 89, urlOficial: 'https://fiberfib.com',
-  poster: { src: '/assets/images/festivals/fib-2026.webp', alt: 'Cartel FIB 2026' },
-  ubicacion: { lat: 39.999, lng: -0.075 }, estado: 'entradas-abiertas',
-  cabezasDeCartel: ['Foo Fighters'],
-};
+import { NewsSearchService, type NewsSearchDocument } from './news-search';
 
-describe('FestivalService', () => {
-  let service: FestivalService;
-  let http: HttpTestingController;
+describe('NewsSearchService', () => {
+  const articles: readonly NewsSearchDocument[] = [
+    {
+      id: 'article-one',
+      title: 'La primera noticia de TuriaFestNoticias',
+      city: 'València',
+      genres: 'electrónica techno',
+    },
+    {
+      id: 'article-two',
+      title: 'El pop vuelve a Alicante',
+      city: 'Alicante',
+      genres: 'pop',
+    },
+  ];
+
+  function createService(): NewsSearchService {
+    const service = new NewsSearchService();
+    service.buildIndex(articles);
+    return service;
+  }
+
+  it('finds articles by title', () => {
+    expect(
+      createService()
+        .search('primera')
+        .map((result) => result.id),
+    ).toEqual(['article-one']);
+  });
+
+  it('finds articles by city without requiring diacritics', () => {
+    expect(
+      createService()
+        .search('Valencia')
+        .map((result) => result.id),
+    ).toEqual(['article-one']);
+  });
+
+  it('returns no results for blank or unrelated queries', () => {
+    const service = createService();
+
+    expect(service.search('')).toEqual([]);
+    expect(service.search('rock')).toEqual([]);
+  });
+});
+```
+
+Real file: `src/data/news-search.spec.ts`.
+
+### Vitest + jsdom — island / DOM test with mocked browser globals
+
+Client islands (`src/scripts/*`) touch `window`, `document`, and `localStorage`. Mock those globals explicitly, exercise the exported functions against `document.documentElement` (jsdom provides it automatically), and **always restore the mock in `afterEach`** so it never leaks into the next spec.
+
+```ts
+// src/lib/theme.spec.ts
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+
+import {
+  applyTheme,
+  resolveTheme,
+  type ThemeMode,
+} from '@lib/theme';
+
+interface FakeMediaQueryList {
+  matches: boolean;
+  media: string;
+  addEventListener(type: 'change', cb: (e: { matches: boolean }) => void): void;
+  removeEventListener(type: 'change', cb: (e: { matches: boolean }) => void): void;
+  dispatch(next: boolean): void;
+}
+
+function mockPrefersDark(matches: boolean): FakeMediaQueryList {
+  const listeners = new Set<(e: { matches: boolean }) => void>();
+  const mql: FakeMediaQueryList = {
+    matches,
+    media: '(prefers-color-scheme: dark)',
+    addEventListener: (_type, cb) => void listeners.add(cb),
+    removeEventListener: (_type, cb) => void listeners.delete(cb),
+    dispatch(next: boolean) {
+      mql.matches = next;
+      listeners.forEach((cb) => cb({ matches: next }));
+    },
+  };
+  (window as unknown as { matchMedia: (q: string) => FakeMediaQueryList }).matchMedia = () => mql;
+  return mql;
+}
+
+function dataTheme(): string | null {
+  return document.documentElement.getAttribute('data-theme');
+}
+
+describe('theme lib', () => {
+  const realMatchMedia = window.matchMedia;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [provideHttpClient(), provideHttpClientTesting()],
-    });
-    service = TestBed.inject(FestivalService);
-    http    = TestBed.inject(HttpTestingController);
+    localStorage.clear();
+    document.documentElement.removeAttribute('data-theme');
   });
 
-  afterEach(() => http.verify());
-
-  it('returns parsed Festival[] on success', () => {
-    let result: unknown;
-    service.list().subscribe(v => (result = v));
-
-    http.expectOne('/api/festivals').flush([FESTIVAL_FIXTURE]);
-
-    expect(result).toHaveLength(1);
-    expect((result as { slug: string }[])[0].slug).toBe('fib-benicassim');
+  afterEach(() => {
+    localStorage.clear();
+    document.documentElement.removeAttribute('data-theme');
+    window.matchMedia = realMatchMedia; // restore so the mock never leaks to other specs
   });
 
-  it('throws FestivalError on 404', () => {
-    let error: unknown;
-    service.list().subscribe({ error: e => (error = e) });
+  it('resolves system mode against the device preference', () => {
+    expect(resolveTheme('system', false)).toBe('light');
+    expect(resolveTheme('system', true)).toBe('dark');
+  });
 
-    http.expectOne('/api/festivals').flush(null, { status: 404, statusText: 'Not Found' });
+  it('defaults to system and resolves light when the device is light', () => {
+    mockPrefersDark(false);
+    const resolved = applyTheme(document.documentElement, 'system', false, localStorage);
 
-    expect((error as { code: string }).code).toBe('NOT_FOUND');
+    expect(resolved).toBe('light');
+    expect(dataTheme()).toBeNull(); // system → no attribute, CSS media query governs
   });
 });
 ```
 
-### Angular Testing Library — component test
+Real file: `src/lib/theme.spec.ts`.
+
+### i18n resolver test
+
+The i18n resolver (`src/i18n/index.ts`) is the one place where asserting against literal Spanish dictionary values is correct — the resolver itself is under test, not a downstream consumer of it.
 
 ```ts
-// src/app/shared/ui/festival-card/festival-card.spec.ts
-import { render, screen } from '@testing-library/angular';
-import { FestivalCardComponent } from './festival-card';
-import { provideRouter } from '@angular/router';
+// src/i18n/index.spec.ts
+import { describe, it, expect } from 'vitest';
 
-const FESTIVAL = {
-  slug: 'medusa-festival', nombre: 'Medusa Festival',
-  ciudad: 'Cullera', provincia: 'Valencia', precioDesde: 120,
-  poster: { src: '/assets/images/festivals/medusa-2026.webp', alt: 'Medusa 2026' },
-  // ... other required fields
-} as Festival;
+import { ES_TRANSLATIONS } from '@i18n/translations';
+import { DEFAULT_LANG, getLanguage, interpolate, isLangCode, LANGUAGES, t } from '@i18n/index';
 
-describe('FestivalCardComponent', () => {
-  it('renders festival name and city', async () => {
-    await render(FestivalCardComponent, {
-      inputs: { festival: FESTIVAL },
-      providers: [provideRouter([])],
-    });
-
-    expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Medusa Festival');
-    expect(screen.getByText('Cullera')).toBeInTheDocument();
+describe('i18n translator', () => {
+  it('exposes the three supported locales in order', () => {
+    expect(LANGUAGES.map((lang) => lang.code)).toEqual(['es', 'ca', 'en']);
+    expect(DEFAULT_LANG).toBe('es');
   });
 
-  it('links to the festival detail route', async () => {
-    await render(FestivalCardComponent, {
-      inputs: { festival: FESTIVAL },
-      providers: [provideRouter([])],
-    });
-
-    const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', '/festivales/medusa-festival');
+  it('resolves dotted keys from the Spanish source dictionary', () => {
+    expect(t('nav.home', ES_TRANSLATIONS)).toBe('Inicio');
   });
 
-  it('uses data-testid for stable selection', async () => {
-    const { container } = await render(FestivalCardComponent, {
-      inputs: { festival: FESTIVAL },
-      providers: [provideRouter([])],
-    });
-
-    expect(container.querySelector('[data-testid="festival-card-medusa-festival"]')).toBeTruthy();
+  it('interpolates named params with {{ key }} placeholders', () => {
+    const template = 'Resultados para «{{ query }}»';
+    expect(interpolate(template, { query: 'Zevra' })).toBe('Resultados para «Zevra»');
   });
 });
 ```
 
-### Zod schema test
+Real file: `src/i18n/index.spec.ts`.
+
+### SEO builder test
+
+`src/lib/seo.ts` is pure TypeScript that builds canonical URLs, Open Graph tags, and JSON-LD — no DOM required, assert on the returned object.
 
 ```ts
-// src/app/shared/domain/festival.model.spec.ts
+// src/lib/seo.spec.ts
+import { describe, it, expect } from 'vitest';
+
+import { NEWS_ARTICLES } from '@data/news.catalogue';
+import { buildArticleSeo, buildListingSeo } from '@lib/seo';
+
+describe('seo lib', () => {
+  it('builds the listing head with an absolute canonical for /noticias', () => {
+    const article = NEWS_ARTICLES[0];
+    const seo = buildListingSeo({
+      title: 'TuriaFest — Noticias',
+      description: 'Descripción de la lista',
+      image: article.socialImage,
+      imageAlt: 'Alt',
+    });
+
+    expect(seo.canonical).toBe('https://turia-fest-noticias.rngheru.workers.dev/noticias');
+    expect(seo.og.type).toBe('website');
+  });
+
+  it('builds the article head with NewsArticle JSON-LD', () => {
+    const article = NEWS_ARTICLES[0];
+    const seo = buildArticleSeo(article, {
+      title: 'Título SEO',
+      description: 'Descripción SEO',
+      headline: 'Titular',
+      author: 'TuriaFest',
+      category: 'Festivales',
+      breadcrumbLabel: 'Noticias',
+      language: 'es-ES',
+      image: article.socialImage,
+      imageAlt: 'Alt',
+    });
+
+    const graph = JSON.parse(seo.jsonLd ?? '{}') as {
+      '@graph': Array<Record<string, unknown>>;
+    };
+    expect(graph['@graph'].some((node) => node['@type'] === 'NewsArticle')).toBe(true);
+  });
+});
+```
+
+Real file: `src/lib/seo.spec.ts`.
+
+### Zod schema test (roadmap)
+
+Once a remote DTO is introduced (see [[api-integration]]), validate it with a Zod schema at the boundary and test both the happy and failure paths. No Zod schema exists in the codebase yet — this is the target shape for when one lands (e.g. the roadmap `Festival` entity):
+
+```ts
+// src/data/festival.model.spec.ts
+import { describe, it, expect } from 'vitest';
+
 import { FestivalSchema } from './festival.model';
 
-const VALID = { /* same as FESTIVAL_FIXTURE above */ };
+const VALID = {
+  slug: 'fib-benicassim',
+  nombre: 'FIB',
+  provincia: 'Castellón',
+  ciudad: 'Benicàssim',
+  fechaInicio: '2026-07-15T00:00:00.000Z',
+  fechaFin: '2026-07-18T00:00:00.000Z',
+  generos: ['indie', 'rock'],
+  cartel: [],
+  precioDesde: 89,
+  urlOficial: 'https://fiberfib.com',
+  poster: { src: '/assets/images/festivals/fib-2026.webp', alt: 'Cartel FIB 2026' },
+  ubicacion: { lat: 39.999, lng: -0.075 },
+};
 
 describe('FestivalSchema', () => {
   it('parses a valid festival', () => {

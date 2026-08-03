@@ -36,7 +36,7 @@ SCSS primitive variables keep a `$fv-` prefix where they are exported, raw scala
 
 ```
 src/styles/
-├── styles.scss          # entry point (the only file `angular.json` references)
+├── styles.scss          # entry point — the only file BaseLayout.astro imports globally
 ├── _reset.scss          # opinionated reset (margin, box-sizing, focus)
 ├── _tokens.scss         # primitive tokens (raw palette, raw scales) — SCSS only
 ├── _semantic.scss       # semantic tokens exposed as `--fv-*` CSS custom properties
@@ -46,12 +46,15 @@ src/styles/
 ├── _radii.scss          # radius scale
 ├── _shadows.scss        # elevation system
 ├── _motion.scss         # easing curves and durations
-├── _breakpoints.scss    # media query helpers (sm/md/lg/xl)
+├── _breakpoints.scss    # media query helpers (sm/md/lg/xl via from()/until())
 ├── _mixins.scss         # reusable mixins (glass, focus-ring, container)
-└── _animations.scss     # keyframes (fade-up, glow-pulse)
+├── _safari-compat.scss  # backdrop-filter / color-mix() fallback reference (see [[cross-device-compat]])
+├── _animations.scss     # keyframes (fade-up, glow-pulse)
+└── utilities/
+    └── _liquid-glass.scss  # `.liquid-glass-*` utility classes (see [[liquid-glass]])
 ```
 
-`styles.scss` `@use`s these partials at the global scope. Component SCSS imports mixins via `@use 'styles/mixins' as *;` (resolved through `stylePreprocessorOptions.includePaths: ["src"]` in `angular.json`). Components never `@use` `_tokens.scss` or `_semantic.scss` directly — they consume the resulting `--fv-*` CSS variables.
+`styles.scss` `@use`s these partials at the global scope and is imported once, in `src/layouts/BaseLayout.astro`, via `<style lang="scss" is:global>@use '../styles/styles';</style>` (SCSS `loadPaths`/aliases are configured in `astro.config.mjs` and mirrored in `tsconfig.json`). Component-level SCSS partials (colocated next to their `.astro` file, e.g. `src/components/_nav-bar.scss`) import mixins and breakpoints via `@use '../styles/mixins' as *;` and `@use '../styles/breakpoints' as *;` — never `@use '../styles/tokens'` or `@use '../styles/semantic'` directly. Components consume only the resulting `--fv-*` CSS variables.
 
 ---
 
@@ -127,14 +130,21 @@ examples.
 
 ## Theme switching
 
-States: `light | dark | system` (default `system`). The `ThemeService`
-(`@core/platform/theme.service.ts`, Signals, SSR-safe) is the single source of truth: it
-sets `data-theme` on `<html>` for explicit choices, removes it for `system` (so the
-`prefers-color-scheme` media query governs), persists the choice in `localStorage`
-(`fv-theme`) and keeps `<meta name="theme-color">` in sync. A tiny blocking script in
-`src/index.html` applies the stored choice before first paint to avoid FOUC. The header
-toggle (`nav-bar`) switches light↔dark with a sun/moon icon, `aria-pressed` and an i18n
-`aria-label` (`nav.theme.toDark` / `nav.theme.toLight`).
+States: `light | dark | system` (default `system`). `src/lib/theme.ts` is the framework-agnostic
+single source of truth: it exports `applyTheme()`, `resolveTheme()`, `readStoredMode()` and
+`watchDarkModePreference()` — pure functions with no Astro/DOM-framework dependency, unit-testable
+in isolation. Two consumers call into it:
+
+- An **inline blocking script** in `src/layouts/BaseLayout.astro`'s `<head>` reads the stored mode
+  and applies `data-theme` on `<html>` synchronously, before first paint, to avoid FOUC.
+- The **`theme.ts` island** (`src/scripts/theme.ts`) re-runs the same resolution after hydration,
+  watches `prefers-color-scheme` changes live, and keeps the header toggle button in sync
+  (`aria-pressed`, i18n `aria-label` via `nav.theme.toDark` / `nav.theme.toLight`).
+
+`data-theme` set explicitly wins; removing it (the `system` state) lets the
+`prefers-color-scheme` media query govern. The choice persists in `localStorage` under the
+`fv-theme` key. The header toggle lives in `NavBar.astro` (`[data-testid="nav-btn-tema"]`) and
+switches light↔dark with a sun/moon icon.
 
 ## Related skills
 

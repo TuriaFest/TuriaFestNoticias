@@ -1,23 +1,22 @@
 ---
 name: project-structure
 description: >-
-  Canonical, non-negotiable feature-sliced architecture with lint-enforced module boundaries, path
-  aliases and placement rules. Use before creating, moving or renaming any file or folder under
-  src/app.
+  Canonical, non-negotiable Astro folder layout, naming rules, placement decision tree and path
+  aliases. Use before creating, moving or renaming any file under src/.
 ---
 
 # 🗂️ Project Structure
 
-Canonical, **non-negotiable** architecture for the **TuriaFestNoticias** Angular application. The project uses a **feature-sliced** structure with **enforced module boundaries** — the professional standard for Angular apps that need to scale past a handful of routes.
+Canonical, **non-negotiable** architecture for the **TuriaFestNoticias** Astro application. The project uses Astro's conventional layout — file-based routing under `src/pages/`, document shells in `src/layouts/`, reusable `.astro` components, and a strict separation between build-time markup and framework-agnostic domain logic.
 
 ## Purpose
 
-Guarantee that the project layout remains identical across every feature, contributor, and AI-assisted change. The structure optimizes for four things, in order:
+Guarantee that the project layout remains identical across every route, contributor, and AI-assisted change. The structure optimizes for four things, in order:
 
-1. **Lazy-loading by default** — every feature is a self-contained chunk; nothing leaks into the initial bundle.
-2. **Cognitive locality** — everything a feature needs lives in one folder.
-3. **Safe deletion** — removing a feature is `rm -rf` plus one route line.
-4. **Enforced boundaries** — ESLint stops the architecture from rotting over time.
+1. **Static-first by default** — every page is prerendered (`output: 'static'`); nothing needs a runtime server.
+2. **Cognitive locality** — domain logic, i18n, and SEO helpers live in small, framework-agnostic modules that are trivial to test without Astro.
+3. **Safe deletion** — removing a route is deleting its `.astro` file (and, if orphaned, its catalogue entries).
+4. **Enforced boundaries** — a one-directional dependency rule keeps `.astro` markup from leaking into domain modules.
 
 This skill is **MANDATORY**. Consult it before creating, moving, or renaming any file. The structure is a contract; deviations are documented here or they do not happen.
 
@@ -26,24 +25,24 @@ This skill is **MANDATORY**. Consult it before creating, moving, or renaming any
 ## Mental model: three layers
 
 ```
-core / layout   →   reusable, app-wide, loaded eagerly
-features/*      →   vertical slices, loaded lazily, isolated from each other
-shared/*        →   horizontal toolbox, imported by features, never imports them
+pages / layouts / components   →   build-time markup, Astro-only
+scripts                        →   client-side islands, vanilla TS
+data / lib / i18n              →   framework-agnostic domain logic, imported by both
 ```
 
 The dependency rule is one-directional and absolute:
 
 ```
-features  →  shared  →  (nothing)
-   │            ▲
-   └──→ core ───┘
-features  →  core
-layout    →  shared, core
+pages → layouts → components
+   │        │          │
+   └────────┴──────────┴──→ data / lib / i18n
+scripts → data / lib / i18n   (never → components/*.astro)
+data / lib / i18n → (nothing Astro-specific)
 ```
 
-- A **feature never imports another feature**.
-- **shared never imports a feature or layout**.
-- **core never imports a feature, layout, or shared/ui** (core is the lowest layer).
+- **`data / lib / i18n` never import a `.astro` file.** They are plain TypeScript, unit-testable in isolation.
+- **`scripts/*` (client islands) never import `.astro` components.** They read/write the DOM the component already rendered and call into `data / lib / i18n`.
+- **`pages` may import `layouts`, `components`, and `data / lib / i18n`.** `layouts` and `components` may import `data / lib / i18n` but not `pages`.
 
 ---
 
@@ -53,137 +52,102 @@ layout    →  shared, core
 TuriaFestNoticias/
 ├── .claude/                   # AI-assisted development (agents + skills) — do not move
 ├── docs/                      # project documentation (documentacion.md) — update on every structural commit
-├── sanity/                    # (CMS phase — not created yet; will be reintroduced when Sanity Studio launches)
-│   └── schemas/               # content schemas, mirror the Zod schemas in @shared/domain
-├── scripts/                   # Node build scripts (WebP converter — see [[performance-optimization]])
+├── scripts/                   # Node build scripts (i18n-sync.mjs, WebP converter — see [[performance-optimization]])
 ├── src/
-│   ├── app/                   # application code (see below)
-│   ├── assets/
-│   │   ├── images/            # generated WebP output — committed, never hand-edited
-│   │   ├── images-src/        # source PNG/JPEG — committed, never shipped to the user
-│   │   ├── icons/             # SVG icon set (additional to Lucide)
-│   │   ├── i18n/              # translation files: es.json (source) + additional locale JSON files
-│   │   └── maps/              # MapLibre style JSON (see [[maps]])
-│   ├── environments/          # environment.ts, environment.prod.ts
-│   ├── styles/                # global SCSS, including the styles.scss entry point (see "Global styles" below)
-│   ├── index.html
-│   ├── main.ts
-│   ├── main.server.ts
-│   └── server.ts
-├── public/                    # static files served as-is (favicon, runtime fonts, festival-detail-*.json;
-│                              #  robots.txt and sitemap.xml will arrive with [[seo-meta]])
-├── angular.json
+│   ├── pages/                 # file-based routes → static HTML (see below)
+│   ├── layouts/                # document shells (BaseLayout.astro: <head>, SEO, nav + footer)
+│   ├── components/            # reusable .astro components (NavBar, Footer) + colocated SCSS partials
+│   ├── scripts/                # client-side islands, vanilla TS: theme.ts, i18n.ts, nav.ts, news-search.ts
+│   ├── data/                   # typed content catalogue + models + framework-agnostic search logic
+│   ├── lib/                    # framework-agnostic helpers: seo.ts, site.ts, theme.ts
+│   ├── i18n/                    # runtime translation resolver (index.ts: t(), LANGUAGES) + translations.ts
+│   ├── styles/                  # global SCSS design system (see "Global styles" below)
+│   └── assets/
+│       ├── i18n/                # translation source JSON: es.json (source of truth) + ca.json, en.json
+│       └── images-src/          # source images — committed, never shipped raw to the user
+├── public/                    # static files served as-is: branding, optimized assets/images, favicon
+│                              #  (assets/i18n is populated here at build time by the copy:i18n script;
+│                              #   robots.txt and sitemap.xml will arrive with [[seo-meta]])
+├── astro.config.mjs
 ├── package.json
 ├── tsconfig.json
-├── tsconfig.app.json
-├── tsconfig.spec.json
+├── vitest.config.mts
 ├── README.md
 └── CLAUDE.md
 ```
 
-Festival posters live in **Sanity**, not in `src/assets/`. See [[performance-optimization]] for the image source split.
+Festival posters and other future remote content will live wherever [[sanity-cms]] or another CMS is introduced, not hand-copied into `src/assets/`. See [[performance-optimization]] for the image source split.
 
 ---
 
-## `src/app/` — feature-sliced application
+## `src/` — Astro application
 
 ```
-src/app/
-├── app.ts / app.html / app.scss   # root component
-├── app.config.ts                  # providers, LOCALE_ID, interceptors, hydration
-├── app.routes.ts                  # top-level routes → lazy-load each feature's routes
+src/
+├── pages/                          # ── route boundary ──
+│   ├── noticias/
+│   │   ├── index.astro             # /noticias — news hub
+│   │   └── [slug].astro            # /noticias/:slug — article detail (getStaticPaths)
+│   └── 404.astro
 │
-├── core/                          # cross-cutting singletons, provided once at root
-│   ├── interceptors/              # HttpInterceptors: auth, error, cache, Zod-validation
-│   ├── handlers/                  # ErrorHandler → Sentry (see [[error-handling]])
-│   ├── notifications/             # NotificationService (signal) consumed by shared/ui notification-banner
-│   ├── initializers/              # APP_INITIALIZER factories (locale, theme, store hydration) + Transloco loader
-│   ├── tokens/                    # InjectionTokens
-│   └── platform/                  # SSR helpers (isPlatformBrowser wrappers, window guards)
+├── layouts/
+│   └── BaseLayout.astro            # <head>, SEO meta injection, anti-flicker theme script, nav + footer slots
 │
-├── layout/                        # the app shell, loaded eagerly
-│   ├── shell/                     # hosts <router-outlet>, nav, progress bar, footer
-│   ├── nav-bar/
-│   ├── nav-progress-bar/          # slow-navigation indicator driven by PageTransitionService
-│   └── footer/
+├── components/
+│   ├── NavBar.astro                # + NavBar.scss (or colocated partial)
+│   └── Footer.astro                # + Footer.scss
 │
-├── features/                      # ── lazy chunk boundary ──
-│   ├── home/
-│   │   ├── feature/               # the smart, route-bound page component
-│   │   │   └── home.page.{ts,html,scss,spec.ts}
-│   │   ├── ui/                    # presentational components used ONLY by home
-│   │   ├── data-access/           # stores + services + Zod schemas local to home
-│   │   └── home.routes.ts         # the feature's ONLY public surface
-│   ├── festival-list/
-│   │   ├── feature/festival-list.page.*
-│   │   ├── ui/                    # festival-list-filters/, festival-list-grid/
-│   │   ├── data-access/           # festivals.store.ts, filters.store.ts
-│   │   └── festival-list.routes.ts
-│   ├── festival-detail/
-│   │   ├── feature/festival-detail.page.*
-│   │   ├── ui/                    # festival-hero/, lineup-grid/, venue-map/
-│   │   ├── data-access/           # festival-detail.store.ts, festival-detail.resolver.ts
-│   │   └── festival-detail.routes.ts
-│   ├── artist-detail/
-│   ├── search/
-│   └── about/
+├── scripts/                        # ── client island boundary ──
+│   ├── theme.ts                    # theme toggle island (reads/writes @lib/theme)
+│   ├── i18n.ts                     # language-switcher island (fetches locale JSON, re-resolves [data-i18n])
+│   ├── nav.ts                      # nav interactions (mobile menu, scroll state)
+│   └── news-search.ts              # wires @data/news-search into the news hub DOM
 │
-└── shared/                        # reused across ≥ 2 features; imports nothing from features
-    ├── ui/                        # primitives: button/, badge/, festival-card/, empty-state/, ...
-    ├── data-access/               # SanityClientService, SearchService (MiniSearch), AnalyticsService
-    ├── domain/                    # models + Zod schemas: festival.model.ts, artist.model.ts, ...
-    ├── pipes/                     # generic pipes: locale-date.pipe.ts, truncate.pipe.ts
-    ├── directives/                # generic directives
-    ├── util/                      # pure functions, zero Angular dependencies
-    └── testing/                   # test helpers reused across specs
+├── data/                           # framework-agnostic domain + content
+│   ├── news-article.model.ts       # NewsArticle, NewsArticleImage, NewsArticleSection types
+│   ├── news.catalogue.ts           # NEWS_ARTICLES: readonly NewsArticle[] + getNewsArticleBySlug()
+│   └── news-search.ts              # NewsSearchService (MiniSearch wrapper)
+│
+├── lib/                             # framework-agnostic helpers
+│   ├── seo.ts                       # buildListingSeo(), buildArticleSeo() — canonical, OG, JSON-LD
+│   ├── site.ts                      # SITE_BASE_URL, BASE_URL, SITE_LANG, absoluteUrl()
+│   └── theme.ts                     # ThemeMode/ResolvedTheme helpers shared by the anti-flicker script and the island
+│
+├── i18n/
+│   ├── index.ts                     # t(), LANGUAGES, LangCode, resolveKey(), interpolate()
+│   └── translations.ts              # ES_TRANSLATIONS (source of truth) + TranslationKey type
+│
+├── styles/                          # see "Global styles" below
+│
+└── assets/
+    ├── i18n/                        # es.json, ca.json, en.json — copied to public/assets/i18n at build
+    └── images-src/                  # source images, per-route subfolders (e.g. images-src/news/<slug>/)
 ```
 
-### Anatomy of a feature
+### Anatomy of a route
 
-Every feature has the same four parts. This shape is **fixed**:
+Every indexable route follows the same shape:
 
-| Part               | Contains                                                        | Rules                                                              |
-| ------------------ | -------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `feature/`         | The smart page component bound to the route.                   | Injects stores/services, orchestrates `ui/`. One page per folder. |
-| `ui/`              | Dumb presentational components local to this feature.          | No HTTP, no store injection. Data in via `input()`, events via `output()`. |
-| `data-access/`     | Stores (Signals/SignalStore), services, resolvers, schemas.    | The only place this feature talks to the network or holds state.  |
-| `<feature>.routes.ts` | The lazy route config.                                      | **The feature's only public export.** Nothing else is imported from outside. |
+| Part          | Contains                                                         | Rules                                                                 |
+| ------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `pages/*.astro` | The route file. Static params come from `getStaticPaths()`.     | Imports the catalogue from `@data`, builds SEO via `@lib/seo`, renders through a layout. |
+| `layouts/`      | The document shell (`<head>`, nav, footer).                     | One layout can serve many routes; do not fork it per-route without cause. |
+| `components/`   | Reusable presentational `.astro` partials used by pages/layouts. | No direct catalogue/network access — receive data via props.         |
+| `data/`         | Typed catalogue, domain models, framework-agnostic search/index logic. | The only place that "knows" the content shape. Imported by pages and islands alike. |
+| `scripts/`      | Client islands wired via `<script>` in the relevant `.astro` file. | Vanilla TS, DOM-only, no `.astro` imports.                            |
 
-A feature is loaded exactly once, lazily, from `app.routes.ts`:
+A new page is a new `.astro` file under `src/pages/` (optionally with a `getStaticPaths()` export) plus, if it needs new data, a model + catalogue entry under `src/data/`. There is no separate "feature" folder layer — Astro's file-based routing **is** the route boundary.
 
-```ts
-// app.routes.ts
-export const routes: Routes = [
-  {
-    path: '',
-    component: ShellComponent,        // from @layout/shell
-    children: [
-      { path: '', loadChildren: () => import('@features/home/home.routes').then(m => m.HOME_ROUTES) },
-      { path: 'festivales', loadChildren: () => import('@features/festival-list/festival-list.routes').then(m => m.FESTIVAL_LIST_ROUTES) },
-      { path: 'festivales/:slug', loadChildren: () => import('@features/festival-detail/festival-detail.routes').then(m => m.FESTIVAL_DETAIL_ROUTES) },
-      { path: 'artistas/:slug', loadChildren: () => import('@features/artist-detail/artist-detail.routes').then(m => m.ARTIST_DETAIL_ROUTES) },
-      { path: 'buscar', loadChildren: () => import('@features/search/search.routes').then(m => m.SEARCH_ROUTES) },
-      { path: 'sobre-nosotros', loadChildren: () => import('@features/about/about.routes').then(m => m.ABOUT_ROUTES) },
-    ],
-  },
-];
-```
+### Naming rules
 
-### Per-component folder
-
-Every component — in `features/*/ui/`, `features/*/feature/`, `layout/`, or `shared/ui/` — has **exactly** this shape (Angular 21 convention, no `.component` suffix):
-
-```
-<name>/
-├── <name>.ts
-├── <name>.html
-├── <name>.scss
-└── <name>.spec.ts
-```
-
-Route-bound pages use the `.page` suffix on the class file: `home.page.ts`. No `index.ts` barrel files anywhere — they defeat tree-shaking and obscure the import graph.
-
-A feature may omit `ui/` or `data-access/` while it has nothing to put in them (e.g. `festival-list`, `calendar`): empty scaffolds are not created ahead of need.
+- **Route files**: kebab-case matching the URL segment; dynamic segments use Astro's `[param]` bracket syntax (`[slug].astro`).
+- **Components**: PascalCase (`NavBar.astro`, `Footer.astro`).
+- **Client islands**: kebab-case matching their concern (`news-search.ts`, `theme.ts`).
+- **Domain models**: `<name>.model.ts` → exports the `interface`/`type` (e.g. `news-article.model.ts` → `NewsArticle`).
+- **Catalogues**: `<domain>.catalogue.ts` → exports `<DOMAIN>_ITEMS: readonly T[]` plus a `get<Domain>BySlug()` lookup.
+- **i18n keys**: dotted path, lowercase (`news.article.breadcrumbLabel`).
+- **Slugs**: kebab-case, lowercase, ASCII, immutable once published (SEO-critical).
+- **SCSS partials**: leading underscore (`_tokens.scss`), colocated with the component they style or under `src/styles/` for global tokens.
 
 ---
 
@@ -191,9 +155,9 @@ A feature may omit `ui/` or `data-access/` while it has nothing to put in them (
 
 ```
 src/styles/
-├── styles.scss                # entry point (the only file angular.json's "styles" references)
+├── styles.scss                # entry point (imported once, e.g. from BaseLayout.astro)
 ├── _tokens.scss               # primitive tokens (raw palette)
-├── _semantic.scss             # semantic tokens (--bg-canvas, --text-primary, --accent-violet)
+├── _semantic.scss             # semantic tokens (--fv-bg-page, --fv-text-primary, ...)
 ├── _safari-compat.scss        # Safari-specific compatibility layer (see [[cross-device-compat]])
 ├── _typography.scss           # font families, type ramp, line-heights, tracking
 ├── _fonts.scss                # @font-face for the self-hosted variable fonts
@@ -209,55 +173,46 @@ src/styles/
     └── _liquid-glass.scss     # liquid-glass mixin + .glass-* classes (see [[liquid-glass]])
 ```
 
-`src/styles/styles.scss` is the only file that `@use`s these partials. Component SCSS imports tokens via `@use 'styles/mixins' as *;` (resolved through `stylePreprocessorOptions.includePaths: ["src"]` in `angular.json`). See [[theming-styling]].
+Component SCSS resolves shared partials via `@use 'styles/mixins' as *;`, resolved through the Vite `css.preprocessorOptions.scss.loadPaths: ['src']` block in `astro.config.mjs` (Dart Sass `modern-compiler` API). See [[theming-styling]].
 
 ---
 
 ## Path aliases
 
-Configured in `tsconfig.json`. **Imports must always use an alias** — never a relative path that climbs out of the current folder.
+Configured in **both** `astro.config.mjs` (Vite `resolve.alias`) and `tsconfig.json` (`compilerOptions.paths`) — the two must be kept in sync.
+
+```js
+// astro.config.mjs
+export default defineConfig({
+  vite: {
+    resolve: {
+      alias: {
+        '@data': alias('./src/data'),
+        '@i18n': alias('./src/i18n'),
+        '@lib': alias('./src/lib'),
+        '@assets': alias('./src/assets'),
+      },
+    },
+  },
+});
+```
 
 ```json
+// tsconfig.json
 {
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@core/*":               ["src/app/core/*"],
-      "@layout/*":             ["src/app/layout/*"],
-      "@features/*":           ["src/app/features/*"],
-      "@shared/ui/*":          ["src/app/shared/ui/*"],
-      "@shared/data-access/*": ["src/app/shared/data-access/*"],
-      "@shared/domain/*":      ["src/app/shared/domain/*"],
-      "@shared/util/*":        ["src/app/shared/util/*"],
-      "@shared/pipes/*":       ["src/app/shared/pipes/*"],
-      "@shared/directives/*":  ["src/app/shared/directives/*"],
-      "@shared/testing/*":     ["src/app/shared/testing/*"],
-      "@env/*":                ["src/environments/*"],
-      "@assets/*":             ["src/assets/*"]
+      "@data/*": ["src/data/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@lib/*": ["src/lib/*"],
+      "@assets/*": ["src/assets/*"]
     }
   }
 }
 ```
 
-There is **no TS alias for styles**: component SCSS resolves `@use 'styles/...'` through `stylePreprocessorOptions.includePaths: ["src"]` in `angular.json`. `@assets/*` is registered in `eslint-plugin-boundaries` as the `asset` element; only `shared` may import it.
-
-Inside a single feature, relative imports (`./ui/festival-hero/...`) are fine — they never climb above the feature root. Crossing any layer boundary requires an alias.
-
----
-
-## Naming rules
-
-- **Folders**: kebab-case (`festival-card`, `festival-list`).
-- **Page classes**: `<feature>.page.ts` → `HomePageComponent`, `FestivalListPageComponent`.
-- **Components**: `<name>.ts` → `FestivalCardComponent`. Selector prefix `fv-` (e.g. `fv-festival-card`).
-- **Services**: `<name>.service.ts` → `FestivalService`.
-- **Stores**: `<name>.store.ts` → `FestivalsStore` (PascalCase, `Store` suffix).
-- **Models + schemas**: `<name>.model.ts` → exports both the Zod schema (`FestivalSchema`) and the inferred type (`Festival`).
-- **Guards / resolvers**: `<name>.guard.ts` / `<name>.resolver.ts`, functional.
-- **Route files**: `<feature>.routes.ts`, exporting `UPPER_SNAKE_ROUTES`.
-- **SCSS partials**: leading underscore (`_tokens.scss`).
-- **Festival slugs**: kebab-case, lowercase, ASCII (`fib-benicassim`). Immutable once published.
-- **i18n keys**: dotted path, lowercase (`festival.detail.lineup.title`).
+There is no alias for `pages`, `layouts`, `components`, or `scripts` — these are always imported by relative path from within the routing/markup layer (e.g. `../../layouts/BaseLayout.astro`), which never climbs above `src/`.
 
 ---
 
@@ -265,71 +220,53 @@ Inside a single feature, relative imports (`./ui/festival-hero/...`) are fine �
 
 When creating a new file, ask in order — stop at the first **yes**:
 
-1. Is it a global singleton, interceptor, error handler, initializer, or SSR/platform helper? → `core/<subfolder>/`.
-2. Is it part of the app shell (nav, footer, outlet host)? → `layout/`.
-3. Does it belong to exactly **one** feature?
-   - The route-bound page? → `features/<feature>/feature/`.
-   - A presentational component? → `features/<feature>/ui/<name>/`.
-   - A store, service, resolver, or schema? → `features/<feature>/data-access/`.
-4. Is it reused by **two or more** features?
-   - A presentational component? → `shared/ui/<name>/`.
-   - A service or store? → `shared/data-access/`.
-   - A model/schema? → `shared/domain/`.
-   - A pipe / directive? → `shared/pipes/` or `shared/directives/`.
-   - A pure helper? → `shared/util/`.
-5. None of the above? → **Stop and discuss.** Do not invent a new top-level folder.
+1. Is it a new route (URL) or a dynamic-route generator? → `src/pages/<path>.astro` (or `[param].astro` with `getStaticPaths()`).
+2. Is it a document shell reused across routes? → `src/layouts/`.
+3. Is it a reusable presentational `.astro` partial (nav, footer, card)? → `src/components/`.
+4. Is it client-side interactivity (toggle, search, menu)? → `src/scripts/<name>.ts`, wired via a `<script>` tag in the `.astro` file that needs it.
+5. Is it typed content, a domain model, or catalogue/lookup logic? → `src/data/`.
+6. Is it a framework-agnostic helper (SEO, site constants, theme resolution) shared by pages **and** islands? → `src/lib/`.
+7. Is it a translation key, dictionary, or i18n resolver? → `src/i18n/` (runtime logic) or `src/assets/i18n/*.json` (locale content).
+8. None of the above? → **Stop and discuss.** Do not invent a new top-level folder.
 
-**The "three uses" rule does not apply to `shared/` promotion — the threshold is two.** A component used by a single feature stays in that feature. The moment a second feature needs it, it moves to `shared/ui/`. Anticipatory placement in `shared/` is forbidden: do not put something in `shared/` because you *think* another feature will use it.
+**Promote only on real duplication.** A helper stays inline in the one `.astro` file that needs it until a second file needs the same logic — then it moves to `src/lib/` or `src/data/`. Anticipatory extraction is forbidden.
 
 ---
 
 ## Hard rules (NEVER violate)
 
-1. **A feature never imports from another feature.** Shared code goes to `shared/`.
-2. **`shared/` never imports from `features/` or `layout/`.**
-3. **`core/` never imports from `features/`, `layout/`, or `shared/ui/`.**
-4. Inside a feature, **`ui/` never imports runtime values from `data-access/`.** Presentational components receive data via inputs; `import type` from `data-access/` is allowed solely to type those inputs.
-5. **A feature's only public surface is its `<feature>.routes.ts`.** Never deep-import `features/x/ui/...` or `features/x/data-access/...` from outside the feature.
-6. **No NgModules.** Every component, directive, and pipe is standalone.
-7. **No `index.ts` barrel files.**
-8. **No HTTP calls outside a `data-access/` folder** (feature-local or `shared/data-access/`). Only exception: infrastructure loaders in `core/` required by `app.config.ts` providers (e.g. the `TranslocoHttpLoader`).
-9. **No state mutations outside a store.**
-10. **No relative import that climbs above a feature root.** Use a path alias instead.
-11. **No new top-level folder under `src/app/`** without updating this document.
-12. **No hardcoded strings, colors, or spacing** in components — i18n keys and design tokens only.
-
-Rules 1–5 and 10 are enforced automatically — see below.
+1. **`data / lib / i18n` never import a `.astro` file.** They must stay unit-testable without Astro (Vitest + jsdom only).
+2. **`scripts/*` never import `.astro` components.** Islands operate on the rendered DOM and on `data / lib / i18n`.
+3. **No remote fetch outside `data/` (or a future feature-specific data module).** Today the catalogue is local and typed; when remote data arrives, validate it once at the edge (see [[api-integration]]).
+4. **No state mutations outside the module that owns the state** (e.g. only `@lib/theme` functions mutate `data-theme`; the island calls them, it does not reimplement them).
+5. **No relative import that climbs above `src/`.** Use a path alias (`@data`, `@lib`, `@i18n`, `@assets`) for anything crossing into those layers.
+6. **No new top-level folder under `src/`** without updating this document.
+7. **No hardcoded strings, colors, or spacings** in `.astro` markup or `scripts/` — i18n keys (`data-i18n` anchors + `t()`) and design tokens only.
+8. **Slugs are immutable once published** — renames are coordinated with **performance** via a redirect entry in `astro.config.mjs`.
 
 ---
 
-## Enforcing boundaries (ESLint)
-
-The full `eslint-plugin-boundaries` configuration that makes the dependency rule a build error.
-
-➡️ Moved to [`references/eslint-boundaries.md`](references/eslint-boundaries.md) to keep this SKILL.md lean.
-
 ## Why this structure is optimal
 
-- **Maximal code-splitting** — each feature (UI + store + services) is one lazy chunk. The initial bundle carries only `core` + `layout` + the landing feature.
-- **Deletion is trivial** — `rm -rf features/x/` plus removing one line in `app.routes.ts` removes a feature cleanly, with zero orphaned files elsewhere.
-- **Ownership is obvious** — a person or agent owns `features/x/` end to end.
-- **Tests run faster** — `vitest --changed` re-runs only the touched feature's specs (see [[testing-patterns]]).
-- **SSR is per-feature** — the pre-render decision lives in each `<feature>.routes.ts`, not in one global list.
-- **Refactors are local** — changing how `festival-detail` fetches data touches only `features/festival-detail/data-access/`.
-- **The boundary lint makes it self-healing** — accidental coupling fails CI instead of silently accumulating.
+- **Zero client JS by default** — every route ships as static HTML; a `<script>` island is an explicit, auditable opt-in.
+- **Deletion is trivial** — removing a route is deleting its `.astro` file; removing a catalogue entry (with its images) removes the content cleanly.
+- **Domain logic is framework-free** — `data / lib / i18n` run under plain Vitest, no Astro test harness needed.
+- **SEO is centralized** — `src/lib/seo.ts` is the single place that builds canonical URLs, Open Graph tags, and JSON-LD; no page hand-rolls its own `<head>` logic.
+- **Refactors are local** — changing how news articles resolve SEO copy touches only `src/lib/seo.ts` and `src/data/news.catalogue.ts`.
+- **i18n is uniform** — every page renders Spanish server-side with `data-i18n` anchors; the language-switcher island is the only place that re-resolves them.
 
 ---
 
 ## When the structure must evolve
 
-A new feature is just a new `features/<name>/` folder with the four standard parts — that is **not** an evolution, it is normal use.
+A new route under an existing folder (`src/pages/noticias/nueva-vista.astro`) is not an evolution — it is normal use.
 
-A genuine structural change (a new top-level layer, a new `core/` subfolder) requires:
+A genuine structural change (a new top-level `src/` folder, a new alias) requires:
 
 1. Propose it in the PR description.
 2. Add it to this document with its purpose and a placement rule.
 3. Update the decision tree and hard rules above.
-4. Update the path aliases in `tsconfig.json` and the boundaries config.
+4. Update the path aliases in **both** `astro.config.mjs` and `tsconfig.json`.
 5. Update `CLAUDE.md` so all agents see the new convention.
 
 **No silent additions.** The structure is a contract.

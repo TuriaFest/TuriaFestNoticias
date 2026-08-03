@@ -1,184 +1,150 @@
 ---
 name: routing-navigation
 description: >-
-  Angular Router conventions: the Spanish URL schema (/festivales/:slug), lazy loading via
-  loadChildren, resolvers and functional guards. Use when adding or changing routes, navigation,
-  guards or route data.
+  Astro file-based routing conventions: the Spanish URL schema (/festivales/:slug), static route
+  generation via getStaticPaths, redirects in astro.config.mjs, and 404 handling. Use when adding
+  or changing routes, navigation, or route-level data loading.
 ---
 
 # 🧭 Routing & Navigation
 
-Conventions for Angular Router usage across **TuriaFestNoticias**.
+Conventions for Astro's file-based routing across **TuriaFestNoticias**.
 
 ## Purpose
 
-Define a predictable, SEO-friendly URL structure and lazy-loading strategy for the festival portal.
+Define a predictable, SEO-friendly URL structure and static-generation strategy for the festival portal.
 
 ## URL Schema
 
-| Route                           | View                                           |
-| ------------------------------- | ---------------------------------------------- |
-| `/`                             | Home with featured festivals                   |
-| `/festivales`                   | Full listing + filters                         |
-| `/festivales/:slug`             | Festival detail                                |
-| `/festivales/:slug/cartel`      | Full line-up                                   |
-| `/artistas/:slug`               | Artist profile                                 |
-| `/provincia/:provincia`         | Filtered by Valencia / Alicante / Castellón    |
-| `/sobre-nosotros`               | Static page                                    |
+Currently implemented: `/` (301 redirect to `/noticias`), `/noticias`, `/noticias/:slug`, `404`. The rest are roadmap, to be added as new files under `src/pages/` following the same pattern:
+
+| Route                           | View                                           | Status      |
+| -------------------------------- | ----------------------------------------------- | ----------- |
+| `/`                               | 301 redirect to `/noticias`                     | Implemented |
+| `/noticias`                       | News hub                                        | Implemented |
+| `/noticias/:slug`                 | News article detail                             | Implemented |
+| `/festivales`                     | Full listing + filters                          | Roadmap     |
+| `/festivales/:slug`               | Festival detail                                 | Roadmap     |
+| `/festivales/:slug/cartel`        | Full line-up                                    | Roadmap     |
+| `/artistas/:slug`                 | Artist profile                                  | Roadmap     |
+| `/provincia/:provincia`           | Filtered by Valencia / Alicante / Castellón     | Roadmap     |
+| `/sobre-nosotros`                 | Static page                                     | Roadmap     |
 
 ## Patterns
 
-Routing is **two-level**, matching the feature-sliced structure (see [[project-structure]]):
+Routing is **file-based**, matching Astro's convention (see [[project-structure]]):
 
-- **App level** (`app.routes.ts`): each feature is lazy-loaded with `loadChildren` pointing at its `<feature>.routes.ts`. This is the chunk boundary.
+- **A route is a file** under `src/pages/`. `src/pages/noticias/index.astro` serves `/noticias`; `src/pages/noticias/[slug].astro` serves every `/noticias/:slug`.
+- **Static params come from `getStaticPaths()`.** For a fully local catalogue, this is a synchronous map over the catalogue array; for a future remote source, it is an `async function getStaticPaths()` that awaits the data-access module (see [[api-integration]]).
   ```ts
-  { path: 'festivales/:slug',
-    loadChildren: () => import('@features/festival-detail/festival-detail.routes')
-      .then(m => m.FESTIVAL_DETAIL_ROUTES) }
+  // src/pages/noticias/[slug].astro frontmatter
+  import { NEWS_ARTICLES } from '@data/news.catalogue';
+
+  export function getStaticPaths() {
+    return NEWS_ARTICLES.map((article) => ({ params: { slug: article.slug } }));
+  }
   ```
-- **Feature level** (`<feature>.routes.ts`): the page component is lazy-loaded with `loadComponent`, and resolvers/guards are attached here.
-  ```ts
-  export const FESTIVAL_DETAIL_ROUTES: Routes = [
-    { path: '', loadComponent: () => import('./feature/festival-detail.page')
-        .then(m => m.FestivalDetailPageComponent),
-      resolve: { festival: festivalResolver } },
-  ];
+- **Redirects** are declared once, centrally, in `astro.config.mjs`'s `redirects` map — not as a page-level trick.
+  ```js
+  // astro.config.mjs
+  export default defineConfig({
+    redirects: { '/': '/noticias' },
+  });
   ```
-- **Route-level data resolvers** (`ResolveFn`) for festival detail pages to avoid template flicker and to feed SSR.
-- **Functional guards** (`CanMatchFn`) instead of class-based.
-- Slugs are kebab-case and stable: `fib-benicassim`, `arenal-sound`, `medusa-festival`.
+- **404** is a plain static page at `src/pages/404.astro`; Astro serves it automatically for unmatched routes in a static build.
+- **No resolvers, no guards.** Astro has neither — data loading happens in frontmatter/`getStaticPaths()` at build time, and there is no per-request auth to gate (the portal has no accounts yet; when the User accounts phase lands, gating will be evaluated against whatever runtime Astro is deployed under at that point).
+- Slugs are kebab-case and stable: `arenal-sound-2027-fechas-preventa-abonos`, `bigsound`, `medusa-festival`.
 
 ## Scroll & History
 
-- `withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })`.
-- Preserve filter state in query params so URLs are shareable.
+- Browser-native scroll restoration is sufficient for a static site; no router-level configuration is needed.
+- Roadmap filter state (once `/festivales` ships) should live in the URL's query string so pages stay shareable — read it in frontmatter for the initial static render and let a client island (see [[state-management]]) refine it without a full reload only if genuinely needed.
 
 ---
 
 ## Examples
 
-### app.routes.ts — two-level lazy loading
+### Redirect + static routes — `astro.config.mjs`
 
-```ts
-// src/app/app.routes.ts
-import { Routes } from '@angular/router';
+```js
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
 
-export const APP_ROUTES: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('@features/home/home.routes').then(m => m.HOME_ROUTES),
+export default defineConfig({
+  output: 'static',
+  redirects: {
+    '/': '/noticias',
   },
-  {
-    path: 'festivales',
-    loadChildren: () =>
-      import('@features/festival-list/festival-list.routes').then(m => m.FESTIVAL_LIST_ROUTES),
-  },
-  {
-    path: 'festivales/:slug',
-    loadChildren: () =>
-      import('@features/festival-detail/festival-detail.routes').then(m => m.FESTIVAL_DETAIL_ROUTES),
-  },
-  {
-    path: 'artistas/:slug',
-    loadChildren: () =>
-      import('@features/artist-detail/artist-detail.routes').then(m => m.ARTIST_DETAIL_ROUTES),
-  },
-  {
-    path: '**',
-    loadComponent: () => import('@features/not-found/not-found.page').then(m => m.NotFoundPageComponent),
-  },
-];
+});
 ```
 
-### Feature routes — ResolveFn + loadComponent
+### Static route generation — `getStaticPaths` over a local catalogue
 
-```ts
-// src/app/features/festival-detail/festival-detail.routes.ts
-import { Routes } from '@angular/router';
-import { festivalResolver } from './data-access/festival.resolver';
-import { festivalMetaResolver } from './data-access/festival-meta.resolver';
+```astro
+---
+// src/pages/noticias/[slug].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { NEWS_ARTICLES, getNewsArticleBySlug } from '@data/news.catalogue';
+import { buildArticleSeo } from '@lib/seo';
 
-export const FESTIVAL_DETAIL_ROUTES: Routes = [
-  {
-    path: '',
-    loadComponent: () =>
-      import('./feature/festival-detail.page').then(m => m.FestivalDetailPageComponent),
-    resolve: {
-      festival: festivalResolver,
-      meta:     festivalMetaResolver,
-    },
-  },
-];
-```
-
-### ResolveFn — fetch festival before render
-
-```ts
-// src/app/features/festival-detail/data-access/festival.resolver.ts
-import { inject } from '@angular/core';
-import { ResolveFn, Router } from '@angular/router';
-import { catchError, EMPTY } from 'rxjs';
-import { FestivalService } from '@shared/data-access/festival.service';
-import type { Festival } from '@shared/domain/festival.model';
-
-export const festivalResolver: ResolveFn<Festival> = (route) => {
-  const service = inject(FestivalService);
-  const router  = inject(Router);
-
-  return service.getBySlug(route.params['slug']).pipe(
-    catchError(() => {
-      router.navigate(['/404']);
-      return EMPTY;
-    }),
-  );
-};
-```
-
-### Functional guard — CanMatchFn
-
-```ts
-// src/app/features/user-profile/user-profile.guard.ts
-import { inject } from '@angular/core';
-import { CanMatchFn, Router } from '@angular/router';
-import { AuthService } from '@shared/data-access/auth.service';
-
-export const authGuard: CanMatchFn = () => {
-  const auth   = inject(AuthService);
-  const router = inject(Router);
-  return auth.isAuthenticated() || router.createUrlTree(['/iniciar-sesion']);
-};
-```
-
-### Filter state in query params — shareable URLs
-
-```ts
-// Smart page reads and writes query params so /festivales?provincia=Valencia&mes=7 works
-@Component({ /* ... */ })
-export class FestivalListPageComponent {
-  private readonly route        = inject(ActivatedRoute);
-  private readonly router       = inject(Router);
-  private readonly filtersStore = inject(FiltersStore);
-
-  constructor() {
-    // Hydrate store from URL on load
-    this.route.queryParamMap.pipe(take(1)).subscribe(params => {
-      this.filtersStore.setProvincia(params.get('provincia') as Provincia | null);
-      this.filtersStore.setMes(params.get('mes') ? Number(params.get('mes')) : null);
-    });
-
-    // Write store changes back to URL
-    effect(() => {
-      this.router.navigate([], {
-        queryParams: {
-          provincia: this.filtersStore.provincia() ?? null,
-          mes:       this.filtersStore.mes()       ?? null,
-        },
-        queryParamsHandling: 'merge',
-        replaceUrl: true,
-      });
-    });
-  }
+export function getStaticPaths() {
+  return NEWS_ARTICLES.map((article) => ({ params: { slug: article.slug } }));
 }
+
+const { slug } = Astro.params;
+const article = getNewsArticleBySlug(slug ?? '');
+if (!article) throw new Error(`News article route is missing catalogue data: ${slug}`);
+
+const seo = buildArticleSeo(article, { /* ...seo copy... */ } as never);
+---
+
+<BaseLayout seo={seo}>
+  <article data-testid="news-article-detail">
+    <h1>{article.titleKey}</h1>
+  </article>
+</BaseLayout>
+```
+
+### Roadmap: `getStaticPaths` over a remote data-access module
+
+```astro
+---
+// src/pages/festivales/[slug].astro (roadmap)
+import { listFestivals, getFestivalBySlug } from '@data/festival.repository';
+
+export async function getStaticPaths() {
+  const festivals = await listFestivals();
+  return festivals.map((festival) => ({ params: { slug: festival.slug } }));
+}
+
+const { slug } = Astro.params;
+const festival = await getFestivalBySlug(slug ?? '');
+if (!festival) throw new Error(`Festival route is missing catalogue data: ${slug}`);
+---
+```
+
+### 404 page
+
+```astro
+---
+// src/pages/404.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout seo={{ title: 'Página no encontrada', robots: 'noindex, nofollow' } as never}>
+  <p data-i18n="errors.notFound.message">No hemos podido encontrar esta página.</p>
+  <a href="/noticias" data-i18n="errors.notFound.action">Volver a portada</a>
+</BaseLayout>
+```
+
+### Filter state in the query string (roadmap, once `/festivales` ships)
+
+```ts
+// src/scripts/festival-filters.ts (roadmap island — reads/writes location.search)
+const params = new URLSearchParams(window.location.search);
+const provincia = params.get('provincia');
+const mes = params.get('mes') ? Number(params.get('mes')) : null;
+// ...filter the already-rendered DOM list client-side using these values...
 ```
 
 ## Related skills

@@ -1,186 +1,173 @@
 ---
 name: state-management
 description: >-
-  Signal-first state with NgRx SignalStore: immutable stores, pure selectors, and persistence of
-  filters and favourites. Use when introducing or changing application state, stores or selectors.
+  Island-local state and framework-agnostic persistence patterns for TuriaFestNoticias: module-level
+  state in src/lib and src/scripts, localStorage/idb-keyval persistence of theme, language and
+  (roadmap) favourites/filters. Use when introducing or changing state in a client island or a
+  framework-agnostic module.
 ---
 
 # 🧠 State Management
 
-Reusable patterns for managing application state across the **TuriaFestNoticias** Angular app.
+Reusable patterns for managing state across the **TuriaFestNoticias** Astro app.
 
 ## Purpose
 
-Centralize how festival data, user preferences (favourites, filters), and UI state (loading, errors, modal visibility) are stored, mutated, and consumed.
+Centralize how the small amount of client-side state — active theme, active language, (roadmap) favourites and filters — is stored, mutated, and consumed, given that the site is static-first and most pages carry **no** client-side state at all.
 
-## Where stores live
+## Where state lives
 
-State follows the feature-sliced structure (see [[project-structure]]):
+There is no store layer like an SPA would have — Astro pages are rendered once at build time and shipped as static HTML. State only exists where a **client island** needs it:
 
-- **Feature-local state** → `features/<feature>/data-access/<name>.store.ts`. Example: `filters.store.ts` inside `festival-list/`.
-- **Cross-feature state** → `@shared/data-access/<name>.store.ts`. Example: the festival catalogue, consumed by `home`, `festival-list`, and `festival-detail`.
+- **Framework-agnostic state helpers** → `src/lib/<name>.ts`. Example: `src/lib/theme.ts` exports pure functions (`resolveTheme`, `applyTheme`, `readStoredMode`, `persistMode`) that compute and mutate theme state without knowing about the DOM event wiring.
+- **Island-local state** → `src/scripts/<name>.ts`. Example: `src/scripts/theme.ts` holds the in-memory `mode`/`resolved` variables for the running page and calls into `@lib/theme` to read, resolve, and persist them.
 
-A store starts feature-local and is promoted to `@shared/data-access/` the moment a **second** feature needs it — never earlier.
+A helper starts inline in the one island that needs it and is promoted to `src/lib/` the moment a **second** island (or a page's inline anti-flicker script) needs the same logic — never earlier. `src/lib/theme.ts` is shared today by the `BaseLayout.astro` inline anti-flicker script and the `theme.ts` island; that is the promotion trigger, not a hypothetical future need.
 
 ## Scope
 
-- The festival catalogue store (Bigsound, Latin Fest, Medusa, Arenal Sound, Reve, Zevra, etc.).
-- Local component state via Angular **Signals**.
-- Persistence of user filters and favourites across sessions.
+- Theme mode (`light` / `dark` / `system`), resolved against `prefers-color-scheme`.
+- Active language (`es` / `ca` / `en`), resolved against a stored preference.
+- News search index state (`NewsSearchService` in `src/data/news-search.ts`), rebuilt in-memory whenever the news hub island mounts or the active language changes.
+- Roadmap: persisted favourites and filters once the Personalization phase begins.
 
 ## Recommended approach
 
-- **Signals first** for new code. `signal()`, `computed()`, `effect()`.
-- **NgRx SignalStore** when state crosses **3 or more features** or needs structured methods + computed selectors at scale.
-- **RxJS `BehaviorSubject`** only for streams that interop with external observables (HTTP, router events) — never as the primary cross-component channel.
-
-## Catalogue hydration
-
-The catalogue comes from **Sanity** (see [[api-integration]]). The store is hydrated once, early, and cached for the session:
-
-1. `APP_INITIALIZER` (in `core/initializers/`) triggers `CatalogueStore.load()` before the first route renders.
-2. The store holds the parsed `Festival[]` (already Zod-validated at the HTTP boundary).
-3. Reads are synchronous Signals; no component re-fetches.
-4. Invalidation: the catalogue is treated as immutable per session. A content update in Sanity is picked up on the next full load — there is no live websocket sync in the MVP.
-5. On SSR, the store is populated server-side and **transferred to the client** via Angular's hydration state, so the client does not re-fetch.
+- **Module-level closures or a small class** for state that outlives a single function call within one island (e.g. `NewsSearchService` wraps a MiniSearch instance as private state with `buildIndex()` / `search()` methods).
+- **Pure functions in `src/lib/`** for anything that can be expressed as `(currentState, input) => nextState` — these are trivially unit-tested with Vitest, no DOM required.
+- **No global mutable singletons shared across islands.** Each island reads its own state from `localStorage`/DOM on mount; islands do not talk to each other directly.
 
 ## Persistence
 
-User preferences survive reloads. Choose the mechanism by data shape (aligned with the roadmap's Personalization phase):
+User preferences survive reloads via the browser, never a server session (the site has none):
 
-- **`localStorage`** — trivial scalar preferences: active theme, last selected province. Synchronous, tiny.
-- **`idb-keyval` (IndexedDB)** — structured or larger data: the favourites set, cached filter combinations. Asynchronous, no 5 MB string limit.
+- **`localStorage`** — trivial scalar preferences: active theme (`fv-theme`, see `THEME_STORAGE_KEY` in `src/lib/theme.ts`), last selected language. Synchronous, tiny, read before first paint by `BaseLayout.astro`'s inline anti-flicker script to avoid a flash of the wrong theme.
+- **`idb-keyval` (IndexedDB, roadmap)** — structured or larger data: a future favourites set, cached filter combinations. Asynchronous, no 5 MB string limit. Not installed yet — introduce only when the Personalization phase starts persisting more than scalars.
 
-Persistence is wired through the store, never read directly by components. Hydrate persisted state on `APP_INITIALIZER`; write through an `effect()` that mirrors the relevant signal.
+Persistence always goes through the owning `src/lib/` module (`readStoredMode` / `persistMode` in `theme.ts`), never read or written directly from a `.astro` file or from an island's DOM-handling code. Guard every `localStorage`/`window` access — `src/lib/theme.ts` wraps reads in `try/catch` and accepts `Storage | undefined` so the same functions can be imported (and no-op) in a non-browser context.
 
 ## Usage guidelines
 
-1. One store per bounded context (`CatalogueStore`, `FiltersStore`, `FavouritesStore`).
-2. Never mutate state outside store methods.
-3. Selectors (`computed`) must be pure.
-4. Components read Signals and call store methods; they never hold a copy of store state.
+1. One module per concern (`src/lib/theme.ts`, `src/i18n/index.ts`'s language state, `src/data/news-search.ts`).
+2. Never mutate `localStorage`/`document` from inline code in an island when a named function in `src/lib/` already owns that mutation — call the function.
+3. Pure helpers (`resolveTheme`, `normalizeSearchTerm`) must stay side-effect-free so they can be tested without jsdom.
+4. Islands read state on `DOMContentLoaded`/module init and re-render the DOM; they never hold a second, divergent copy of `localStorage`'s value.
 
 ## Anti-patterns
 
-- Storing derived values that a `computed()` could produce from existing state.
-- Sharing `Subject`s between unrelated components.
-- Reading `localStorage` / IndexedDB directly from a component instead of through a store.
-- A feature reaching into another feature's store (forbidden by the boundary rules — promote to `@shared/data-access/` instead).
+- Reimplementing theme/i18n persistence logic inside a `<script>` block instead of importing `@lib/theme` / `@i18n`.
+- Sharing a mutable object between two unrelated islands via `window.__someGlobal`.
+- Reading `localStorage` directly from `.astro` frontmatter (frontmatter runs at build time — there is no browser there; only islands may touch `localStorage`).
+- A page's inline `<script>` growing business logic that belongs in `src/lib/` or `src/data/`.
 
 ---
 
 ## Examples
 
-### NgRx SignalStore — FiltersStore
+### Framework-agnostic state helpers — `src/lib/theme.ts`
 
 ```ts
-// src/app/features/festival-list/data-access/filters.store.ts
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
-import { computed } from '@angular/core';
-import type { Provincia } from '@shared/domain/festival.model';
+// src/lib/theme.ts
+export type ThemeMode = 'light' | 'dark' | 'system';
+export type ResolvedTheme = 'light' | 'dark';
 
-interface FiltersState {
-  provincia: Provincia | null;
-  mes: number | null;          // 1–12
-  genero: string | null;
-  precioMax: number | null;
+export const THEME_STORAGE_KEY = 'fv-theme';
+
+export function resolveTheme(mode: ThemeMode, systemDark: boolean): ResolvedTheme {
+  return mode === 'system' ? (systemDark ? 'dark' : 'light') : mode;
 }
 
-const initialState: FiltersState = {
-  provincia: null,
-  mes: null,
-  genero: null,
-  precioMax: null,
-};
+export function readStoredMode(storage: Storage | undefined): ThemeMode | null {
+  try {
+    const value = storage?.getItem(THEME_STORAGE_KEY) ?? null;
+    return value === 'light' || value === 'dark' || value === 'system' ? value : null;
+  } catch {
+    return null;
+  }
+}
 
-export const FiltersStore = signalStore(
-  { providedIn: 'root' },
-  withState(initialState),
-  withComputed(({ provincia, mes, genero, precioMax }) => ({
-    hasActiveFilters: computed(
-      () => provincia() !== null || mes() !== null || genero() !== null || precioMax() !== null,
-    ),
-    activeCount: computed(
-      () => [provincia(), mes(), genero(), precioMax()].filter(Boolean).length,
-    ),
-  })),
-  withMethods((store) => ({
-    setProvincia(p: Provincia | null): void {
-      patchState(store, { provincia: p });
-    },
-    setMes(m: number | null): void {
-      patchState(store, { mes: m });
-    },
-    setGenero(g: string | null): void {
-      patchState(store, { genero: g });
-    },
-    setPrecioMax(p: number | null): void {
-      patchState(store, { precioMax: p });
-    },
-    reset(): void {
-      patchState(store, initialState);
-    },
-  })),
-);
+export function persistMode(storage: Storage | undefined, mode: ThemeMode): void {
+  try {
+    storage?.setItem(THEME_STORAGE_KEY, mode);
+  } catch {
+    // Storage unavailable (private mode / blocked) — non-fatal.
+  }
+}
 ```
 
-### Local component state with Signals
+### Island-local state — `src/scripts/theme.ts`
 
 ```ts
-// Inside a smart page component — never in a presentational ui/ component
-@Component({ /* ... */ changeDetection: ChangeDetectionStrategy.OnPush })
-export class FestivalListPageComponent {
-  private readonly catalogue = inject(CatalogueStore);
-  private readonly filters   = inject(FiltersStore);
+// src/scripts/theme.ts — module-level `mode`/`resolved` are this island's only state
+import {
+  applyTheme,
+  isDarkModePreferred,
+  readStoredMode,
+  watchDarkModePreference,
+  type ThemeMode,
+} from '@lib/theme';
 
-  readonly festivals = computed(() => {
-    const all    = this.catalogue.festivals();
-    const prov   = this.filters.provincia();
-    const genero = this.filters.genero();
-    return all
-      .filter(f => !prov   || f.provincia === prov)
-      .filter(f => !genero || f.generos.includes(genero));
+export function initTheme(): void {
+  const view = window;
+  const storage = view.localStorage;
+  const root = document.documentElement;
+
+  let mode: ThemeMode = readStoredMode(storage) ?? 'system';
+  let systemDark = isDarkModePreferred(view);
+  let resolved = applyTheme(root, mode, systemDark, storage);
+
+  watchDarkModePreference(view, (dark) => {
+    systemDark = dark;
+    if (mode === 'system') {
+      resolved = applyTheme(root, mode, systemDark, storage);
+    }
+  });
+
+  document.querySelector('[data-testid="nav-btn-tema"]')?.addEventListener('click', () => {
+    mode = resolved === 'dark' ? 'light' : 'dark';
+    resolved = applyTheme(root, mode, systemDark, storage);
   });
 }
 ```
 
-### Effect — persist theme to localStorage
+### Class-based in-memory index — `src/data/news-search.ts`
 
 ```ts
-// src/app/core/initializers/theme.initializer.ts
-import { effect, inject, signal } from '@angular/core';
+// src/data/news-search.ts
+import MiniSearch from 'minisearch';
 
-export const theme = signal<'dark' | 'light'>('dark');
-
-// Call once in app.config.ts or an initializer
-export function wireThemePersistence(): void {
-  const saved = localStorage.getItem('fv-theme') as 'dark' | 'light' | null;
-  if (saved) theme.set(saved);
-
-  effect(() => {
-    localStorage.setItem('fv-theme', theme());
-    document.documentElement.setAttribute('data-theme', theme());
+export class NewsSearchService {
+  readonly #index = new MiniSearch({
+    fields: ['title', 'city', 'genres'],
+    storeFields: ['id'],
+    searchOptions: { boost: { title: 3, city: 1.5, genres: 1 }, prefix: true, fuzzy: 0.2 },
   });
+
+  buildIndex(documents: readonly { id: string; title: string; city: string; genres: string }[]): void {
+    this.#index.removeAll();
+    this.#index.addAll([...documents]);
+  }
+
+  search(query: string) {
+    return this.#index.search(query);
+  }
 }
 ```
 
-### APP_INITIALIZER — hydrate catalogue before first render
+### Anti-flicker theme read — inline script in `BaseLayout.astro`
 
-```ts
-// src/app/core/initializers/catalogue.initializer.ts
-import { inject } from '@angular/core';
-import { CatalogueStore } from '@shared/data-access/catalogue.store';
-
-export function provideCatalogueInit() {
-  return {
-    provide: APP_INITIALIZER,
-    useFactory: () => {
-      const store = inject(CatalogueStore);
-      return () => store.load();   // returns Promise; router waits for it
-    },
-    multi: true,
-  };
-}
+```astro
+<script is:inline>
+  // Runs before first paint — imports are not available here, so this stays a
+  // tiny, deliberately duplicated read of the same THEME_STORAGE_KEY contract
+  // that src/lib/theme.ts owns. Keep both in sync if the key ever changes.
+  try {
+    const stored = localStorage.getItem('fv-theme');
+    if (stored === 'dark' || (stored !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch {}
+</script>
 ```
 
 ## Related skills

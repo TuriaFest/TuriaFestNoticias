@@ -1,6 +1,6 @@
 # Audit TuriaFestNoticias Architecture
 
-Automated architecture auditor for the TuriaFestNoticias Angular project.
+Automated architecture auditor for the TuriaFestNoticias Astro project.
 
 Read-only. Strict. Objective. Reports — never modifies.
 
@@ -14,8 +14,8 @@ This command must not write code, create files, run migrations, or apply fixes. 
 
 The audit must cover, in order:
 
-1. **Project structure** — folder layout under `src/app/` and `src/styles/`, presence and placement of `core/`, `layout/`, `features/`, `shared/` and their sub-folders (`feature/`, `ui/`, `data-access/`, `domain/`, `pipes/`, `directives/`, `util/`, `testing/`).
-2. **Architecture compliance** — feature-sliced boundaries, standalone components, lazy loading, unidirectional data flow, path aliases (`@core`, `@layout`, `@features`, `@shared/*`), Zod validation at HTTP boundary.
+1. **Project structure** — folder layout under `src/` (`pages/`, `layouts/`, `components/`, `scripts/`, `data/`, `lib/`, `i18n/`, `styles/`, `assets/`) and their expected placement per [[project-structure]].
+2. **Architecture compliance** — file-based routing, static generation (`output: 'static'`, `getStaticPaths`), unidirectional data flow (`data/lib/i18n` never importing `.astro`; `scripts/` never importing `.astro` components), path aliases (`@data`, `@i18n`, `@lib`, `@assets`) matching in both `astro.config.mjs` and `tsconfig.json`, Zod validation at any remote-data boundary (roadmap).
 3. **Design system** — fonts, colors, spacing tokens defined as CSS custom properties or SCSS variables under `src/styles/`. No hardcoded literal colors, font families, or spacings in component SCSS when a token exists.
 4. **Skills compliance** — patterns from `.claude/skills/` actually present in code (api-integration, state-management, routing-navigation, performance-optimization, error-handling, theming-styling, internationalization, accessibility, testing-patterns).
 5. **Documentation sync** — `docs/documentacion.md` reflects the current tree (no orphan entries, no missing files).
@@ -33,14 +33,13 @@ Read in this order — do not skip:
 - `.claude/skills/api-integration/` (DTO + Zod rules)
 - `.claude/skills/state-management/`, `sanity-cms/`, `routing-navigation/`, `performance-optimization/`, `error-handling/`, `internationalization/`, `accessibility/`, `testing-patterns/`, `ui-components/`, `forms-validation/`, `search/`, `maps/`, `seo-meta/` — as available
 - `.claude/agents/*.md` — for agent ownership boundaries
-- `angular.json` — styles entry, budgets, locale, prerender config
-- `tsconfig.json` — path aliases
-- `eslint.config.*` or `.eslintrc*` — boundary rules
-- `package.json` — declared stack vs. CLAUDE.md canonical table
+- `astro.config.mjs` — output mode, redirects, Vite aliases, SCSS `loadPaths`
+- `tsconfig.json` — path aliases (must match `astro.config.mjs`)
+- `package.json` — declared stack vs. CLAUDE.md canonical table, and the `lint`/`test`/`build`/`deploy` scripts
 
 ### 2. Walk the tree
 
-Enumerate `src/`, `public/`, `src/app/**`, `src/styles/**`, `src/assets/**`, `src/environments/**`, `docs/`, `.claude/`. Use `find`/`ls`/`Read` — never write.
+Enumerate `src/`, `public/`, `src/pages/**`, `src/layouts/**`, `src/components/**`, `src/scripts/**`, `src/data/**`, `src/lib/**`, `src/i18n/**`, `src/styles/**`, `src/assets/**`, `docs/`, `.claude/`. Use `find`/`ls`/`Read` — never write.
 
 For each folder, check:
 
@@ -51,26 +50,26 @@ For each folder, check:
 
 ### 3. Inspect files for architectural violations
 
-For every `.ts` file under `src/app/`:
+For every `.ts` file under `src/data/`, `src/lib/`, `src/i18n/`, and `src/scripts/`, and every `.astro` file under `src/pages/`, `src/layouts/`, `src/components/`:
 
-- **Feature isolation**: does any `features/<a>/**` import from `features/<b>/**`? Flag every occurrence.
-- **Public surface**: does anything outside a feature import from inside it without going through `<feature>.routes.ts`?
-- **Path aliases**: any relative import (`../../`) that climbs above a feature root? Flag.
-- **HttpClient placement**: any component, page, pipe, or directive that imports `HttpClient` directly? It must live only under `data-access/`.
-- **Business logic in components**: components longer than ~150 lines with non-trivial branching, data transformation, or persistence calls. Flag as candidate for extraction into a store or service.
-- **Standalone**: any `@NgModule` declarations in new code? Flag (only allowed in legacy areas, which this project has none of).
-- **Lazy loading**: every feature listed in `app.routes.ts` must use `loadChildren` pointing at `<feature>.routes.ts`. Flag eagerly-imported features.
-- **DTO validation**: `data-access/` files that call `HttpClient` without piping through a Zod `parse`/`safeParse`. Flag.
-- **Hardcoded strings in templates**: visible user-facing copy not routed through the i18n pipe. Flag with file:line.
+- **Domain isolation**: does any file under `src/data/`, `src/lib/`, or `src/i18n/` import a `.astro` file? Flag every occurrence — these must stay framework-agnostic and Vitest-testable without Astro.
+- **Island isolation**: does any file under `src/scripts/` import a `.astro` component? Flag — islands operate on the rendered DOM and on `data/lib/i18n`, never on Astro component source.
+- **Path aliases**: any relative import (`../../../`) that climbs unreasonably far, where a `@data`/`@lib`/`@i18n`/`@assets` alias should have been used instead? Flag.
+- **Alias parity**: do `astro.config.mjs`'s Vite `resolve.alias` and `tsconfig.json`'s `compilerOptions.paths` declare the same alias set? Flag any drift.
+- **Fetch placement**: any `fetch()` call inside `.astro` frontmatter or `src/scripts/` that reaches a remote origin without going through a `src/data/` module (once remote data exists)? Flag.
+- **Business logic in markup**: `.astro` files with long frontmatter blocks doing non-trivial data transformation that belongs in `src/data/` or `src/lib/`. Flag as candidate for extraction.
+- **Static generation**: does every dynamic route (`[param].astro`) export a `getStaticPaths()`? Flag any that don't, since `output: 'static'` requires it.
+- **DTO validation**: any `src/data/` module reading remote JSON without piping it through a Zod `.parse()`/`.safeParse()` (once remote sources exist). Flag.
+- **Hardcoded strings in markup**: visible user-facing copy not routed through a `data-i18n` anchor + the `t()` resolver. Flag with file:line.
 
 ### 4. Inspect SCSS for design-system violations
 
-For every `.scss` file under `src/app/**` and component-level styles:
+For every `.scss` file under `src/styles/**` and component-colocated partials:
 
 - Literal hex/rgb/hsl colors → must be `var(--fv-*)` or a token.
-- Literal `font-family` declarations → must use `var(--fv-font-*)` or the `fvFont` directive/pipe.
+- Literal `font-family` declarations → must use `var(--fv-font-*)`.
 - Literal pixel/rem spacings outside of breakpoints → must use spacing tokens (when defined).
-- `@import` of partials by relative path instead of `stylePreprocessorOptions.includePaths`.
+- `@use`/`@import` of partials by relative path instead of the Vite `css.preprocessorOptions.scss.loadPaths` resolution configured in `astro.config.mjs`.
 
 Cross-check that the tokens referenced actually exist in `src/styles/*.scss`. Flag references to undefined tokens.
 
@@ -78,17 +77,17 @@ Cross-check that the tokens referenced actually exist in `src/styles/*.scss`. Fl
 
 For each skill, produce one row: **applied / partially applied / not yet applied / bypassed**.
 
-- `api-integration` — at least one `data-access/` service with Zod DTO parsing.
-- `state-management` — Signals or SignalStore used; no manual `BehaviorSubject` state where a Signal would do.
-- `routing-navigation` — Spanish slugs (`/festivales/:slug`, `/artistas/:slug`, `/provincia/:provincia`), functional guards, resolvers.
-- `performance-optimization` — `ChangeDetectionStrategy.OnPush` on standalone components, `@defer` on below-the-fold blocks, `NgOptimizedImage` on `<img>`.
-- `error-handling` — global `ErrorHandler` registered, HTTP interceptor mapping to `FestivalError`.
+- `api-integration` — the local catalogue pattern (`src/data/*.catalogue.ts` + `*.model.ts`) followed consistently; any remote fetch, if present, goes through Zod DTO parsing.
+- `state-management` — theme/language state resolved through `src/lib/theme.ts` and `src/i18n/index.ts`, not reimplemented ad hoc inside an island.
+- `routing-navigation` — Spanish slugs (`/noticias/:slug`, and roadmap `/festivales/:slug`, `/artistas/:slug`, `/provincia/:provincia`), `getStaticPaths()` present on every dynamic route, redirects centralized in `astro.config.mjs`.
+- `performance-optimization` — static prerendering intact, minimal client islands, responsive `<img>`/`srcset` usage, lazy `loading` on below-the-fold images.
+- `error-handling` — build-time guards (`throw new Error(...)`) present on every `getStaticPaths()`/detail-page lookup that can miss; islands fail safely to the server-rendered default rather than crashing.
 - `theming-styling` — token files present and consumed.
-- `internationalization` — `es-ES` source-of-truth keys, no diverging keys vs. `ca`/`en`.
+- `internationalization` — `es` source-of-truth keys in `src/i18n/translations.ts`, no diverging keys vs. `ca`/`en` JSON under `src/assets/i18n/`.
 - `accessibility` — visible focus styles, semantic landmarks, alt text on images, color contrast tokens.
-- `testing-patterns` — Vitest specs colocated, `data-testid` used, no `xit`/`xdescribe` without expiry comment.
+- `testing-patterns` — Vitest specs colocated (`*.spec.ts`), `data-testid` used, no `it.skip`/`describe.skip` without an expiry comment.
 
-A skill is **bypassed** when code clearly contradicts it (e.g. `HttpClient` in a component, hex color in a template).
+A skill is **bypassed** when code clearly contradicts it (e.g. a `fetch()` in `src/scripts/` reaching a remote origin directly, hex color in markup).
 
 ### 6. Documentation sync check
 
@@ -105,9 +104,9 @@ Emit one report, in this exact order, in Markdown. No preamble, no closing pleas
 ### A. Summary
 
 - **Health score**: 0–100. Deduct as follows (cap at 0):
-  - Critical violation (feature-to-feature import, `HttpClient` in component, missing top-level folder): **−15**
-  - Architecture warning (relative-path climb, undocumented folder, hardcoded color/font, missing Zod parse): **−5**
-  - Style/skill nit (empty folder, stale `.gitkeep`, missing `OnPush`, missing `data-testid`): **−1**
+  - Critical violation (domain module importing `.astro`, remote fetch bypassing `src/data/`, missing top-level folder): **−15**
+  - Architecture warning (unreasonable relative-path climb, undocumented folder, hardcoded color/font, missing Zod parse on remote data, missing `getStaticPaths`): **−5**
+  - Style/skill nit (empty folder, stale `.gitkeep`, missing `data-testid`, missing lazy-loading attribute): **−1**
 - **Status**:
   - `OK` if score ≥ 85 and 0 critical
   - `WARNING` if score 60–84 or ≤ 3 critical
