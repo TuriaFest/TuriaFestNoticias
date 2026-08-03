@@ -1,0 +1,161 @@
+---
+// ============================================================================
+// /noticias — news hub
+// ============================================================================
+// Ports the Angular news listing page: hero, feed with article cards and the
+// `?buscar=` search behaviour. All cards are server-rendered in Spanish; the
+// search island filters them client-side with MiniSearch (same logic and
+// expectations as the original service specs).
+// ============================================================================
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { NEWS_ARTICLES } from '@data/news.catalogue';
+import { ES_TRANSLATIONS } from '@i18n/translations';
+import { t } from '@i18n/index';
+import { buildListingSeo } from '@lib/seo';
+import caTranslations from '@assets/i18n/ca.json';
+import enTranslations from '@assets/i18n/en.json';
+
+const searchDocs = NEWS_ARTICLES.map((article) => ({
+  id: article.id,
+  slug: article.slug,
+  es: {
+    id: article.id,
+    title: t(article.titleKey, ES_TRANSLATIONS),
+    city: t(article.cityKey, ES_TRANSLATIONS),
+    genres: t(article.searchGenresKey, ES_TRANSLATIONS),
+  },
+  ca: {
+    id: article.id,
+    title: t(article.titleKey, caTranslations),
+    city: t(article.cityKey, caTranslations),
+    genres: t(article.searchGenresKey, caTranslations),
+  },
+  en: {
+    id: article.id,
+    title: t(article.titleKey, enTranslations),
+    city: t(article.cityKey, enTranslations),
+    genres: t(article.searchGenresKey, enTranslations),
+  },
+}));
+
+const leadArticle = NEWS_ARTICLES[0];
+const seoCopy = {
+  es: { title: t('news.meta.title', ES_TRANSLATIONS), description: t('news.description', ES_TRANSLATIONS) },
+  ca: { title: t('news.meta.title', caTranslations), description: t('news.description', caTranslations) },
+  en: { title: t('news.meta.title', enTranslations), description: t('news.description', enTranslations) },
+};
+const seo = buildListingSeo({
+  title: seoCopy.es.title,
+  description: seoCopy.es.description,
+  image: leadArticle.socialImage,
+  imageAlt: t(leadArticle.socialImage.altKey, ES_TRANSLATIONS),
+});
+---
+
+<BaseLayout seo={seo} seoCopy={seoCopy}>
+  <div class="news-page">
+    <header class="news-hero" aria-describedby="news-page-description">
+      <div class="news-hero__title-lockup">
+        <h1 class="news-hero__title" data-testid="news-page-title" data-i18n="news.title">
+          {t('news.title', ES_TRANSLATIONS)}
+        </h1>
+        <span class="news-hero__title-echo" aria-hidden="true" data-i18n="news.title">
+          {t('news.title', ES_TRANSLATIONS)}
+        </span>
+      </div>
+
+      <p id="news-page-description" class="news-hero__intro" data-testid="news-page-description" data-i18n="news.description">
+        {t('news.description', ES_TRANSLATIONS)}
+      </p>
+    </header>
+
+    <section class="news-feed" aria-labelledby="news-feed-title">
+      <h2 id="news-feed-title" class="news-feed__heading" data-i18n="news.list.sectionTitle">
+        {t('news.list.sectionTitle', ES_TRANSLATIONS)}
+      </h2>
+
+      {
+        <div
+          class="news-feed__search-summary"
+          role="status"
+          aria-live="polite"
+          data-testid="news-search-summary"
+          hidden
+        >
+          <p data-testid="news-search-summary-text"></p>
+          <a href="/noticias" data-i18n="news.search.clear">{t('news.search.clear', ES_TRANSLATIONS)}</a>
+        </div>
+      }
+
+      {
+        NEWS_ARTICLES.map((article, index) => (
+          <article class="news-entry" data-testid={`news-card-${article.id}`} data-news-article={article.id}>
+            <a
+              class="news-entry__media"
+              href={`/noticias/${article.slug}`}
+              data-i18n={article.titleKey}
+              data-i18n-attr="aria-label"
+              aria-label={t(article.titleKey, ES_TRANSLATIONS)}
+              data-testid="news-card-media"
+            >
+              <img
+                src={article.cardImage.src}
+                width={article.cardImage.width}
+                height={article.cardImage.height}
+                alt={t(article.cardImage.altKey, ES_TRANSLATIONS)}
+                data-i18n={article.cardImage.altKey}
+                data-i18n-attr="alt"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchpriority={index === 0 ? 'high' : undefined}
+              />
+            </a>
+
+            <div class="news-entry__body">
+              <div class="news-entry__meta">
+                <p class="news-entry__context">
+                  <span data-i18n={article.cityKey}>{t(article.cityKey, ES_TRANSLATIONS)}</span>
+                  <span aria-hidden="true">·</span>
+                  <span data-i18n={article.categoryKey}>{t(article.categoryKey, ES_TRANSLATIONS)}</span>
+                </p>
+                <time datetime={article.publishedAt} data-i18n={article.publishedLabelKey}>
+                  {t(article.publishedLabelKey, ES_TRANSLATIONS)}
+                </time>
+              </div>
+
+              <h3>
+                <a href={`/noticias/${article.slug}`} data-i18n={article.titleKey}>
+                  {t(article.titleKey, ES_TRANSLATIONS)}
+                </a>
+              </h3>
+              <p class="news-entry__excerpt" data-i18n={article.summaryKey}>
+                {t(article.summaryKey, ES_TRANSLATIONS)}
+              </p>
+              <a class="news-entry__read-more" href={`/noticias/${article.slug}`} data-testid="news-card-read-more">
+                <span data-i18n="news.list.readMore">{t('news.list.readMore', ES_TRANSLATIONS)}</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+
+      <div class="news-search-empty" data-testid="news-search-empty" role="status" hidden>
+        <h3 data-i18n="news.search.emptyTitle">{t('news.search.emptyTitle', ES_TRANSLATIONS)}</h3>
+        <p data-i18n="news.search.emptyDescription">{t('news.search.emptyDescription', ES_TRANSLATIONS)}</p>
+        <a href="/noticias" data-i18n="news.search.clear">{t('news.search.clear', ES_TRANSLATIONS)}</a>
+      </div>
+    </section>
+  </div>
+
+  <script id="news-search-docs" type="application/json" set:html={JSON.stringify(searchDocs)} />
+
+  <script>
+    import { initNewsSearch } from '../../scripts/news-search';
+    initNewsSearch();
+  </script>
+</BaseLayout>
+
+<style lang="scss" is:global>
+  @use '../../components/_news-page.scss';
+</style>

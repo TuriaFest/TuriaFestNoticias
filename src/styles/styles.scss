@@ -1,9 +1,10 @@
 // ============================================================================
 // styles.scss — TuriaFestNoticias · Global stylesheet entry point
 // ============================================================================
-// The only file Angular's `styles` build option references. It composes the
-// design system in dependency order: primitives → semantic → typography
-// (sizes + fonts) → spacing/radii/shadows/motion → reset → animations.
+// Astro's global entry (imported by BaseLayout). It composes the design
+// system in dependency order: primitives → semantic → typography (sizes +
+// fonts) → spacing/radii/shadows/motion → reset → animations, then the app
+// shell rules formerly owned by the Angular root component.
 // ============================================================================
 
 @use 'styles/tokens';
@@ -18,3 +19,15 @@
 @use 'styles/animations';
 @use 'styles/reset';
 @use 'styles/utilities/liquid-glass';
+
+// App shell (was the Angular root component's `:host` + `.app-main`).
+body {
+  display: block;
+  min-height: 100vh;
+  background: var(--fv-bg-page);
+  color: var(--fv-text-primary);
+}
+
+.app-main {
+  min-height: calc(100vh - 72px);
+}

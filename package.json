@@ -1,68 +1,40 @@
 {
   "name": "turia-fest-noticias",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "watch": "astro dev",
+    "test": "vitest",
+    "lint": "astro check",
     "deploy": "npm run build && wrangler deploy",
-    "watch": "ng build --watch --configuration development",
-    "test": "sh -c 'if printf \"%s\\n\" \"$@\" | grep -qx -- \"--run\"; then ng test --watch=false; else ng test \"$@\"; fi' --",
-    "serve:ssr:TuriaFestNoticias": "node dist/TuriaFestNoticias/server/server.mjs",
-    "lint": "ng lint",
     "i18n:sync": "node scripts/i18n-sync.mjs",
     "i18n:check": "node scripts/i18n-sync.mjs --check",
     "sync:codex": "node scripts/sync-codex.mjs",
     "sync:codex:check": "node scripts/sync-codex.mjs --check",
     "images:convert": "node scripts/convert-images.mjs",
     "branches:update-from-develop": "bash scripts/update-branches-from-develop.sh",
-    "branches:merge-develop-into-all": "bash scripts/merge-develop-into-branches.sh"
+    "branches:merge-develop-into-all": "bash scripts/merge-develop-into-branches.sh",
+    "predev": "npm run copy:i18n",
+    "prebuild": "npm run copy:i18n",
+    "copy:i18n": "node scripts/copy-i18n.mjs"
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
-  },
-  "private": true,
-  "packageManager": "npm@11.6.2",
   "dependencies": {
-    "@angular/common": "^21.1.0",
-    "@angular/compiler": "^21.1.0",
-    "@angular/core": "^21.1.0",
-    "@angular/forms": "^21.1.0",
-    "@angular/platform-browser": "^21.1.0",
-    "@angular/platform-server": "^21.1.0",
-    "@angular/router": "^21.1.0",
-    "@angular/ssr": "^21.1.0",
-    "@jsverse/transloco": "^8.3.0",
-    "@lucide/angular": "^1.17.0",
-    "express": "^5.1.0",
-    "minisearch": "^7.2.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "astro": "^7.1.6",
+    "minisearch": "^7.2.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.1.0",
-    "@angular/cli": "^21.1.0",
-    "@angular/compiler-cli": "^21.1.0",
-    "@eslint/js": "^10.0.1",
-    "@types/express": "^5.0.1",
-    "@types/node": "^20.17.19",
-    "angular-eslint": "21.4.0",
-    "eslint": "^10.3.0",
-    "eslint-plugin-boundaries": "^6.0.2",
-    "jsdom": "^27.1.0",
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^24.0.0",
+    "jsdom": "^30.0.1",
+    "sass": "^1.102.0",
     "sharp": "^0.34.5",
-    "typescript": "~5.9.2",
-    "typescript-eslint": "8.59.2",
-    "vitest": "^4.0.8",
-    "wrangler": "^4.112.0"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.118.0"
   }
 }

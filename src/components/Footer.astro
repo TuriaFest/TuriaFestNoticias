@@ -1,0 +1,188 @@
+---
+// ============================================================================
+// Footer.astro — TuriaFestNoticias · site footer
+// ============================================================================
+// Ports the Angular Footer template. Brand links home (`/` → `/noticias` via
+// the redirect), social icons are inline SVGs, columns use the footer.* i18n
+// keys. Server-rendered in Spanish; the NavBar island re-translates it.
+// ============================================================================
+
+import { ES_TRANSLATIONS } from '@i18n/translations';
+import { t } from '@i18n/index';
+
+const exploreLinks = [
+  { href: '/mapa', key: 'footer.explore.map' },
+  { href: '/festivales', key: 'footer.explore.upcoming' },
+  { href: '/explorar', key: 'footer.explore.byGenre' },
+  { href: '/festivales', key: 'footer.explore.byProvince' },
+] as const;
+
+const infoLinks = [
+  { href: '/sobre-nosotros', key: 'footer.info.about' },
+  { href: '/contacto', key: 'footer.info.contact' },
+  { href: '/faq', key: 'footer.info.faq' },
+] as const;
+
+const legalLinks = [
+  { href: '/aviso-legal', key: 'footer.legal.notice' },
+  { href: '/privacidad', key: 'footer.legal.privacy' },
+  { href: '/cookies', key: 'footer.legal.cookies' },
+  { href: '/terminos', key: 'footer.legal.terms' },
+] as const;
+---
+
+<div class="fv-footer-root">
+  <footer class="footer" data-i18n="footer.ariaLabel" data-i18n-attr="aria-label" aria-label={t('footer.ariaLabel', ES_TRANSLATIONS)} data-testid="site-footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="footer__logo-link" href="/" data-i18n="nav.home" data-i18n-attr="aria-label" aria-label={t('nav.home', ES_TRANSLATIONS)}>
+            <img
+              class="footer__logo footer__logo--light"
+              src="/assets/branding/festi-val-logo.webp"
+              width="800"
+              height="580"
+              data-i18n="footer.brand.logoAlt"
+              data-i18n-attr="alt"
+              alt={t('footer.brand.logoAlt', ES_TRANSLATIONS)}
+            />
+            <img
+              class="footer__logo footer__logo--dark"
+              src="/assets/branding/festi-val-logo-dark.webp"
+              width="800"
+              height="580"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+
+          <p class="footer__tagline" data-i18n="footer.brand.description">
+            {t('footer.brand.description', ES_TRANSLATIONS)}
+          </p>
+
+          <ul class="footer__social" data-i18n="footer.social.ariaLabel" data-i18n-attr="aria-label" aria-label={t('footer.social.ariaLabel', ES_TRANSLATIONS)}>
+            <li>
+              <a
+                class="footer__social-link"
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-social-instagram"
+                data-i18n="footer.social.instagram"
+                data-i18n-attr="aria-label"
+                aria-label={t('footer.social.instagram', ES_TRANSLATIONS)}
+              >
+                <svg class="footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="footer__social-link"
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-social-x"
+                data-i18n="footer.social.x"
+                data-i18n-attr="aria-label"
+                aria-label={t('footer.social.x', ES_TRANSLATIONS)}
+              >
+                <svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="footer__social-link"
+                href="https://youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-social-youtube"
+                data-i18n="footer.social.youtube"
+                data-i18n-attr="aria-label"
+                aria-label={t('footer.social.youtube', ES_TRANSLATIONS)}
+              >
+                <svg class="footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path
+                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+                  />
+                  <path d="m10 15 5-3-5-3z" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="footer__social-link"
+                href="https://open.spotify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-social-spotify"
+                data-i18n="footer.social.spotify"
+                data-i18n-attr="aria-label"
+                aria-label={t('footer.social.spotify', ES_TRANSLATIONS)}
+              >
+                <svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path
+                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.586 14.424a.623.623 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.622.622 0 1 1-.277-1.215c3.809-.871 7.077-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.224-2.723a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.779.779 0 1 1-.452-1.491c3.632-1.102 8.147-.568 11.232 1.329a.78.78 0 0 1 .257 1.071zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 1 1-.542-1.79c3.532-1.072 9.404-.865 13.115 1.337a.935.935 0 1 1-.955 1.609z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" data-i18n="footer.explore.title" data-i18n-attr="aria-label" aria-label={t('footer.explore.title', ES_TRANSLATIONS)}>
+          <h2 class="footer__col-title" data-i18n="footer.explore.title">{t('footer.explore.title', ES_TRANSLATIONS)}</h2>
+          <span class="footer__col-rule" aria-hidden="true"></span>
+          <ul class="footer__links">
+            {exploreLinks.map((link) => (
+              <li>
+                <a class="footer__link" href={link.href} data-i18n={link.key}>{t(link.key, ES_TRANSLATIONS)}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav class="footer__col" data-i18n="footer.info.title" data-i18n-attr="aria-label" aria-label={t('footer.info.title', ES_TRANSLATIONS)}>
+          <h2 class="footer__col-title" data-i18n="footer.info.title">{t('footer.info.title', ES_TRANSLATIONS)}</h2>
+          <span class="footer__col-rule" aria-hidden="true"></span>
+          <ul class="footer__links">
+            {infoLinks.map((link) => (
+              <li>
+                <a class="footer__link" href={link.href} data-i18n={link.key}>{t(link.key, ES_TRANSLATIONS)}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav class="footer__col" data-i18n="footer.legal.title" data-i18n-attr="aria-label" aria-label={t('footer.legal.title', ES_TRANSLATIONS)}>
+          <h2 class="footer__col-title" data-i18n="footer.legal.title">{t('footer.legal.title', ES_TRANSLATIONS)}</h2>
+          <span class="footer__col-rule" aria-hidden="true"></span>
+          <ul class="footer__links">
+            {legalLinks.map((link) => (
+              <li>
+                <a class="footer__link" href={link.href} data-i18n={link.key}>{t(link.key, ES_TRANSLATIONS)}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright" data-i18n="footer.bottom.copyright">
+          {t('footer.bottom.copyright', ES_TRANSLATIONS)}
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<style lang="scss" is:global>
+  @use './_footer.scss';
+</style>

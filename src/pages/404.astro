@@ -1,0 +1,55 @@
+---
+// 404 — not found
+// Ports the error.notFound copy; links back to the news hub.
+// ============================================================================
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ES_TRANSLATIONS } from '@i18n/translations';
+import { t } from '@i18n/index';
+import { absoluteUrl } from '@lib/site';
+import { BASE_URL } from '@lib/site';
+
+const seo = {
+  title: '404 — TuriaFestNoticias',
+  description: t('error.notFound', ES_TRANSLATIONS),
+  robots: 'noindex, follow',
+  canonical: `${BASE_URL}/404`,
+  og: {
+    title: '404 — TuriaFestNoticias',
+    description: t('error.notFound', ES_TRANSLATIONS),
+    type: 'website' as const,
+    url: `${BASE_URL}/404`,
+    image: absoluteUrl('/assets/branding/turiafest-favicon-64.png'),
+    imageAlt: 'TuriaFestNoticias',
+    imageWidth: 64,
+    imageHeight: 64,
+  },
+  twitter: {
+    card: 'summary',
+    title: '404 — TuriaFestNoticias',
+    description: t('error.notFound', ES_TRANSLATIONS),
+    image: absoluteUrl('/assets/branding/turiafest-favicon-64.png'),
+    imageAlt: 'TuriaFestNoticias',
+  },
+};
+---
+
+<BaseLayout seo={seo}>
+  <div class="news-page">
+    <header class="news-hero">
+      <div class="news-hero__title-lockup">
+        <h1 class="news-hero__title" data-testid="not-found-title">404</h1>
+        <span class="news-hero__title-echo" aria-hidden="true">404</span>
+      </div>
+      <p class="news-hero__intro">{t('error.notFound', ES_TRANSLATIONS)}</p>
+      <a class="news-article__footer" href="/noticias" data-i18n="news.article.backToNews">
+        <span aria-hidden="true">←</span>
+        <span>{t('news.article.backToNews', ES_TRANSLATIONS)}</span>
+      </a>
+    </header>
+  </div>
+</BaseLayout>
+
+<style lang="scss" is:global>
+  @use '../components/_news-page.scss';
+</style>

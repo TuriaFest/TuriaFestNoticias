@@ -1,74 +1,98 @@
 # TuriaFestNoticias
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
+Portal de noticias y festivales de la Comunitat Valenciana, construido con [Astro](https://astro.build/) y desplegado como sitio estático en Cloudflare Workers. La interfaz está en español (es-ES), con valenciano e inglés en el roadmap.
 
-## Development server
+> Migrado de Angular 21 a Astro. La superficie en producción es el portal de noticias (`/noticias`, `/noticias/:slug`); el catálogo de festivales, filtros y mapa son roadmap.
 
-To start a local development server, run:
+## Requisitos
 
-```bash
-ng serve
-```
+- Node.js 22.22+ / 24.15+ (ver avisos de `engines`)
+- npm
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Instala dependencias con:
 
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Servidor de desarrollo
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+Arranca `astro dev` en `http://localhost:4321/`. La app recarga al modificar los ficheros fuente.
 
-To build the project run:
+## Build
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Compila el sitio estático en `dist/`. Para previsualizar el resultado del build:
 
-## Cloudflare Workers deployment
+```bash
+npm run preview
+```
 
-The production build is deployed as prerendered static assets from
-`dist/TuriaFestNoticias/browser`. The Worker configuration lives in `wrangler.jsonc`.
+## Despliegue en Cloudflare Workers
 
-To build and deploy the current branch, run:
+Los assets estáticos se sirven desde `./dist` (configuración en `wrangler.jsonc`). Para construir y desplegar la rama actual:
 
 ```bash
 npm run deploy
 ```
 
-In Cloudflare Builds, use `npm run build` as the build command and `npx wrangler deploy` as the
-deploy command.
+En Cloudflare Builds, usa `npm run build` como comando de build y `npx wrangler deploy` como comando de despliegue.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Tests
 
 ```bash
-ng test
+npm test           # Vitest en modo watch
+npm test -- --run  # una sola pasada (usado en la puerta de pre-commit)
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Lint / type-check
 
 ```bash
-ng e2e
+npm run lint       # astro check
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Puerta de pre-commit
 
-## Additional Resources
+Todo commit que toque `src/` debe pasar, en orden y ambos con salida `0`, antes de `git commit`:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# TuriaFestNoticias
+```bash
+npm run lint && npm test -- --run
+```
+
+## Internacionalización
+
+Las traducciones viven en `src/assets/i18n/*.json` (`es.json` es la fuente de verdad). Un paso `copy:i18n` (pre-dev y pre-build) las copia a `public/assets/i18n` para el island de cambio de idioma.
+
+```bash
+npm run i18n:check   # verifica paridad de claves entre locales
+npm run i18n:sync    # propaga claves nuevas a los demás locales
+```
+
+## Estructura
+
+```
+src/
+├── pages/       # rutas → HTML estático (noticias/index, noticias/[slug], 404)
+├── layouts/     # shells de documento (BaseLayout.astro)
+├── components/  # componentes .astro reutilizables (NavBar, Footer) + SCSS
+├── scripts/     # islands de cliente (theme, i18n, nav, news-search)
+├── data/        # catálogo de contenido tipado + modelos + búsqueda
+├── lib/         # helpers agnósticos de framework (seo, site, theme)
+├── i18n/        # resolver de traducciones en runtime
+├── styles/      # sistema de diseño SCSS (tokens, capa semántica, mixins)
+└── assets/      # JSON de i18n (fuente) + fuentes de imágenes
+```
+
+`public/` contiene los assets estáticos servidos tal cual (branding, fuentes, imágenes optimizadas, i18n copiado).
+
+## Recursos
+
+- [Documentación de Astro](https://docs.astro.build/)
+- Contrato del proyecto para agentes: [`.claude/CLAUDE.md`](.claude/CLAUDE.md)

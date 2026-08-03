@@ -1,0 +1,202 @@
+---
+// ============================================================================
+// /noticias/[slug] — news article detail
+// ============================================================================
+// Ports the Angular article page: breadcrumb, header, responsive hero, body
+// sections, highlight quote, gallery and source back-link. Rendered from the
+// static catalogue (getStaticPaths) with build-time NewsArticle SEO.
+// ============================================================================
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { NEWS_ARTICLES, getNewsArticleBySlug } from '@data/news.catalogue';
+import { ES_TRANSLATIONS } from '@i18n/translations';
+import { t } from '@i18n/index';
+import { buildArticleSeo } from '@lib/seo';
+import caTranslations from '@assets/i18n/ca.json';
+import enTranslations from '@assets/i18n/en.json';
+
+export function getStaticPaths() {
+  return NEWS_ARTICLES.map((article) => ({ params: { slug: article.slug } }));
+}
+
+const { slug } = Astro.params;
+const article = getNewsArticleBySlug(slug ?? '');
+if (!article) throw new Error(`News article route is missing catalogue data: ${slug}`);
+
+function srcsetFrom(sources: Readonly<Record<number, string>>): string {
+  return Object.entries(sources)
+    .map(([width, src]) => `${src} ${width}w`)
+    .join(', ');
+}
+
+const seoCopy = {
+  es: {
+    title: t(article.seoTitleKey, ES_TRANSLATIONS),
+    description: t(article.seoDescriptionKey, ES_TRANSLATIONS),
+  },
+  ca: { title: t(article.seoTitleKey, caTranslations), description: t(article.seoDescriptionKey, caTranslations) },
+  en: { title: t(article.seoTitleKey, enTranslations), description: t(article.seoDescriptionKey, enTranslations) },
+};
+const seo = buildArticleSeo(article, {
+  title: seoCopy.es.title,
+  description: seoCopy.es.description,
+  headline: t(article.titleKey, ES_TRANSLATIONS),
+  author: t(article.authorKey, ES_TRANSLATIONS),
+  category: t(article.categoryKey, ES_TRANSLATIONS),
+  breadcrumbLabel: t('news.title', ES_TRANSLATIONS),
+  language: 'es-ES',
+  image: article.socialImage,
+  imageAlt: t(article.socialImage.altKey, ES_TRANSLATIONS),
+});
+---
+
+<BaseLayout seo={seo} seoCopy={seoCopy}>
+  <article class="news-article" data-testid="news-article-detail">
+    <div class="news-article__shell">
+      <nav
+        class="news-article__breadcrumb"
+        data-i18n="news.article.breadcrumbLabel"
+        data-i18n-attr="aria-label"
+        aria-label={t('news.article.breadcrumbLabel', ES_TRANSLATIONS)}
+      >
+        <ol>
+          <li>
+            <a href="/noticias" data-i18n="news.title">{t('news.title', ES_TRANSLATIONS)}</a>
+          </li>
+          <li aria-current="page" data-i18n={article.categoryKey}>
+            {t(article.categoryKey, ES_TRANSLATIONS)}
+          </li>
+        </ol>
+      </nav>
+
+      <header class="news-article__header">
+        <h1 data-testid="news-article-title" data-i18n={article.titleKey}>
+          {t(article.titleKey, ES_TRANSLATIONS)}
+        </h1>
+        <p class="news-article__standfirst" data-i18n={article.summaryKey}>
+          {t(article.summaryKey, ES_TRANSLATIONS)}
+        </p>
+
+        <div class="news-article__meta">
+          <span data-i18n={article.cityKey}>{t(article.cityKey, ES_TRANSLATIONS)}</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n={article.categoryKey}>{t(article.categoryKey, ES_TRANSLATIONS)}</span>
+          <span aria-hidden="true">·</span>
+          <time datetime={article.publishedAt} data-i18n={article.publishedLabelKey}>
+            {t(article.publishedLabelKey, ES_TRANSLATIONS)}
+          </time>
+          <span aria-hidden="true">·</span>
+          <span data-i18n={article.authorKey}>{t(article.authorKey, ES_TRANSLATIONS)}</span>
+        </div>
+      </header>
+
+      <figure class="news-article__hero">
+        {
+          article.cover.responsive ? (
+            <img
+              src={article.cover.src}
+              srcset={srcsetFrom(article.cover.responsive.sources)}
+              sizes={article.cover.responsive.sizes}
+              width={article.cover.width}
+              height={article.cover.height}
+              alt={t(article.cover.altKey, ES_TRANSLATIONS)}
+              data-i18n={article.cover.altKey}
+              data-i18n-attr="alt"
+              loading="eager"
+              fetchpriority="high"
+            />
+          ) : (
+            <img
+              src={article.cover.src}
+              width={article.cover.width}
+              height={article.cover.height}
+              alt={t(article.cover.altKey, ES_TRANSLATIONS)}
+              data-i18n={article.cover.altKey}
+              data-i18n-attr="alt"
+              loading="eager"
+              fetchpriority="high"
+            />
+          )
+        }
+        <figcaption>
+          {
+            article.cover.captionKey && (
+              <span data-i18n={article.cover.captionKey}>
+                {t(article.cover.captionKey, ES_TRANSLATIONS)}
+              </span>
+            )
+          }
+          <span data-i18n={article.cover.creditKey ?? 'news.article.photoCredit'}>
+            {t(article.cover.creditKey ?? 'news.article.photoCredit', ES_TRANSLATIONS)}
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="news-article__body">
+        {article.sections.map((section, sectionIndex) => (
+          <>
+            <section class="news-article__section">
+              <h2 data-i18n={section.headingKey}>{t(section.headingKey, ES_TRANSLATIONS)}</h2>
+              {section.paragraphKeys.map((paragraphKey) => (
+                <p data-i18n={paragraphKey}>{t(paragraphKey, ES_TRANSLATIONS)}</p>
+              ))}
+            </section>
+
+            {sectionIndex === 0 &&
+              article.highlightKey && (
+                <blockquote class="news-article__highlight">
+                  <p data-i18n={article.highlightKey}>{t(article.highlightKey, ES_TRANSLATIONS)}</p>
+                </blockquote>
+              )}
+          </>
+        ))}
+      </div>
+
+      {
+        article.gallery.length > 0 && (
+          <section class="news-gallery" aria-labelledby="news-gallery-title">
+            <header class="news-gallery__header">
+              <h2 id="news-gallery-title" data-i18n={article.galleryTitleKey}>
+                {t(article.galleryTitleKey, ES_TRANSLATIONS)}
+              </h2>
+            </header>
+
+            <div class="news-gallery__grid">
+              {article.gallery.map((image) => (
+                <figure class="news-gallery__item">
+                  <img
+                    src={image.src}
+                    width={image.width}
+                    height={image.height}
+                    alt={t(image.altKey, ES_TRANSLATIONS)}
+                    data-i18n={image.altKey}
+                    data-i18n-attr="alt"
+                    loading="lazy"
+                  />
+                  {
+                    image.captionKey && (
+                      <figcaption data-i18n={image.captionKey}>
+                        {t(image.captionKey, ES_TRANSLATIONS)}
+                      </figcaption>
+                    )
+                  }
+                </figure>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      <footer class="news-article__footer">
+        <a href="/noticias">
+          <span aria-hidden="true">←</span>
+          <span data-i18n="news.article.backToNews">{t('news.article.backToNews', ES_TRANSLATIONS)}</span>
+        </a>
+      </footer>
+    </div>
+  </article>
+</BaseLayout>
+
+<style lang="scss" is:global>
+  @use '../../components/_news-article-page.scss';
+</style>

@@ -3,7 +3,7 @@
   "name": "turia-fest-noticias",
   "compatibility_date": "2026-07-21",
   "assets": {
-    "directory": "./dist/TuriaFestNoticias/browser",
+    "directory": "./dist",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
   }

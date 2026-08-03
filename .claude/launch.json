@@ -4,9 +4,8 @@
     {
       "name": "TuriaFestNoticias",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["start", "--", "--port", "0"],
-      "port": 4200,
-      "autoPort": true
+      "runtimeArgs": ["start", "--", "--port", "4321"],
+      "port": 4321
     }
   ]
 }

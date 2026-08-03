@@ -1,0 +1,1230 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "festivals": "Festivales",
+    "calendar": "Calendario",
+    "news": "Noticias",
+    "map": "Mapa",
+    "search": "Buscar",
+    "searchForm": {
+      "label": "Buscar noticias",
+      "placeholder": "Busca por titular, ciudad o género musical",
+      "submit": "Buscar"
+    },
+    "theme": {
+      "toDark": "Activar modo oscuro",
+      "toLight": "Activar modo claro"
+    },
+    "menu": "Abrir menú",
+    "progress": {
+      "loading": "Cargando página"
+    },
+    "language": {
+      "label": "Cambiar idioma",
+      "current": "Idioma actual: {lang}",
+      "es": "Español",
+      "ca": "Valencià",
+      "en": "English"
+    },
+    "aria": {
+      "primary": "Navegación principal"
+    }
+  },
+  "news": {
+    "meta": {
+      "title": "TuriaFest — Noticias"
+    },
+    "eyebrow": "Actualidad festivalera",
+    "title": "Noticias",
+    "description": "Novedades, anuncios y actualidad de los festivales de la Comunitat Valenciana.",
+    "list": {
+      "sectionTitle": "Últimas noticias",
+      "readMore": "Leer la crónica"
+    },
+    "article": {
+      "breadcrumbLabel": "Ruta de navegación",
+      "eyebrow": "Crónica · Reve Fest 2026",
+      "author": "Redacción TuriaFest",
+      "photoCredit": "Fotografías: archivo TuriaFest",
+      "galleryEyebrow": "Desde el recinto",
+      "backToNews": "Volver a Noticias"
+    },
+    "articles": {
+      "arenalSound2027Presale": {
+        "title": "Arenal Sound anuncia sus fechas de 2027 y abre una preventa de 48 horas con abonos desde 54,99 €",
+        "summary": "Tras cerrar su edición de 2026, Arenal Sound vuelve a Burriana del 29 de julio al 1 de agosto de 2027, con preparty el día 29. La preventa de 3.000 abonos se abre el miércoles 5 de agosto a las 12:00 y solo estará disponible 48 horas, con precios desde 54,99 € con gastos de gestión incluidos.",
+        "city": "Burriana",
+        "category": "Entradas y fechas",
+        "searchGenres": "Arenal Sound 2027 Burriana Castellón fechas 29 30 31 julio 1 agosto preparty pre-party preventa abonos entradas precio 54,99 euros gastos de gestión incluidos arenalsound.com 3.000 abonos miércoles 5 agosto viernes 7 agosto 48 horas pop urbano electrónica indie reguetón festival playa verano Sounders",
+        "publishedLabel": "3 agosto 2026",
+        "seoTitle": "Arenal Sound 2027: fechas y preventa desde 54,99 € | TuriaFest",
+        "seoDescription": "Arenal Sound 2027 se celebrará del 29 de julio al 1 de agosto en Burriana. La preventa de abonos abre el 5 de agosto durante 48 horas, con 3.000 abonos desde 54,99 € con gastos de gestión incluidos.",
+        "coverAlt": "Arte oficial de Arenal Sound 2027 con las fechas del 29 de julio al 1 de agosto en Burriana y las condiciones de la preventa de abonos",
+        "coverCaption": "Arenal Sound 2027 se celebrará en Burriana del 29 de julio (preparty) al 1 de agosto y abre su preventa de abonos el miércoles 5 de agosto.",
+        "sections": {
+          "dates": {
+            "heading": "Vuelta a Burriana del 29 de julio al 1 de agosto de 2027",
+            "paragraph1": "Arenal Sound ha situado su próxima edición del 29 de julio al 1 de agosto de 2027 en la playa de Burriana (Castellón). El festival ha despedido su edición de 2026 con el mensaje «Gracias, Sounders. Nos vemos en 2027» y ha recuperado su lema «Vuelve a vivir el verano de tu vida».",
+            "paragraph2": "El abono da acceso a los días 29 (preparty), 30 y 31 de julio y 1 de agosto de 2027. La organización todavía no ha anunciado los artistas ni la distribución de escenarios de la nueva edición."
+          },
+          "presale": {
+            "heading": "La preventa se abre el 5 de agosto y dura 48 horas",
+            "paragraph1": "La primera venta de abonos comenzará el miércoles 5 de agosto de 2026 a las 12:00 y se cerrará el viernes 7 de agosto a las 12:00. La campaña la presenta como el precio más bajo, disponible únicamente durante esas 48 horas.",
+            "paragraph2": "Al tratarse de una preventa limitada, tanto el precio como la disponibilidad dependerán de los tramos que permanezcan activos durante esa ventana de dos días."
+          },
+          "prices": {
+            "heading": "3.000 abonos desde 54,99 € con gastos de gestión incluidos",
+            "paragraph1": "El festival ha reservado 3.000 abonos para esta preventa, con un precio que arranca en 54,99 €. A diferencia de otras campañas, el importe anunciado incluye los gastos de gestión.",
+            "paragraph2": "La organización no ha detallado todavía el resto de modalidades ni las condiciones completas de cada tramo. Antes de comprar conviene revisar en la plataforma oficial el precio final y las condiciones vigentes."
+          },
+          "info": {
+            "heading": "Dónde consultar la información oficial",
+            "paragraph1": "Arenal Sound remite a su web arenalsound.com para ampliar la información sobre la preventa y las fechas de 2027.",
+            "paragraph2": "TuriaFest recoge aquí los datos comunicados por el festival en sus canales oficiales y actualizará esta noticia cuando se anuncien el cartel y el resto de modalidades de abono."
+          }
+        },
+        "gallery": {
+          "title": "Los carteles oficiales de la preventa",
+          "presaleAlt": "Arte oficial de la preventa de Arenal Sound 2027 con el lema «Vuelve a vivir el verano de tu vida» y los abonos desde 54,99 €",
+          "presaleCaption": "La preventa anuncia 3.000 abonos desde 54,99 €, disponibles el miércoles 5 de agosto a las 12:00 y solo durante 48 horas.",
+          "datesAlt": "Arte oficial de Arenal Sound 2027 con el mensaje «Gracias, Sounders. Nos vemos en Arenal Sound» y las fechas del 29 de julio al 1 de agosto de 2027 en Burriana",
+          "datesCaption": "El festival despide 2026 y confirma las fechas de 2027: del 29 de julio (preparty) al 1 de agosto en Burriana, con la preventa del miércoles 5 al viernes 7 de agosto."
+        }
+      },
+      "zevra2027Presale": {
+        "title": "Zevra confirma las fechas de 2027 y abrirá una preventa desde 59,95 €",
+        "summary": "Zevra volverá a Cullera del 23 al 25 de julio de 2027: el viernes se reservará para la preparty y el festival ocupará el sábado y el domingo. La preventa limitada se abrirá el 30 de julio de 2026 a las 12:00.",
+        "city": "Cullera",
+        "category": "Entradas y fechas",
+        "searchGenres": "Zevra Festival 2027 Cullera Valencia fechas 23 24 25 julio preparty preventa abonos entradas general camping acampada Front Stage VIP consumiciones cashless pulsera descuento 20 por ciento música urbana reguetón pop electrónica",
+        "publishedLabel": "27 julio 2026",
+        "seoTitle": "Zevra 2027: fechas y preventa desde 59,95 € | TuriaFest",
+        "seoDescription": "Zevra anuncia sus fechas de 2027 en Cullera y una preventa limitada el 30 de julio, con abonos desde 59,95 € más gastos de gestión.",
+        "coverAlt": "Arte oficial de Zevra 2027 con el escenario, fuegos artificiales y las fechas del 23 al 25 de julio",
+        "coverCaption": "Zevra celebrará la preparty el viernes 23 de julio y el festival los días 24 y 25 de julio de 2027.",
+        "sections": {
+          "dates": {
+            "heading": "Tres fechas para el regreso a Cullera",
+            "paragraph1": "Zevra ya ha situado su próxima edición en el calendario. La actividad comenzará el viernes 23 de julio de 2027 con la preparty y continuará el sábado 24 y el domingo 25 con las dos jornadas principales del festival en Cullera.",
+            "paragraph2": "El anuncio abre la nueva temporada inmediatamente después de la quinta edición. La organización cifra en 155.000 las personas que pasaron por Zevra 2026, pero todavía no ha comunicado los artistas ni la distribución de escenarios de 2027."
+          },
+          "presale": {
+            "heading": "La preventa se abre el 30 de julio a mediodía",
+            "paragraph1": "La primera venta de abonos comenzará el jueves 30 de julio de 2026 a las 12:00. La campaña la presenta como una preventa muy limitada y disponible únicamente durante esa jornada, por lo que tanto el precio como la disponibilidad dependerán de los tramos que permanezcan activos.",
+            "paragraph2": "Zevra ha adelantado cuatro modalidades para este lanzamiento. Todos los importes anunciados se muestran sin gastos de gestión, que se añadirán durante el proceso de compra."
+          },
+          "prices": {
+            "heading": "Cuatro tipos de abono desde 59,95 €",
+            "paragraph1": "El abono general parte de 59,95 € más gastos de gestión. La opción que combina abono general y zona de acampada se anuncia por 90 € más gastos de gestión, mientras que el abono general con acceso Front Stage sube a 127 € más gastos de gestión.",
+            "paragraph2": "La modalidad VIP incluye Front Stage y tres consumiciones por 174 € más gastos de gestión. La organización no ha detallado todavía el resto de condiciones de cada categoría ni ha anunciado el cartel de la próxima edición."
+          },
+          "cashless": {
+            "heading": "El saldo de la pulsera de 2026 también cuenta",
+            "paragraph1": "Quienes conserven saldo en su pulsera cashless de Zevra 2026 podrán utilizarlo para pagar el abono de 2027. La promoción añade un 20 % de descuento a esa compra al introducir el código de la pulsera durante el proceso.",
+            "paragraph2": "Esta ventaja está vinculada a la preventa oficial y al código de la pulsera. Antes de completar la operación conviene revisar en la plataforma de venta el importe aplicado, los gastos de gestión y las condiciones definitivas de la promoción."
+          }
+        },
+        "gallery": {
+          "title": "Precios y ventaja cashless de la preventa",
+          "presaleAlt": "Arte oficial con los cuatro tipos de abono y los precios de la preventa de Zevra 2027",
+          "presaleCaption": "La preventa anuncia abonos desde 59,95 € y tres modalidades adicionales, todas con gastos de gestión.",
+          "cashlessAlt": "Arte oficial que explica el uso del saldo de la pulsera cashless de 2026 para comprar el abono de 2027",
+          "cashlessCaption": "El código de la pulsera de 2026 permitirá aplicar el saldo restante y un descuento adicional del 20 %."
+        }
+      },
+      "zevra2026ThirdDay": {
+        "title": "Zevra 2026 cierra su tercera jornada con Anuel AA, Juan Magán y Chanel",
+        "summary": "Zevra completó el domingo 26 de julio su tercera jornada con 38 pases artísticos repartidos en siete espacios de la playa de Cullera. La galería recorre la actuación de Anuel AA, cabeza de cartel de la última noche.",
+        "city": "Cullera",
+        "category": "Crónica de festival",
+        "searchGenres": "Zevra 2026 Cullera tercera jornada domingo 26 julio Anuel AA Juan Magán Chanel Álvaro Soler Henry Méndez DJ Nano Carlittos Íñigo Quintero Metrika Efecto Pasillo La Pantera Tami Tamako Ginesta DPR Cream DPR Artic Polo Nández Cencii Adela BB Claupi La Venganza Prepago DJ Khriz Font Villanueva DJ Bacardit Luc Loren Michenlo Alvaro Varen Rubens Vibes Omar Svenson Jaime Soeiro Lorena Llanes Carlos Agraz Anthony Godfather Pive Speaker Reality Reality DJ Set Guau Mbreaks Jose Rodríguez Tortu Karpin The Brainkiller DJs Comunidad Zevra BreakB música urbana reguetón trap pop electrónica breakbeat",
+        "publishedLabel": "27 julio 2026",
+        "seoTitle": "Zevra 2026: Anuel AA cierra la tercera jornada | TuriaFest",
+        "seoDescription": "Anuel AA encabeza la tercera jornada de Zevra 2026 en Cullera, con Juan Magán, Chanel y otros 35 pases artísticos repartidos en siete espacios.",
+        "coverAlt": "Composición de Anuel AA actuando entre luces rojas y azules en la tercera jornada de Zevra 2026",
+        "coverCaption": "Anuel AA encabezó la tercera jornada de Zevra 2026 durante la madrugada del domingo 26 al lunes 27 de julio.",
+        "sections": {
+          "opening": {
+            "heading": "La última noche recorre siete espacios",
+            "paragraph1": "Zevra completó el domingo 26 de julio su tercera y última jornada de conciertos en la playa de Cullera. El horario oficial distribuyó 38 pases artísticos entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo y Church Club, con programación desde las cinco de la tarde hasta las seis de la mañana.",
+            "paragraph2": "El cierre cruzó pop, música urbana, reguetón y electrónica con actuaciones simultáneas durante buena parte de la noche. Anuel AA ocupó el tramo central del escenario principal, mientras Juan Magán, Henry Méndez y DJ Nano prolongaron el Negrita Stage hasta el amanecer."
+          },
+          "photos": {
+            "heading": "Anuel AA, en imágenes",
+            "paragraph1": "Las fotografías disponibles siguen la actuación de Anuel AA en el Negrita Stage. El artista aparece vestido de negro y con gafas, entre humo, contraluces y cambios de iluminación del rojo al azul, sosteniendo un micrófono decorado con flores de colores.",
+            "paragraph2": "La galería documenta únicamente ese concierto porque es el único del domingo del que se han facilitado fotografías identificables. Los demás artistas y sesiones que formaron parte de la jornada también se recogen a continuación, agrupados según el horario oficial."
+          },
+          "mainStages": {
+            "heading": "Quince pases entre Negrita, Cutty Sark y Arcade Land",
+            "paragraph1": "El Negrita Stage programó a Carlittos, Chanel, Álvaro Soler, Anuel AA, Juan Magán, Henry Méndez y DJ Nano. El horario incluyó además una ceremonia antes de Anuel AA, pero esta crónica contabiliza los siete pases artísticos anunciados en el escenario principal.",
+            "paragraph2": "En el Cutty Sark Stage actuaron Íñigo Quintero, Metrika, Efecto Pasillo y La Pantera. Arcade Land by Vibra Mahou completó este bloque con Tami Tamako, Ginesta, DPR Cream & DPR Artic y Polo Nández."
+          },
+          "beyond": {
+            "heading": "Beyond encadena ocho bloques durante doce horas",
+            "paragraph1": "El Beyond by Pepsi abrió con Cencii y continuó con La Beba Showcase, un tramo compartido por Adela BB, Claupi, La Venganza y Prepago.",
+            "paragraph2": "La programación siguió con DJ Khriz, Font & Villanueva, DJ Bacardit, Carlittos, Luc Loren y Michenlo, que cerró el escenario a las cinco de la mañana."
+          },
+          "lateStages": {
+            "heading": "Dharma, BreakB y Church Club sostienen la madrugada",
+            "paragraph1": "Dharma Cutty Sark reunió a Alvaro Varen B2B Rubens Vibes, Omar Svenson B2B Jaime Soeiro, Lorena Llanes, Carlos Agraz, Anthony Godfather y Pive.",
+            "paragraph2": "The Club acogió el takeover de BreakB, presentado por Speaker Reality, con Reality DJ Set, Guau, Mbreaks, Jose Rodríguez, Tortu, Karpin, The Brainkiller y un cierre especial B2B2B2B. El Church Club completó el domingo con DJs Comunidad Zevra entre las diez de la noche y las cuatro de la mañana."
+          }
+        },
+        "gallery": {
+          "title": "Anuel AA, desde el Negrita Stage",
+          "redSmokeAlt": "Anuel AA canta bajo humo rojo durante la tercera jornada de Zevra 2026",
+          "backlightAlt": "Anuel AA queda recortado por un foco blanco entre el humo del escenario",
+          "raisedHandAlt": "Anuel AA alza una mano bajo iluminación azul en el Negrita Stage",
+          "redStageAlt": "Anuel AA recorre el escenario iluminado en rojo mientras canta",
+          "redPortraitAlt": "Anuel AA canta en primer plano ante un fondo rojo",
+          "closePortraitAlt": "Anuel AA sostiene un micrófono decorado con flores durante su actuación",
+          "orangePortraitAlt": "Anuel AA actúa ante un foco naranja en Zevra 2026",
+          "profileAlt": "Anuel AA canta de perfil entre humo y luz blanca en el escenario principal"
+        }
+      },
+      "zevra2026SecondDay": {
+        "title": "Zevra 2026 vive su segunda jornada con Ozuna, Omar Montes y Luar La L",
+        "summary": "La segunda jornada de Zevra reunió el sábado 25 de julio 39 actuaciones repartidas en siete espacios de la playa de Cullera. La galería recorre los directos de Omar Montes, Ozuna y Luar La L.",
+        "city": "Cullera",
+        "category": "Crónica de festival",
+        "searchGenres": "Zevra 2026 Cullera segunda jornada sábado 25 julio Ozuna Omar Montes Nyno Vargas Rakata Luar La L J.Beren La La Love You Saiko Ovy On The Drums Alvama Ice Samurái Camin Lorna Xiyo Fernandezz Mónica Mara Space Elephants Funzo Helen Krhu Zafiro DJ Noex Mike Adrian Denniz R.Flow Sweet Suárez Juanjo García Ivan Ortiz Darío Huerta Cande Gariso Albert González YX3 Lucia Reina Selecta D Basto Gea Brenda Serna Parkineos Mareels Paula Fields Xune Fran Hernández Paskman DJs Comunidad Zevra música urbana reguetón trap pop electrónica",
+        "publishedLabel": "26 julio 2026",
+        "seoTitle": "Zevra 2026: Ozuna y Omar Montes en el día 2 | TuriaFest",
+        "seoDescription": "Zevra 2026 reúne a Ozuna, Omar Montes y Luar La L en su segunda jornada en Cullera, con 39 actuaciones repartidas entre siete espacios.",
+        "coverAlt": "Composición de Omar Montes, Ozuna y Luar La L actuando en la segunda jornada de Zevra 2026",
+        "coverCaption": "Omar Montes, Ozuna y Luar La L actuaron el sábado 25 de julio en Zevra 2026.",
+        "sections": {
+          "opening": {
+            "heading": "El sábado multiplica la actividad frente al mar",
+            "paragraph1": "Zevra encaró el sábado 25 de julio su segunda jornada en la playa de Cullera. El horario oficial reunió 39 pases artísticos entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo y Church Club, con programación desde las cinco de la tarde hasta las seis de la mañana.",
+            "paragraph2": "La noche combinó grandes directos urbanos, pop, trap y sesiones electrónicas en varios escenarios simultáneos. Ozuna ocupó el tramo central del Negrita Stage, mientras el resto del recinto mantuvo propuestas paralelas hasta los últimos cierres de la madrugada."
+          },
+          "photos": {
+            "heading": "Omar Montes, Ozuna y Luar La L, en imágenes",
+            "paragraph1": "Las fotografías disponibles siguen tres momentos del sábado. El directo de Omar Montes dejó además una aparición invitada: Nyno Vargas subió al escenario para cantar juntos «Rakata». Omar Montes aparece todavía bajo la luz cálida del atardecer; Ozuna cambia la escena a azules y violetas con gorra roja y chaqueta clara; Luar La L queda recortado después contra un escenario oscuro, entre humo y focos rojos.",
+            "paragraph2": "La galería documenta únicamente esas tres actuaciones porque son las únicas de las que se han facilitado fotografías identificables. El resto de artistas y sesiones que formaron parte de la jornada también se recoge a continuación, agrupado según el horario oficial."
+          },
+          "mainStages": {
+            "heading": "Once pases entre Negrita y Cutty Sark",
+            "paragraph1": "El Negrita Stage programó a J.Beren, Omar Montes, La La Love You, Ozuna, Saiko, Ovy On The Drums y Alvama Ice. El horario incluyó además una ceremonia antes de Ozuna, pero esta crónica contabiliza los siete pases artísticos anunciados en el escenario principal.",
+            "paragraph2": "En el Cutty Sark Stage se sucedieron Samurái, Camin, Lorna y Luar La L. Los cuatro turnos se alternaron con el principal y extendieron la programación urbana desde las nueve de la noche hasta las cuatro de la madrugada."
+          },
+          "arcadeBeyond": {
+            "heading": "Quince sesiones entre Arcade Land y Beyond",
+            "paragraph1": "Arcade Land by Vibra Mahou reunió a Xiyo y Fernandezz, Mónica Mara, Space Elephants y Funzo.",
+            "paragraph2": "El Beyond by Pepsi encadenó a Helen Krhu, Zafiro, DJ Noex, Mike & Adrian Denniz, R.Flow, J.Beren, Sweet Suárez, Juanjo García B2B Ivan Ortiz, Darío Huerta, Cande Gariso y Albert González."
+          },
+          "lateStages": {
+            "heading": "Dharma, The Club y Church Club sostienen la madrugada",
+            "paragraph1": "Dharma Cutty Sark programó a YX3, Lucia Reina, Selecta, D Basto, Gea, Brenda Serna y Parkineos. En The Club by Vertigo Plata o Plomo actuaron Mareels, Paula Fields, Xune, Fran Hernández y Paskman.",
+            "paragraph2": "El Church Club completó el mapa del sábado con DJs Comunidad Zevra entre las diez de la noche y las cuatro de la mañana. Con esta sesión colectiva, los tres espacios sumaron trece de los 39 pases artísticos de la jornada."
+          }
+        },
+        "gallery": {
+          "title": "Omar Montes, Ozuna y Luar La L, desde el recinto",
+          "omarMontesAlt": "Omar Montes canta bajo la luz del atardecer durante la segunda jornada de Zevra",
+          "ozunaBlueAlt": "Ozuna se inclina hacia el público bajo iluminación azul en Zevra 2026",
+          "ozunaProfileAlt": "Ozuna canta de perfil con gorra roja y chaqueta clara sobre el escenario",
+          "ozunaArmAlt": "Ozuna alza un brazo durante su actuación del sábado en Zevra",
+          "luarWideAlt": "Luar La L actúa entre humo y focos rojos en un escenario de Zevra",
+          "luarPairAlt": "Luar La L canta acompañado por otro intérprete durante su directo",
+          "luarGestureAlt": "Luar La L hace un gesto al público mientras sostiene el micrófono",
+          "luarCloseAlt": "Luar La L canta en primer plano con gafas y una camiseta negra"
+        }
+      },
+      "zevra2026FirstDay": {
+        "title": "Zevra 2026 abre en Cullera con Nicky Jam y JC Reyes",
+        "summary": "El quinto aniversario de Zevra arrancó el viernes 24 de julio en la playa de Cullera con 41 actuaciones repartidas en siete espacios. La galería recoge los directos de Nicky Jam y JC Reyes; la programación completa sumó muchas más voces y sesiones.",
+        "city": "Cullera",
+        "category": "Crónica de festival",
+        "searchGenres": "Zevra 2026 Cullera primera jornada viernes 24 julio Nicky Jam JC Reyes Totote Leire Martínez Shark Arnny Montana King África Carliitos Jose de las Heras Mar Lucas Gil Chimeno Dumore Juan Valiente Moya Santi Bertomeu Rajobos Nev Dany Asensi Danigo Jordi Sanz Hidalgo Maggie Enygma Jaime Bermejo Jayxme Barce Fercho Energy Danny Mad Joel Moreno Los Liaos Txarandonga DJ Joel No Ni Qué Va De Bo Osuna G El Truc Tot A Una DJ Lluís SB El Tinglao Manxisa La Sargantana La Jarranga Klandestina Tere Ling Azhar Lucia Gea DJs Comunidad Zevra música urbana reguetón pop electrónica",
+        "publishedLabel": "25 julio 2026",
+        "seoTitle": "Zevra 2026: primera jornada en Cullera | TuriaFest",
+        "seoDescription": "Zevra 2026 abre en Cullera con Nicky Jam y JC Reyes en imágenes y otras 39 actuaciones repartidas entre siete escenarios.",
+        "coverAlt": "Composición de Nicky Jam bajo luces rojas y JC Reyes bajo iluminación verde en Zevra 2026",
+        "coverCaption": "Nicky Jam y JC Reyes actuaron en la primera jornada de Zevra 2026, el viernes 24 de julio en Cullera.",
+        "sections": {
+          "opening": {
+            "heading": "La quinta edición arranca frente al Mediterráneo",
+            "paragraph1": "Zevra abrió el viernes 24 de julio su quinta edición en el recinto de la playa de Cullera. El horario oficial distribuyó 41 actuaciones entre Negrita Stage, Cutty Sark Stage, Arcade Land by Vibra Mahou, Beyond by Pepsi, Dharma Cutty Sark, The Club by Vertigo Plata o Plomo y Church Club, con música desde la tarde hasta las seis de la mañana.",
+            "paragraph2": "El festival mantiene su programación hasta el domingo 26, dentro de una edición anunciada del 24 al 27 de julio. La primera jornada cruzó música urbana, pop y electrónica, combinando directos, sesiones de DJ y encuentros entre colectivos en varios escenarios simultáneos."
+          },
+          "photos": {
+            "heading": "Nicky Jam y JC Reyes, en imágenes",
+            "paragraph1": "Las fotografías disponibles se concentran en dos tramos del Negrita Stage. Nicky Jam aparece con camiseta blanca, gorra y un micrófono dorado, recortado por visuales rojas; horas después, JC Reyes cambia la paleta a verdes y violetas, con llamaradas puntuales en el frente del escenario.",
+            "paragraph2": "La galería no pretende representar todo el cartel: documenta únicamente esas dos actuaciones porque son las únicas de las que se han facilitado imágenes. El resto de artistas que formaron parte del viernes también figura a continuación, agrupado según el horario oficial."
+          },
+          "mainStages": {
+            "heading": "Nueve actuaciones entre Negrita y Cutty Sark",
+            "paragraph1": "El Negrita Stage programó a Totote, Nicky Jam, Leire Martínez, JC Reyes y el cierre conjunto de Shark y Arnny Montana. Entre los cambios de escenario, la programación incluyó además la ceremonia de apertura de Zevra, pero esta crónica contabiliza los cinco pases artísticos anunciados.",
+            "paragraph2": "En el Cutty Sark Stage actuaron King África, Carliitos, Jose de las Heras y Mar Lucas. Sus horarios se alternaron con el principal, ampliando la noche con perfiles de directo y sesiones de DJ."
+          },
+          "arcadeBeyond": {
+            "heading": "De Arcade Land a Beyond",
+            "paragraph1": "Arcade Land by Vibra Mahou reunió a Gil, Chimeno, Dumore, Juan Valiente, Moya, Santi Bertomeu, Rajobos & Nev y Dany Asensi.",
+            "paragraph2": "El Beyond by Pepsi encadenó a Danigo, Jordi Sanz, Hidalgo, Maggie, Enygma B2B Jaime Bermejo, Jayxme, Barce, Fercho Energy y Danny Mad."
+          },
+          "lateStages": {
+            "heading": "Dharma, The Club y Church Club completan el viernes",
+            "paragraph1": "En Dharma Cutty Sark se sucedieron Joel Moreno, Los Liaos vs Txarandonga, DJ Joel, No Ni Qué vs Va De Bo, Osuna G, El Truc vs Tot A Una, DJ Lluís SB, El Tinglao vs Manxisa, DJ Joel Moreno y La Sargantana vs La Jarranga.",
+            "paragraph2": "The Club by Vertigo Plata o Plomo contó con Klandestina, Tere Ling, Azhar y Lucia Gea. El Church Club completó el viernes con DJs Comunidad Zevra, una sesión colectiva programada de 22:00 a 4:00."
+          }
+        },
+        "gallery": {
+          "title": "Nicky Jam y JC Reyes, desde el Negrita Stage",
+          "nickyJamWideAlt": "Nicky Jam canta en el Negrita Stage de Zevra bajo iluminación roja",
+          "nickyJamPortraitAlt": "Nicky Jam sostiene el micrófono durante su actuación en Zevra 2026",
+          "nickyJamRedAlt": "Nicky Jam actúa ante las pantallas rojas del escenario principal de Zevra",
+          "nickyJamLightsAlt": "Nicky Jam alza un brazo frente a los focos del Negrita Stage",
+          "jcReyesFlameAlt": "JC Reyes recorre el escenario de Zevra con una llamarada al fondo",
+          "jcReyesCloseAlt": "JC Reyes canta con un micrófono verde bajo una luz violeta",
+          "jcReyesGreenAlt": "JC Reyes señala al público durante su actuación iluminada en verde",
+          "jcReyesPurpleAlt": "JC Reyes canta en primer plano bajo la iluminación violeta del escenario"
+        }
+      },
+      "latinFest2027Registration": {
+        "title": "Latin Fest abre el registro para 2027 en Valencia y Benidorm",
+        "summary": "Latin Fest ha activado dos registros para acceder al lanzamiento de 500 entradas early bird por edición. El plazo termina el 2 de agosto a las 23:59 y Valencia ya mira a su décimo aniversario.",
+        "city": "Valencia y Benidorm",
+        "category": "Acceso anticipado",
+        "searchGenres": "Latin Fest Valencia Benidorm 2027 entradas early bird acceso anticipado registro aniversario música urbana latina reguetón reggaeton",
+        "publishedLabel": "25 julio 2026",
+        "seoTitle": "Latin Fest 2027 abre sus registros | TuriaFest",
+        "seoDescription": "Latin Fest abre hasta el 2 de agosto el registro para 500 entradas early bird por edición en Valencia y Benidorm 2027.",
+        "coverAlt": "Carteles de registro de Latin Fest 2027 para Valencia en naranja y Benidorm en verde",
+        "coverCaption": "Las campañas de Valencia y Benidorm comparten cierre: el 2 de agosto a las 23:59.",
+        "imageCredit": "Artes: Latin Fest",
+        "highlight": "El primer movimiento de Latin Fest 2027 llega antes que las fechas y el cartel: dos registros, uno por ciudad, y una ventana común de acceso anticipado.",
+        "sections": {
+          "launch": {
+            "heading": "Dos registros con una misma fecha límite",
+            "paragraph1": "Latin Fest ha puesto en marcha dos convocatorias independientes para sus citas de Valencia y Benidorm en 2027. La organización distribuye el acceso desde su perfil oficial de Instagram: cada publicación activa un enlace por mensaje directo al dejar la palabra indicada, y los dos formularios también están disponibles desde la biografía del festival.",
+            "paragraph2": "Ambos anuncios fijan el cierre el 2 de agosto a las 23:59 y reservan su lanzamiento a un cupo de 500 entradas early bird por edición. Las piezas presentan ese tramo como el precio más bajo del año, aunque todavía no detallan el importe de las entradas ni las condiciones completas de la venta."
+          },
+          "valencia": {
+            "heading": "Valencia prepara su décimo aniversario",
+            "paragraph1": "La campaña de Valencia añade el primer dato propio de la próxima edición: Latin Fest celebrará en 2027 su décimo aniversario. El anuncio abre así una nueva temporada del festival sin adelantar todavía las fechas, el recinto ni los artistas que formarán parte del cartel.",
+            "paragraph2": "Para recibir el enlace de esta convocatoria, la publicación pide comentar «ANIVERSARIO». El registro funciona como puerta de entrada al lanzamiento promocional y no sustituye la compra posterior, que seguirá condicionada por la disponibilidad del cupo anunciado."
+          },
+          "benidorm": {
+            "heading": "Benidorm abre su propio acceso",
+            "paragraph1": "Benidorm cuenta con una campaña y un formulario diferenciados. En este caso, la palabra solicitada en la publicación es «REGISTRO», con el mismo cierre del 2 de agosto y otro cupo anunciado de 500 entradas early bird a precio promocional.",
+            "paragraph2": "La organización plantea la apertura como continuidad de la edición recién celebrada, pero aún no ha comunicado las fechas, el recinto ni el cartel de Benidorm 2027. Hasta que lleguen esos anuncios, lo confirmado es el acceso anticipado y la necesidad de utilizar el registro correspondiente a cada ciudad."
+          }
+        },
+        "gallery": {
+          "title": "Dos ciudades, dos convocatorias",
+          "valenciaAlt": "Arte oficial de Latin Fest Valencia 2027 con el plazo de registro en una pantalla",
+          "valenciaCaption": "La convocatoria de Valencia anticipa el décimo aniversario de Latin Fest.",
+          "benidormAlt": "Arte oficial de Latin Fest Benidorm 2027 en verde con el plazo de registro",
+          "benidormCaption": "Benidorm dispone de un registro separado con el mismo cierre de la promoción."
+        }
+      },
+      "latinFestValencia2026": {
+        "title": "Latin Fest llena Valencia de música urbana durante dos días",
+        "summary": "Latin Fest estrenó su formato de dos jornadas en el Estadi Ciutat de València. Beéle, ROA y Kris R marcaron el viernes; Mora, Omar Courtz, Kapo y Pirlo tomaron el relevo el sábado.",
+        "city": "Valencia",
+        "category": "Música urbana latina",
+        "searchGenres": "música urbana latina reguetón reggaeton trap latino afrobeat dancehall pop latino",
+        "publishedLabel": "21 julio 2026",
+        "seoTitle": "Latin Fest Valencia: dos días de música urbana | TuriaFest",
+        "seoDescription": "Latin Fest estrenó dos jornadas en el Estadi Ciutat de València con Beéle, ROA, Kris R, Mora, Omar Courtz, Kapo y Pirlo.",
+        "coverAlt": "Artista de Latin Fest canta con sombrero blanco ante un escenario iluminado en rojo",
+        "coverCaption": "Latin Fest reunió dos jornadas de música urbana en el Estadi Ciutat de València los días 17 y 18 de julio.",
+        "highlight": "Al pasar de una sola fecha a dos jornadas, Latin Fest pudo dar a cada cartel su propio ritmo sin perder la sensación de una celebración compartida.",
+        "sections": {
+          "newStage": {
+            "heading": "Un estadio para abrir una etapa nueva",
+            "paragraph1": "Latin Fest comenzó el 17 de julio una edición diferente a todas las anteriores en Valencia. El festival dejó atrás el Auditorio Marina Sur, se instaló en el Estadi Ciutat de València y amplió su programación a dos días consecutivos.",
+            "paragraph2": "Cada jornada se extendió desde las cinco de la tarde hasta la una de la madrugada. El formato de estadio dio más profundidad a los visuales, al cuerpo de baile y a las bandas, mientras las sesiones de DJ enlazaban los directos y mantenían el pulso entre cambios de escenario."
+          },
+          "friday": {
+            "heading": "Viernes: tres voces para estrenar el formato",
+            "paragraph1": "Beéle, ROA y Kris R repartieron el peso de la primera fecha. El cartel viajó entre melodías caribeñas, reguetón y trap sin tratar el viernes como una antesala: la jornada tuvo identidad propia desde las primeras horas hasta el tramo nocturno.",
+            "paragraph2": "La producción acompañó ese recorrido con cambios constantes de color, pantallas de gran formato y músicos en directo. Entre actuación y actuación, los DJ mantuvieron la pista en movimiento y evitaron que la energía se reiniciara con cada relevo."
+          },
+          "saturday": {
+            "heading": "Sábado: el relevo sube la intensidad",
+            "paragraph1": "La segunda jornada cambió de reparto con Mora, Omar Courtz, Kapo y Pirlo. Sus propuestas ampliaron el recorrido del festival desde el pop urbano y los ritmos afrocaribeños hasta el reguetón y el trap puertorriqueño y colombiano.",
+            "paragraph2": "Con la caída de la noche, la puesta en escena ganó volumen: grandes elementos inflables, haces de luz sobre el público y una producción visual que ocupaba todo el fondo del estadio. El sábado cerró así un fin de semana que convirtió la ampliación de Latin Fest en algo más que una suma de conciertos: dos jornadas distintas dentro de una misma cita urbana."
+          }
+        },
+        "gallery": {
+          "title": "Dos días de Latin Fest, desde la pista",
+          "fridayOpeningAlt": "Cantante de Latin Fest actúa con gafas rojas y micrófono durante la primera jornada",
+          "fridayStageAlt": "Dos artistas comparten el escenario de Latin Fest entre humo y luces violetas",
+          "fridayCloseAlt": "Vocalista de Latin Fest canta ante una pantalla de gran formato durante el viernes",
+          "saturdayOpeningAlt": "Cantante y guitarrista actúan bajo iluminación roja en la segunda jornada de Latin Fest",
+          "saturdayNightAlt": "Artista de Latin Fest sostiene una bandera de España entre luces verdes y visuales rosas",
+          "finalAlt": "Cantante interpreta el cierre de Latin Fest entre humo, láseres y una gran escenografía rosa"
+        }
+      },
+      "reveFest2026": {
+        "title": "Reve Fest debuta en Valencia con música urbana para hospitales",
+        "summary": "El festival estrenó su primera edición con seis directos y varias sesiones de DJ. La recaudación permitirá impulsar nuevos microconciertos de Músicos por la Salud en hospitales y centros sociosanitarios.",
+        "city": "Valencia",
+        "category": "Música urbana",
+        "searchGenres": "música urbana reguetón trap pop urbano latino",
+        "publishedLabel": "21 julio 2026",
+        "seoTitle": "Reve Fest debuta con música urbana solidaria | TuriaFest",
+        "seoDescription": "Reve Fest debuta en Roig Arena con seis artistas y una recaudación destinada a llevar microconciertos a hospitales.",
+        "coverAlt": "Una artista de Reve Fest canta sobre el escenario de Roig Arena bajo luces violetas",
+        "coverCaption": "Reve Fest llevó nueve horas de música urbana al Roig Arena el 16 de julio.",
+        "highlight": "Lo vivido durante una tarde en Valencia continuará después en hospitales y centros sociosanitarios, convertido en nuevos microconciertos.",
+        "sections": {
+          "debut": {
+            "heading": "Una primera edición con destino doble",
+            "paragraph1": "Reve Fest se estrenó el 16 de julio en Roig Arena con una propuesta de doble recorrido: reunir durante nueve horas distintas voces de la escena urbana y hacer que el resultado de la jornada continuara mucho después de apagar el escenario.",
+            "paragraph2": "Miles de asistentes, con una presencia mayoritariamente joven, acompañaron el debut del festival en Valencia. Seis actuaciones y varias sesiones de DJ construyeron una programación continua, pensada como un único viaje entre registros urbanos distintos."
+          },
+          "lineup": {
+            "heading": "Un cartel que viajaba entre escenas",
+            "paragraph1": "Kidd Voodoo llevó a Valencia una parada de su Euphoria World Tour. El relevo pasó después por C. Marí y su cruce de reguetón, trap y sonidos contemporáneos, antes de que Lorna completara la primera parte del encuentro.",
+            "paragraph2": "María Becerra abrió la segunda mitad con su repertorio de pop urbano latino. La Zowi cambió el tono hacia el trap y RVFV asumió el cierre. Entre cada directo, las sesiones de DJ evitaron que la música perdiera continuidad y unieron propuestas con identidades muy diferentes."
+          },
+          "purpose": {
+            "heading": "La recaudación cambia de escenario",
+            "paragraph1": "El elemento que distingue a Reve Fest aparece cuando termina el último concierto. Músicos por la Salud, impulsora del evento, destinará los beneficios a contratar jóvenes intérpretes para sus actuaciones de pequeño formato en hospitales y centros sociosanitarios.",
+            "paragraph2": "La primera edición queda así conectada con una actividad que sucede lejos de los grandes recintos. El público encontró una nueva cita urbana en Valencia y, al mismo tiempo, contribuyó a que la música llegue a personas que la recibirán en un contexto completamente distinto."
+          }
+        },
+        "gallery": {
+          "title": "Reve Fest, desde primera fila",
+          "openingAlt": "Cantante de música urbana actuando ante una pantalla roja en Reve Fest",
+          "openingCaption": "Las primeras actuaciones marcaron el pulso de una jornada de nueve horas.",
+          "stageAlt": "Cantante recorriendo el escenario de Roig Arena entre humo y luces",
+          "stageCaption": "El escenario principal alternó directos y sesiones de DJ durante toda la tarde.",
+          "afternoonAlt": "Artista cantando en Reve Fest con visuales verdes al fondo",
+          "afternoonCaption": "La programación fue cambiando de sonido y puesta en escena con cada relevo.",
+          "eveningAlt": "Vocalista interpretando una canción bajo iluminación violeta en Reve Fest",
+          "eveningCaption": "El público acompañó cada estribillo desde la pista de Roig Arena.",
+          "closingAlt": "Rapero levantando un brazo durante la recta final de Reve Fest",
+          "closingCaption": "La última parte de la noche llevó el urbano hasta su registro más directo.",
+          "finalAlt": "Artista actuando entre luces violetas durante el cierre de Reve Fest",
+          "finalCaption": "RVFV puso el cierre a la primera edición del festival."
+        }
+      }
+    },
+    "search": {
+      "results": "Resultados para «{{ query }}»",
+      "clear": "Limpiar búsqueda",
+      "emptyTitle": "No encontramos noticias",
+      "emptyDescription": "Prueba con otro titular, ciudad o género musical."
+    },
+    "empty": {
+      "ariaLabel": "Noticias aún no disponibles",
+      "title": "Aún no hay noticias",
+      "description": "Estamos preparando este espacio para contarte las últimas novedades del panorama festivalero valenciano.",
+      "cta": "Explorar festivales"
+    }
+  },
+  "home": {
+    "ariaLabel": "Inicio",
+    "hero": {
+      "title": "Descubre los festivales que hacen vibrar el Mediterráneo",
+      "description": "Explora los principales festivales de la Comunitat Valenciana: fechas, ubicaciones, estilos musicales y toda la información que necesitas para planear tu próxima experiencia.",
+      "imageAlt": "Público disfrutando de un festival de música al atardecer en la playa",
+      "primaryCta": "Explorar festivales",
+      "secondaryCta": "Ver calendario"
+    },
+    "nextFestival": {
+      "ariaLabel": "Próximo festival destacado",
+      "eyebrow": "Próximo festival",
+      "titleAccent": "Latin Fest",
+      "title": "arranca el 4 de julio. ¿Ya tienes tu plan?",
+      "description": "La primera cita de julio llega a Benidorm y abre dos fines de semana latinos seguidos antes de su parada en Valencia.",
+      "date": "4 julio 2026",
+      "location": "Benidorm, Alicante",
+      "genre": "Latino en directo",
+      "imageAlt": "Vista aérea del recinto de Latin Fest junto al mar en Benidorm",
+      "primaryCta": "Ver Latin Fest",
+      "secondaryCta": "Ir al calendario",
+      "countdown": {
+        "days": "días",
+        "hours": "horas",
+        "minutes": "min",
+        "seconds": "seg"
+      },
+      "festivals": {
+        "bigsound": {
+          "titleAccent": "Bigsound Festival",
+          "title": "arranca el 26 de junio. ¿Ya tienes tu plan?",
+          "date": "26 junio 2026",
+          "location": "Parc Central de Torrent, Valencia",
+          "genre": "Pop & directo",
+          "imageAlt": "Cartel de Bigsound Festival Valencia 2026",
+          "primaryCta": "Ver Bigsound"
+        },
+        "latinFestBenidorm": {
+          "titleAccent": "Latin Fest",
+          "title": "arranca el 4 de julio. ¿Ya tienes tu plan?",
+          "date": "4 julio 2026",
+          "location": "Benidorm, Alicante",
+          "genre": "Latino en directo",
+          "imageAlt": "Cartel de Latin Fest Benidorm 2026",
+          "primaryCta": "Ver Latin Fest"
+        },
+        "reve": {
+          "titleAccent": "Reve Festival",
+          "title": "arranca el 16 de julio. ¿Ya tienes tu plan?",
+          "date": "16 julio 2026",
+          "location": "Roig Arena, Valencia",
+          "genre": "Pop y show",
+          "imageAlt": "Cartel de Reve Festival Roig Arena Valencia 2026",
+          "primaryCta": "Ver Reve"
+        },
+        "latinFestValencia": {
+          "titleAccent": "Latin Fest",
+          "title": "llega a Valencia el 17 de julio. ¿Ya tienes tu plan?",
+          "date": "17 julio 2026",
+          "location": "Valencia",
+          "genre": "Latino en directo",
+          "imageAlt": "Recinto visual de Latin Fest Valencia 2026",
+          "primaryCta": "Ver Latin Fest"
+        },
+        "zevra": {
+          "titleAccent": "Zevra Festival",
+          "title": "arranca el 24 de julio. ¿Ya tienes tu plan?",
+          "date": "24 julio 2026",
+          "location": "Cullera, Valencia",
+          "genre": "Urbano",
+          "imageAlt": "Cartel general de Zevra Festival 2026",
+          "primaryCta": "Ver Zevra"
+        },
+        "arenal": {
+          "titleAccent": "Arenal Sound",
+          "title": "arranca el 30 de julio. ¿Ya tienes tu plan?",
+          "date": "30 julio 2026",
+          "location": "Playa El Arenal, Burriana",
+          "genre": "Pop, urbano y electrónica",
+          "imageAlt": "Cartel de Arenal Sound 2026",
+          "primaryCta": "Ver Arenal"
+        },
+        "medusa": {
+          "titleAccent": "Medusa Festival",
+          "title": "arranca el 13 de agosto. ¿Ya tienes tu plan?",
+          "date": "13 agosto 2026",
+          "location": "Playa de Cullera, Valencia",
+          "genre": "Electrónica",
+          "imageAlt": "Cartel general de Medusa Festival 2026",
+          "primaryCta": "Ver Medusa"
+        }
+      }
+    },
+    "featured": {
+      "title": "Festivales destacados",
+      "cards": {
+        "bigsound": {
+          "date": "JUN 26-27",
+          "name": "Bigsound Festival",
+          "location": "Torrent, Valencia"
+        },
+        "latinFestBenidorm": {
+          "date": "JUL 4-5",
+          "name": "Latin Fest Benidorm",
+          "location": "Benidorm, Alicante"
+        },
+        "latinFest": {
+          "date": "JUL 17-18",
+          "name": "Latin Fest Valencia",
+          "location": "Valencia"
+        },
+        "reve": {
+          "date": "JUL 16",
+          "name": "Reve Festival",
+          "location": "Roig Arena, Valencia"
+        },
+        "zevra": {
+          "date": "JUL 24-27",
+          "name": "Zevra Festival",
+          "location": "Cullera, Valencia"
+        },
+        "arenal": {
+          "date": "JUL 30-AGO 2",
+          "name": "Arenal Sound",
+          "location": "Playa El Arenal, Burriana"
+        },
+        "medusa": {
+          "date": "AGO 13-17",
+          "name": "Medusa Festival",
+          "location": "Playa de Cullera, Valencia"
+        }
+      }
+    },
+    "calendar": {
+      "title": "Calendario de festivales 2026",
+      "subtitle": "Explora cuándo y dónde se celebran los mejores festivales de la Comunitat Valenciana.",
+      "empty": "Todavía no hay festivales seleccionados para este mes. Cambia el filtro para seguir explorando el verano.",
+      "filters": {
+        "ariaLabel": "Filtrar festivales por mes",
+        "all": "Todos",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre"
+      },
+      "months": {
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto"
+      },
+      "shortMonths": {
+        "june": "JUN",
+        "july": "JUL",
+        "august": "AGO"
+      },
+      "cards": {
+        "bigsound": {
+          "date": "26–27 Jun",
+          "name": "Bigsound Festival",
+          "location": "Parc Central de Torrent",
+          "genre": "Pop & directo"
+        },
+        "latinFestValencia": {
+          "date": "17–18 Jul",
+          "name": "Latin Fest Valencia",
+          "location": "Valencia",
+          "genre": "Latino"
+        },
+        "latinFest": {
+          "date": "4–5 Jul",
+          "name": "Latin Fest Benidorm",
+          "location": "Benidorm, Alicante",
+          "genre": "Latino"
+        },
+        "reve": {
+          "date": "16 Jul",
+          "name": "Reve Festival",
+          "location": "Roig Arena, Valencia",
+          "genre": "Pop y show"
+        },
+        "zevra": {
+          "date": "24–27 Jul",
+          "name": "Zevra Festival",
+          "location": "Cullera",
+          "genre": "Urbano"
+        },
+        "arenal": {
+          "date": "30 Jul–2 Ago",
+          "name": "Arenal Sound",
+          "location": "Playa El Arenal, Burriana",
+          "genre": "Pop, urbano y electrónica"
+        },
+        "medusa": {
+          "date": "13–17 Ago",
+          "name": "Medusa Festival",
+          "location": "Playa de Cullera, Valencia",
+          "genre": "Electrónica"
+        }
+      },
+      "stats": {
+        "festivals": "Festivales seleccionados",
+        "attendees": "Asistentes cada año",
+        "artists": "Artistas en escena",
+        "provinces": "Provincias por descubrir"
+      }
+    },
+    "map": {
+      "eyebrow": "Exploración editorial",
+      "title": "Festivales sobre el mapa valenciano",
+      "description": "Recorre la Comunitat: cada pin revela el carácter, las fechas y la energía de su festival.",
+      "figureLabel": "Mapa estático de la Comunitat Valenciana con festivales destacados",
+      "panel": {
+        "eyebrow": "Festival en foco",
+        "cta": "Ver festival"
+      },
+      "categories": {
+        "electronic": "Electrónica",
+        "latin": "Latino",
+        "pop": "Pop & directo",
+        "urban": "Urbano"
+      },
+      "stats": {
+        "attendance": "Asistencia",
+        "artists": "Artistas",
+        "duration": "Duración",
+        "days": "días"
+      },
+      "fav": {
+        "label": "Añadir a favoritos",
+        "add": "Favoritos"
+      }
+    },
+    "faq": {
+      "ariaLabel": "Preguntas frecuentes sobre cómo elegir festival",
+      "eyebrow": "Guía rápida",
+      "title": "Preguntas que suelen salir antes del primer festival",
+      "description": "Una capa rápida de contexto para decidir mejor: qué género encaja, dónde comparar fechas y cuándo saltar a la web oficial antes de comprar.",
+      "items": {
+        "tickets": {
+          "question": "¿Las entradas se compran directamente en TuriaFestNoticias?",
+          "answer": "No. TuriaFestNoticias funciona como guía editorial: te ayuda a comparar festivales, fechas y sedes, y después te lleva al enlace oficial de cada evento para terminar la compra."
+        },
+        "genres": {
+          "question": "¿Puedo descubrir festivales por estilo musical?",
+          "answer": "Sí. La portada, el calendario y las fichas están pensados para orientarte rápido entre electrónica, urbano, pop y latino sin tener que entrar a ciegas en cada festival."
+        },
+        "provinces": {
+          "question": "¿Cómo comparo Valencia, Alicante y Castellón?",
+          "answer": "Usa la home como punto de partida: primero ves el calendario editorial, luego el mapa de la Comunitat y, desde ahí, puedes saltar a los festivales que mejor te encajen por ubicación."
+        },
+        "family": {
+          "question": "¿Cómo sé si un festival encaja para ir en grupo o en familia?",
+          "answer": "La ficha de cada festival resume el tono del evento, la ubicación y el tipo de experiencia. Para políticas exactas de edad, accesos o acompañantes, el último paso siempre es revisar la web oficial."
+        },
+        "details": {
+          "question": "¿Dónde miro cartel, recinto y detalles prácticos antes de decidirme?",
+          "answer": "Cada festival tiene su propia ficha dentro de TuriaFestNoticias con contexto editorial, fechas, mapa y acceso directo al sitio oficial, que es donde encontrarás cartel confirmado, horarios y normativa final."
+        },
+        "dates": {
+          "question": "¿Qué hago si primero quiero ordenar el verano por fechas?",
+          "answer": "Empieza por el calendario: te deja ver los festivales en orden cronológico y saltar después a la ficha del evento cuando ya tienes claro qué fin de semana quieres reservar."
+        }
+      }
+    },
+    "playlists": {
+      "eyebrow": "Banda sonora",
+      "title": "Playlists oficiales",
+      "subtitle": "Escucha el sonido de los principales festivales de la Comunitat Valenciana.",
+      "cta": "Ver en Spotify",
+      "iframeTitle": "Playlist oficial de {festival} en Spotify",
+      "cards": {
+        "zevra": {
+          "name": "ZEVRA Festival",
+          "description": "Los sonidos urbanos que definen el verano."
+        },
+        "medusa": {
+          "name": "Medusa Festival",
+          "description": "La esencia electrónica del Mediterráneo."
+        },
+        "arenal": {
+          "name": "Arenal Sound",
+          "description": "Pop, urbano y electrónica para la semana grande de Burriana."
+        },
+        "latinFest": {
+          "name": "Latin Fest",
+          "description": "La mejor selección latina del verano."
+        }
+      }
+    }
+  },
+  "festivales": {
+    "map": {
+      "page": {
+        "eyebrow": "Mapa interactivo",
+        "title": "Descubre festivales sobre el mapa.",
+        "description": "Explora los siete festivales semilla desde una experiencia cartográfica con búsqueda, filtros y fichas flotantes."
+      },
+      "figure": {
+        "label": "Mapa interactivo de ubicación de festivales"
+      },
+      "search": {
+        "label": "Buscar festivales, ciudades o municipios",
+        "placeholder": "Busca por festival, ciudad o municipio"
+      },
+      "filters": {
+        "provincePrefix": "Provincia",
+        "upcoming": "Próximos",
+        "currentYear": "Año actual",
+        "clear": "Limpiar filtros"
+      },
+      "provinces": {
+        "valencia": "Valencia",
+        "alicante": "Alicante",
+        "castellon": "Castellón"
+      },
+      "sidebar": {
+        "title": "Festivales",
+        "empty": "No hay festivales que coincidan con los filtros actuales.",
+        "hint": "Haz clic en los marcadores o en los festivales para ver más información.",
+        "sort": {
+          "label": "Ordenar",
+          "upcoming": "Próximos",
+          "name": "Nombre A-Z"
+        }
+      },
+      "marker": {
+        "label": "Abrir ficha de {festival} en el mapa",
+        "selected": "{festival} está seleccionado",
+        "highlighted": "{festival} está resaltado"
+      },
+      "card": {
+        "eyebrow": "Festival seleccionado",
+        "detailLink": "Ver festival",
+        "favorite": "Guardar en favoritos",
+        "share": "Compartir festival"
+      },
+      "mobileSheet": {
+        "label": "Panel móvil de festivales",
+        "toggle": "Todos los festivales"
+      },
+      "fallback": {
+        "title": "Mapa no disponible",
+        "copy": "La capa interactiva no se ha podido cargar. Usa el panel de festivales y los enlaces de cómo llegar para seguir explorando."
+      },
+      "attribution": "© Protomaps © OpenStreetMap",
+      "textEquivalent": {
+        "label": "Listado textual de ubicaciones de festivales",
+        "title": "Ubicaciones y cómo llegar",
+        "directions": "Cómo llegar"
+      },
+      "festivals": {
+        "bigsound": {
+          "name": "Bigsound Festival",
+          "dates": "26 – 27 jun 2026",
+          "city": "Torrent",
+          "province": "Valencia",
+          "description": "Dos jornadas de urbano, pop y grandes directos en el área metropolitana de Valencia.",
+          "howToGetThere": "Cómo llegar a Bigsound"
+        },
+        "latinValencia": {
+          "name": "Latin Fest Valencia",
+          "dates": "17–18 jul 2026",
+          "city": "Valencia",
+          "province": "Valencia",
+          "description": "Edición valenciana de Latin Fest con ritmos latinos y reggaetón en formato intensivo.",
+          "howToGetThere": "Cómo llegar a Latin Fest Valencia"
+        },
+        "latinBenidorm": {
+          "name": "Latin Fest Benidorm",
+          "dates": "4–5 jul 2026",
+          "city": "Benidorm",
+          "province": "Alicante",
+          "description": "Edición de Benidorm de Latin Fest con enfoque mediterráneo y cartel latino concentrado.",
+          "howToGetThere": "Cómo llegar a Latin Fest Benidorm"
+        },
+        "medusa": {
+          "name": "Medusa Festival",
+          "dates": "13 – 17 ago 2026",
+          "city": "Cullera",
+          "province": "Valencia",
+          "description": "Macrofestival electrónico junto al mar con varios días de programación y puesta en escena inmersiva.",
+          "howToGetThere": "Cómo llegar a Medusa"
+        },
+        "arenal": {
+          "name": "Arenal Sound",
+          "dates": "30 jul – 2 ago 2026",
+          "city": "Burriana",
+          "province": "Castellón",
+          "description": "Festival masivo junto a la Playa del Arenal con pop, urbano, electrónica, camping y ambiente de verano en Burriana.",
+          "howToGetThere": "Cómo llegar a Arenal Sound"
+        },
+        "reve": {
+          "name": "Reve Festival",
+          "dates": "16 jul 2026",
+          "city": "Valencia",
+          "province": "Valencia",
+          "description": "Festival nocturno en Valencia con mezcla de pop, espectáculo visual y cartel de gran formato.",
+          "howToGetThere": "Cómo llegar a Reve"
+        },
+        "zevra": {
+          "name": "Zevra Festival",
+          "dates": "24 – 27 jul 2026",
+          "city": "Cullera",
+          "province": "Valencia",
+          "description": "Experiencia de playa con cartel urbano y latino repartido en varias jornadas frente al Mediterráneo.",
+          "howToGetThere": "Cómo llegar a Zevra"
+        }
+      }
+    }
+  },
+  "festival": {
+    "detail": {
+      "facts": {
+        "ariaLabel": "Datos clave del festival",
+        "location": {
+          "label": "Ubicación"
+        },
+        "genre": {
+          "label": "Género"
+        },
+        "price": {
+          "label": "Desde",
+          "feesIncluded": "GD incluidos",
+          "feesExcluded": "+ gastos de gestión"
+        },
+        "age": {
+          "label": "Edad mínima",
+          "authorization": "{{ from }} y {{ to }} años con autorización paterna.",
+          "adultsOnly": "{{ area }} solo 18+."
+        },
+        "schedule": {
+          "label": "Horario",
+          "pendingPrimary": "Pendiente",
+          "pendingSecondary": "Consulta la sección HORARIOS de la web oficial.",
+          "daily": "Cada día"
+        }
+      },
+      "hero": {
+        "breadcrumb": {
+          "ariaLabel": "Ruta de navegación",
+          "home": "Inicio",
+          "festivals": "Festivales"
+        },
+        "meta": {
+          "ariaLabel": "Información del festival"
+        },
+        "cta": {
+          "tickets": "COMPRAR ENTRADAS",
+          "official": "VER SITIO OFICIAL"
+        },
+        "review": {
+          "singular": "reseña",
+          "plural": "reseñas"
+        }
+      },
+      "overview": {
+        "ariaLabel": "Sobre el festival",
+        "title": "Sobre el festival",
+        "highlightsAriaLabel": "Highlights del festival"
+      },
+      "locationMap": {
+        "ariaLabel": "Ubicación del festival",
+        "title": "Ubicación",
+        "iframeTitle": "Mapa de ubicación de {festival}"
+      },
+      "byFestival": {
+        "bigsound": {
+          "name": "Bigsound Festival",
+          "hero": {
+            "title": "BIGSOUND",
+            "subtitle": "FESTIVAL",
+            "location": "Parc Central de Torrent, Valencia",
+            "dates": "26 – 27 jun 2026"
+          },
+          "overview": {
+            "paragraph1": "Bigsound Festival se ha consolidado como uno de los grandes encuentros pop e indie de la Comunitat Valenciana. Programado en Parc Central de Torrent, combina cabezas de cartel internacionales con artistas emergentes de la escena nacional, y apuesta por una producción cuidada y un público intergeneracional.",
+            "paragraph2": "Dos jornadas de música en vivo, food trucks de cocina mediterránea y zonas chill orientadas al verano valenciano. Buena conectividad en transporte público desde el centro y una agenda de actividades paralelas que arranca por la tarde.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival y, cuando existe, su recorrido visual complementario.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel general"
+              }
+            },
+            "highlights": {
+              "beach": "Ciudad",
+              "camping": "Hoteles cercanos",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "latinFest": {
+          "name": "Latin Fest",
+          "hero": {
+            "title": "LATIN",
+            "subtitle": "FEST",
+            "location": "Valencia",
+            "dates": "17 – 18 jul 2026"
+          },
+          "overview": {
+            "paragraph1": "Latin Fest es el festival de referencia para el reggaeton y la música urbana latina en la Comunitat Valenciana. Cartel concentrado en grandes nombres del género y una producción pensada para un público joven que busca espectáculo, baile y energía mediterránea.",
+            "paragraph2": "El recinto principal está en Valencia capital y suele complementarse con una parada en Benidorm. Conexión sencilla en transporte público, zonas de hidratación, food trucks de cocina latina y un ambiente festivo de verano.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival y sus variaciones por ciudad para comparar cada edición de un vistazo.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Valencia",
+                "benidorm": "Benidorm"
+              }
+            },
+            "highlights": {
+              "beach": "Ciudad",
+              "camping": "Hoteles cercanos",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "medusa": {
+          "name": "Medusa Festival",
+          "hero": {
+            "title": "MEDUSA",
+            "subtitle": "FESTIVAL",
+            "location": "Playa de Cullera, Valencia",
+            "dates": "13 – 17 ago 2026"
+          },
+          "overview": {
+            "paragraph1": "Medusa Festival es uno de los festivales de música electrónica más importantes de Europa y una referencia imprescindible del verano en España. Celebrado en la espectacular playa de Cullera (Valencia), reúne durante cinco días a algunos de los mejores DJs y artistas internacionales en un entorno único junto al mar Mediterráneo.",
+            "paragraph2": "Con más de 300.000 m² de recinto, impresionantes escenarios temáticos, producciones audiovisuales de gran formato y una experiencia inmersiva incomparable, Medusa Festival atrae cada año a miles de asistentes de todo el mundo que buscan música, espectáculo y una atmósfera inolvidable.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel general y la programación visual por jornadas para seguir el festival de un vistazo.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel general",
+                "thursday": "Jueves",
+                "friday": "Viernes",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+              }
+            },
+            "highlights": {
+              "beach": "Playa",
+              "camping": "Camping",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "arenal": {
+          "name": "Arenal Sound",
+          "hero": {
+            "title": "Arenal Sound",
+            "subtitle": "PLAYA Y MÚSICA",
+            "location": "Playa El Arenal, Burriana, Castellón",
+            "dates": "30 jul – 2 ago 2026"
+          },
+          "overview": {
+            "paragraph1": "Arenal Sound convierte Burriana en uno de los grandes puntos de encuentro festivaleros del Mediterráneo. Cuatro días junto a la Playa del Arenal con una mezcla amplia de pop, urbano y electrónica para vivir el verano sin salir del recinto.",
+            "paragraph2": "El festival combina conciertos, sesiones, zonas de descanso, camping y una programación pensada para moverse entre escenarios durante toda la jornada. Su ubicación en la costa de Castellón lo hace especialmente cómodo para quienes buscan playa y música en el mismo viaje.",
+            "posterGallery": {
+              "title": "Cartel oficial de Arenal Sound 2026",
+              "intro": "El cartel reúne nombres de pop, urbano y electrónica para la edición de Burriana.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado de Arenal Sound",
+                "close": "Cerrar cartel de Arenal Sound"
+              },
+              "labels": {
+                "general": "Cartel 2026"
+              }
+            },
+            "highlights": {
+              "beach": "Playa",
+              "camping": "Camping",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "reve": {
+          "name": "Reve Festival",
+          "hero": {
+            "title": "REVE",
+            "subtitle": "FESTIVAL",
+            "location": "Roig Arena, Valencia",
+            "dates": "16 jul 2026"
+          },
+          "overview": {
+            "paragraph1": "Reve Festival es la cita pop nocturna del verano valenciano, con un cartel orientado al mainstream y al espectáculo visual de gran formato. Concebido para grandes audiencias, prioriza la puesta en escena y la calidad de sonido sobre la fórmula clásica de festival al aire libre.",
+            "paragraph2": "Ubicado en Roig Arena, ofrece una experiencia cómoda con buena conectividad en transporte público, hoteles cercanos, zonas de restauración y producciones audiovisuales que prolongan la noche hasta tarde.",
+            "featuredVideo": {
+              "ariaLabel": "Teaser oficial de Reve Festival con María Becerra en pantalla",
+              "fallback": "Tu navegador no puede reproducir este vídeo."
+            },
+            "photoGallery": {
+              "title": "Galería REVE",
+              "intro": "Un mosaico de prensa con la imagen principal del festival y retratos de la noche urbana que toma el Roig Arena.",
+              "ariaLabel": "Galería de fotos de Reve Festival",
+              "controls": {
+                "previous": "Ver foto anterior",
+                "next": "Ver foto siguiente"
+              },
+              "labels": {
+                "main": "Imagen principal",
+                "mariaBecerraLive": "María Becerra en directo",
+                "mariaBecerraPortrait": "María Becerra",
+                "cMari": "C Marí",
+                "lorna": "Lorna",
+                "laZowi": "La Zowi",
+                "rvfv": "RVFV"
+              }
+            },
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival para consultar su propuesta visual completa.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel vertical",
+                "horizontal": "Cartel horizontal",
+                "story": "Cartel story",
+                "mariaBecerra": "María Becerra",
+                "kiddVoodoo": "Kidd Voodoo",
+                "lorna": "Lorna",
+                "cMari": "C Marí",
+                "laZowi": "La Zowi",
+                "rvfv": "RVFV"
+              }
+            },
+            "highlights": {
+              "beach": "Ciudad",
+              "camping": "Hoteles cercanos",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        },
+        "zevra": {
+          "name": "Zevra Festival",
+          "hero": {
+            "title": "ZEVRA",
+            "subtitle": "FESTIVAL",
+            "location": "Cullera, Valencia",
+            "dates": "24 – 27 jul 2026"
+          },
+          "overview": {
+            "paragraph1": "Zevra Festival es una experiencia urbana y latina celebrada frente al Mediterráneo, en la playa de Cullera (Valencia). Cuatro jornadas con cartel centrado en reggaeton, latin y urban, en un recinto pensado para combinar música, playa y fiesta de verano.",
+            "paragraph2": "Producción a gran escala, varios escenarios, zonas de food trucks de cocina mediterránea y latina, y un calendario de afterparties que se extiende a los clubes cercanos. Conexión sencilla en coche desde Valencia capital.",
+            "posterGallery": {
+              "title": "Carteles oficiales",
+              "intro": "El cartel principal del festival y la programación visual por días para seguir el fin de semana completo.",
+              "dialog": {
+                "ariaLabel": "Cartel ampliado del festival",
+                "close": "Cerrar cartel ampliado"
+              },
+              "labels": {
+                "general": "Cartel general",
+                "friday": "Viernes",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+              }
+            },
+            "highlights": {
+              "beach": "Playa",
+              "camping": "Camping",
+              "foodTrucks": "Food Trucks",
+              "afterparties": "Afterparties",
+              "activities": "Actividades"
+            }
+          }
+        }
+      }
+    }
+  },
+  "footer": {
+    "ariaLabel": "Pie de página",
+    "brand": {
+      "logoAlt": "TuriaFestNoticias",
+      "description": "Tu guía de festivales en la Comunitat Valenciana. Música, cultura y verano."
+    },
+    "social": {
+      "ariaLabel": "Redes sociales de TuriaFestNoticias",
+      "instagram": "Síguenos en Instagram",
+      "x": "Síguenos en X",
+      "youtube": "Síguenos en YouTube",
+      "spotify": "Escúchanos en Spotify"
+    },
+    "explore": {
+      "title": "Explora",
+      "map": "Mapa de festivales",
+      "upcoming": "Próximos festivales",
+      "byGenre": "Por género",
+      "byProvince": "Por provincia"
+    },
+    "info": {
+      "title": "Información",
+      "about": "Sobre TuriaFestNoticias",
+      "contact": "Contacto",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "title": "Legal",
+      "notice": "Aviso legal",
+      "privacy": "Política de privacidad",
+      "cookies": "Política de cookies",
+      "terms": "Términos de uso"
+    },
+    "bottom": {
+      "copyright": "© 2026 TuriaFestNoticias. Todos los derechos reservados."
+    }
+  },
+  "error": {
+    "network": "Error de red. Comprueba tu conexión e inténtalo de nuevo.",
+    "notFound": "El contenido solicitado no se encontró.",
+    "unknown": "Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo.",
+    "dismiss": "Cerrar"
+  },
+  "festivalList": {
+    "title": "Festivales",
+    "subtitle": "Descubre los principales festivales de música de la Comunidad Valenciana"
+  },
+  "calendarPage": {
+    "hero": {
+      "ariaLabel": "Introducción del calendario de festivales",
+      "eyebrow": "Calendario",
+      "title": "Festivales por día",
+      "description": "Explora los próximos festivales de la Comunitat Valenciana ordenados por fecha. Cada día con festival aparece con su cartel, ubicación y acceso directo a la ficha del evento.",
+      "stats": {
+        "festivals": "{{ count }} festivales",
+        "region": "Comunitat Valenciana",
+        "season": "Temporada 2026"
+      }
+    },
+    "filters": {
+      "ariaLabel": "Filtros del calendario",
+      "month": {
+        "title": "Mes",
+        "ariaLabel": "Filtrar por mes"
+      },
+      "province": {
+        "title": "Provincia",
+        "ariaLabel": "Filtrar por provincia"
+      },
+      "genre": {
+        "title": "Género",
+        "ariaLabel": "Filtrar por género"
+      },
+      "months": {
+        "all": "Todos",
+        "june": "Junio",
+        "july": "Julio",
+        "august": "Agosto",
+        "september": "Septiembre"
+      },
+      "provinces": {
+        "all": "Todas",
+        "valencia": "Valencia",
+        "alicante": "Alicante",
+        "castellon": "Castellón"
+      },
+      "genres": {
+        "all": "Todos",
+        "electronic": "Electrónica",
+        "urban": "Urbano",
+        "latin": "Latino",
+        "pop": "Pop"
+      }
+    },
+    "results": {
+      "summary": "{{ dayCount }} días visibles · {{ festivalCount }} festivales"
+    },
+    "timeline": {
+      "ariaLabel": "Cronología de festivales por día",
+      "eyebrow": "Temporada 2026",
+      "cta": "Ver festival"
+    },
+    "badges": {
+      "singleDay": "Festival de un día",
+      "start": "Inicio",
+      "lastDay": "Último día",
+      "dayOfTotal": "Día {{ day }} de {{ total }}"
+    },
+    "empty": {
+      "ariaLabel": "Sin resultados en el calendario",
+      "eyebrow": "Sin coincidencias",
+      "title": "No hay festivales con esos filtros",
+      "body": "Prueba a cambiar el mes, la provincia o el género para volver a ver días con festivales activos.",
+      "cta": "Restablecer filtros"
+    }
+  }
+}

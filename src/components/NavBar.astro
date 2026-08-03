@@ -1,0 +1,203 @@
+---
+// ============================================================================
+// NavBar.astro — TuriaFestNoticias · sticky header + interactive islands
+// ============================================================================
+// Ports the Angular NavBar template: brand (light/dark swap via CSS), primary
+// nav, language switcher, search panel, theme toggle. Server-rendered in
+// Spanish; the island script handles menus, theme and language switching.
+// ============================================================================
+
+import { ES_TRANSLATIONS } from '@i18n/translations';
+import { t, LANGUAGES } from '@i18n/index';
+---
+
+<div class="fv-nav-root">
+  <header class="nav-bar">
+    <div class="nav-bar__inner">
+      <a
+        class="nav-bar__brand"
+        href="https://www.turiafest.com/"
+        data-i18n="nav.home"
+        data-i18n-attr="aria-label"
+        aria-label={t('nav.home', ES_TRANSLATIONS)}
+      >
+        <img
+          class="nav-bar__brand-img nav-bar__brand-img--light"
+          src="/assets/branding/festi-val-logo.webp"
+          width="800"
+          height="580"
+          alt="TuriaFest"
+        />
+        <img
+          class="nav-bar__brand-img nav-bar__brand-img--dark"
+          src="/assets/branding/festi-val-logo-dark.webp"
+          width="800"
+          height="580"
+          alt=""
+          aria-hidden="true"
+        />
+      </a>
+
+      <nav class="nav-bar__nav" data-i18n="nav.aria.primary" data-i18n-attr="aria-label" aria-label={t('nav.aria.primary', ES_TRANSLATIONS)}>
+        <ul class="nav-bar__nav-list">
+          <li>
+            <a class="nav-bar__nav-link" data-testid="nav-link-inicio" href="https://www.turiafest.com/" data-i18n="nav.home">
+              {t('nav.home', ES_TRANSLATIONS)}
+            </a>
+          </li>
+          <li>
+            <a class="nav-bar__nav-link" data-testid="nav-link-festivales" href="https://www.turiafest.com/festivales" data-i18n="nav.festivals">
+              {t('nav.festivals', ES_TRANSLATIONS)}
+            </a>
+          </li>
+          <li>
+            <a class="nav-bar__nav-link" data-testid="nav-link-calendario" href="https://www.turiafest.com/calendario" data-i18n="nav.calendar">
+              {t('nav.calendar', ES_TRANSLATIONS)}
+            </a>
+          </li>
+          <li>
+            <a class="nav-bar__nav-link" data-testid="nav-link-noticias" href="https://turiafestnoticias.es/" data-i18n="nav.news">
+              {t('nav.news', ES_TRANSLATIONS)}
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-bar__actions">
+        <div class="nav-bar__language" data-testid="nav-language-selector">
+          <button
+            class="nav-bar__icon-btn nav-bar__language-trigger"
+            data-testid="nav-btn-language"
+            type="button"
+            data-i18n="nav.language.label"
+            data-i18n-attr="aria-label"
+            aria-label={t('nav.language.label', ES_TRANSLATIONS)}
+            aria-haspopup="menu"
+            aria-expanded="false"
+          >
+            <img
+              class="nav-bar__language-flag"
+              src={LANGUAGES[0].flag}
+              alt={LANGUAGES[0].label}
+              width="24"
+              height="24"
+            />
+          </button>
+
+          <div class="nav-bar__language-menu" role="menu" data-testid="nav-language-menu" hidden>
+            {
+              LANGUAGES.map((lang) => (
+                <button
+                  class:list={[
+                    'nav-bar__language-option',
+                    { 'nav-bar__language-option--active': lang.code === 'es' },
+                  ]}
+                  type="button"
+                  role="menuitem"
+                  data-lang-option={lang.code}
+                  aria-current={lang.code === 'es' ? 'true' : undefined}
+                  data-testid={`nav-language-option-${lang.code}`}
+                >
+                  <img
+                    class="nav-bar__language-option-flag"
+                    src={lang.flag}
+                    alt=""
+                    aria-hidden="true"
+                    width="20"
+                    height="20"
+                  />
+                  <span class="nav-bar__language-option-label">{lang.label}</span>
+                </button>
+              ))
+            }
+          </div>
+        </div>
+
+        <button
+          class="nav-bar__icon-btn nav-bar__search"
+          data-testid="nav-btn-buscar"
+          type="button"
+          data-i18n="nav.search"
+          data-i18n-attr="aria-label"
+          aria-label={t('nav.search', ES_TRANSLATIONS)}
+          aria-controls="nav-news-search"
+          aria-expanded="false"
+        >
+          <svg class="nav-bar__icon nav-bar__icon--search" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+
+        <button
+          class="nav-bar__icon-btn nav-bar__theme-toggle"
+          data-testid="nav-btn-tema"
+          type="button"
+          aria-label={t('nav.theme.toDark', ES_TRANSLATIONS)}
+          aria-pressed="false"
+        >
+          <svg class="nav-bar__icon nav-bar__icon-sun" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <svg class="nav-bar__icon nav-bar__icon-moon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+
+        <button class="nav-bar__icon-btn nav-bar__menu" data-testid="nav-btn-menu" type="button" data-i18n="nav.menu" data-i18n-attr="aria-label" aria-label={t('nav.menu', ES_TRANSLATIONS)}>
+          <svg class="nav-bar__icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <form id="nav-news-search" class="nav-bar__search-form" role="search" action="/noticias" method="get" data-i18n="nav.searchForm.label" data-i18n-attr="aria-label" aria-label={t('nav.searchForm.label', ES_TRANSLATIONS)} hidden>
+      <label class="sr-only" for="nav-news-search-input" data-i18n="nav.searchForm.label">
+        {t('nav.searchForm.label', ES_TRANSLATIONS)}
+      </label>
+
+      <div class="nav-bar__search-field">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input
+          id="nav-news-search-input"
+          class="nav-bar__search-input"
+          data-testid="nav-search-input"
+          type="search"
+          name="buscar"
+          autocomplete="off"
+          enterkeyhint="search"
+          data-i18n="nav.searchForm.placeholder"
+          data-i18n-attr="placeholder"
+          placeholder={t('nav.searchForm.placeholder', ES_TRANSLATIONS)}
+        />
+      </div>
+
+      <button class="nav-bar__search-submit" data-testid="nav-search-submit" type="submit" data-i18n="nav.searchForm.submit">
+        {t('nav.searchForm.submit', ES_TRANSLATIONS)}
+      </button>
+    </form>
+  </header>
+</div>
+
+<script>
+  import { initNav } from '../scripts/nav';
+  initNav();
+</script>
+
+<style lang="scss" is:global>
+  @use './_nav-bar.scss';
+</style>

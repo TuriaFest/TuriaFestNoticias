@@ -1,0 +1,104 @@
+---
+// ============================================================================
+// BaseLayout.astro — TuriaFestNoticias · document shell
+// ============================================================================
+// Ports the Angular root template + head (theme-color, favicons with `?v=3`,
+// anti-flicker theme script, Content-Language) and renders per-page SEO built
+// by the `seo` lib. All translatable copy is server-rendered in Spanish with
+// `data-i18n` anchors so the language-switcher island can re-resolve it.
+// ============================================================================
+
+import '../styles/styles.scss';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_LANG } from '@lib/site';
+import type { SeoHead } from '@lib/seo';
+
+export interface PageSeoCopy {
+  readonly title: string;
+  readonly description: string;
+}
+
+interface Props {
+  readonly seo: SeoHead;
+  /** Per-language title/description so the client island can refresh meta. */
+  readonly seoCopy?: Readonly<Record<string, PageSeoCopy>>;
+}
+
+const { seo, seoCopy } = Astro.props;
+const seoCopyJson = JSON.stringify(seoCopy ?? {});
+---
+
+<!doctype html>
+<html lang={SITE_LANG}>
+  <head>
+    <meta charset="utf-8" />
+    <title data-fv-seo-title>{seo.title}</title>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F8F5F0" />
+    <meta name="description" content={seo.description} data-fv-seo-description />
+    <meta name="robots" content={seo.robots} />
+    <link rel="canonical" href={seo.canonical} data-fv-news-canonical />
+
+    <meta property="og:title" content={seo.og.title} data-fv-og-title />
+    <meta property="og:description" content={seo.og.description} data-fv-og-description />
+    <meta property="og:type" content={seo.og.type} />
+    <meta property="og:url" content={seo.og.url} />
+    <meta property="og:image" content={seo.og.image} />
+    <meta property="og:image:alt" content={seo.og.imageAlt} />
+    <meta property="og:image:width" content={String(seo.og.imageWidth)} />
+    <meta property="og:image:height" content={String(seo.og.imageHeight)} />
+
+    <meta name="twitter:card" content={seo.twitter.card} />
+    <meta name="twitter:title" content={seo.twitter.title} data-fv-twitter-title />
+    <meta name="twitter:description" content={seo.twitter.description} data-fv-twitter-description />
+    <meta name="twitter:image" content={seo.twitter.image} />
+    <meta name="twitter:image:alt" content={seo.twitter.imageAlt} />
+
+    {
+      seo.article && (
+        <>
+          <meta property="article:published_time" content={seo.article.publishedTime} />
+          <meta property="article:modified_time" content={seo.article.modifiedTime} />
+          <meta name="author" content={seo.article.author} />
+        </>
+      )
+    }
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/branding/turiafest-favicon-64.png?v=3"
+      sizes="64x64"
+    />
+    <link rel="shortcut icon" href="/turiafest-favicon.ico?v=3" />
+
+    <script is:inline>
+      // Anti-flicker: apply the stored theme before first paint. A manual choice
+      // sets data-theme; `system` (or no choice) is left to the CSS
+      // prefers-color-scheme media query. Kept tiny and dependency-free on purpose.
+      (function () {
+        try {
+          var m = localStorage.getItem('fv-theme');
+          if (m === 'dark' || m === 'light') {
+            document.documentElement.setAttribute('data-theme', m);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    {
+      seo.jsonLd && <script type="application/ld+json" data-fv-news-jsonld set:html={seo.jsonLd} />
+    }
+
+    <script id="fv-seo-copy" type="application/json" set:html={seoCopyJson} />
+  </head>
+  <body>
+    <NavBar />
+    <main class="app-main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

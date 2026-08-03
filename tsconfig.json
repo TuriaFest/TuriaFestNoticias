@@ -1,48 +1,15 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
-  "compileOnSave": false,
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@core/*": ["src/app/core/*"],
-      "@layout/*": ["src/app/layout/*"],
-      "@features/*": ["src/app/features/*"],
-      "@shared/ui/*": ["src/app/shared/ui/*"],
-      "@shared/data-access/*": ["src/app/shared/data-access/*"],
-      "@shared/domain/*": ["src/app/shared/domain/*"],
-      "@shared/util/*": ["src/app/shared/util/*"],
-      "@shared/pipes/*": ["src/app/shared/pipes/*"],
-      "@shared/directives/*": ["src/app/shared/directives/*"],
-      "@shared/testing/*": ["src/app/shared/testing/*"],
-      "@env/*": ["src/environments/*"],
+      "@data/*": ["src/data/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@lib/*": ["src/lib/*"],
       "@assets/*": ["src/assets/*"]
-    }
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  },
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
     },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "include": ["src", ".astro/types.d.ts", "vitest.config.mts"]
 }
