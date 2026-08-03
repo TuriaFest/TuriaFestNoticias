@@ -150,7 +150,6 @@ The project defines reusable skills in `.codex/skills/` that document patterns s
 - **`maps`** — MapLibre GL JS + Protomaps tiles, lazy-loaded, SSR-safe, accessible with text equivalents.
 - **`design-responsive-validation`** 🎨 — **MANDATORY for every UI task.** Bans generic AI-looking layouts, requires a distinctive TuriaFestNoticias identity, enforces responsive checks across desktop / laptop / tablet / mobile (320 px floor), and demands a Design & Responsive Validation Report at task completion.
 - **`i18n-commit-policy`** 🌍 — **MANDATORY at commit time.** During normal development only `es.json` is edited; at commit / finalization the matching keys are propagated to every supported locale (`ca`, `en`), JSON parity is verified with `npm run i18n:check`, and an i18n Commit Translation Report is emitted before `git commit` runs.
-- **`angular-developer`** — Official Angular Team reference skill (Google LLC). Angular 21 API docs: signals, linkedSignal, resource, DI, routing, forms, SSR, ARIA, animations, CLI, migrations, MCP server. Use when you need to look up Angular internals or best practices. Adapted for this project: Tailwind removed, E2E via Playwright, gate is `npm run lint && npm test -- --run`.
 
 ## Architecture
 

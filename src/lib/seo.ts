@@ -1,7 +1,7 @@
 // ============================================================================
 // seo.ts — TuriaFestNoticias · build-time meta and structured data
 // ============================================================================
-// Framework-free port of the Angular `NewsMetaService`: canonical URLs, Open
+// Build-time SEO helpers: canonical URLs, Open
 // Graph / Twitter tags and NewsArticle JSON-LD are computed here and rendered
 // by BaseLayout into `<head>` with the same `data-fv-*` anchor attributes.
 // ============================================================================

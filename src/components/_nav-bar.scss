@@ -6,8 +6,8 @@
 @use 'styles/mixins' as *;
 
 // Component-level sizing values that fall outside the global token scale.
-// `.fv-nav-root` is the wrapper the Astro component renders (the Angular
-// `:host` equivalent — sticky header behaviour lives here).
+// `.fv-nav-root` is the wrapper the component renders; sticky header
+// behaviour lives here.
 .fv-nav-root {
   // Icon-button touch targets (UI sizing, not spacing tokens)
   --nav-icon-size-sm: calc(var(--fv-space-6) + var(--fv-space-3)); // 44px
@@ -75,11 +75,10 @@
   }
 }
 
-// CSS-driven logo swap. The Angular `@if (isDark())` approach raced with SSR:
-// the server defaulted to light (no matchMedia available), shipped the navy
-// wordmark, and NgOptimizedImage `priority` had already committed it before
-// hydration could flip the signal. Letting the browser pick via media query +
-// `data-theme` keeps it instant and SSR-safe.
+// CSS-driven logo swap. A JS-driven swap races with SSR: the server defaults
+// to light (no matchMedia available) and ships the navy wordmark before the
+// client can flip it. Letting the browser pick via media query + `data-theme`
+// keeps it instant and SSR-safe.
 .nav-bar__brand-img--dark {
   display: none;
 }

@@ -1,7 +1,7 @@
 // ============================================================================
 // news-search.ts — TuriaFestNoticias · news hub filtering island
 // ============================================================================
-// Ports the Angular news hub behaviour: reads `?buscar=` from the URL,
+// News hub behaviour: reads `?buscar=` from the URL,
 // filters the server-rendered article cards with the MiniSearch index (built
 // from per-language strings embedded in `#news-search-docs`), updates the
 // summary / empty-state and re-runs on `fv:langchange` and `popstate`.

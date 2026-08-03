@@ -1,7 +1,7 @@
 // ============================================================================
 // theme.ts — TuriaFestNoticias · theme toggle island
 // ============================================================================
-// Port of the Angular `ThemeService` for the browser: reads the stored mode,
+// Theme controller for the browser: reads the stored mode,
 // resolves `system` against `prefers-color-scheme`, applies `data-theme` and
 // keeps the toggle button (pressed state, icon, translated label) in sync.
 // ============================================================================

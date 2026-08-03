@@ -1,7 +1,7 @@
 // ============================================================================
 // news-search.ts — TuriaFestNoticias · news hub client-side search
 // ============================================================================
-// Framework-free port of the Angular `NewsSearchService`: MiniSearch index
+// News search: MiniSearch index
 // over the news catalogue, diacritic-insensitive for Spanish. The news hub
 // island builds the index from per-article data embedded in the page and
 // re-builds it when the active language changes.

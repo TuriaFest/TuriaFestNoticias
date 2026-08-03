@@ -1,7 +1,7 @@
 // ============================================================================
 // nav.ts — TuriaFestNoticias · NavBar interaction island
 // ============================================================================
-// Ports the Angular NavBar behaviours: language menu (open/close, click
+// NavBar behaviours: language menu (open/close, click
 // outside, Escape), search panel toggle + focused submit, and language
 // selection. The submit keeps the native GET form navigation to
 // `/noticias?buscar=…` — only the empty-query guard is intercepted.

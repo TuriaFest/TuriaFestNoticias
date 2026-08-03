@@ -1,7 +1,7 @@
 // ============================================================================
 // theme.ts — TuriaFestNoticias · light / dark / system theming
 // ============================================================================
-// Framework-free port of the Angular `ThemeService`. The anti-flicker inline
+// Theme state helpers. The anti-flicker inline
 // script in BaseLayout applies the stored choice before first paint; this
 // module keeps the DOM in sync afterwards (island side).
 // ============================================================================

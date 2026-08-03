@@ -4,7 +4,7 @@
 // Astro's global entry (imported by BaseLayout). It composes the design
 // system in dependency order: primitives → semantic → typography (sizes +
 // fonts) → spacing/radii/shadows/motion → reset → animations, then the app
-// shell rules formerly owned by the Angular root component.
+// shell rules for the document shell.
 // ============================================================================
 
 @use 'styles/tokens';
@@ -20,7 +20,7 @@
 @use 'styles/reset';
 @use 'styles/utilities/liquid-glass';
 
-// App shell (was the Angular root component's `:host` + `.app-main`).
+// App shell.
 body {
   display: block;
   min-height: 100vh;
